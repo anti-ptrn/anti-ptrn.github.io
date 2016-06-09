@@ -4,84 +4,84 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>/</loc>
-<lastmod>2016-06-09T22:11:08-00:00</lastmod>
+<loc>http://antipattern.ir/</loc>
+<lastmod>2016-06-09T22:18:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/archives.html</loc>
-<lastmod>2016-06-09T22:11:08-00:00</lastmod>
+<loc>http://antipattern.ir/archives.html</loc>
+<lastmod>2016-06-09T22:18:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tags.html</loc>
-<lastmod>2016-06-09T22:11:08-00:00</lastmod>
+<loc>http://antipattern.ir/tags.html</loc>
+<lastmod>2016-06-09T22:18:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/categories.html</loc>
-<lastmod>2016-06-09T22:11:08-00:00</lastmod>
+<loc>http://antipattern.ir/categories.html</loc>
+<lastmod>2016-06-09T22:18:37-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/always-encrypted-with-sql-server-2016-with-code-example.html</loc>
+<loc>http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html</loc>
 <lastmod>2016-06-03T18:53:00+04:30</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/sql-server-encryption-c.html</loc>
+<loc>http://antipattern.ir/category/sql-server-encryption-c.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/rmzngry.html</loc>
+<loc>http://antipattern.ir/tag/adonet.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/always-encrypted.html</loc>
+<loc>http://antipattern.ir/tag/rmzngry.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/adonet.html</loc>
+<loc>http://antipattern.ir/tag/sql-server.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/sql-server.html</loc>
+<loc>http://antipattern.ir/tag/entity-framework.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/entity-framework.html</loc>
+<loc>http://antipattern.ir/tag/always-encrypted.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/author/ly-bhrmynjd.html</loc>
+<loc>http://antipattern.ir/author/ly-bhrmynjd.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
