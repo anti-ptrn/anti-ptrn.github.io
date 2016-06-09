@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8"/>
+	<title>رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework - Anti-Pattern</title>
+	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
+	<meta name="author" content="Ali Bahraminezhad">
+
+	<link rel="canonical" href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html" />
+
+  <meta name="description" content="رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند. مدت زیادی نیست که نسخه نهایی SQL Server 2016 توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز اون امکان Always Encrypted هست که این قابلیت رو به ما میده در داخل SQL Server ستون/ستون‌های مد نظر رو رمز نگاری کنیم! رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام میشه. اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.">
+
+	
+    <meta property="og:title" content="رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/sql-server-2016/sql-server-2016-always-encrpted.jpg" />
+    <meta property="og:url" content="http://antipattern.ir\always-encrypted-with-sql-server-2016-with-code-example.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern" />
+    <meta property="article:published_time" content="2016-06-04" />
+    <meta property="article:modified_time" content="2016-06-03" />
+    <meta property="article:section" content="SQL-Server, Encryption, C#" />
+    <meta property="article:tag" content="SQL-Server" />
+    <meta property="article:tag" content="رمزنگاری" />
+    <meta property="article:tag" content="Always Encrypted" />
+    <meta property="article:tag" content="ADO.Net" />
+    <meta property="article:tag" content="Entity Framework" />
+	
+
+	
+			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?2ca269a1">	
+		
+	
+		<link href="http://antipattern.ir/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anti-Pattern Atom Feed" />
+</head>
+
+<body>
+
+    <div class="row">
+		<header role="banner" class="small-12 columns">
+			<div class="social-icons large-3 medium-4 small-5 columns float-left">												
+				<a href="https://ir.linkedin.com/in/bahraminezhad" title="لینکدین من" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin" aria-hidden="true"></i></a>
+				<a href="https://telegram.me/anti_pattern" title="کانال تلگرام آنتی پترن" target="_blank"><i class="fa fa-paper-plane-o fa-2x telegram" aria-hidden="true"></i></i></a>
+				
+				
+				
+					<a href="http://antipattern.ir/feeds/all.atom.xml" title="RSS Feed" rel="alternate"><i class="fa fa-rss fa-2x feed" aria-hidden="true"></i></a>
+			</div> <!-- end social icons -->
+			
+			<h1 class="title large-9 medium-8 small-6 columns float-right">
+				<a href="http://antipattern.ir/">Anti-Pattern 💾</a>
+				<small class="show-for-large">محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها</small>
+				<small class="show-for-medium hide-for-large">اشتراک دانش برنامه‌نویسی</small>
+			</h1>
+		</header>
+		<div role="main" class="content small-12 medium-8 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html"><i class="fa fa-paperclip" aria-hidden="true"></i> رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
+
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">15-03-1395</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 6 دقیقه </span>
+
+<hr class="top-spilter" />
+
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="tag/sql-server.html">SQL-Server</a>
+        <a href="tag/rmzngry.html">رمزنگاری</a>
+        <a href="tag/always-encrypted.html">Always Encrypted</a>
+        <a href="tag/adonet.html">ADO.Net</a>
+        <a href="tag/entity-framework.html">Entity Framework</a>
+</div>    
+
+<br />
+
+<p><img alt="SQL Server 2016 - Always Encrpted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/sql-server-2016-always-encrpted.jpg" /></p>
+<p>رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند.</p>
+<p>مدت زیادی نیست که نسخه نهایی <a href="https://www.microsoft.com/en-us/server-cloud/products/sql-server/" target="_blank">SQL Server 2016</a> توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز اون امکان <a href="https://msdn.microsoft.com/en-us/library/mt163865.aspx" target="_blank">Always Encrypted</a> هست که این قابلیت رو به ما میده در داخل SQL Server ستون/ستون‌های مد نظر رو رمز نگاری کنیم!</p>
+<p>رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام میشه.</p>
+<p>اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.</p>
+<a name="more"></a>
+
+<h2>نیازمندی‌ها</h2>
+<hr />
+<p>اگر قبلاً SQL Server 2016 و Management Studio 2016 رو نصب نکردید، از طریق لینک‌های زیر دانلود و نصب کنید.</p>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016" target="_blank">دریافت SQL Server 2016 با لایسنس 180 روزه</a></li>
+<li><a href="https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads?pid=2057" target="_blank">دریافت SQL Server 2016 نسخه Developer Edition - تماماً رایگان</a></li>
+<li><a href="http://go.microsoft.com/fwlink/?LinkID=799832" target="_blank">دریافت Management Studio June 2016</a></li>
+<li><a href="https://download.microsoft.com/download/F/6/4/F6444AC3-ACF7-4024-BD31-3CACA2DA62DC/AdventureWorks2016CTP3.bak" target="_blank">دریافت دیتابیس تمرینی AdventureWorks 2016 CTP3</a></li>
+</ul>
+<p><small><em>برای دانلود نسخه Developer حتماً باید در visualstudio.com/free ثبت نام کنید و عضو برنامه <a href="https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL" target_blank="target_blank">Visual Studio Dev Express</a> شوید.</em></small></p>
+<h3>انواع رمزنگاری</h3>
+<hr />
+<p>قبل از اینکه نحوه استفاده از Always encrpted را بررسی کنیم، باید بدونیم که Always Encrypted به ما دو نوع روش رمزنگاری پیشنهاد میدهد:</p>
+<ol>
+<li>Deterministic encryption</li>
+<li>Randomized encryption</li>
+</ol>
+<p>در <strong>Deterministic</strong>  علاوه بر رمزنگاری داده‌ها امکان فیلترکردن داده‌ها با عملگر مساوی، جوین زدن جدول‌ها و دسته بندی فراهم شده است. در این روش رمزنگاری همیشه یک مقدار ثابت رمزنگاری شده برای یک رشته یکسان تولید میشود.</p>
+<p>برای مثال به جدول زیر نگاه کنید:</p>
+<table>
+<thead>
+<tr>
+<th>Sample Value</th>
+<th>Sample Encrytped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td><strong>0xfff777895</strong></td>
+</tr>
+<tr>
+<td>Ali</td>
+<td>0xeaaf557412</td>
+</tr>
+<tr>
+<td>John</td>
+<td><strong>0xfff777895</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>در 2 رکورد متفاوت برای رشته <strong>John</strong> یک عبارت یکسان تولید شده است</em></p>
+<p><br /></p>
+<p><strong>روش Randomized</strong> روشی امن‌تر از روش اول است چون رشته‌های رمزنگاری آن شانس حدس زدن بسیار پایینی دارند، اما نمی‌توان در این جدول‌ها را براساس مقدار رمزنگاری شده جوین زد، با عملگر مساوی مقادیر را پیدا یا دیتا را دسته بندی کرد. به این دلیل که در هر مرتبه از یک <code>cipher text</code> جدید جهت رمزنگاری استفاده میکند.</p>
+<h2>جدولهای نمونه</h2>
+<hr />
+<p>در نظر بگیرید دو جدول به نام‌های <code>dbo.Person</code> و <code>dbo.PersonCard</code> با ساختار زیر وجود دارد:</p>
+<h4>جدول dbo.Person</h4>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>int</td>
+</tr>
+<tr>
+<td>FullName</td>
+<td>nvarchar(50)</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<h4>جدول dbo.PersonCard</h4>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PersonId</td>
+<td>int</td>
+</tr>
+<tr>
+<td>CardNumber</td>
+<td>nvarchar(16)</td>
+</tr>
+<tr>
+<td>BankName</td>
+<td>nvarchar(50)</td>
+</tr>
+</tbody>
+</table>
+<p><small><em>در این جدول نام بانک و شماره کارت کاربر مهم تلقی شده و قصد رمزنگاری آنرا داریم</em></small></p>
+<p><br /></p>
+<h2>فعال سازی Always Encrypted</h2>
+<hr />
+<p>جهت رمزنگاری؛ کافیست در Management Studio برروی جدولی که می‌خواهیم ستون‌های آنرا رمزنگاری کنیم راست کلیک و گزینه Encrypt Columns را انتخاب کنیم. ( در اینجا جدول <code>dbo.PersonCard</code> )</p>
+<p><img alt="Encrypt Columns" class="center-image" src="http://antipattern.ir/images/sql-server-2016/01-encrypt-columns.png" /></p>
+<p>سپس در پنجره باز شده به مرحله دوم یعنی <strong>Column Selection</strong> می‌رویم تا ستون‌های مورد نظر جهت رمزنگاری  انتخاب و نوع رمزنگاری آن‌ها را تعیین کنیم.</p>
+<p><img alt="SQL Server 2016 - Always Encrypted - Column Selection" class="center-image" src="http://antipattern.ir/images/sql-server-2016/02-select-columns.png" /></p>
+<p><em>در پنجره بالا برای ستون‌های <code>CardNumber</code> و  <code>BankName</code> جهت رمزنگاری نوع <strong>Deterministic</strong> را اتخاب کرده ایم.</em> </p>
+<p>همانطور که در شکل بالا پیداست، در یک ToolTip اعلام شده است که نوع <em>Collation</em> ستون از <strong>Persian_100_AS_CS</strong> به <strong>Persian_100_bin2</strong> تبدیل خواهد شد. برای رمزنگاری <strong>Deterministic</strong> نوع <em>Collation</em> ستون باید از نوع <em>Binary</em> باشد.</p>
+<p>در صورت رفتن به مرحله بعدی؛ می‌بایست پیکربند <strong>Master Key</strong> را انجام دهیم. اما سوال اصلی اینجاست که <strong>Master Key</strong> چیست؟ <a href="https://msdn.microsoft.com/en-us/library/mt163865.aspx#Anchor_3" target="_blank">طبق تعریف مایکروسافت</a> <strong>Column Master Keyها</strong>؛ کلیدهایی جهت محافظت از «کلیدهای رمزنگاری کننده ستون» هستند و این کلید‌ها در جایی امن مانند <strong>Windows Certificate Store</strong> باید ذخیره شوند.</p>
+<p><img alt="SQL Server 2016 - Always Encrypted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/Always_Encrypted-graphic.jpg" /></p>
+<p>در این تصویر با استفاده از <strong>Column Encryption Keys</strong> داده‌های حساس در دیتابیس رمزنگاری شده اند و <strong>Master Key</strong>ها جهت دسترسی به کلیدهای رمزنگاری کننده ستون‌ها هستند.</p>
+<p><br /></p>
+<p><strong>پیکربندی Master Key:</strong></p>
+<p><img alt="SQL Server 2016 - Configuration Master Key" class="center-image" src="http://antipattern.ir/images/sql-server-2016/03-master-key-configuration.png" /></p>
+<p>در این مرحله اگر قبلاً <strong>Master Key</strong> تولید کرده باشیم می‌توانیم از قسمت <code>Select column master key</code> نسبت به انتخاب آن یا  اگر قبلاً <strong>Master Key</strong> نساخته ایم با انتخاب <code>Auto generate column master key</code> نسبت به تولید <strong>Master Key</strong> اقدام کنیم. همچنین محل ذخیره سازی Master Key بسیار مهم است؛ همانطور که بالاتر نیز شرح داده شد Master Keyها می‌بایست در جایی امن و قابل اطمینان ذخیره شوند. در اینجا <strong>Windows Certification Store</strong> جهت ذخیره Master Keyها انتخاب شده است. پس از انتخاب <code>master key source</code> با رفتن به مرحله Summary عملیات ساخت Keyها را آغاز می‌کنیم.</p>
+<p>در صورتی که خطایی در زمان تولید کلید‌ها رخ ندهد؛ نتیجه چیزی مانند تصویر زیر خواهد بود:</p>
+<p><img alt="SQL Server 2016 - Encrypted in DB , Decrypted In App" class="center-image" src="http://antipattern.ir/images/sql-server-2016/03-result.png" /></p>
+<p>حال اگر از جدول <strong>dbo.PersonCard</strong> یک <code>SELECT</code> ساده بگیریم؛ خواهیم دید که اطلاعات به چه شکل رمزنگاری شده اند.</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">SELECT</span> * <span style="color: #0000ff">FROM</span> dbo.PersonCard
+</pre></div>
+
+
+<p><img alt="SQL Server 2016 - Sample Encrypted Data" class="center-image" src="http://antipattern.ir/images/sql-server-2016/04-encrypted-data.png" /></p>
+<p>اطلاعات در ستون‌ها رمزنگاری شده اند و برخی داده‌های رمزنگاری شده با یکدیگر برابر هستند.</p>
+<p><strong><em>باید توجه داشت </em></strong>که اطلاعات بین مسیر ارتباطی با <strong>SQL Server</strong> و همچنین داخل <strong>SQL Server</strong> به شکل رمزنگاری شده هستند و فقط در برنامه است که داده‌ها رمزگشایی میشوند.</p>
+<p><img alt="SQL Server 2016 - Encrypted in DB , Decrypted In App" class="center-image" src="http://antipattern.ir/images/sql-server-2016/encrypted-in-db.png" /></p>
+<h2>مثال عملی - خواندن دیتای رمزنگاری شده</h2>
+<hr />
+<p>در Query زیر یک Aggregation و Group By برروی یکی از ستون‌های رمزنگاری شده انجام میدهیم.</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">SELECT</span> BankName, <span style="color: #0000ff">COUNT</span>(1) [CardQuantity] <span style="color: #0000ff">FROM</span> dbo.PersonCard
+<span style="color: #0000ff">GROUP</span> <span style="color: #0000ff">BY</span> BankName
+</pre></div>
+
+
+<p><img alt="SQL Server 2016 - Sample Encrypted Data Group by Query" class="center-image" src="http://antipattern.ir/images/sql-server-2016/05-sample-query.png" /></p>
+<p>قبلاً نیز اشاره کردیم که تنها دربرنامه می‌توان مقدار رمزنگاری شده را رمزگشایی کرد؛ حال سعی میکنیم این کار را در یک پروژه با دات نت انجام دهیم.</p>
+<p>برای استفاده از <strong>Always Encrypted</strong> در دات نت بهتر است در پروژه خود از Netframework 4.6.x استفاده کنید.</p>
+<p><em>وجود عبارت <code>Column Encryption Setting=enabled</code> در <strong>Connection String</strong>، سبب می‌شود تا ADO.Net از امکان Always Encrypted استفاده کند.</em></p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">using</span> System;
+<span style="color: #0000ff">using</span> System.Collections.Generic;
+<span style="color: #0000ff">using</span> System.Linq;
+<span style="color: #0000ff">using</span> System.Text;
+<span style="color: #0000ff">using</span> System.Threading.Tasks;
+<span style="color: #0000ff">using</span> System.Data;
+<span style="color: #0000ff">using</span> System.Data.SqlClient;
+
+<span style="color: #0000ff">namespace</span> AlwaysEncrypted
+{
+    <span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
+    {
+        <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
+        {
+            <span style="color: #008000">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+            <span style="color: #2b91af">var</span> connectionString = <span style="color: #a31515">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span>;
+
+            <span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> connection = <span style="color: #0000ff">new</span> SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                <span style="color: #2b91af">var</span> cmd = connection.CreateCommand();
+                cmd.CommandText = <span style="color: #a31515">&quot;SELECT BankName, COUNT(1) [CardQuantity] FROM dbo.PersonCard GROUP BY BankName&quot;</span>;
+
+                <span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> reader = cmd.ExecuteReader())
+                {
+                    <span style="color: #0000ff">while</span> (reader.Read())
+                        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{reader[0]}\t{reader[1]}&quot;</span>);
+
+                    reader.Close();
+                }
+            }
+
+            Console.Read();
+        }
+    }
+}
+</pre></div>
+
+
+<p>بدون اینکه کد اضافه ای نوشته شود دیتا رمزگشایی شد.</p>
+<p><img alt="SQL Server 2016 - Sample Decrypted Data Group by Query" class="center-image" src="http://antipattern.ir/images/sql-server-2016/06-decrpted_data.jpg" /></p>
+<h2>مثال عملی - درج دیتا</h2>
+<hr />
+<p>با استفاده از تکه کد زیر قصد داریم یک کارت بانکی جدید در جدول <code>dbo.PersonCard</code> اضافه کنیم. از قبل ستون‌های <strong>BankName</strong> و <strong>CardNumber</strong>رمزنگاری شده اند، اما به چه شکل میتوانیم در دات نت در آنها دیتا درج کنیم؟</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008000">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+<span style="color: #2b91af">var</span> connectionString = <span style="color: #a31515">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span>;
+
+<span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> connection = <span style="color: #0000ff">new</span> SqlConnection(connectionString))
+{
+    connection.Open();
+
+    <span style="color: #2b91af">var</span> cmd = connection.CreateCommand();
+    cmd.CommandText = <span style="color: #a31515">@&quot;INSERT INTO [dbo].[PersonCard]</span>
+<span style="color: #a31515">                        SELECT @PersonId, @CardNumber, @BankName;&quot;</span>;
+
+
+
+    cmd.Parameters.AddWithValue(<span style="color: #a31515">&quot;@PersonId&quot;</span>, 1);
+    cmd.Parameters.AddWithValue(<span style="color: #a31515">&quot;@BankName&quot;</span>, <span style="color: #a31515">&quot;New Bank of Mine&quot;</span>);
+    cmd.Parameters.AddWithValue(<span style="color: #a31515">&quot;@CardNumber&quot;</span>, <span style="color: #a31515">&quot;80908945xxxxyyyy&quot;</span>);
+
+
+    cmd.ExecuteNonQuery();
+
+    Console.WriteLine(<span style="color: #a31515">&quot;Inserted!&quot;</span>);
+}
+
+Console.Read();
+</pre></div>
+
+
+<p>کد بالا بدون مشکل اجرا میشود و رکورد در دیتابیس درج میشود؛
+اگر با استفاده از <a href="https://technet.microsoft.com/en-us/library/aa173918(v=sql.80).aspx" target="_blank">SQL Server Profiler</a> دستورات ارسالی به <em>SQL Server</em> پروفایل کنید خواهید دید که مقادیر اارسالی نیز به شکل رمزنگاری شده ارسال شده اند!</p>
+<p><img alt="SQL Server Profiler - Insert in Always Encrypted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/07-profiler.png" /></p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">exec</span> sp_executesql N<span style="color: #a31515">&#39;INSERT INTO [dbo].[PersonCard]</span>
+<span style="color: #a31515">                                    SELECT @PersonId, @CardNumber, @BankName;&#39;</span>,N<span style="color: #a31515">&#39;@PersonId int,@BankName nvarchar(16),@CardNumber nvarchar(16)&#39;</span>,@PersonId=1,@BankName=0x01272FF7910740F799AC04B88B70A0C540CA03301928CCFEB027DDBD56589004159F7DD3C71D8B5D83BE0DFE1B52B9374B542F38F419B3F8C0A06F9FDD398DEBB6BA3B499D9D43017755F87F89720EDFC02B2227BCC15C5BCD03B87C9D3837EC5D,@CardNumber=0x01634D3FF45705BCA69969F7650B178B4B733F0148A7FE6562CF9DEABC8BF1BCAC3249FF28CE30AAE4D4CA8663EA9D3474E35711867CF35069B930272DC979BB761B92F319541DF9233F8983DA5ECE39607212E28C89316D35A02A480721ED04C7
+</pre></div>
+
+
+<p><br /></p>
+<h2>مثال عملی - خواندن دیتا و درج دیتا با استفاده از EntityFramework</h2>
+<hr />
+<p>تکه کد زیر جهت اجرای دستورات خواندن، درج، بروز آوری، جستجو و دسته بندی در <strong>Entity Framework</strong> نوشته شده است.</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008000">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+<span style="color: #2b91af">var</span> connectionString = <span style="color: #a31515">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span>;
+
+<span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> context = <span style="color: #0000ff">new</span> MyDBContext(connectionString))
+{
+    <span style="color: #008000">// Read them all</span>
+    Console.WriteLine(<span style="color: #a31515">&quot;All Data&quot;</span>);
+    context.PersonCards.ToList().ForEach((card) =&gt;
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{card.PersonId}, {card.BankName}, {card.CardNumber}&quot;</span>);
+    });
+
+    <span style="color: #008000">// Insert some</span>
+    <span style="color: #2b91af">var</span> newCard = context.PersonCards.Add(<span style="color: #0000ff">new</span> PersonCard
+    {
+        PersonId = 1,
+        BankName = <span style="color: #a31515">&quot;Entity Bank of Me&quot;</span>,
+        CardNumber = <span style="color: #a31515">&quot;1234567891234531&quot;</span>
+    });
+    context.SaveChanges();
+    Console.WriteLine(<span style="color: #a31515">&quot;\r\nRecord has inserted&quot;</span>);
+
+    <span style="color: #008000">// A Where Condition</span>
+    <span style="color: #008000">// حتماً به متدهای لینک متغیر پاس دهید تا کوئری تولید شده پارامتری باشد</span>
+    <span style="color: #008000">// در غیر اینصورت ممکن است با خطا مواجه شوید!</span>
+    <span style="color: #2b91af">var</span> aCard = context.PersonCards
+                        .FirstOrDefault(card =&gt; card.CardNumber == newCard.CardNumber);
+    <span style="color: #0000ff">if</span> (aCard != <span style="color: #0000ff">null</span>)
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;\r\nCard found \t =&gt; \t {aCard.PersonId}, {aCard.BankName}, {aCard.CardNumber}&quot;</span>);
+
+    <span style="color: #008000">// Update some fields</span>
+    aCard.BankName = <span style="color: #a31515">&quot;EN Bank&quot;</span>;
+    context.SaveChanges();
+
+    Console.WriteLine(<span style="color: #a31515">&quot;\r\nRecord has updated.&quot;</span>);
+
+    <span style="color: #008000">// An aggregation query</span>
+    <span style="color: #2b91af">var</span> result = (<span style="color: #0000ff">from</span> c <span style="color: #0000ff">in</span> context.PersonCards
+                    <span style="color: #0000ff">group</span> c <span style="color: #0000ff">by</span> c.BankName <span style="color: #0000ff">into</span> gc
+                    <span style="color: #0000ff">select</span> <span style="color: #0000ff">new</span> { BankName = gc.Key, Quantity = gc.Count() })
+                    .ToList();
+
+    Console.WriteLine(<span style="color: #a31515">&quot;\r\nA group by!\r\n&quot;</span>);
+    result.ForEach((r) =&gt;
+    {
+        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{r.BankName}, {r.Quantity}&quot;</span>);
+    });
+
+}
+
+
+Console.Read();
+</pre></div>
+
+
+<p><strong>خروجی تکه کد بالا</strong></p>
+<p><img alt="SQL Server Profiler - EntityFramework Query Result" class="center-image" src="http://antipattern.ir/images/sql-server-2016/08-ef-query-result.png" /></p>
+<p><br /></p>
+<p>بزرگترین مزیت <strong>Always Encrypted</strong> عدم نیاز به تغییر در کدهای برنامه است و تنها با اضافه کردن یک تنظیم در <strong>Connection String</strong> می‌توان از این امکان جدید استفاده کرد.</p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "always-encrypted-with-sql-server-2016-with-code-example.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
+		</div> <!-- end main -->
+
+		<div class="sidebar medium-4  small-12 columns">
+			<div class="sidebar-container small-12 columns">
+				
+			
+		
+				
+				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
+				<ul id="recent-posts">
+					<li>
+					<a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html" title='رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند. مدت زیادی نیست که نسخه نهایی SQL Server 2016 توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز اون امکان Always Encrypted هست که این قابلیت رو به ما میده در داخل SQL Server ستون/ستون‌های مد نظر رو رمز نگاری کنیم! رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام میشه. اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.'>رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a>
+					</li>
+				</ul>												
+
+						
+													
+				<nav class="tags">								
+					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
+					<ul>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL-Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+					</ul>
+				</nav>						
+
+				
+			</div> <!-- end sidebar-container -->
+		</div> <!-- end sibder -->
+
+		<footer class="small-12 columns">
+			<div class="float-left" dir="ltr">
+				Ali Bahraminezhad - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme inspired by <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+			</div>
+		</footer>		
+	</div>	
+</body>
+</html>

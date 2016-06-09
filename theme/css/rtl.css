@@ -1,0 +1,410 @@
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/vazir/Vazir.eot');
+  src: url('../fonts/vazir/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vazir/Vazir.woff') format('woff'),
+       url('../fonts/vazir/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+      
+@font-face {
+  font-family: Vazir;
+  src: url('../fonts/vazir/Vazir-Bold.eot');
+  src: url('../fonts/vazir/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/vazir/Vazir-Bold.woff') format('woff'),
+       url('../fonts/vazir/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+body{
+    font-family: Vazir, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif !important;
+    
+    direction: rtl;
+    text-align: right;
+}
+
+header .feeds{
+    float:left;
+}
+
+header .feeds a{
+    float:left;
+}
+
+
+header .title{
+    float:right;
+}
+
+[role=contentinfo]{
+    direction: ltr;
+    text-align: left;
+}
+
+hr{
+    margin:0;
+    margin-top:25px;
+}
+
+.metadata{
+    float:none !important;
+}
+
+.sidebar-container h2{
+    font-size:1em;
+}
+
+h1{
+    margin-bottom: 5px;
+}
+
+article h1{
+    font-size:1.3em;
+    font-weight: bold;       
+}
+
+.top-spilter{
+    margin-top: 6px !important;
+    opacity: 0.15 !important;
+    box-shadow: none;
+    width: :100%;
+}
+
+
+article .tags{
+    float:left;
+}
+
+
+article .tags a {
+	display: inline-block;
+	height: 21px;
+	margin: 0 0px 0 1px;
+	padding: 0 14px 0 7px;
+	white-space: nowrap;
+	position: relative;
+
+	background-color: #E1F5FE;
+
+	color: #000;
+	font: bold 11px/21px Vazir, Calibri,Arial, Tahoma, sans-serif;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(255,255,255,0.4);
+
+	border: 1px solid #90CAF9;
+}
+
+
+article .tags a:before { 
+  content: '';  
+  position: absolute;  
+  top: 7px;  
+  right: 3px;  
+  width: 5px;  
+  height: 5px;  
+  background: #FFF;  
+  border-radius: 4px;  
+	border: 1px solid #90CAF9;
+}  
+
+
+article .tags a:hover { 
+  color: #0D47A1;  
+  color: white;
+} 
+
+.sidebar-container .tags{
+    margin-bottom: 1.5em;
+}
+
+.sidebar-container .tags ul{
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+.sidebar-container .tags li{
+    display: inline;
+}
+
+/*.sidebar-container .tags li:first-child{
+    margin-right: 35px !important;
+}*/
+
+.sidebar-container .tags li{
+	display: inline-block;
+	height: 21px;
+	margin: 0 0px 0 1px;
+	padding: 0 14px 0 7px;
+	white-space: nowrap;
+	position: relative;
+
+	background-color: #FFF8E1;
+
+	color: #000;
+	font: bold 11px/21px Vazir, Calibri,Arial, Tahoma, sans-serif;
+	text-decoration: none;
+	text-shadow: 0 1px rgba(255,255,255,0.4);
+
+	border: 1px solid #FFB300;
+}
+
+.sidebar-container .tags li a{
+    text-align: center;    
+    text-decoration: none;
+    border:0px;
+}
+
+.sidebar-container .tags li a:hover{
+    text-decoration: none;
+    border:0px;
+    color:white;
+}
+
+
+.sidebar-container .tags li:nth-child(2n+1){
+	background-color: #FFD54F;
+}
+
+
+
+.feed{
+    color:#FFC107;
+}
+
+.linkedin{
+    color:#01579B;
+}
+
+.email{
+    color:#F44336
+}
+
+.telegram{
+    color:#90CAF9;
+}
+
+.social-icons{
+    line-height: 55px;
+}
+
+.social-icons{
+    text-align: left;
+}
+
+.social-icons a{
+    margin-right:5px;
+}
+
+.social-icons a i{
+    transition: background-color 0.7s ease;  
+}
+
+.social-icons a:hover{
+    color:#B2FF59;
+}
+
+.social-icons a:hover i{
+    color:#00796B;
+}
+
+
+.title{
+    font-size:1.2em;
+    margin:0;
+    padding:0;
+    font-weight: normal;
+}
+
+article h1 a i{
+    display: none !important;
+}
+
+article h1 a:hover i{
+    display: inline-block !important;
+}
+
+.code{
+    direction: ltr;
+    text-align: left;
+}
+
+.content-spilter{
+    
+    margin: 40px 5% 60px 5%;
+    color: #d6d6d6;
+    box-shadow: 0.1em 0.1em 0.1em #EFEFEF;
+    border-radius: 5px;    
+    
+    margin-top:25px;
+    margin-bottom: 25px;
+    box-shadow: none;
+    border-style: double;
+}
+
+article:hover h1 a i{
+    /*display: inline-block !important;*/
+}
+
+.home-single-article:hover{
+    background:#FAFAFA;
+}
+
+
+a:hover{
+    color:#01579B;
+}
+
+.codehilite pre{
+    font-size: 10pt;
+    direction: ltr !important;
+    font-family: Menlo,Monaco,Lucida Console, Consolas,Droid Sans Mono,Courier New,monospace,Droid Sans Fallback;
+    text-align: left;
+    
+    
+    display: block;
+    padding: 15px;
+    margin: 10px 0 10px;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #ccc; 
+    border-radius: 0px;    
+}
+
+.codehilitetable{
+    font-size: 10pt;
+    width:100%;
+    direction: ltr !important;
+    font-family: Menlo,Monaco,Lucida Console, Consolas,Droid Sans Mono,Courier New,monospace,Droid Sans Fallback;
+    text-align: left;
+}
+
+
+
+
+/*.codehilite pre *{
+    direction: ltr;
+}
+*/
+
+article .center-image{
+    display: block;
+    margin: 0 auto;
+}
+
+.comment-title{
+    font-weight: bold;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+article hr{
+    /*width:65%;*/
+    margin: 15px auto;
+}
+
+article h1 + hr, article h2 + hr,article h3 + hr, article h4 + hr, article h5 + hr{
+    width:100%;
+    color:#eee;
+    /*opacity: 0.2;*/
+    border-style: solid;
+    margin:0px;
+    margin-bottom: 25px;
+}
+
+article h1, article h2{
+    margin-bottom: 5px;
+}
+
+code{
+    background: #eee;
+}
+
+
+
+/* Tables
+     ========================================================================== */
+/**
+   * Remove most spacing between table cells.
+   */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; 
+  direction: ltr;
+ }
+
+td,
+th {
+  padding: 0; }
+
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 3px; }
+  table thead,
+  table tbody,
+  table tfoot {
+    border: 1px solid #f1f1f1;
+    background-color: #fefefe; }
+  table caption {
+    font-weight: bold;
+    padding: 0.5rem 0.625rem 0.625rem; }
+  table thead,
+  table tfoot {
+    background: #f8f8f8;
+    color: #0a0a0a; }
+    table thead tr,
+    table tfoot tr {
+      background: transparent; }
+    table thead th,
+    table thead td,
+    table tfoot th,
+    table tfoot td {
+      padding: 0.5rem 0.625rem 0.625rem;
+      font-weight: bold;
+      text-align: right; }
+  table tbody tr:nth-child(even) {
+    background-color: #f1f1f1; }
+  table tbody th,
+  table tbody td {
+    padding: 0.5rem 0.625rem 0.625rem; }
+
+@media screen and (max-width: 63.9375em) {
+  table.stack thead {
+    display: none; }
+  table.stack tfoot {
+    display: none; }
+  table.stack tr,
+  table.stack th,
+  table.stack td {
+    display: block; }
+  table.stack td {
+    border-top: 0; } }
+
+table.scroll {
+  display: block;
+  width: 100%;
+  overflow-x: auto; }
+
+table.hover tr:hover {
+  background-color: #f9f9f9; }
+
+table.hover tr:nth-of-type(even):hover {
+  background-color: #ececec; }
+
+
+  .row{
+      max-width: 75rem !important;
+  }
+
+
+  .codehilite pre{
+      background: initial!important;
+  }
+
+
+.single-article{
+    margin-bottom: 25px;
+}
