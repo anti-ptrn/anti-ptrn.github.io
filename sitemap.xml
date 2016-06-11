@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/</loc>
-<lastmod>2016-06-11T23:40:42-00:00</lastmod>
+<lastmod>2016-06-11T23:50:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/archives.html</loc>
-<lastmod>2016-06-11T23:40:42-00:00</lastmod>
+<lastmod>2016-06-11T23:50:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/tags.html</loc>
-<lastmod>2016-06-11T23:40:42-00:00</lastmod>
+<lastmod>2016-06-11T23:50:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/categories.html</loc>
-<lastmod>2016-06-11T23:40:42-00:00</lastmod>
+<lastmod>2016-06-11T23:50:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -46,6 +46,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://antipattern.ir/tag/sql-server.html</loc>
+<lastmod>2016-06-04T10:42:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://antipattern.ir/tag/adonet.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
@@ -54,13 +61,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/tag/always-encrypted.html</loc>
-<lastmod>2016-06-04T10:42:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/sql-server.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
