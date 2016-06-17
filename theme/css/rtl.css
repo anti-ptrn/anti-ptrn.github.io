@@ -231,7 +231,7 @@ article h1 a:hover i{
 
 .content-spilter{
     
-    margin: 40px 5% 60px 5%;
+    margin: 40px 0 60px 0;
     color: #d6d6d6;
     box-shadow: 0.1em 0.1em 0.1em #EFEFEF;
     border-radius: 5px;    
@@ -239,7 +239,7 @@ article h1 a:hover i{
     margin-top:25px;
     margin-bottom: 25px;
     box-shadow: none;
-    border-style: double;
+    border-style: dashed;
 }
 
 article:hover h1 a i{

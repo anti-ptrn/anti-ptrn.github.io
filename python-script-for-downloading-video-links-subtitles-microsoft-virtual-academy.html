@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8"/>
+	<title>استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون - Anti-Pattern</title>
+	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
+	<meta name="author" content="Ali Bahraminezhad">
+
+	<link rel="canonical" href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" />
+
+  <meta name="description" content="اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با Microsoft Virtual Academy آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n صدهزار یا n میلیون تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است. اخیراً من اسکریپتی با Python 3 نوشتم که با گرفتن URL درس Microsoft Virtual Academy لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت می‌کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد. اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.">
+
+	
+    <meta property="og:title" content="استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/mva/mva.png" />
+    <meta property="og:url" content="http://antipattern.ir\python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2016-06-17" />
+    <meta property="article:modified_time" content="2016-06-17" />
+    <meta property="article:section" content="Microsoft Virtual Academy, Python, اسکریپت کاربردی پایتون" />
+    <meta property="article:tag" content="Microsoft Virtual Academy" />
+    <meta property="article:tag" content="Python" />
+    <meta property="article:tag" content="اسکریپت کاربردی پایتون" />
+	
+
+	
+			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?2347fd64">	
+		
+	
+		<link href="http://antipattern.ir/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anti-Pattern Atom Feed" />
+</head>
+
+<body>
+
+    <div class="row">
+		<header role="banner" class="small-12 columns">
+			<div class="social-icons large-3 medium-4 small-5 columns float-left">												
+				<a href="https://ir.linkedin.com/in/bahraminezhad" title="لینکدین من" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin" aria-hidden="true"></i></a>
+				<a href="https://telegram.me/anti_pattern" title="کانال تلگرام آنتی پترن" target="_blank"><i class="fa fa-paper-plane-o fa-2x telegram" aria-hidden="true"></i></i></a>
+				
+				
+				
+					<a href="http://antipattern.ir/feeds/all.atom.xml" title="RSS Feed" rel="alternate"><i class="fa fa-rss fa-2x feed" aria-hidden="true"></i></a>
+			</div> <!-- end social icons -->
+			
+			<h1 class="title large-9 small-6 columns float-right">
+				<a href="http://antipattern.ir/">Anti-Pattern 💾</a>
+				<small class="show-for-large">محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها</small>
+				<small class="show-for-medium hide-for-large">اشتراک دانش برنامه‌نویسی</small>
+			</h1>
+		</header>
+		<div role="main" class="content large-8 small-12 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html"><i class="fa fa-paperclip" aria-hidden="true"></i> استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
+
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">28-03-1395</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 3 دقیقه </span>
+
+<hr class="top-spilter" />
+
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a>
+        <a href="http://antipattern.ir/tag/python.html">Python</a>
+        <a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a>
+</div>    
+
+<br />
+
+<p><img alt="Microsoft Virtual Academy" class="center-image" src="http://antipattern.ir/images/mva/mva-logo.png" /></p>
+<p>اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با <a href="https://mva.microsoft.com/" target="_blank">Microsoft Virtual Academy</a> آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n<strong><em> صدهزار</em></strong> یا n<strong><em> میلیون</em></strong> تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است.</p>
+<p>اخیراً من اسکریپتی با <a :title="دانلود Python 3.5.1" _="," href="https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe" target="_blank">Python 3</a> نوشتم که با گرفتن URL درس <a href="https://mva.microsoft.com/" target="_blank">Microsoft Virtual Academy</a> لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت می‌کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد.</p>
+<p>اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.</p>
+<a name="more"></a>
+
+<h2>نیازمندی‌ها</h2>
+<hr />
+<p>همانطور که قبلاً اشاره شد، این اسکریپت با Python 3.x نوشته شده است، پس برای اجرا نیاز است که Python 3 برروی کامپیوتر شما نصب باشد.</p>
+<ul>
+<li><a href="https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe" target="_blank">دریافت فایل نصب Python 3.5.1 برای ویندوز</a></li>
+<li><strong><a href="http://antipattern.ir/code-scripts/MVA.py" target="_blank">اسکریپت دانلود از Microosft Virtual Academy</a></strong></li>
+<li><a href="https://github.com/SubtitleEdit/subtitleedit/releases/download/3.4.13/SubtitleEdit-3.4.13-Setup.zip" target="_blank">برنامه SubtitleEdit جهت کانورت زیرنویس ها</a></li>
+</ul>
+<p><br /></p>
+<h3>استفاده از اسکریپت</h3>
+<hr />
+<p>هر درس در MVA دارای یک URL بخصوص است.</p>
+<p><img alt="Building Blocks: Game Development" class="center-image" src="http://antipattern.ir/images/mva/sample-course.png" /></p>
+<p>در اینجا من URL درس Building Blocks: Game Development رو جهت تست اکسریپت انتخاب کردم:</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>https://mva.microsoft.com/en-US/training-courses/building-blocks-game-development-16063?l=OOAAoLZDC_9606218949
+</pre></div>
+
+
+<p>برای استفاده از اسکریپت کافیست که Command Prompt ویندوز رو در پوشه‌ای که فایل MVA.py قرار گرفته باز کنیم.</p>
+<p><img alt="CMD in MVA.py" class="center-image" src="http://antipattern.ir/images/mva/console-1.png" /></p>
+<p>اسکریپت و به شکل زیر داخل Command Prompt باز می‌کنیم:</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>python MVA.py
+</pre></div>
+
+
+<p>بعد از اجرا کردن؛ اسکریپت ابتدا URL درس مورد نظر در Microsoft Virtual Academy را خواهد پرسید. مانند شکل زیر آدرس رو وارد و کلید Enter را میزنیم.</p>
+<p><img alt="CMD in MVA.py" class="center-image" src="http://antipattern.ir/images/mva/console-2.png" /></p>
+<p>در صورتی که لینک درس درست باشد؛ مانند خروجی زیر ابتدا نام درس چاپ میشود، همچنین اگر درس دارای زیر نویسباشد پیامی مبنی بر اینکه زیرنویس ها دانلود شود از شما پرسیده خواهد شد.</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>Getting course details, pelase wait...
+Course 42149: Building Blocks: Game Development
+
+Getting table of contents, video links and subtitles, please wait ...
+
+Would you like to download subttiles? (y/n)
+</pre></div>
+
+
+<p>با وارد کردن <strong>y</strong> اسکریپت زیرنویس‌ها را نیز دانلود میکند و بعد از چند لحظه ( بسته به سرعت اینترنت ) کار اجرای اسکریپت تمام میشود و چنین خروجی نمایش خواهد داد.</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>Would you like to download subttiles? (y/n)y
+Downloading subtitles, please wait ...
+
+Exporting video links, please wait ...
+
+Files saved in &quot;E:\Virtual Academy Courses\Course 42149  Building Blocks  Game Development&quot;
+</pre></div>
+
+
+<p>در کنار فایل <strong>MVA.py</strong> پوشه ای به نام درس مورد نظر ساخته میشود.    </p>
+<p><img alt="Project folder" class="center-image" src="http://antipattern.ir/images/mva/project-folder.png" /></p>
+<p>در داخل پوشه به ازای کیفیت های موجود یک فایل txt تولید خواهد شد که داخل آن لیست درس ها با URL دانلود فایل وجود خواهد داشت.</p>
+<p><img alt="Project folder" class="center-image" src="http://antipattern.ir/images/mva/project-folder-2.png" /></p>
+<p><strong>مثلاً برای کیفیت 360p</strong></p>
+<p><img alt="Project folder" class="center-image" src="http://antipattern.ir/images/mva/project-folder-3.png" /></p>
+<p><br /></p>
+<h3>نحوه کانورت زیرنویس‌های Microsoft Virtual Academy</h3>
+<hr />
+<p>زیرنویس‌های سایت MVA از نوع <strong><a href="https://en.wikipedia.org/wiki/Timed_Text_Markup_Language" target="_blank">Timed Text Markup Language</a></strong> با پسوند <strong>ttml</strong> می‌باشند. برای کانورت آنها به <code>srt</code> می‌توان از نرم افزار قدرتمند Subtitle Edit استفاده کرد. کافیه فایل ttml مورد نظر رو با برنامه باز کنید و با پسوند srt یا هر پسوند دیگه ذخیره کنید.</p>
+<p><img alt="Subtitle Edit" class="center-image" src="http://antipattern.ir/images/mva/subtitle-edit.png" /></p>
+<p><br /></p>
+<p><strong>نمونه فایل ویدئویی همراه با زیرنویس کانورت شده</strong></p>
+<p><img alt="Video with Subtitle" class="center-image" src="http://antipattern.ir/images/mva/video-with-subs.jpg" /></p>
+<p><br /></p>
+<h3>سورس اسکریپت</h3>
+<hr />
+<p>من برای این اسکریپت یک <a href="https://gist.github.com/al1b/771dabe22b34d59728bddcf87b26cf54" target="_blank">gist</a> برروی github.com ایجاد کردم و سعی میکنم در طول زمان تغییرات سایت MVA و برای این اسکریپت اعمال کنم.</p>
+<p>من مشخصاً یک برنامه‌نویس حرفه‌ای پایتون نیستم؛ پس اگه چیزی به نظرتون اشتباه رسید حتماً بهم بگید که اصلاح کنم.</p>
+<script src="https://gist.github.com/al1b/771dabe22b34d59728bddcf87b26cf54.js"></script>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
+		</div> <!-- end main -->
+
+		<div class="sidebar large-4  small-12 columns">
+			<div class="sidebar-container small-12 columns">
+				
+			
+		
+				
+				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
+				<ul id="recent-posts">
+					<li>
+					<a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" title='اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با Microsoft Virtual Academy آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n صدهزار یا n میلیون تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است. اخیراً من اسکریپتی با Python 3 نوشتم که با گرفتن URL درس Microsoft Virtual Academy لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت می‌کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد. اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.'>استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html" title='رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند. مدت زیادی نیست که نسخه نهایی SQL Server 2016 توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز آن Always Encrypted است که امکان رمزنگاری ستون‌های بانک اطلاعاتی فراهم میکند. رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام می‌شود. اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.'>رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a>
+					</li>
+				</ul>												
+
+						
+													
+				<nav class="tags">								
+					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
+					<ul>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL-Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+					</ul>
+				</nav>						
+
+				
+			</div> <!-- end sidebar-container -->
+		</div> <!-- end sibder -->
+
+		<footer class="small-12 columns">
+			<div class="float-left" dir="ltr">
+				Ali Bahraminezhad - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme inspired by <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+			</div>
+		</footer>
+
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+	var sc_project=11003002; 
+	var sc_invisible=1; 
+	var sc_security="73e6953b"; 
+	var scJsHost = (("https:" == document.location.protocol) ?
+	"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+	scJsHost+
+	"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<!-- End of StatCounter Code for Default Guide -->		
+
+	</div>	
+</body>
+</html>

@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/</loc>
-<lastmod>2016-06-12T00:21:12-00:00</lastmod>
+<lastmod>2016-06-17T17:35:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/archives.html</loc>
-<lastmod>2016-06-12T00:21:12-00:00</lastmod>
+<lastmod>2016-06-17T17:35:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/tags.html</loc>
-<lastmod>2016-06-12T00:21:12-00:00</lastmod>
+<lastmod>2016-06-17T17:35:58-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/categories.html</loc>
-<lastmod>2016-06-12T00:21:12-00:00</lastmod>
+<lastmod>2016-06-17T17:35:58-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html</loc>
+<lastmod>2016-06-17T13:06:00+04:30</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -35,6 +42,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <loc>http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html</loc>
 <lastmod>2016-06-03T18:53:00+04:30</lastmod>
 <changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/category/microsoft-virtual-academy-python-skhrypt-khrbrdy-pytwn.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -60,15 +74,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/adonet.html</loc>
+<loc>http://antipattern.ir/tag/always-encrypted.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/always-encrypted.html</loc>
-<lastmod>2016-06-04T10:42:00+03:26</lastmod>
+<loc>http://antipattern.ir/tag/python.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/microsoft-virtual-academy.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -81,8 +102,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/author/ly-bhrmynjd.html</loc>
+<loc>http://antipattern.ir/tag/adonet.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/author/ly-bhrmynjd.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
