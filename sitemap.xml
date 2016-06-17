@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/</loc>
-<lastmod>2016-06-17T17:40:37-00:00</lastmod>
+<lastmod>2016-06-17T17:46:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/archives.html</loc>
-<lastmod>2016-06-17T17:40:37-00:00</lastmod>
+<lastmod>2016-06-17T17:46:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/tags.html</loc>
-<lastmod>2016-06-17T17:40:37-00:00</lastmod>
+<lastmod>2016-06-17T17:46:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/categories.html</loc>
-<lastmod>2016-06-17T17:40:37-00:00</lastmod>
+<lastmod>2016-06-17T17:46:33-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -60,7 +60,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/microsoft-virtual-academy.html</loc>
+<loc>http://antipattern.ir/tag/python.html</loc>
 <lastmod>2016-06-17T13:06:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -74,7 +74,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/always-encrypted.html</loc>
+<loc>http://antipattern.ir/tag/microsoft-virtual-academy.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/sql-server.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -88,28 +102,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/entity-framework.html</loc>
+<loc>http://antipattern.ir/tag/always-encrypted.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html</loc>
-<lastmod>2016-06-17T13:06:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/python.html</loc>
-<lastmod>2016-06-17T13:06:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/sql-server.html</loc>
+<loc>http://antipattern.ir/tag/entity-framework.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
