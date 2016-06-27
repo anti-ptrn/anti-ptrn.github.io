@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8"/>
+	<title>چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟ - Anti-Pattern</title>
+	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
+	<meta name="author" content="Ali Bahraminezhad">
+
+	<link rel="canonical" href="http://antipattern.ir/microsoft-stack-2016.html" />
+
+  <meta name="description" content="اگر به دلایل زیر توجه کنید: SQL Server برروی لینوکس توسعه و اجرای برنامه‌های .Net برروی لینوکس، مک توسعه برنامه‌های Native موبایل با استفاده از Xamarin متن باز شدن .Net Framework و Xamarin ارائه ابزارهای رایگان و بازمتن برنامه‌نویسی حتماً نگاه دقیقتری به استک مایکروسافت برای برای توسعه برنامه‌های آینده/فعلی خود خواهید داشت. درصورتی که علاقه‌مند به این استک هستید ادامه مطلب را مطالعه کنید.">
+
+	
+    <meta property="og:title" content="چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/microsoft-stack/microsoft-logo.jpg" />
+    <meta property="og:url" content="http://antipattern.ir\microsoft-stack-2016.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2016-06-27" />
+    <meta property="article:modified_time" content="2016-06-28" />
+    <meta property="article:section" content="Microsoft, .Net, .NET Core, Open Source, Xamarin, SQL Server" />
+    <meta property="article:tag" content="Microsoft" />
+    <meta property="article:tag" content=".Net" />
+    <meta property="article:tag" content=".NET Core" />
+    <meta property="article:tag" content="Open Source" />
+    <meta property="article:tag" content="Xamarin" />
+    <meta property="article:tag" content="SQL Server" />
+	
+
+	
+			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?2347fd64">	
+		
+	
+		<link href="http://antipattern.ir/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anti-Pattern Atom Feed" />
+</head>
+
+<body>
+
+    <div class="row">
+		<header role="banner" class="small-12 columns">
+			<div class="social-icons large-3 medium-4 small-5 columns float-left">												
+				<a href="https://ir.linkedin.com/in/bahraminezhad" title="لینکدین من" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin" aria-hidden="true"></i></a>
+				<a href="https://telegram.me/anti_pattern" title="کانال تلگرام آنتی پترن" target="_blank"><i class="fa fa-paper-plane-o fa-2x telegram" aria-hidden="true"></i></i></a>
+				
+				
+				
+					<a href="http://antipattern.ir/feeds/all.atom.xml" title="RSS Feed" rel="alternate"><i class="fa fa-rss fa-2x feed" aria-hidden="true"></i></a>
+			</div> <!-- end social icons -->
+			
+			<h1 class="title large-9 small-6 columns float-right">
+				<a href="http://antipattern.ir/">Anti-Pattern 💾</a>
+				<small class="show-for-large">محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها</small>
+				<small class="show-for-medium hide-for-large">اشتراک دانش برنامه‌نویسی</small>
+			</h1>
+		</header>
+		<div role="main" class="content large-8 small-12 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/microsoft-stack-2016.html"><i class="fa fa-paperclip" aria-hidden="true"></i> چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
+
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">07-04-1395</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 4 دقیقه </span>
+
+<hr class="top-spilter" />
+
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a>
+        <a href="http://antipattern.ir/tag/net.html">.Net</a>
+        <a href="http://antipattern.ir/tag/net-core.html">.NET Core</a>
+        <a href="http://antipattern.ir/tag/open-source.html">Open Source</a>
+        <a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a>
+        <a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a>
+</div>    
+
+<br />
+
+<p><img alt="Microsoft Stack" class="center-image" src="http://antipattern.ir/images/microsoft-stack/microsoft-logo.jpg" /></p>
+<p><strong>اگر به دلایل زیر توجه کنید:</strong></p>
+<ul>
+<li>SQL Server برروی لینوکس</li>
+<li>توسعه و اجرای برنامه‌های .Net برروی لینوکس، مک </li>
+<li>توسعه برنامه‌های Native موبایل با استفاده از Xamarin </li>
+<li>متن باز شدن .Net Framework و Xamarin</li>
+<li>ارائه ابزارهای رایگان و بازمتن برنامه‌نویسی</li>
+</ul>
+<p>حتماً نگاه دقیقتری به استک مایکروسافت برای برای توسعه <em>برنامه‌های آینده/فعلی</em> خود خواهید داشت. درصورتی که علاقه‌مند به این استک هستید ادامه مطلب را مطالعه کنید.</p>
+<p><br /></p>
+<a name="more"></a>
+
+<h2>چند سکویی - Cross Platform</h2>
+<hr />
+<p>در گذشته، یکی از مشکلات بزرگ مایکروسافت، عدم پشتیبانی ابزارهای توسعه نرم افزار این شرکت از دیگر سیستم‌عامل ها نظیر Linux و Mac بود. در <a href="https://blogs.msdn.microsoft.com/dotnet/2014/11/12/net-core-is-open-source/" target="_blank">تاریخ 12 نوامبر 2014 مایکروسافت اعلام کرد</a>، NET Core. (نسخه جدید دات نت ) برروی پلتفرمهای مختلف ویندوز، لینوکس و مک اجرا خواهد شد! با این اتفاق بزرگ نرم‌افزارهایی که با دات نت نوشته می‌شوند این امکان را خواهند داشت که با یک کد روی چندین سیستم عامل با کارایی یکسان اجرا شوند.</p>
+<p><img alt="Microsoft Stack" class="center-image" src="http://antipattern.ir/images/microsoft-stack/2577.DotNet2015.png" /></p>
+<p><em>نسخه NET Core RTM. امروز <strong>7 تیر 1395</strong> بصورت رسمی ارائه خواهد شد.</em></p>
+<p><br /></p>
+<h3>ارائه SQL Server برروی لینوکس!</h3>
+<hr />
+<p>مایکروسافت <a href="http://blogs.microsoft.com/blog/2016/03/07/announcing-sql-server-on-linux/" target="_blank">به شکل رسمی اعلام کرد</a> اواسط 2016 نسخه قابل اجرای SQL Server برروی Linux ارائه خواهد شد. در همین رابطه ویدئویی برروی <a href="https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-on-Linux-Sneak-Peak" target="_blank">Channel9</a> قرار گرفته است که در آن دموی کوتاهی از مراحل نصب و اجرای SQL Server برروی Ubuntu Linux نمایش داده می‌شود. پیش از این SQL Server تنها برروی سیستم عامل ویندوز اجرا می‌شد.</p>
+<!-- ![SQL Server Loves Linux]({filename}/images/microsoft-stack/sql-server-loves-linux.jpg){:.center-image} -->
+
+<p>فقط تصور کنید با نوشتن دستور <code>sudo apt-get install mssql-server</code> در ترمینال لینوکس بتوانید آنرا نصب کنید. </p>
+<p><img alt="SQL Server on Ubutnu" class="center-image" src="http://antipattern.ir/images/microsoft-stack/sql-on-ubuntu.jpg" /></p>
+<p><br /></p>
+<h3>ابزار توسعه برنامه‌های Native موبایل Cross-Platform</h3>
+<hr />
+<p><img alt="Xamarin Joins Microsoft" class="center-image" src="http://antipattern.ir/images/microsoft-stack/xamarin-joins-microsoft-2.jpg" /></p>
+<p>در طی دو سال گذشته شایعات زیادی مبنی بر خرید شرکت Xamarin توسط مایکروسافت در اینترنت منتشر شد. زامارین گذشته‌ی بسیار طولانی و طی کرد؛ زمانی که مایکروسافت جهت اجرای برنامه‌های دات نت برروی Linux برنامه‌ای نداشت، این شرکت، Mono Framework و عرضه کرد که یک نسخه متن باز و رایگان از NET Framework. بود که امکان تهیه و تولید و اجرای برنامه‌های دات نتی رو روی لینوکس/مک فراهم میکرد. پس از مدتی اون‌ها پلتفرم بزرگتری برای توسعه برنامه های Native موبایل ارائه دادند. فقط تصور کنید با یک بستر کد مشترک بتوانید برنامه موبایل خود را برای iOS، Android یا Windows Phone بصورت Native ارائه کنید یا حتی اگر کدها یا برنامه‌هایی دارید که با NET. قبلاً توسعه پیدا کردن با هزینه بسیار کمتر اون‌ها رو برروی موبایل بیارید.</p>
+<p><img alt=".NET Shared Code in Xamarin" class="center-image" src="http://antipattern.ir/images/microsoft-stack/xamarin-shared-code.png" /></p>
+<p>بزرگترین مشکل Xamarin پولی بودن و قیمت بسیار زیاد اون بود، خوشبختانه مایکروسافت اون رو خرید و بصورت رایگان به تمامی کاربران ارائه کرد!</p>
+<p><em>برنامه <strong><em>Native</em></strong> برنامه‌ای است که کد کامپایل شده آن بدون وابستگی به هرگونه Runtime یا ابزار خارجی برروی سیستم عامل اجرا می‌شود. برای مثال برنامه‌های تولیدی با Xamarin تفاوتی با برنامه‌های تولید شده با استفاده از Android SDK را ندارند.</em></p>
+<p><br /></p>
+<h2>متن باز - Open Source</h2>
+<hr />
+<p>ایراد بزرگ دیگری که همیشه از مایکروسافت گرفته میشد عدم متن باز بودن ابزارها و نرم افزارهایش بود. در چند سال اخیر مایکروسافت حرکت‌های مثبتی در جهت بازمتن انجام داد از جمله این موارد را می‌توان به  راه اندازی وب سایت CodePlex، متن باز کردن EntityFrameowrk و MVC Framework اشاره کرد، در نوامبر 2014 مایکروسافت اعلام کرد که نسخه جدید دات نت یعنی NET Core. ( به همراه ASP.NET Core ) نه تنها بصورت چند سکویی ارائه شده است بلکه تماماً بازمتن هم هست، همچنین پس از خرید Xamarin  مایکروسافت اعلام کرد که <a href="https://blog.xamarin.com/xamarin-for-all/" target="_blank"> و Runtime زامارین به شکل بازمتن منتشر خواهد شد</a>!</p>
+<p>از دیگر نکات جالب میتوان به قرار گرفتن سورس دات نت برروی <a href="https://github.com/dotnet/core" target="_blank">github.com</a> اشاره کرد.</p>
+<p><img alt=".NET Core Github.com" class="center-image" src="http://antipattern.ir/images/microsoft-stack/dotnet-core-github.png" /></p>
+<p><br /></p>
+<h2>کارایی - Performance</h2>
+<hr />
+<p>برنامه‌نویسان علاقه‌مند به استفاده از Frameworkهایی هسنتد که سرعت و کارایی کافی در اختیار آنان قرار دهد. مایکروسافت با تغییرات بزرگی که در NET Core. و ASP.NET Core ایجاد کرد کارایی بسیار بالایی برای نرم افزارهای تولیدی با این Framework را به ارمغان آورده است. لازم به ذکر است که بخشی از این کارایی رو باید مدیون بازمتن بودن اون دونست چون کاربرانی از بیرون مایکروسافت برروی سورس دات نت نت کار کردن و باعث بهبود شدید اون شدن از جمله ی این برنامه نویسان میتوان <a href="https://github.com/benaadams" target="_blank">Ben Adams</a> رو نام برد.</p>
+<p>هم اکنون کارایی ASP.NET Core در پردازش درخواستهای همزمان بسیار خوب بوده و روز به روز برکارایی اون افزوده میشه؛ برای مثال در تست‌های یکسان حتی از NodeJS نیز کارایی بالاتری دارد.</p>
+<p><a href="https://github.com/aspnet/benchmarks" target="target">بنچمارک های تست کارایی NET Core.</a></p>
+<table>
+<thead>
+<tr>
+<th>درخواست در ثانیه</th>
+<th>سرور</th>
+<th>تکنولوژی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>57,843</td>
+<td>perfsvr</td>
+<td>ASP.NET 4.6</td>
+</tr>
+<tr>
+<td>276,727</td>
+<td>perfsvr</td>
+<td>IIS Static File (kernel cached)</td>
+</tr>
+<tr>
+<td>231,609</td>
+<td>perfsvr</td>
+<td>IIS Static File (non-kernel cached)</td>
+</tr>
+<tr>
+<td>106,479</td>
+<td>perfsvr</td>
+<td>NodeJS</td>
+</tr>
+<tr>
+<td>127,017</td>
+<td>perfsvr2 (Linux)</td>
+<td>NodeJS</td>
+</tr>
+<tr>
+<td><strong><em>313,001</em></strong></td>
+<td>perfsvr</td>
+<td><strong><em>ASP.NET Core on Kestrel</em></strong></td>
+</tr>
+<tr>
+<td>176,509</td>
+<td>perfsvr</td>
+<td>Scala - Plain</td>
+</tr>
+<tr>
+<td>447,993</td>
+<td>perfsvr</td>
+<td>Netty</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<h2>ابزارهای توسعه</h2>
+<hr />
+<p>مایکروسافت در سالی که گذشت Code Editor رایگان و بازمتن خود یعنی <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>  را ارائه کرد. این ویرایشگر علاوه بر داشتن ویژگی‌های ویرایشگرهایی مانند Atom و  VIM از امکان debug کدها و پشتیبانی از ابزار git نیز بهره مند است و برروی سیستم عامل های ویندوز، مک و لینوکس قابل اجرا می‌باشد.</p>
+<p>تصویر محیط Visual Studio Code:
+<img alt="VS Code" class="center-image" src="http://antipattern.ir/images/microsoft-stack/vs-code.gif" /></p>
+<p><br /></p>
+<p>مایکروسافت همچنین نسخه ای رایگان از Visual Studio با نام Visual Studio Community برای تمامی کاربران عرضه کرد. امکانات نسخه Community همانند نسخه Professional است و برخی از امکانات را ندارد.</p>
+<p>نسخه رایگان Visual Studio جزوی از برنامه <em><a href="https://www.visualstudio.com/products/free-developer-offers-vs" target="_blank">Dev Essentials</a></em> مایکروسافت است. اگر عضو این برنامه باشید سرویس‌های متنوع مانند SQL Server 2016 Developer Edition به صورت رایگان شما ارائه خواهد شد.</p>
+<p><br /></p>
+<h2>آمدن bash به ویندوز 10</h2>
+<hr />
+<p><img alt="Windows is home for developers" class="center-image" src="http://antipattern.ir/images/microsoft-stack/windows-10.png" /></p>
+<p>در کنفرانس Build 2016 مایکروسافت برای ویندوز 10 با شعار Windows is home for developers نسبت به معرفی امکانانت جدید پرداخت و یکی از این امکانات آوردن bash لینوکس برروی ویندوز بود! همکاری بین شرکت Canonical ( شرکت حامی Ubuntu ) و مایکروسافت صورت گرفته که طی اون یک نسخه بسیار سبک از Ubuntu برروی ویندوز اجرا میشود و از طریق اون میشه به bash دسترسی داشت.</p>
+<p><br /></p>
+<h2>Microsoft Stack</h2>
+<hr />
+<p>با توجه به سیاست‌های بسیار مثبت مایکروسافت و ابزارهای قدرتمند ارائه شده آینده خیلی خوبی برای برنامه‌نویسان دراین استک می‌توان دید. اگر هنوز پروژه ای را آغاز نکرده اید یا در مراحل ابتدایی آن هستید بد نیست نگاهی درست به ابزارهای مایکروسافت بیندازید.</p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "microsoft-stack-2016.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
+		</div> <!-- end main -->
+
+		<div class="sidebar large-4  small-12 columns">
+			<div class="sidebar-container small-12 columns">
+				
+		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
+		<ul>
+			<li><a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html">رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a></li>
+		</ul>
+			
+		
+				
+				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
+				<ul id="recent-posts">
+					<li>
+					<a href="http://antipattern.ir/microsoft-stack-2016.html" title='اگر به دلایل زیر توجه کنید: SQL Server برروی لینوکس توسعه و اجرای برنامه‌های .Net برروی لینوکس، مک توسعه برنامه‌های Native موبایل با استفاده از Xamarin متن باز شدن .Net Framework و Xamarin ارائه ابزارهای رایگان و بازمتن برنامه‌نویسی حتماً نگاه دقیقتری به استک مایکروسافت برای برای توسعه برنامه‌های آینده/فعلی خود خواهید داشت. درصورتی که علاقه‌مند به این استک هستید ادامه مطلب را مطالعه کنید.'>چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" title='اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با Microsoft Virtual Academy آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n صدهزار یا n میلیون تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است. اخیراً من اسکریپتی با Python 3 نوشتم که با گرفتن URL درس Microsoft Virtual Academy لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد. اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.'>استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html" title='رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند. مدت زیادی نیست که نسخه نهایی SQL Server 2016 توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز آن Always Encrypted است که امکان رمزنگاری ستون‌های بانک اطلاعاتی فراهم میکند. رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام می‌شود. اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.'>رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a>
+					</li>
+				</ul>												
+
+						
+													
+				<nav class="tags">								
+					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
+					<ul>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+					</ul>
+				</nav>						
+
+				
+			</div> <!-- end sidebar-container -->
+		</div> <!-- end sibder -->
+
+		<footer class="small-12 columns">
+			<div class="float-left" dir="ltr">
+				Ali Bahraminezhad - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme inspired by <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+			</div>
+		</footer>
+
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+	var sc_project=11003002; 
+	var sc_invisible=1; 
+	var sc_security="73e6953b"; 
+	var scJsHost = (("https:" == document.location.protocol) ?
+	"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+	scJsHost+
+	"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<!-- End of StatCounter Code for Default Guide -->		
+
+	</div>	
+</body>
+</html>
