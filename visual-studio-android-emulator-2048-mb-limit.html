@@ -1,238 +1,0 @@
-<!doctype html>
-<html lang="">
-<head>
-	<meta charset="utf-8"/>
-	<title>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android - Anti-Pattern</title>
-	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
-	<meta name="author" content="Ali Bahraminezhad">
-
-	<link rel="canonical" href="http://antipattern.ir/visual-studio-android-emulator-2048-mb-limit.html" />
-
-  <meta name="description" content="یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار Visual Sudio Emulator For Android می‌باشد. از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: کاملاً رایگان هماهنگی کامل با Visual Studio امکان استفاده در Android Studio، Eclipse یا هر ابزار دیگری که از ADB پشتیبانی می‌کند کارایی خوب بدلیل استفاده از Hyper-V ویندوز کاربران در استفاده از این ابزار ممکن است با خطای Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد: افزایش حافظه RAM برروی Computer بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی RAM اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.">
-
-	
-    <meta property="og:title" content="رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://antipattern.ir/images/vs-android-emulator/error.png" />
-    <meta property="og:url" content="http://antipattern.ir\visual-studio-android-emulator-2048-mb-limit.html" />
-    <meta property="og:description" content="" />
-    <meta property="og:locale" content="" />
-    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
-    <meta property="article:published_time" content="2016-07-28" />
-    <meta property="article:modified_time" content="2016-07-28" />
-    <meta property="article:section" content="Android, Emulator, Hyper-V, Visual Studio" />
-    <meta property="article:tag" content="Android" />
-    <meta property="article:tag" content="Emulator" />
-    <meta property="article:tag" content="Hyper-V" />
-    <meta property="article:tag" content="Visual Studio" />
-	
-
-	
-			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?2347fd64">	
-		
-	
-		<link href="http://antipattern.ir/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anti-Pattern Atom Feed" />
-</head>
-
-<body>
-
-    <div class="row">
-		<header role="banner" class="small-12 columns">
-			<div class="social-icons large-3 medium-4 small-5 columns float-left">												
-				<a href="https://ir.linkedin.com/in/bahraminezhad" title="لینکدین من" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin" aria-hidden="true"></i></a>
-				<a href="https://telegram.me/anti_pattern" title="کانال تلگرام آنتی پترن" target="_blank"><i class="fa fa-paper-plane-o fa-2x telegram" aria-hidden="true"></i></i></a>
-				
-				
-				
-					<a href="http://antipattern.ir/feeds/all.atom.xml" title="RSS Feed" rel="alternate"><i class="fa fa-rss fa-2x feed" aria-hidden="true"></i></a>
-			</div> <!-- end social icons -->
-			
-			<h1 class="title large-9 small-6 columns float-right">
-				<a href="http://antipattern.ir/">Anti-Pattern 💾</a>
-				<small class="show-for-large">محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها</small>
-				<small class="show-for-medium hide-for-large">اشتراک دانش برنامه‌نویسی</small>
-			</h1>
-		</header>
-		<div role="main" class="content large-8 small-12 columns">
-	<article class="small-12 columns single-article">
-<h1><a href="http://antipattern.ir/visual-studio-android-emulator-2048-mb-limit.html"><i class="fa fa-paperclip" aria-hidden="true"></i> رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</a></h1>  
-        
-<i class="fa fa-user" aria-hidden="true"></i> 
-<span class="post-article">علی بهرامی‌نژاد</span> -
-
-<i class="fa fa-calendar" aria-hidden="true"></i>
-<span class="post-date">07-05-1395</span>  -
-                
-<i class="fa fa-clock-o" aria-hidden="true"></i>
-<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
-
-<hr class="top-spilter" />
-
-<div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i> 
-        <a href="http://antipattern.ir/tag/android.html">Android</a>
-        <a href="http://antipattern.ir/tag/emulator.html">Emulator</a>
-        <a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a>
-        <a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a>
-</div>    
-
-<br />
-
-<p>یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار <a href="https://www.visualstudio.com/en-  us/features/msft-android-emulator-vs.aspx" target="_blank">Visual Sudio Emulator For Android</a> می‌باشد.</p>
-<p><strong> از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: </strong></p>
-<ul>
-<li>کاملاً رایگان</li>
-<li>هماهنگی کامل با Visual Studio</li>
-<li>امکان استفاده در Android Studio، Eclipse یا هر ابزار دیگری که از ADB پشتیبانی می‌کند</li>
-<li>کارایی خوب بدلیل استفاده از Hyper-V ویندوز</li>
-</ul>
-<p><img alt="Microsoft Visual Emulator For Android - 2048 MB Error" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/error.png" /></p>
-<p>کاربران در استفاده از این ابزار ممکن است با خطای <strong>Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM</strong> مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد:</p>
-<ol>
-<li>افزایش حافظه RAM برروی Computer</li>
-<li>بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی RAM</li>
-</ol>
-<p>اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.  </p>
-<p><br /></p>
-<a name="more"></a>
-
-<h2>رفع خطای Not enough memory</h2>
-<hr />
-<p>این سوال همیشه برای من پیش آمده است که مثلاً چرا برای اجرای Emulator اندروید Kit Kat 4.4.2 چرا نیاز به 2 گیگابایت از فضای RAM است؟ و چطور می‌توان این مقدار را کاهش دهم؟</p>
-<p>برای مثال وضعیت مصرف حافظه RAM لپتاپ من، قبل از اجرای Emulator، به شکل زیر است. از 8 گیگابایت حافظه RAM تنها 2 گیگابایت قابل استفاده است. در صورت اجرای Emulator با خطای <code>Not enough memory</code> مواجه خواهم شد.
-<img alt="RAM Usage before running Emulator" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/ram-before-run.png" /></p>
-<p>هر <strong>پروفایل</strong> در Visual Studio Emulator For Android یک فایل تنظیمات دارد که بواسطه آن می‌توان میزان حافظه RAM مورد نیاز در زمان اجرای اولیه Emulator تعیین کرد. این فایل‌ها در مسیر زیر قرار می‌گیرند:</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>C:\Users\[UserName]\AppData\Local\Microsoft\VisualStudioEmulator\Android\Containers\Local\Devices
-</pre></div>
-
-
-<p><em>به جای <code>[UserName]</code> نام کاربری خود را بنویسید.</em></p>
-<p>در صورتی که مسیر فوق را بررسی کنیم؛ فایل‌هایی با پسوند <code>cfg</code> خواهیم یافت که مربوط به تنظیمات پروفایل‌ها می‌باشند.</p>
-<p><img alt="CFG Files" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/cfg-files.png" /></p>
-<p>برای مثال محتوای فایل <code>5_KitKat_(4.4)_XXHDPI_Phone.cfg</code> به شکل زیر است.</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>configuration[id]=363F7AED-462C-46BD-9FEC-F1DD3B79916C
-configuration.type=device
-configuration.version=1.0.51209.1
-device.description=Similar to Samsung Galaxy S5, Sony Xperia Z
-device.platform=6FAA28E5-6520-4516-B1A5-C7B72CAE3E31
-device.screen.diagonal=5
-device.screen.resolution=1080x1920
-device.vm.cpu.architecture=x86
-device.vm.cpu.count=4
-device.vm.heap.size=192
-device.vm.ram.size=2048
-device.vm.vhd=vhd\\5_KitKat_(4.4)_XXHDPI_Phone\\image.vhd
-device.name=5&quot; KitKat (4.4) XXHDPI Phone
-</pre></div>
-
-
-<p>در قسمت <code>device.ram.size</code> میزان حافظه RAM برروی 2048 مگابایت تنظیم شده است. با کاهش این عدد می‌توان مشکل Not enough memory را مرتفع ساخت.</p>
-<p>برای مثال؛ اگر حافظه 800 مگابایت را برای اجرای Emulator در نظر بگیریم؛ تنظیم مربوط به حافظه باید به شکل زیر تغییر یابد:</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>device.vm.ram.size=800
-</pre></div>
-
-
-<ol>
-<li><strong> دقت کنید عدد وارد شده حتماً باید مضربی از 8 باشد. </strong></li>
-<li>پس از اعمال تغییرات؛ اگر از قبل Visual Studio باز است، حتماً یکبار آنرا ببندید و مجدد باز کنید. </li>
-</ol>
-<p>پس از تغییرات فوق؛ Emulator به خوبی اجرا و برنامه‌ داخل آن به خوبی اجرا شد!</p>
-<p><img alt="App running in the emulator" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/running.png" /></p>
-<p><br /></p>
-<p>میزان مصرف حافظه RAM بعد از اجرای Emulator:</p>
-<p><img alt="RAM Usage after running Emulator" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/ram-after-run.png" /></p>         
-        
-        						
-	</article>
-	
-	
-	<div class="comments">
-	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
-	    <div id="disqus_thread"></div>
-	    <script type="text/javascript">
-	       var disqus_identifier = "visual-studio-android-emulator-2048-mb-limit.html";
-	       (function() {
-	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
-	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	      })();
-	    </script>
-	</div>
-			
-	
-		</div> <!-- end main -->
-
-		<div class="sidebar large-4  small-12 columns">
-			<div class="sidebar-container small-12 columns">
-				
-			
-		
-				
-				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
-				<ul id="recent-posts">
-					<li>
-					<a href="http://antipattern.ir/visual-studio-android-emulator-2048-mb-limit.html" title='یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار Visual Sudio Emulator For Android می‌باشد. از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: کاملاً رایگان هماهنگی کامل با Visual Studio امکان استفاده در Android Studio، Eclipse یا هر ابزار دیگری که از ADB پشتیبانی می‌کند کارایی خوب بدلیل استفاده از Hyper-V ویندوز کاربران در استفاده از این ابزار ممکن است با خطای Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد: افزایش حافظه RAM برروی Computer بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی RAM اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.'>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</a>
-					</li>
-					<li>
-					<a href="http://antipattern.ir/microsoft-stack-2016.html" title='اگر به دلایل زیر توجه کنید: SQL Server برروی لینوکس توسعه و اجرای برنامه‌های .Net برروی لینوکس، مک توسعه برنامه‌های Native موبایل با استفاده از Xamarin متن باز شدن .Net Framework و Xamarin ارائه ابزارهای رایگان و متن باز برنامه‌نویسی حتماً نگاه دقیقتری به استک مایکروسافت برای برای توسعه برنامه‌های آینده/فعلی خود خواهید داشت. درصورتی که علاقه‌مند به این استک هستید ادامه مطلب را مطالعه کنید.'>چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</a>
-					</li>
-					<li>
-					<a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" title='اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با Microsoft Virtual Academy آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n صدهزار یا n میلیون تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است. اخیراً من اسکریپتی با Python 3 نوشتم که با گرفتن URL درس Microsoft Virtual Academy لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد. اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.'>استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a>
-					</li>
-					<li>
-					<a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html" title='رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند. مدت زیادی نیست که نسخه نهایی SQL Server 2016 توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز آن Always Encrypted است که امکان رمزنگاری ستون‌های بانک اطلاعاتی فراهم میکند. رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام می‌شود. اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.'>رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a>
-					</li>
-				</ul>												
-
-						
-													
-				<nav class="tags">								
-					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
-					<ul>
-							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
-							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
-							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
-							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
-							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.Net</a></li>
-							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
-							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
-							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
-							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
-					</ul>
-				</nav>						
-
-				
-			</div> <!-- end sidebar-container -->
-		</div> <!-- end sibder -->
-
-		<footer class="small-12 columns">
-			<div class="float-left" dir="ltr">
-				Ali Bahraminezhad - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme inspired by <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
-			</div>
-		</footer>
-
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-	var sc_project=11003002; 
-	var sc_invisible=1; 
-	var sc_security="73e6953b"; 
-	var scJsHost = (("https:" == document.location.protocol) ?
-	"https://secure." : "http://www.");
-	document.write("<sc"+"ript type='text/javascript' src='" +
-	scJsHost+
-	"statcounter.com/counter/counter.js'></"+"script>");
-	</script>
-	<!-- End of StatCounter Code for Default Guide -->		
-
-	</div>	
-</body>
-</html>
