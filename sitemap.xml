@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/</loc>
-<lastmod>2016-06-27T17:13:31-00:00</lastmod>
+<lastmod>2016-07-28T18:36:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/archives.html</loc>
-<lastmod>2016-06-27T17:13:31-00:00</lastmod>
+<lastmod>2016-07-28T18:36:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/tags.html</loc>
-<lastmod>2016-06-27T17:13:31-00:00</lastmod>
+<lastmod>2016-07-28T18:36:10-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/categories.html</loc>
-<lastmod>2016-06-27T17:13:31-00:00</lastmod>
+<lastmod>2016-07-28T18:36:10-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/visual-studio-android-emulator-2048-mb-limit.html</loc>
+<lastmod>2016-07-28T17:20:00+04:30</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -53,6 +60,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://antipattern.ir/category/android-emulator-hyper-v-visual-studio.html</loc>
+<lastmod>2016-07-28T17:20:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://antipattern.ir/category/microsoft-net-net-core-open-source-xamarin-sql-server.html</loc>
 <lastmod>2016-06-28T12:45:00+03:26</lastmod>
 <changefreq>daily</changefreq>
@@ -74,42 +88,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/open-source.html</loc>
-<lastmod>2016-06-28T12:45:00+03:26</lastmod>
+<loc>http://antipattern.ir/tag/hyper-v.html</loc>
+<lastmod>2016-07-28T17:20:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/microsoft.html</loc>
-<lastmod>2016-06-28T12:45:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/microsoft-virtual-academy.html</loc>
-<lastmod>2016-06-17T13:06:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/rmzngry.html</loc>
-<lastmod>2016-06-04T10:42:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/mqlh-amwzshy.html</loc>
-<lastmod>2016-06-04T10:42:00+03:26</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html</loc>
+<loc>http://antipattern.ir/tag/python.html</loc>
 <lastmod>2016-06-17T13:06:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -123,8 +109,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://antipattern.ir/tag/entity-framework.html</loc>
+<lastmod>2016-06-04T10:42:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://antipattern.ir/tag/net-core.html</loc>
 <lastmod>2016-06-28T12:45:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/xamarin.html</loc>
+<lastmod>2016-06-28T12:45:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/mqlh-amwzshy.html</loc>
+<lastmod>2016-06-04T10:42:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -137,8 +151,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/entity-framework.html</loc>
+<loc>http://antipattern.ir/tag/microsoft-virtual-academy.html</loc>
+<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/emulator.html</loc>
+<lastmod>2016-07-28T17:20:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/rmzngry.html</loc>
 <lastmod>2016-06-04T10:42:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/microsoft.html</loc>
+<lastmod>2016-06-28T12:45:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -151,15 +186,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/python.html</loc>
-<lastmod>2016-06-17T13:06:00+03:26</lastmod>
+<loc>http://antipattern.ir/tag/android.html</loc>
+<lastmod>2016-07-28T17:20:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/xamarin.html</loc>
+<loc>http://antipattern.ir/tag/open-source.html</loc>
 <lastmod>2016-06-28T12:45:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/tag/visual-studio.html</loc>
+<lastmod>2016-07-28T17:20:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -173,7 +215,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/author/ly-bhrmynjd.html</loc>
-<lastmod>2016-06-28T12:45:00+03:26</lastmod>
+<lastmod>2016-07-28T17:20:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
