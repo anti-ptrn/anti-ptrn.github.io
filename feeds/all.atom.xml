@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-07-28T17:20:00+04:30</updated><entry><title>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</title><link href="http://antipattern.ir/visual-studio-android-emulator-2048-mb-limit.html" rel="alternate"></link><published>2016-07-28T17:20:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-07-28:visual-studio-android-emulator-2048-mb-limit.html</id><summary type="html">&lt;p&gt;یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار &lt;a href="https://www.visualstudio.com/en-  us/features/msft-android-emulator-vs.aspx" target="_blank"&gt;Visual Sudio Emulator For Android&lt;/a&gt; می‌باشد.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-07-28T17:20:00+04:30</updated><entry><title>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</title><link href="http://antipattern.ir/overcome-visual-studio-android-emulator-2048-mb-requirement.html" rel="alternate"></link><published>2016-07-28T17:20:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-07-28:overcome-visual-studio-android-emulator-2048-mb-requirement.html</id><summary type="html">&lt;p&gt;یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار &lt;a href="https://www.visualstudio.com/en-  us/features/msft-android-emulator-vs.aspx" target="_blank"&gt;Visual Sudio Emulator For Android&lt;/a&gt; می‌باشد.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: &lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;کاملاً رایگان&lt;/li&gt;
@@ -10,8 +10,8 @@
 &lt;p&gt;&lt;img alt="Microsoft Visual Emulator For Android - 2048 MB Error" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/error.png" /&gt;&lt;/p&gt;
 &lt;p&gt;کاربران در استفاده از این ابزار ممکن است با خطای &lt;strong&gt;Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM&lt;/strong&gt; مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;افزایش حافظه RAM برروی Computer&lt;/li&gt;
-&lt;li&gt;بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی RAM&lt;/li&gt;
+&lt;li&gt;افزایش حافظه RAM&lt;/li&gt;
+&lt;li&gt;بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.  &lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
