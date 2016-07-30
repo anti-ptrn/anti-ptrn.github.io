@@ -131,6 +131,10 @@ article .tags a:hover {
     margin-right: 35px !important;
 }*/
 
+.sidebar-container li{
+	margin-bottom: 0.7rem;
+}
+
 .sidebar-container .tags li{
 	display: inline-block;
 	height: 21px;
