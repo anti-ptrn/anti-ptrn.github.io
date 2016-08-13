@@ -35,7 +35,7 @@
 &lt;li&gt;معرفی برنامه &lt;code&gt;KTOP&lt;/code&gt; جهت بهینه سازی کتاب‌های فارسی یا عربی&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;جهت اسفتاده از فونت سفارشی؛ حتماً پس ازا اضافه کردن فونت باید با برنامه KTOP نسبت به بهینه سازی کتاب اقدام کنید.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;جهت اسفتاده از فونت سفارشی؛ حتماً پس ازا اضافه کردن فونت باید با برنامه KTOP نسبت به بهینه سازی کتاب اقدام کنید.&lt;/strong&gt;&lt;/p&gt;
 </summary><category term="Amazon Kindle"></category><category term="eReader"></category><category term="epub"></category><category term="Calibre"></category></entry><entry><title>فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</title><link href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html" rel="alternate"></link><published>2016-07-30T10:31:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-07-30:enable-visual-studio-intellisense-in-android-.axml-files.html</id><summary type="html">&lt;p&gt;برای ویرایش فایل‌های axml اندروید در &lt;a href="https://www.xamarin.com/visual-studio" target="_blank"&gt;Xamarin For Visual Studio&lt;/a&gt; دو راه وجود دارد:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;استفاده از ابزار ابزار طراحی گرافیکی &lt;/li&gt;
