@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8"/>
+	<title>epub - Anti-Pattern</title>
+	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
+	<meta name="author" content="Ali Bahraminezhad">
+<link rel="canonical" href="http://antipattern.ir/tag/epub.html" />
+
+
+<meta property="og:title" content="Anti-Pattern - epub" />
+<meta property="og:description" content="محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+<meta property="og:image" content="http://antipattern.ir/images/logo.jpg" />
+	
+			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?617b3e96">	
+		
+	
+		<link href="http://antipattern.ir/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anti-Pattern Atom Feed" />
+</head>
+
+<body>
+
+    <div class="row">
+		<header role="banner" class="small-12 columns">
+			<div class="social-icons large-3 medium-4 small-5 columns float-left">												
+				<a href="https://ir.linkedin.com/in/bahraminezhad" title="لینکدین من" target="_blank"><i class="fa fa-linkedin-square fa-2x linkedin" aria-hidden="true"></i></a>
+				<a href="https://telegram.me/anti_pattern" title="کانال تلگرام آنتی پترن" target="_blank"><i class="fa fa-paper-plane-o fa-2x telegram" aria-hidden="true"></i></i></a>
+				
+				
+				
+					<a href="http://antipattern.ir/feeds/all.atom.xml" title="RSS Feed" rel="alternate"><i class="fa fa-rss fa-2x feed" aria-hidden="true"></i></a>
+			</div> <!-- end social icons -->
+			
+			<h1 class="title large-9 small-6 columns float-right">
+				<a href="http://antipattern.ir/">Anti-Pattern 💾</a>
+				<small class="show-for-large">محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها</small>
+				<small class="show-for-medium hide-for-large">اشتراک دانش برنامه‌نویسی</small>
+			</h1>
+		</header>
+		<div role="main" class="content large-8 small-12 columns">
+
+<h3>نوشتارهای تگ: epub</h3>
+
+
+<article class="small-12">              
+  <h1><a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html"><i class="fa fa-paragraph" aria-hidden="true"></i> معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</a></h1>  
+          
+  <i class="fa fa-user" aria-hidden="true"></i> 
+  <span class="post-article">علی بهرامی‌نژاد</span> -
+  
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+  <span class="post-date">23-05-1395</span>  -
+                  
+  <i class="fa fa-clock-o" aria-hidden="true"></i>
+  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
+  
+  <hr class="top-spilter" />
+
+  <div class="tags">
+    <i class="fa fa-tag" aria-hidden="true"></i> 
+          <a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a>
+          <a href="http://antipattern.ir/tag/ereader.html">eReader</a>
+          <a href="http://antipattern.ir/tag/epub.html">epub</a>
+          <a href="http://antipattern.ir/tag/calibre.html">Calibre</a>
+          <a href="http://antipattern.ir/tag/ktop.html">KTOP</a>
+  </div>    
+   
+<br />
+
+  <p>
+    <p>در <a href="/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank">پست قبلی</a> به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده.</p>
+<p>برای رفع این مشکل، من برنامه‌ای نوشتم که کتاب‌های <strong>epub</strong> رو به شکلی بهینه‌سازی می‌کنه که به راحتی داخل Kindle قابل خوندن باشن، مثلاً به دو عکس زیر توجه کنید:</p>
+<table>
+<thead>
+<tr>
+<th>فونت سفارشی</th>
+<th align="center">فونت سفارشی - بهینه‌سازی شده با KTOP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Custom font" src="http://antipattern.ir/images/epub/03-custom-font.jpg" /></td>
+<td align="center"><img alt="Optimized font" src="http://antipattern.ir/images/epub/01-optimized.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<h2>برنامه KTOP</h2>
+<p>کلاً پروسه اسم گذاری برای یه برنامه خیلی سخته، من اسم <em>KTOP</em> رو از روی جمله <em>Kindle Text Optimization for Persian eBooks</em> انتخاب کردم، شاید یه دلیلش این بود که دوست داشتم برنامه رو به اسم <strong>کتاپ</strong> صدا کنم.</p>
+<h2>قابلیت‌های برنامه</h2>
+<ol>
+<li>اصلاح ی و ک عربی</li>
+<li>اصلاح نیم‌فاصله‌ها و اشتباه‌های این‌چنینی</li>
+<li><strong>بهنیه‌سازی کتاب‌ها جهت مشاهده در Amazon Kindle</strong></li>
+</ol>
+<p>این نکته رو لازم هست که بگم، برنامه و سورس اون با مجوز GNU برروی سایت github در آدرس زیر قرار گرفته:</p>
+<p><a href="https://github.com/al1b/KTOP" target="_blank">https://github.com/al1b/KTOP</a></p>
+<p>در صورتی که علاقه‌مند به آشنایی بیشتر با این برنامه هستید، ادامه مطلب رو مطالعه کنید.</p>
+
+  </p>
+  <a class="read-more" href="ktop-kindle-text-optimization-for-perisan-ebooks.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
+          
+          
+                    
+  
+</article><article class="small-12">              
+  <h1><a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html"><i class="fa fa-paragraph" aria-hidden="true"></i> تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</a></h1>  
+          
+  <i class="fa fa-user" aria-hidden="true"></i> 
+  <span class="post-article">علی بهرامی‌نژاد</span> -
+  
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+  <span class="post-date">23-05-1395</span>  -
+                  
+  <i class="fa fa-clock-o" aria-hidden="true"></i>
+  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
+  
+  <hr class="top-spilter" />
+
+  <div class="tags">
+    <i class="fa fa-tag" aria-hidden="true"></i> 
+          <a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a>
+          <a href="http://antipattern.ir/tag/ereader.html">eReader</a>
+          <a href="http://antipattern.ir/tag/epub.html">epub</a>
+          <a href="http://antipattern.ir/tag/calibre.html">Calibre</a>
+  </div>    
+   
+<br />
+
+  <p>
+    <p><img alt="Sample Books" class="center-image" src="http://antipattern.ir/images/epub/sample-books.png" /></p>
+<p>کتاب‌خوان آمازون کیندل پس از ارائه فرمت <a href="https://www.amazon.com/gp/feature.html?docId=1000729511" target="_blank">KF8</a> امکان پشتیبانی از کتاب‌های فارسی رو فراهم آورده، اما فونت پیشفرض دستگاه علاوه بر اینکه خیلی ناخوشایند هست، اشکالات زیادی داره که بخشی از اون تو تصویر بالا می‌تونید ببیند.</p>
+<h2>تو این مطلب مواردی که بررسی میشن:</h2>
+<ol>
+<li>نحوه اضافه کردن فونت سفارشی به کتاب‌هایی با فرمت <code>epub</code> یا <code>azw3</code> با استفاده از نرم افزار Calibre</li>
+<li>نحوه فرمت و اصلاح CSS کتاب‌ها برای نمایش بهتر داخل Kindle</li>
+<li>معرفی برنامه <code>KTOP</code> جهت بهینه سازی کتاب‌های فارسی یا عربی</li>
+</ol>
+<p>در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید.</p>
+
+  </p>
+  <a class="read-more" href="embed-custom-font-in-epub-and-justify-the-book.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
+          
+          
+                    
+  
+</article>
+<div class="pagination">
+    Page 1 / 1
+</div>
+
+		</div> <!-- end main -->
+
+		<div class="sidebar large-4  small-12 columns">
+			<div class="sidebar-container small-12 columns">
+				
+		
+				
+				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
+				<ul id="recent-posts">
+					<li>
+					<a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" title='در پست قبلی به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده. برای رفع این مشکل، من برنامه‌ای نوشتم که کتاب‌های epub رو به شکلی بهینه‌سازی می‌کنه که به راحتی داخل Kindle قابل خوندن باشن، مثلاً به دو عکس زیر توجه کنید: فونت سفارشی فونت سفارشی - بهینه‌سازی شده با KTOP برنامه KTOP کلاً پروسه اسم گذاری برای یه برنامه خیلی سخته، من اسم KTOP رو از روی جمله Kindle Text Optimization for Persian eBooks انتخاب کردم، شاید یه دلیلش این بود که دوست داشتم برنامه رو به اسم کتاپ صدا کنم. قابلیت‌های برنامه اصلاح ی و ک عربی اصلاح نیم‌فاصله‌ها و اشتباه‌های این‌چنینی بهنیه‌سازی کتاب‌ها جهت مشاهده در Amazon Kindle این نکته رو لازم هست که بگم، برنامه و سورس اون با مجوز GNU برروی سایت github در آدرس زیر قرار گرفته: https://github.com/al1b/KTOP در صورتی که علاقه‌مند به آشنایی بیشتر با این برنامه هستید، ادامه مطلب رو مطالعه کنید.'>معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html" title='کتاب‌خوان آمازون کیندل پس از ارائه فرمت KF8 امکان پشتیبانی از کتاب‌های فارسی رو فراهم آورده، اما فونت پیشفرض دستگاه علاوه بر اینکه خیلی ناخوشایند هست، اشکالات زیادی داره که بخشی از اون تو تصویر بالا می‌تونید ببیند. تو این مطلب مواردی که بررسی میشن: نحوه اضافه کردن فونت سفارشی به کتاب‌هایی با فرمت epub یا azw3 با استفاده از نرم افزار Calibre نحوه فرمت و اصلاح CSS کتاب‌ها برای نمایش بهتر داخل Kindle معرفی برنامه KTOP جهت بهینه سازی کتاب‌های فارسی یا عربی در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید.'>تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html" title='برای ویرایش فایل‌های axml اندروید در Xamarin For Visual Studio دو راه وجود دارد: استفاده از ابزار ابزار طراحی گرافیکی ویرایش متنی فایل axml در حالت اول به راحتی با استفاده از ابزار GUI که Xamarin تهیه کرده است عمده تغییرات قابل اعمال است، اما اگر قصد این را داشته باشیم که مستقیم فایل‌ها را در حالت متنی ویرایش کنیم مشاهده خواهیم کرد که هیچ intellisense یا autocomplete کد، به کاربر ارائه نمی‌شود. همانطور که در شکل بالا نیز مشخص است؛ هیچ پیشنهاد کد یا راهنمایی برای تکمیل کردن کد در xml editor نمایش داده نمیشود. خوشبختانه این مورد توسط Xamarin پشتیبانی میشود و تنها باید آنرا فعال کنیم. در ادامه مطلب نحوه فعال سازی آن شرح داده خواهد شد.'>فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/overcome-visual-studio-android-emulator-2048-mb-requirement.html" title='یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار Visual Sudio Emulator For Android می‌باشد. از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: کاملاً رایگان هماهنگی کامل با Visual Studio امکان استفاده در Android Studio، Eclipse یا هر ابزار دیگری که از ADB پشتیبانی می‌کند کارایی خوب بدلیل استفاده از Hyper-V ویندوز کاربران در استفاده از این ابزار ممکن است با خطای Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد: افزایش حافظه RAM بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.'>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/microsoft-stack-2016.html" title='اگر به دلایل زیر توجه کنید: SQL Server برروی لینوکس توسعه و اجرای برنامه‌های .Net برروی لینوکس، مک توسعه برنامه‌های Native موبایل با استفاده از Xamarin متن باز شدن .Net Framework و Xamarin ارائه ابزارهای رایگان و متن باز برنامه‌نویسی حتماً نگاه دقیقتری به استک مایکروسافت برای برای توسعه برنامه‌های آینده/فعلی خود خواهید داشت. درصورتی که علاقه‌مند به این استک هستید ادامه مطلب را مطالعه کنید.'>چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</a>
+					</li>
+					<li>
+					<a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" title='اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با Microsoft Virtual Academy آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n صدهزار یا n میلیون تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است. اخیراً من اسکریپتی با Python 3 نوشتم که با گرفتن URL درس Microsoft Virtual Academy لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد. اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.'>استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a>
+					</li>
+				</ul>												
+
+						
+													
+				<nav class="tags">								
+					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
+					<ul>
+							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
+							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
+							<li class="active"><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+					</ul>
+				</nav>						
+
+				
+			</div> <!-- end sidebar-container -->
+		</div> <!-- end sibder -->
+
+		<footer class="small-12 columns">
+			<div class="float-left" dir="ltr">
+				Ali Bahraminezhad - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme inspired by <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+			</div>
+		</footer>
+
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+	var sc_project=11003002; 
+	var sc_invisible=1; 
+	var sc_security="73e6953b"; 
+	var scJsHost = (("https:" == document.location.protocol) ?
+	"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+	scJsHost+
+	"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<!-- End of StatCounter Code for Default Guide -->		
+
+	</div>	
+</body>
+</html>

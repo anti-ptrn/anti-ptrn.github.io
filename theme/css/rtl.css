@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: Vazir;
   src: url('../fonts/vazir/Vazir.eot');
   src: url('../fonts/vazir/Vazir.eot?#iefix') format('embedded-opentype'),
@@ -14,13 +14,33 @@
        url('../fonts/vazir/Vazir-Bold.woff') format('woff'),
        url('../fonts/vazir/Vazir-Bold.ttf') format('truetype');
   font-weight: bold;
+} */
+
+@font-face {
+  font-family: Samim;
+  src: url('../fonts/samim/Samim.eot');
+  src: url('../fonts/samim/Samim.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/samim/Samim.woff') format('woff'),
+       url('../fonts/samim/Samim.ttf') format('truetype');
+  font-weight: normal;
+}
+      
+@font-face {
+  font-family: Samim;
+  src: url('../fonts/samim/Samim-Bold.eot');
+  src: url('../fonts/samim/Samim-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/samim/Samim-Bold.woff') format('woff'),
+       url('../fonts/samim/Samim-Bold.ttf') format('truetype');
+  font-weight: bold;
 }
 
 body{
-    font-family: Vazir, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif !important;
+    font-family: Samim, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif !important;
     
     direction: rtl;
     text-align: right;
+	
+	  font-size: 0.95em;
 }
 
 header .feeds{
@@ -79,7 +99,7 @@ article .tags{
 article .tags a {
 	display: inline-block;
 	height: 21px;
-	margin: 0 0px 0 1px;
+	margin: 0 0px 0 5px;
 	padding: 0 14px 0 7px;
 	white-space: nowrap;
 	position: relative;
@@ -87,7 +107,7 @@ article .tags a {
 	background-color: #E1F5FE;
 
 	color: #000;
-	font: bold 11px/21px Vazir, Calibri,Arial, Tahoma, sans-serif;
+	font: bold 12px/21px Vazir, Calibri,Arial, Tahoma, sans-serif;
 	text-decoration: none;
 	text-shadow: 0 1px rgba(255,255,255,0.4);
 
@@ -318,7 +338,7 @@ article h1 + hr, article h2 + hr,article h3 + hr, article h4 + hr, article h5 + 
 }
 
 article h1, article h2{
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 code{
@@ -335,9 +355,13 @@ code{
 table {
   border-collapse: collapse;
   border-spacing: 0; 
-  direction: ltr;
+  direction: rtl;
  }
 
+ td[align=left]{
+	 direction:ltr;
+ }
+ 
 td,
 th {
   padding: 0; }
@@ -411,4 +435,14 @@ table.hover tr:nth-of-type(even):hover {
 
 .single-article{
     margin-bottom: 25px;
+}
+
+article p, article div, article ul, article ol {
+	line-height:1.7;
+	font-size: 1.1em;
+}
+
+.sidebar-container li{
+	font-size:1.1em;
+	line-height:2;
 }
