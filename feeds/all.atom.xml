@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-08-13T20:30:00+04:30</updated><entry><title>معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</title><link href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-08-13T20:30:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-08-13:ktop-kindle-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;در &lt;a href="/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank"&gt;پست قبلی&lt;/a&gt; به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-09-01T11:05:00+04:30</updated><entry><title>تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio</title><link href="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html" rel="alternate"></link><published>2016-09-01T11:05:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-09-01:define-reference-path-for-all-projects-in-visual-studio-solution.html</id><summary type="html">&lt;p&gt;وقتی Solution بزرگی داخل Visual Studio داشته باشیم ممکنه با مشکل تنظیم کردن &lt;strong&gt;Reference Path&lt;/strong&gt; برای تمای پروژه‌های موجود مواجه بشیم، برای اینکور مجبوریم به صفحه &lt;strong&gt;Properties&lt;/strong&gt; پروژه‌ها بریم و &lt;strong&gt;Reference Path&lt;/strong&gt; رو تنظیم کنیم که این خودش کار بسیار زمان بر و اعصاب خوردکنی هست.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Define Reference Path" class="center-image" src="http://antipattern.ir/images/vs-ref/01.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;با اسفتاده از Powershell می‌تونیم به راحتی مسیر Reference Pathها رو برای تمامی پروژه‌ها ست کنیم. برای اینکار کافیه &lt;strong&gt;Package Manager Console&lt;/strong&gt; رو از منو &lt;code&gt;Tools-&amp;gt;Nuget Package Manager-&amp;gt;Package Manager Console&lt;/code&gt; باز کنیم.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/02.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;و اسکریپت Powershell زیر و داخل اون اجرا کنیم.&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;$path = [System.IO.Path]; 
+&lt;span style="color: #0000ff"&gt;foreach&lt;/span&gt; ($proj &lt;span style="color: #0000ff"&gt;in&lt;/span&gt; get-project -all) {   $proj.Properties.Item(&lt;span style="color: #a31515"&gt;&amp;quot;ReferencePath&amp;quot;&lt;/span&gt;).Value=&lt;span style="color: #a31515"&gt;&amp;quot;&lt;/span&gt;$($path::GetDirectoryName($proj.filename))&lt;span style="color: #a31515"&gt;\..\libs&amp;quot;&lt;/span&gt; }
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نمونه اجرا شده :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/03.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4&gt;نکات&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li&gt;اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم به پوشه می‌خواید بدید کلا! به جای &lt;code&gt;$($path::GetDirectoryName($proj.filename))\..\libs"&lt;/code&gt; مسیر مستقیم رو بنویسید. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$path::GetDirectoryName($proj.filename))&lt;/code&gt; مسیر هر فایل پروژه رو بهتون میده&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;منبع&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href="http://andsmi.com/post/85237953978/adding-reference-paths-to-all-projects-in-solution" target="_blank"&gt;Adding Reference Paths to all Projects in Solution Visual Studio&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Visual Studio"></category><category term="Powershell"></category></entry><entry><title>معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</title><link href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-08-13T20:30:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-08-13:ktop-kindle-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;در &lt;a href="/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank"&gt;پست قبلی&lt;/a&gt; به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده.&lt;/p&gt;
 &lt;p&gt;برای رفع این مشکل، من برنامه‌ای نوشتم که کتاب‌های &lt;strong&gt;epub&lt;/strong&gt; رو به شکلی بهینه‌سازی می‌کنه که به راحتی داخل Kindle قابل خوندن باشن، مثلاً به دو عکس زیر توجه کنید:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
