@@ -14,11 +14,14 @@
 &lt;p&gt;&lt;strong&gt;نمونه اجرا شده :&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/03.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h4&gt;نکات&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم به پوشه می‌خواید بدید کلا! به جای &lt;code&gt;$($path::GetDirectoryName($proj.filename))\..\libs"&lt;/code&gt; مسیر مستقیم رو بنویسید. &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$path::GetDirectoryName($proj.filename))&lt;/code&gt; مسیر هر فایل پروژه رو بهتون میده&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم برای پروژه میخواید تنظیم کنید کافیه به جای &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;$($path::&lt;span style="border: 1px solid #FF0000"&gt;GetDirectoryName&lt;/span&gt;($proj.filename))\..\libs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مسیر مستقیم خودتون رو بنویسد.&lt;/p&gt;
 &lt;h4&gt;منبع&lt;/h4&gt;
 &lt;p&gt;&lt;a href="http://andsmi.com/post/85237953978/adding-reference-paths-to-all-projects-in-solution" target="_blank"&gt;Adding Reference Paths to all Projects in Solution Visual Studio&lt;/a&gt;&lt;/p&gt;
 </summary><category term="Visual Studio"></category><category term="Powershell"></category></entry><entry><title>معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</title><link href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-08-13T20:30:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-08-13:ktop-kindle-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;در &lt;a href="/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank"&gt;پست قبلی&lt;/a&gt; به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده.&lt;/p&gt;
