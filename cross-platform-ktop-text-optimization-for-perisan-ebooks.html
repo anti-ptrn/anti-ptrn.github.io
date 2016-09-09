@@ -2,27 +2,30 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio - Anti-Pattern</title>
+	<title>نسخه 1.5 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
 
-	<link rel="canonical" href="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html" />
+	<link rel="canonical" href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html" />
 
-  <meta name="description" content="وقتی Solution بزرگی داخل Visual Studio داشته باشیم ممکنه با مشکل تنظیم کردن Reference Path برای تمای پروژه‌های موجود مواجه بشیم، برای اینکور مجبوریم به صفحه Properties پروژه‌ها بریم و Reference Path رو تنظیم کنیم که این خودش کار بسیار زمان بر و اعصاب خوردکنی هست. با اسفتاده از Powershell می‌تونیم به راحتی مسیر Reference Pathها رو برای تمامی پروژه‌ها ست کنیم. برای اینکار کافیه Package Manager Console رو از منو Tools->Nuget Package Manager->Package Manager Console باز کنیم. و اسکریپت Powershell زیر و داخل اون اجرا کنیم. $path = [System.IO.Path]; foreach ($proj in get-project -all) { $proj.Properties.Item("ReferencePath").Value="$($path::GetDirectoryName($proj.filename))\..\libs" } نمونه اجرا شده : اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم برای پروژه میخواید تنظیم کنید کافیه به جای $($path::GetDirectoryName($proj.filename))\..\libs مسیر مستقیم خودتون رو بنویسد. منبع Adding Reference Paths to all Projects in Solution Visual Studio">
+  <meta name="description" content="اگر 2 پست قبلی درباره معرفی برنامه KTOP و نحوه اضافه کردن فونت سفارشی به Calibre را مطالعه کرده باشید؛ با برنامه KTOP آشنایی دارید. KTOP (تلفظ کنید کِتاپ) بهینه‌ساز کتاب‌های فارسی و عربی برای کتابخوان آمازون Kindle می‌باشد. بعد از انتشار این نرم‌افزار چندین درخواست مبنی بر ارائه نرم افزار برای سیستم‌عامل‌های Mac یا Linux دریافت کردم. امروز بالاخره موفق شدم و بهتر بگم فرصتی پیدا کردم که برنامه را با DOTNet Core سازگار کنم. با اینکار امکان اجرا بر روی سیستم‌عامل‌های لینوکس، مک و ویندوز فراهم شد. تغییرات نسخه 1.5: اضافه شدن پشتیبانی از Mac و Linux ساخت Installer برای سیستم عامل Windows ساده‌تر شدن سوییچ ها حذف Library ویراستیار و استفاده از Normalizer پروژه NHazm جهت اصلاح نویسه‌ها آخرین تغییرات پروژه داخل صفحه github پروژه قرار گرفتن: https://github.com/al1b/KTOP جهت آشنایی با تغییرات و دریافت نسخه جدید ادامه مطلب را مطالعه نمایید.">
 
 	
-    <meta property="og:title" content="تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio" />
+    <meta property="og:title" content="نسخه 1.5 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://antipattern.ir/images/vs-ref/01.jpg" />
-    <meta property="og:url" content="http://antipattern.ir\define-reference-path-for-all-projects-in-visual-studio-solution.html" />
+    <meta property="og:image" content="http://antipattern.ir/images/epub/linux-ubuntu.png" />
+    <meta property="og:url" content="http://antipattern.ir\cross-platform-ktop-text-optimization-for-perisan-ebooks.html" />
     <meta property="og:description" content="" />
     <meta property="og:locale" content="" />
     <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
-    <meta property="article:published_time" content="2016-09-01" />
-    <meta property="article:modified_time" content="2016-09-01" />
-    <meta property="article:section" content="Visual Studio, Powershell" />
-    <meta property="article:tag" content="Visual Studio" />
-    <meta property="article:tag" content="Powershell" />
+    <meta property="article:published_time" content="2016-09-09" />
+    <meta property="article:modified_time" content="2016-08-13" />
+    <meta property="article:section" content="Amazon Kindle, eReader, epub, Calibre, KTOP" />
+    <meta property="article:tag" content="Amazon Kindle" />
+    <meta property="article:tag" content="eReader" />
+    <meta property="article:tag" content="epub" />
+    <meta property="article:tag" content="Calibre" />
+    <meta property="article:tag" content="KTOP" />
 	
 
 	
@@ -53,51 +56,141 @@
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
 	<article class="small-12 columns single-article">
-<h1><a href="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html"><i class="fa fa-paperclip" aria-hidden="true"></i> تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio</a></h1>  
+<h1><a href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html"><i class="fa fa-paperclip" aria-hidden="true"></i> نسخه 1.5 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</a></h1>  
         
 <i class="fa fa-user" aria-hidden="true"></i> 
 <span class="post-article">علی بهرامی‌نژاد</span> -
 
 <i class="fa fa-calendar" aria-hidden="true"></i>
-<span class="post-date">11-06-1395</span>  -
+<span class="post-date">19-06-1395</span>  -
                 
 <i class="fa fa-clock-o" aria-hidden="true"></i>
-<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 1 دقیقه </span>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
 
 <hr class="top-spilter" />
 
 <div class="tags">
   <i class="fa fa-tag" aria-hidden="true"></i> 
-        <a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a>
-        <a href="http://antipattern.ir/tag/powershell.html">Powershell</a>
+        <a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a>
+        <a href="http://antipattern.ir/tag/ereader.html">eReader</a>
+        <a href="http://antipattern.ir/tag/epub.html">epub</a>
+        <a href="http://antipattern.ir/tag/calibre.html">Calibre</a>
+        <a href="http://antipattern.ir/tag/ktop.html">KTOP</a>
 </div>    
 
 <br />
 
-<p><img alt="Sample Solution" class="center-image" src="http://antipattern.ir/images/vs-ref/00.jpg" /></p>
-<p>وقتی Solution بزرگی داخل Visual Studio داشته باشیم ممکنه با مشکل تنظیم کردن <strong>Reference Path</strong> برای تمای پروژه‌های موجود مواجه بشیم، برای اینکور مجبوریم به صفحه <strong>Properties</strong> پروژه‌ها بریم و <strong>Reference Path</strong> رو تنظیم کنیم که این خودش کار بسیار زمان بر و اعصاب خوردکنی هست.</p>
-<p><img alt="Define Reference Path" class="center-image" src="http://antipattern.ir/images/vs-ref/01.jpg" /></p>
-<p>با اسفتاده از Powershell می‌تونیم به راحتی مسیر Reference Pathها رو برای تمامی پروژه‌ها ست کنیم. برای اینکار کافیه <strong>Package Manager Console</strong> رو از منو <code>Tools-&gt;Nuget Package Manager-&gt;Package Manager Console</code> باز کنیم.</p>
-<p><img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/02.jpg" /></p>
-<p>و اسکریپت Powershell زیر و داخل اون اجرا کنیم.</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>$path = [System.IO.Path]; 
-<span style="color: #0000ff">foreach</span> ($proj <span style="color: #0000ff">in</span> get-project -all) {   $proj.Properties.Item(<span style="color: #a31515">&quot;ReferencePath&quot;</span>).Value=<span style="color: #a31515">&quot;</span>$($path::GetDirectoryName($proj.filename))<span style="color: #a31515">\..\libs&quot;</span> }
+<p><img alt="KTOP On Linux" src="http://antipattern.ir/images/epub/linux-ubuntu.png" /></p>
+<p>اگر 2 پست قبلی درباره معرفی برنامه <a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank">KTOP</a> و <a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank">نحوه اضافه کردن فونت سفارشی به Calibre</a> را مطالعه کرده باشید؛ با برنامه KTOP آشنایی دارید. KTOP (تلفظ کنید کِتاپ) بهینه‌ساز کتاب‌های فارسی و عربی برای کتابخوان آمازون Kindle می‌باشد.</p>
+<p>بعد از انتشار این نرم‌افزار چندین درخواست مبنی بر ارائه نرم افزار برای سیستم‌عامل‌های Mac یا Linux دریافت کردم. امروز بالاخره موفق شدم و بهتر بگم فرصتی پیدا کردم که برنامه را با DOTNet Core سازگار کنم. با اینکار امکان اجرا بر روی سیستم‌عامل‌های لینوکس، مک و ویندوز فراهم شد.</p>
+<p><strong>تغییرات نسخه 1.5:</strong></p>
+<ol>
+<li>اضافه شدن پشتیبانی از Mac و Linux</li>
+<li>ساخت Installer برای سیستم عامل Windows</li>
+<li>ساده‌تر شدن سوییچ ها</li>
+<li>حذف Library ویراستیار و استفاده از Normalizer پروژه NHazm جهت اصلاح نویسه‌ها</li>
+</ol>
+<p>آخرین تغییرات پروژه داخل صفحه github پروژه قرار گرفتن:</p>
+<p><a href="https://github.com/al1b/KTOP" target="_blank">https://github.com/al1b/KTOP</a></p>
+<p>جهت آشنایی با تغییرات و دریافت نسخه جدید ادامه مطلب را مطالعه نمایید.</p>
+<a name="more"></a>
+
+<h2>دریافت نسخه 1.5 برنامه KTOP</h2>
+<table>
+<thead>
+<tr>
+<th>سیستم عامل</th>
+<th align="left">لینک دانلود</th>
+<th align="center">سایز به مگابایت</th>
+<th align="right">نوع فایل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Windows 7, 8, 8.1, 10</td>
+<td align="left"><a href="https://github.com/al1b/KTOP/releases/download/v1.5.0b/KTOP.1.5.0b.exe">KTOP.1.5.0b.exe</a></td>
+<td align="center">14.8</td>
+<td align="right">فایل نصب</td>
+</tr>
+<tr>
+<td>Debian 8</td>
+<td align="left"><a href="https://github.com/al1b/KTOP/releases/download/v1.5.0b/KTOP.1.5.0b-debian8-x64.tar.gz">KTOP.1.5.0b-debian8-x64.tar.gz</a></td>
+<td align="center">18.7</td>
+<td align="right">tar.gz آرشیو</td>
+</tr>
+<tr>
+<td>Ubuntu 14.04</td>
+<td align="left"><a href="https://github.com/al1b/KTOP/releases/download/v1.5.0b/KTOP.1.5.0b-ubuntu.14.04-x64.tar.gz">KTOP.1.5.0b-ubuntu.14.04-x64.tar.gz</a></td>
+<td align="center">18.6</td>
+<td align="right">tar.gz آرشیو</td>
+</tr>
+<tr>
+<td>Ubuntu 16.04</td>
+<td align="left"><a href="https://github.com/al1b/KTOP/releases/download/v1.5.0b/KTOP.1.5.0b-ubuntu.16.04-x64.tar.gz">KTOP.1.5.0b-ubuntu.16.04-x64.tar.gz</a></td>
+<td align="center">18.6</td>
+<td align="right">tar.gz آرشیو</td>
+</tr>
+<tr>
+<td>Mac OSX 10.10</td>
+<td align="left"><a href="https://github.com/al1b/KTOP/releases/download/v1.5.0b/KTOP.1.5.0b-MacOSX10.10-x64.zip">MacOSX10.10-x64.zip</a></td>
+<td align="center">18.1</td>
+<td align="right">zip آرشیو</td>
+</tr>
+</tbody>
+</table>
+<h2>راهنما</h2>
+<hr />
+<p>برنامه دارای رابط کاربری کنسولی بسیار ساده که تنها دارای 2 سوییچ است:</p>
+<table>
+<thead>
+<tr>
+<th>سوییچ</th>
+<th align="right">شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>persian--</td>
+<td align="right">بهینه‌سازی کتاب، اصلاح نویسه‌ها و کارکترهای عربی - سوییچ پیشفرض</td>
+</tr>
+<tr>
+<td>arabic--</td>
+<td align="right">بهینه‌سازی کتاب</td>
+</tr>
+</tbody>
+</table>
+<h3>سیستم عامل ویندوز</h3>
+<p>بعد از نصب، بصورت خودکار توسط برنامه آدرس KTOP در PATH ویندوز تعریف میشود و امکان استفاده فراگیر از آن در تمام محیط سیستم‌عامل به راحتی فراهم میشود.</p>
+<p>جهت اجرا کافیست Command Prompt ویندوز رو باز کنید و دستور زیر رو بنویسد:</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>KTOP.CLI.exe &quot;مسیر فایل شما&quot; [--persian]
+
+KTOP.CLI.exe &quot;d:/my-books/programming/csharp.epub&quot;
 </pre></div>
 
 
-<p><br /></p>
-<p><strong>نمونه اجرا شده :</strong></p>
-<p><img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/03.jpg" /></p>
-<p><br /></p>
-<p>اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم برای پروژه میخواید تنظیم کنید کافیه به جای </p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>$($path::<span style="border: 1px solid #FF0000">GetDirectoryName</span>($proj.filename))\..\libs
+<h3>سیستم عامل مک و لینوکس</h3>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>./KTOP.CLI &quot;./csharp.epub&quot;
 </pre></div>
 
 
-<p>مسیر مستقیم خودتون رو بنویسد.</p>
-<h4>منبع</h4>
-<p><a href="http://andsmi.com/post/85237953978/adding-reference-paths-to-all-projects-in-solution" target="_blank">Adding Reference Paths to all Projects in Solution Visual Studio</a></p>
-<a name="more"></a>         
+<h3>نیازمندی ها</h3>
+<p>نسخه جدید برنامه به شکل self-contained منتشر شده است که جهت اجرا در سیستم‌عامل‌های مختلف نیاز به هیچ نیازمندی قبلی نیست، البته ممکنه در برخی از سیستم‌عامل‌ها ( مثل Ubuntu 14.04 ) برنامه در زمان اجرا با خطا مواجه شود جهت رفع مشکل DOTNet Core متناسب با سیستم‌عامل خود را نصب کنید.</p>
+<ul>
+<li><em>پیشنهاد این است که ابتدا برنامه را دریافت کنید، اگر در اجرا مشکل خورد نسبت به نصب دات نت اقدام نمایید.</em></li>
+</ul>
+<p><strong><em>ویندوز:</em></strong>
+دانلود و نصب <a href="https://go.microsoft.com/fwlink/?LinkID=809109">.NET Core</a></p>
+<p><strong><em>لینکوس:</em></strong>
+بسته به توزیع لینوکسی که استفاده می‌کنید نسخه متناسب رو نصب کنید.</p>
+<ol>
+<li><a href="http://www.microsoft.com/net/core#ubuntu">.NET Core Ubuntu 14.04, 16.04 &amp; Linux Mint 17</a></li>
+<li><a href="http://www.microsoft.com/net/core#debian">.NET Core Debian 8</a></li>
+<li><a href="http://www.microsoft.com/net/core#fedora">.NET Core Fedora 23</a></li>
+<li><a href="http://www.microsoft.com/net/core#centos">.NET Core CentOS 7.1 &amp; Oracle Linux 7.1</a></li>
+<li><a href="http://www.microsoft.com/net/core#opensuse">.NET Core openSUSE 13.2</a></li>
+</ol>
+<p><strong><em>مک:</em></strong>
+<a href="http://www.microsoft.com/net/core#macos">.NET Core Mac OS X 10.11</a></p>         
         
         						
 	</article>
@@ -107,7 +200,7 @@
 	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
 	    <div id="disqus_thread"></div>
 	    <script type="text/javascript">
-	       var disqus_identifier = "define-reference-path-for-all-projects-in-visual-studio-solution.html";
+	       var disqus_identifier = "cross-platform-ktop-text-optimization-for-perisan-ebooks.html";
 	       (function() {
 	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
@@ -124,8 +217,8 @@
 				
 		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
 		<ul>
-			<li><a href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html">فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</a></li>
-			<li><a href="http://antipattern.ir/overcome-visual-studio-android-emulator-2048-mb-requirement.html">رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</a></li>
+			<li><a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html">معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</a></li>
+			<li><a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html">تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</a></li>
 		</ul>
 			
 		
