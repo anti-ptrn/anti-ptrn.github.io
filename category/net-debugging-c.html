@@ -2,7 +2,7 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>Anti-Pattern - Authors</title>
+	<title>.net, Debugging, C# - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
 	
@@ -32,10 +32,69 @@
 			</h1>
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
-    <h1>Authors on Anti-Pattern</h1>
 
-    <ul>        <li><a href="http://antipattern.ir/author/ly-bhrmynjd.html">علی بهرامی‌نژاد</a> (10)</li>
-    </ul>
+<h1>Posts categorized under: .net, Debugging, C#</h1>
+
+<article class="small-12">              
+  <h1><a href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html"><i class="fa fa-paragraph" aria-hidden="true"></i> دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</a></h1>  
+          
+  <i class="fa fa-user" aria-hidden="true"></i> 
+  <span class="post-article">علی بهرامی‌نژاد</span> -
+  
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+  <span class="post-date">13-08-1395</span>  -
+                  
+  <i class="fa fa-clock-o" aria-hidden="true"></i>
+  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 3 دقیقه </span>
+  
+  <hr class="top-spilter" />
+
+  <div class="tags">
+    <i class="fa fa-tag" aria-hidden="true"></i> 
+          <a href="http://antipattern.ir/tag/net.html">.net</a>
+          <a href="http://antipattern.ir/tag/debugging.html">Debugging</a>
+          <a href="http://antipattern.ir/tag/c.html">C#</a>
+  </div>    
+   
+<br />
+
+  <p>
+    <p>امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ی دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:</p>
+<ol>
+<li>رایگان</li>
+<li>قوی و سریع</li>
+<li>امکان استخراج فایل پروژه</li>
+<li>امکان ساخت فایل pdb</li>
+<li>فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever</li>
+</ol>
+<p>قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم:</p>
+<ul>
+<li>
+<p><strong><em>Managed Code</em></strong> به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به کد میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه.
+(<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb318664(v=vs.85).aspx" target="_blank">اطلاعات بیشتر</a>)</p>
+</li>
+<li>
+<p><strong><em>pdb</em></strong> مخفف <strong>P</strong>rogram <strong>D</strong>ata<strong>B</strong>ase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (<a href="https://msdn.microsoft.com/en-us/library/ms241903(v=vs.90).aspx" target="_blank">اطلاعات بیشتر</a>)</p>
+</li>
+<li>
+<p><strong><em>Obfuscation</em></strong> یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه.
+(<a href="https://en.wikipedia.org/wiki/Obfuscation_(software)" target="_blank">اطلاعات بیشتر</a>)</p>
+</li>
+</ul>
+<p>چه چیزی و قرار هست بررسی کنیم؟
+اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...</p>
+
+  </p>
+  <a class="read-more" href="debugging-dotnet-assemblies-without-having-the-source-code.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
+          
+          
+                    
+  
+</article>
+<div class="pagination">
+    Page 1 / 1
+</div>
+
 		</div> <!-- end main -->
 
 		<div class="sidebar large-4  small-12 columns">

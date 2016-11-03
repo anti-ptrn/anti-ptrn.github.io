@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-09-10T22:13:00+04:30</updated><entry><title>نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</title><link href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-09-10T22:13:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-09-09:cross-platform-ktop-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;&lt;img alt="KTOP On Linux" src="http://antipattern.ir/images/epub/linux-ubuntu.png" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-11-03T16:50:00+03:30</updated><entry><title>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</title><link href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" rel="alternate"></link><published>2016-11-03T16:50:00+03:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-03:debugging-dotnet-assemblies-without-having-the-source-code.html</id><summary type="html">&lt;p&gt;امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ی دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;رایگان&lt;/li&gt;
+&lt;li&gt;قوی و سریع&lt;/li&gt;
+&lt;li&gt;امکان استخراج فایل پروژه&lt;/li&gt;
+&lt;li&gt;امکان ساخت فایل pdb&lt;/li&gt;
+&lt;li&gt;فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Managed Code&lt;/em&gt;&lt;/strong&gt; به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به کد میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه.
+(&lt;a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb318664(v=vs.85).aspx" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;pdb&lt;/em&gt;&lt;/strong&gt; مخفف &lt;strong&gt;P&lt;/strong&gt;rogram &lt;strong&gt;D&lt;/strong&gt;ata&lt;strong&gt;B&lt;/strong&gt;ase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (&lt;a href="https://msdn.microsoft.com/en-us/library/ms241903(v=vs.90).aspx" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Obfuscation&lt;/em&gt;&lt;/strong&gt; یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه.
+(&lt;a href="https://en.wikipedia.org/wiki/Obfuscation_(software)" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;چه چیزی و قرار هست بررسی کنیم؟
+اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...&lt;/p&gt;
+</summary><category term=".net"></category><category term="Debugging"></category><category term="C#"></category></entry><entry><title>نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</title><link href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-09-10T22:13:00+04:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-09-09:cross-platform-ktop-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;&lt;img alt="KTOP On Linux" src="http://antipattern.ir/images/epub/linux-ubuntu.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ویرایش:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;درصورتی که نسخه 1.5b را پیش‌تر دریافت کرده‌اید، لطفاً نسبت به دانلود نسخه 1.5.1 که لینک دانلود آن در همین پست آمده است اقدام کنید.&lt;/p&gt;
 &lt;p&gt;اگر 2 پست قبلی درباره معرفی برنامه &lt;a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank"&gt;KTOP&lt;/a&gt; و &lt;a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank"&gt;نحوه اضافه کردن فونت سفارشی به Calibre&lt;/a&gt; را مطالعه کرده باشید؛ با برنامه KTOP آشنایی دارید. KTOP (تلفظ کنید کِتاپ) بهینه‌ساز کتاب‌های فارسی و عربی برای کتابخوان آمازون Kindle می‌باشد.&lt;/p&gt;

@@ -2,9 +2,30 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>Anti-Pattern - Authors</title>
+	<title>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
+
+	<link rel="canonical" href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" />
+
+  <meta name="description" content="امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ی دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به کد میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...">
+
+	
+    <meta property="og:title" content="دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/dotpeek/01_decompile_assembly.png" />
+    <meta property="og:url" content="http://antipattern.ir\debugging-dotnet-assemblies-without-having-the-source-code.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2016-11-03" />
+    <meta property="article:modified_time" content="2016-11-03" />
+    <meta property="article:section" content=".net, Debugging, C#" />
+    <meta property="article:tag" content=".net" />
+    <meta property="article:tag" content="Debugging" />
+    <meta property="article:tag" content="C#" />
+	
+
 	
 			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?617b3e96">	
 		
@@ -32,15 +53,126 @@
 			</h1>
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
-    <h1>Authors on Anti-Pattern</h1>
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html"><i class="fa fa-paperclip" aria-hidden="true"></i> دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
 
-    <ul>        <li><a href="http://antipattern.ir/author/ly-bhrmynjd.html">علی بهرامی‌نژاد</a> (10)</li>
-    </ul>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">13-08-1395</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 3 دقیقه </span>
+
+<hr class="top-spilter" />
+
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/net.html">.net</a>
+        <a href="http://antipattern.ir/tag/debugging.html">Debugging</a>
+        <a href="http://antipattern.ir/tag/c.html">C#</a>
+</div>    
+
+<br />
+
+<p>امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ی دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:</p>
+<ol>
+<li>رایگان</li>
+<li>قوی و سریع</li>
+<li>امکان استخراج فایل پروژه</li>
+<li>امکان ساخت فایل pdb</li>
+<li>فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever</li>
+</ol>
+<p>قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم:</p>
+<ul>
+<li>
+<p><strong><em>Managed Code</em></strong> به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به کد میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه.
+(<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb318664(v=vs.85).aspx" target="_blank">اطلاعات بیشتر</a>)</p>
+</li>
+<li>
+<p><strong><em>pdb</em></strong> مخفف <strong>P</strong>rogram <strong>D</strong>ata<strong>B</strong>ase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (<a href="https://msdn.microsoft.com/en-us/library/ms241903(v=vs.90).aspx" target="_blank">اطلاعات بیشتر</a>)</p>
+</li>
+<li>
+<p><strong><em>Obfuscation</em></strong> یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه.
+(<a href="https://en.wikipedia.org/wiki/Obfuscation_(software)" target="_blank">اطلاعات بیشتر</a>)</p>
+</li>
+</ul>
+<p>چه چیزی و قرار هست بررسی کنیم؟
+اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...</p>
+<a name="more"></a>
+
+<p>در اینجا من برنامه‌ای به اسم <code>FooBarCLI</code> دارم که با حالت Debug کامپایل شده. این برنامه. کاری که این برنامه انجام میده اینه که یک داده ورودی از Console میخونه و یک کد تصادفی به اون اختصاص میده.</p>
+<h2>پیش مرحله</h2>
+<p>این رو مد نظر قرار دهید که این روش تنها برای برنامه‌هایی جواد خواهد داد که debug mode کامپایل شده باشند.</p>
+<p><strong><em>هیچگاه از این روش برای سوء استفاده از برنامه‌ها استفاده نکنید</em></strong>
+<strong><em>Never ever</em></strong></p>
+<h2>مرحله 1</h2>
+<p>ابتدا <a href="https://www.jetbrains.com/decompiler/download/" target="_blank">https://www.jetbrains.com/decompiler/download/</a> رو از سایت JetBrains دانلود کنید. </p>
+<h2>مرحله 2</h2>
+<p>فایل اسمبلی برنامه دات نتی (exe یا dll) مورد نظر و داخل DotPeek باز کنید:</p>
+<p><img alt="A .net assembly decompiled in DotPeek" class="center-image" src="http://antipattern.ir/images/dotpeek/01_decompile_assembly.png" /></p>
+<h2>مرحله 3</h2>
+<p>از اسمبلی دیکامپایل شده، یک خروجی از نوع پروژه Visual Studio بگیرید:</p>
+<p><img alt="DotPeek export to visual studio project" class="center-image" src="http://antipattern.ir/images/dotpeek/02_export_to_project.png" /></p>
+<p>مانند شکل زیر تنظیمات را انجام بدید:</p>
+<p><img alt="dotpeek export options" class="center-image" src="http://antipattern.ir/images/dotpeek/03_export_options.png" /></p>
+<h2>مرحله 4</h2>
+<p>وارد تنظیمات DotPeek از طریق منو <code>Tools-&gt;Options</code> بشید و در <em>Symbol Server</em> تنظیمات را مانند شکل پایین انجام بدید:</p>
+<p><img alt="dotpeek settings" class="center-image" src="http://antipattern.ir/images/dotpeek/04_symbol_server_options.png" /></p>
+<h2>مرحله 5</h2>
+<p>ویژوال استودیو را باز کنید و از منو <code>Tools-&gt;Options</code> به قسمت <em>Debugging</em> رفته و <strong>Enable Just My Code</strong> را غیر فعال کنید.</p>
+<p><img alt="visual studio just my code" class="center-image" src="http://antipattern.ir/images/dotpeek/05_just_my_code.png" /></p>
+<p>و سپس در قسمت <em>Symbols</em> مانند شکل زیر هاست و پورت Symbol Server مربوط به DotPeek رو وارد کنید:</p>
+<p><img alt="visual studio symbols" class="center-image" src="http://antipattern.ir/images/dotpeek/06_symbol_server.png" /></p>
+<h2>مرحله 6</h2>
+<p>در DotPeek، از طریق منوی <code>Tools-&gt;Symbol Server</code> روی Symbol Server جهت راه اندازی آن کلیک کنید:</p>
+<p><img alt="start symbol server" class="center-image" src="http://antipattern.ir/images/dotpeek/07_start_symbol_server.png" /></p>
+<h2>مرحله 7</h2>
+<p>پروژه دیکامپایل شده را در ویژوال استودیو باز کنید و هر قسمت از کد که می‌خواهید breakpoint قراردهید:</p>
+<p><img alt="start symbol server" class="center-image" src="http://antipattern.ir/images/dotpeek/08_breakpoint_decompiled.png" /></p>
+<h2>مرحله 8</h2>
+<p>برنامه اصلی دات نتی که قصد دیباگ آنرا دارید اجرا کنید و پس از اجرا در Visual Studio ابزار Debugger را به پروسس آن Attach کنید:</p>
+<p><img alt="attach to process" class="center-image" src="http://antipattern.ir/images/dotpeek/09_attach.png" /></p>
+<p><img alt="attach to process" class="center-image" src="http://antipattern.ir/images/dotpeek/10_attach_to_process.png" /></p>
+<h2>مرحله 9</h2>
+<p>بسته به سایز پروژه، ممکن است روال ایجاد pdbها در DotPeek زمان‌بر باشد، در زمان تولید می‌توانید در قسمت <em>project/pdb generation status</em> لیست pdbهای تولید شده/در حال تولید رو مشاهده کنید، پس کمی صبور باشید:</p>
+<p><img alt="pdb" class="center-image" src="http://antipattern.ir/images/dotpeek/11_pdb_symbols_in_dotpeek.png" /></p>
+<h2>مرحله 10</h2>
+<p>برنامه را به شکل عادی استفاده کنید تا به breakpoint شما برخورد کند.</p>
+<p><img alt="pdb" class="center-image" src="http://antipattern.ir/images/dotpeek/12_breakpoint.png" /></p>
+<h2>حرف آخر</h2>
+<p><strong><em>هیچگاه از این روش برای سوء استفاده از برنامه‌ها استفاده نکنید</em></strong>
+<strong><em>Never ever</em></strong></p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "debugging-dotnet-assemblies-without-having-the-source-code.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
 		</div> <!-- end main -->
 
 		<div class="sidebar large-4  small-12 columns">
 			<div class="sidebar-container small-12 columns">
 				
+		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
+		<ul>
+			<li><a href="http://antipattern.ir/microsoft-stack-2016.html">چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</a></li>
+		</ul>
+			
 		
 				
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>

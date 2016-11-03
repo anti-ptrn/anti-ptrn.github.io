@@ -90,6 +90,9 @@
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
 				<ul id="recent-posts">
 					<li>
+					<a href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" title='امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ی دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به کد میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...'>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</a>
+					</li>
+					<li>
 					<a href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html" title='ویرایش: درصورتی که نسخه 1.5b را پیش‌تر دریافت کرده‌اید، لطفاً نسبت به دانلود نسخه 1.5.1 که لینک دانلود آن در همین پست آمده است اقدام کنید. اگر 2 پست قبلی درباره معرفی برنامه KTOP و نحوه اضافه کردن فونت سفارشی به Calibre را مطالعه کرده باشید؛ با برنامه KTOP آشنایی دارید. KTOP (تلفظ کنید کِتاپ) بهینه‌ساز کتاب‌های فارسی و عربی برای کتابخوان آمازون Kindle می‌باشد. بعد از انتشار این نرم‌افزار چندین درخواست مبنی بر ارائه نرم افزار برای سیستم‌عامل‌های Mac یا Linux دریافت کردم. امروز بالاخره موفق شدم و بهتر بگم فرصتی پیدا کردم که برنامه را با DOTNet Core سازگار کنم. با اینکار امکان اجرا بر روی سیستم‌عامل‌های لینوکس، مک و ویندوز فراهم شد. تغییرات نسخه 1.5: اضافه شدن پشتیبانی از Mac و Linux ساخت Installer برای سیستم عامل Windows ساده‌تر شدن سوییچ ها حذف کتابخانه ویراستیار که جهت اصلاح نویسه‌ها استفاده میشد. آخرین تغییرات پروژه داخل صفحه github پروژه قرار گرفتن: https://github.com/al1b/KTOP جهت آشنایی با تغییرات و دریافت نسخه جدید ادامه مطلب را مطالعه نمایید.'>نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</a>
 					</li>
 					<li>
@@ -104,9 +107,6 @@
 					<li>
 					<a href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html" title='برای ویرایش فایل‌های axml اندروید در Xamarin For Visual Studio دو راه وجود دارد: استفاده از ابزار ابزار طراحی گرافیکی ویرایش متنی فایل axml در حالت اول به راحتی با استفاده از ابزار GUI که Xamarin تهیه کرده است عمده تغییرات قابل اعمال است، اما اگر قصد این را داشته باشیم که مستقیم فایل‌ها را در حالت متنی ویرایش کنیم مشاهده خواهیم کرد که هیچ intellisense یا autocomplete کد، به کاربر ارائه نمی‌شود. همانطور که در شکل بالا نیز مشخص است؛ هیچ پیشنهاد کد یا راهنمایی برای تکمیل کردن کد در xml editor نمایش داده نمیشود. خوشبختانه این مورد توسط Xamarin پشتیبانی میشود و تنها باید آنرا فعال کنیم. در ادامه مطلب نحوه فعال سازی آن شرح داده خواهد شد.'>فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</a>
 					</li>
-					<li>
-					<a href="http://antipattern.ir/overcome-visual-studio-android-emulator-2048-mb-requirement.html" title='یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار Visual Sudio Emulator For Android می‌باشد. از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: کاملاً رایگان هماهنگی کامل با Visual Studio امکان استفاده در Android Studio، Eclipse یا هر ابزار دیگری که از ADB پشتیبانی می‌کند کارایی خوب بدلیل استفاده از Hyper-V ویندوز کاربران در استفاده از این ابزار ممکن است با خطای Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد: افزایش حافظه RAM بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.'>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</a>
-					</li>
 				</ul>												
 
 						
@@ -114,30 +114,32 @@
 				<nav class="tags">								
 					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
 					<ul>
-							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
-							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
-							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
-							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
-							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.Net</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
 							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
-							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
-							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
-							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
-							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
-							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
-							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
-							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
-							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
 							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
+							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
+							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
 							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
+							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
+							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
+							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
+							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
 					</ul>
 				</nav>						
 
