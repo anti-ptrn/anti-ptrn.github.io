@@ -8,19 +8,19 @@
 
 	<link rel="canonical" href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" />
 
-  <meta name="description" content="امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...">
+  <meta name="description" content="امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains dotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من dotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از dotPeek و Visual Studio دیباگ کنیم ...">
 
 	
     <meta property="og:title" content="دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://antipattern.ir/images/dotpeek/01_decompile_assembly.png" />
+    <meta property="og:image" content="http://antipattern.irimages/dotpeek/01_decompile_assembly.png" />
     <meta property="og:url" content="http://antipattern.ir\debugging-dotnet-assemblies-without-having-the-source-code.html" />
     <meta property="og:description" content="" />
     <meta property="og:locale" content="" />
     <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
     <meta property="article:published_time" content="2016-11-03" />
     <meta property="article:modified_time" content="2016-11-03" />
-    <meta property="article:section" content=".net, Debugging, C#" />
+    <meta property="article:section" content=".net, Debugging," />
     <meta property="article:tag" content=".net" />
     <meta property="article:tag" content="Debugging" />
     <meta property="article:tag" content="C#" />
@@ -76,7 +76,7 @@
 
 <br />
 
-<p>امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:</p>
+<p>امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains dotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من dotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:</p>
 <ol>
 <li>رایگان</li>
 <li>قوی و سریع</li>
@@ -99,7 +99,7 @@
 </li>
 </ul>
 <p>چه چیزی و قرار هست بررسی کنیم؟
-اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...</p>
+اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از dotPeek و Visual Studio دیباگ کنیم ...</p>
 <a name="more"></a>
 
 <p>در اینجا من برنامه‌ای به اسم <code>FooBarCLI</code> دارم که با حالت Debug کامپایل شده.  کاری که این برنامه انجام میده اینه که یک داده ورودی از Console میخونه و یک کد تصادفی به اون اختصاص میده.</p>
@@ -110,23 +110,23 @@
 <h2>مرحله 1</h2>
 <p>ابتدا <a href="https://www.jetbrains.com/decompiler/download/" target="_blank">https://www.jetbrains.com/decompiler/download/</a> رو از سایت JetBrains دانلود کنید. </p>
 <h2>مرحله 2</h2>
-<p>فایل اسمبلی برنامه دات نتی (exe یا dll) مورد نظر و داخل DotPeek باز کنید:</p>
-<p><img alt="A .net assembly decompiled in DotPeek" class="center-image" src="http://antipattern.ir/images/dotpeek/01_decompile_assembly.png" /></p>
+<p>فایل اسمبلی برنامه دات نتی (exe یا dll) مورد نظر و داخل dotPeek باز کنید:</p>
+<p><img alt="A .net assembly decompiled in dotPeek" class="center-image" src="http://antipattern.ir/images/dotpeek/01_decompile_assembly.png" /></p>
 <h2>مرحله 3</h2>
 <p>از اسمبلی دیکامپایل شده، یک خروجی از نوع پروژه Visual Studio بگیرید:</p>
-<p><img alt="DotPeek export to visual studio project" class="center-image" src="http://antipattern.ir/images/dotpeek/02_export_to_project.png" /></p>
+<p><img alt="dotPeek export to visual studio project" class="center-image" src="http://antipattern.ir/images/dotpeek/02_export_to_project.png" /></p>
 <p>مانند شکل زیر تنظیمات را انجام بدید:</p>
-<p><img alt="dotpeek export options" class="center-image" src="http://antipattern.ir/images/dotpeek/03_export_options.png" /></p>
+<p><img alt="dotPeek export options" class="center-image" src="http://antipattern.ir/images/dotpeek/03_export_options.png" /></p>
 <h2>مرحله 4</h2>
-<p>وارد تنظیمات DotPeek از طریق منو <code>Tools-&gt;Options</code> بشید و در <em>Symbol Server</em> تنظیمات را مانند شکل پایین انجام بدید:</p>
-<p><img alt="dotpeek settings" class="center-image" src="http://antipattern.ir/images/dotpeek/04_symbol_server_options.png" /></p>
+<p>وارد تنظیمات dotPeek از طریق منو <code>Tools-&gt;Options</code> بشید و در <em>Symbol Server</em> تنظیمات را مانند شکل پایین انجام بدید:</p>
+<p><img alt="dotPeek settings" class="center-image" src="http://antipattern.ir/images/dotpeek/04_symbol_server_options.png" /></p>
 <h2>مرحله 5</h2>
 <p>ویژوال استودیو را باز کنید و از منو <code>Tools-&gt;Options</code> به قسمت <em>Debugging</em> رفته و <strong>Enable Just My Code</strong> را غیر فعال کنید.</p>
 <p><img alt="visual studio just my code" class="center-image" src="http://antipattern.ir/images/dotpeek/05_just_my_code.png" /></p>
-<p>و سپس در قسمت <em>Symbols</em> مانند شکل زیر هاست و پورت Symbol Server مربوط به DotPeek رو وارد کنید:</p>
+<p>و سپس در قسمت <em>Symbols</em> مانند شکل زیر هاست و پورت Symbol Server مربوط به dotPeek رو وارد کنید:</p>
 <p><img alt="visual studio symbols" class="center-image" src="http://antipattern.ir/images/dotpeek/06_symbol_server.png" /></p>
 <h2>مرحله 6</h2>
-<p>در DotPeek، از طریق منوی <code>Tools-&gt;Symbol Server</code> روی Symbol Server جهت راه اندازی آن کلیک کنید:</p>
+<p>در dotPeek، از طریق منوی <code>Tools-&gt;Symbol Server</code> روی Symbol Server جهت راه اندازی آن کلیک کنید:</p>
 <p><img alt="start symbol server" class="center-image" src="http://antipattern.ir/images/dotpeek/07_start_symbol_server.png" /></p>
 <h2>مرحله 7</h2>
 <p>پروژه دیکامپایل شده را در ویژوال استودیو باز کنید و هر قسمت از کد که می‌خواهید breakpoint قراردهید:</p>
@@ -136,8 +136,8 @@
 <p><img alt="attach to process" class="center-image" src="http://antipattern.ir/images/dotpeek/09_attach.png" /></p>
 <p><img alt="attach to process" class="center-image" src="http://antipattern.ir/images/dotpeek/10_attach_to_process.png" /></p>
 <h2>مرحله 9</h2>
-<p>بسته به سایز پروژه، ممکن است روال ایجاد pdbها در DotPeek زمان‌بر باشد، در زمان تولید می‌توانید در قسمت <em>project/pdb generation status</em> لیست pdbهای تولید شده/در حال تولید رو مشاهده کنید، پس کمی صبور باشید:</p>
-<p><img alt="pdb" class="center-image" src="http://antipattern.ir/images/dotpeek/11_pdb_symbols_in_dotpeek.png" /></p>
+<p>بسته به سایز پروژه، ممکن است روال ایجاد pdbها در dotPeek زمان‌بر باشد، در زمان تولید می‌توانید در قسمت <em>project/pdb generation status</em> لیست pdbهای تولید شده/در حال تولید رو مشاهده کنید، پس کمی صبور باشید:</p>
+<p><img alt="pdb" class="center-image" src="{filename}images/dotpeek/11_pdb_symbols_in_dotPeek.png" /></p>
 <h2>مرحله 10</h2>
 <p>برنامه را به شکل عادی استفاده کنید تا به breakpoint شما برخورد کند.</p>
 <p><img alt="pdb" class="center-image" src="http://antipattern.ir/images/dotpeek/12_breakpoint.png" /></p>
@@ -178,7 +178,7 @@
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
 				<ul id="recent-posts">
 					<li>
-					<a href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" title='امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از DotPeek و Visual Studio دیباگ کنیم ...'>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</a>
+					<a href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" title='امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains dotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من dotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از dotPeek و Visual Studio دیباگ کنیم ...'>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</a>
 					</li>
 					<li>
 					<a href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html" title='ویرایش: درصورتی که نسخه 1.5b را پیش‌تر دریافت کرده‌اید، لطفاً نسبت به دانلود نسخه 1.5.1 که لینک دانلود آن در همین پست آمده است اقدام کنید. اگر 2 پست قبلی درباره معرفی برنامه KTOP و نحوه اضافه کردن فونت سفارشی به Calibre را مطالعه کرده باشید؛ با برنامه KTOP آشنایی دارید. KTOP (تلفظ کنید کِتاپ) بهینه‌ساز کتاب‌های فارسی و عربی برای کتابخوان آمازون Kindle می‌باشد. بعد از انتشار این نرم‌افزار چندین درخواست مبنی بر ارائه نرم افزار برای سیستم‌عامل‌های Mac یا Linux دریافت کردم. امروز بالاخره موفق شدم و بهتر بگم فرصتی پیدا کردم که برنامه را با DOTNet Core سازگار کنم. با اینکار امکان اجرا بر روی سیستم‌عامل‌های لینوکس، مک و ویندوز فراهم شد. تغییرات نسخه 1.5: اضافه شدن پشتیبانی از Mac و Linux ساخت Installer برای سیستم عامل Windows ساده‌تر شدن سوییچ ها حذف کتابخانه ویراستیار که جهت اصلاح نویسه‌ها استفاده میشد. آخرین تغییرات پروژه داخل صفحه github پروژه قرار گرفتن: https://github.com/al1b/KTOP جهت آشنایی با تغییرات و دریافت نسخه جدید ادامه مطلب را مطالعه نمایید.'>نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</a>
@@ -202,32 +202,32 @@
 				<nav class="tags">								
 					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
 					<ul>
-							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
-							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
-							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
-							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
-							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
-							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
 							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
-							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
-							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
 							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
-							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
 							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
 							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
 							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
 							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
-							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
 					</ul>
 				</nav>						
 
