@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-11-03T16:50:00+03:30</updated><entry><title>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</title><link href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" rel="alternate"></link><published>2016-11-03T16:50:00+03:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-03:debugging-dotnet-assemblies-without-having-the-source-code.html</id><summary type="html">&lt;p&gt;امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ی دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-11-03T16:50:00+03:30</updated><entry><title>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</title><link href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" rel="alternate"></link><published>2016-11-03T16:50:00+03:30</published><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-03:debugging-dotnet-assemblies-without-having-the-source-code.html</id><summary type="html">&lt;p&gt;امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains DotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من DotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;رایگان&lt;/li&gt;
 &lt;li&gt;قوی و سریع&lt;/li&gt;
@@ -10,7 +10,7 @@
 &lt;p&gt;قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Managed Code&lt;/em&gt;&lt;/strong&gt; به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به کد میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه.
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Managed Code&lt;/em&gt;&lt;/strong&gt; به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه.
 (&lt;a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb318664(v=vs.85).aspx" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
