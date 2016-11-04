@@ -15,11 +15,11 @@
 	<meta name="twitter:title" content="تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio">
 	<meta name="twitter:description" content="وقتی Solution بزرگی داخل Visual Studio داشته باشیم ممکنه با مشکل تنظیم کردن Reference Path برای تمای پروژه‌های موجود مواجه بشیم، برای اینکور مجبوریم به صفحه Properties پروژه‌ها بریم و Reference Path رو تنظیم کنیم که این خودش کار بسیار زمان بر و اعصاب خوردکنی هست. با اسفتاده از Powershell می‌تونیم به راحتی مسیر Reference Pathها رو برای تمامی پروژه‌ها ست کنیم. برای اینکار کافیه Package Manager Console رو از منو Tools->Nuget Package Manager->Package Manager Console باز کنیم. و اسکریپت Powershell زیر و داخل اون اجرا کنیم. $path = [System.IO.Path]; foreach ($proj in get-project -all) { $proj.Properties.Item("ReferencePath").Value="$($path::GetDirectoryName($proj.filename))\..\libs" } نمونه اجرا شده : اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم برای پروژه میخواید تنظیم کنید کافیه به جای $($path::GetDirectoryName($proj.filename))\..\libs مسیر مستقیم خودتون رو بنویسد. منبع Adding Reference Paths to all Projects in Solution Visual Studio">
 	<meta name="twitter:url" content="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html">
-	<meta name="twitter:image" content="تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio" />
 	
     <meta property="og:title" content="تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="http://antipattern.ir/images/vs-ref/01.jpg" />
+		<meta name="twitter:image" content="http://antipattern.ir/images/vs-ref/01.jpg" />	
     <meta property="og:url" content="http://antipattern.ir\define-reference-path-for-all-projects-in-visual-studio-solution.html" />
     <meta property="og:description" content="" />
     <meta property="og:locale" content="" />
@@ -163,32 +163,32 @@
 				<nav class="tags">								
 					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
 					<ul>
-							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
-							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
 							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
 							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
-							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
-							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
-							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
-							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
-							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
-							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
-							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
-							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
-							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
-							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
 							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
+							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
+							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
 					</ul>
 				</nav>						
 
