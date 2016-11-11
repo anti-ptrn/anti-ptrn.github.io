@@ -2,34 +2,32 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre - Anti-Pattern</title>
+	<title>حذف صفحه peyvandha.ir و تغییر آن به صفحه‌ی خیلی ساده‌تر - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
 
-	<link rel="canonical" href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html" />
+	<link rel="canonical" href="http://antipattern.ir/transform-peyvandha-into-simpler-page-with-grease-monkey.html" />
 
-  <meta name="description" content="کتاب‌خوان آمازون کیندل پس از ارائه فرمت KF8 امکان پشتیبانی از کتاب‌های فارسی رو فراهم آورده، اما فونت پیشفرض دستگاه علاوه بر اینکه خیلی ناخوشایند هست، اشکالات زیادی داره که بخشی از اون تو تصویر بالا می‌تونید ببیند. تو این مطلب مواردی که بررسی میشن: نحوه اضافه کردن فونت سفارشی به کتاب‌هایی با فرمت epub یا azw3 با استفاده از نرم افزار Calibre نحوه فرمت و اصلاح CSS کتاب‌ها برای نمایش بهتر داخل Kindle معرفی برنامه KTOP جهت بهینه سازی کتاب‌های فارسی یا عربی در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید. جهت اسفتاده از فونت سفارشی؛ حتماً پس ازا اضافه کردن فونت باید با برنامه KTOP نسبت به بهینه سازی کتاب اقدام کنید.">
+  <meta name="description" content="اگر از کاربران قدیمی‌تر اینترنت باشید؛ حتماً با صفحه زیر آشنایی دارید، یا حداقل شاید برای شما نوستالوژی باشه: از چند سال پیش این صفحه ساده نوستالوژیک، با صفحه peyvandha.ir جایگزین شد. امروز در حال مطالعه صفحه‌ای در سایت W3Schools بودم که دقت کردم به جای تبلیغ‌های کنار این سایت، داخل چندین iframe صفحه پیوند‌ها باز شده ... حساب کردم، همین پهنای باندی که برای باز شدن سایت پیوند‌ها مصرف میشه، باری که روی شبکه می‌ذاره، در طول ماه ممکنه مقدار قابل قبولی بشه! بخصوص اینکه اگه از بسته‌های اینترت موبایل استفاده کنیم ( و بخصوص بصورت آزاد حساب بشه ) یک اسکریپت برای TamperMonkey و GreaseMonkey نوشتم که این صفحه پیوند‌ها رو با حالت زیر تعویض میکنه: اگه علاقه‌مند به استفاده از این اسکریپت هستید نگاهی به ادامه مطلب بیاندازید.">
 
 	<meta name="twitter:card" content="summary">
 	  <meta name="twitter:site" content="@ABahraminezhad">
-	<meta name="twitter:title" content="تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre">
-	<meta name="twitter:description" content="کتاب‌خوان آمازون کیندل پس از ارائه فرمت KF8 امکان پشتیبانی از کتاب‌های فارسی رو فراهم آورده، اما فونت پیشفرض دستگاه علاوه بر اینکه خیلی ناخوشایند هست، اشکالات زیادی داره که بخشی از اون تو تصویر بالا می‌تونید ببیند. تو این مطلب مواردی که بررسی میشن: نحوه اضافه کردن فونت سفارشی به کتاب‌هایی با فرمت epub یا azw3 با استفاده از نرم افزار Calibre نحوه فرمت و اصلاح CSS کتاب‌ها برای نمایش بهتر داخل Kindle معرفی برنامه KTOP جهت بهینه سازی کتاب‌های فارسی یا عربی در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید. جهت اسفتاده از فونت سفارشی؛ حتماً پس ازا اضافه کردن فونت باید با برنامه KTOP نسبت به بهینه سازی کتاب اقدام کنید.">
-	<meta name="twitter:url" content="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html">
+	<meta name="twitter:title" content="حذف صفحه peyvandha.ir و تغییر آن به صفحه‌ی خیلی ساده‌تر">
+	<meta name="twitter:description" content="اگر از کاربران قدیمی‌تر اینترنت باشید؛ حتماً با صفحه زیر آشنایی دارید، یا حداقل شاید برای شما نوستالوژی باشه: از چند سال پیش این صفحه ساده نوستالوژیک، با صفحه peyvandha.ir جایگزین شد. امروز در حال مطالعه صفحه‌ای در سایت W3Schools بودم که دقت کردم به جای تبلیغ‌های کنار این سایت، داخل چندین iframe صفحه پیوند‌ها باز شده ... حساب کردم، همین پهنای باندی که برای باز شدن سایت پیوند‌ها مصرف میشه، باری که روی شبکه می‌ذاره، در طول ماه ممکنه مقدار قابل قبولی بشه! بخصوص اینکه اگه از بسته‌های اینترت موبایل استفاده کنیم ( و بخصوص بصورت آزاد حساب بشه ) یک اسکریپت برای TamperMonkey و GreaseMonkey نوشتم که این صفحه پیوند‌ها رو با حالت زیر تعویض میکنه: اگه علاقه‌مند به استفاده از این اسکریپت هستید نگاهی به ادامه مطلب بیاندازید.">
+	<meta name="twitter:url" content="http://antipattern.ir/transform-peyvandha-into-simpler-page-with-grease-monkey.html">
 	
-    <meta property="og:title" content="تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre" />
+    <meta property="og:title" content="حذف صفحه peyvandha.ir و تغییر آن به صفحه‌ی خیلی ساده‌تر" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://antipattern.ir/images/epub/kindle.png" />
-    <meta property="og:url" content="http://antipattern.ir\embed-custom-font-in-epub-and-justify-the-book.html" />
+    <meta property="og:image" content="http://antipattern.ir/images/peyvandha/01.png" />
+    <meta property="og:url" content="http://antipattern.ir\transform-peyvandha-into-simpler-page-with-grease-monkey.html" />
     <meta property="og:description" content="" />
     <meta property="og:locale" content="" />
     <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
-    <meta property="article:published_time" content="2016-08-13" />
-    <meta property="article:modified_time" content="2016-08-13" />
-    <meta property="article:section" content="Amazon Kindle, eReader, epub, Calibre" />
-    <meta property="article:tag" content="Amazon Kindle" />
-    <meta property="article:tag" content="eReader" />
-    <meta property="article:tag" content="epub" />
-    <meta property="article:tag" content="Calibre" />
+    <meta property="article:published_time" content="2016-11-11" />
+    <meta property="article:modified_time" content="2016-11-11" />
+    <meta property="article:section" content="اسکریپت‌های Grease Monkey, پیوند‌ها" />
+    <meta property="article:tag" content="اسکریپت‌های Grease Monkey" />
+    <meta property="article:tag" content="پیوند‌ها" />
 	
 
 	
@@ -60,97 +58,47 @@
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
 	<article class="small-12 columns single-article">
-<h1><a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html"><i class="fa fa-paperclip" aria-hidden="true"></i> تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</a></h1>  
+<h1><a href="http://antipattern.ir/transform-peyvandha-into-simpler-page-with-grease-monkey.html"><i class="fa fa-paperclip" aria-hidden="true"></i> حذف صفحه peyvandha.ir و تغییر آن به صفحه‌ی خیلی ساده‌تر</a></h1>  
         
 <i class="fa fa-user" aria-hidden="true"></i> 
 <span class="post-article">علی بهرامی‌نژاد</span> -
 
 <i class="fa fa-calendar" aria-hidden="true"></i>
-<span class="post-date">23-05-1395</span>  -
+<span class="post-date">21-08-1395</span>  -
                 
 <i class="fa fa-clock-o" aria-hidden="true"></i>
-<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 1 دقیقه </span>
 
 <hr class="top-spilter" />
 
 <div class="tags">
   <i class="fa fa-tag" aria-hidden="true"></i> 
-        <a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a>
-        <a href="http://antipattern.ir/tag/ereader.html">eReader</a>
-        <a href="http://antipattern.ir/tag/epub.html">epub</a>
-        <a href="http://antipattern.ir/tag/calibre.html">Calibre</a>
+        <a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a>
+        <a href="http://antipattern.ir/tag/pywndh.html">پیوند‌ها</a>
 </div>    
 
 <br />
 
-<p><img alt="Sample Books" class="center-image" src="http://antipattern.ir/images/epub/sample-books.png" /></p>
-<p>کتاب‌خوان آمازون کیندل پس از ارائه فرمت <a href="https://www.amazon.com/gp/feature.html?docId=1000729511" target="_blank">KF8</a> امکان پشتیبانی از کتاب‌های فارسی رو فراهم آورده، اما فونت پیشفرض دستگاه علاوه بر اینکه خیلی ناخوشایند هست، اشکالات زیادی داره که بخشی از اون تو تصویر بالا می‌تونید ببیند.</p>
-<h2>تو این مطلب مواردی که بررسی میشن:</h2>
-<ol>
-<li>نحوه اضافه کردن فونت سفارشی به کتاب‌هایی با فرمت <code>epub</code> یا <code>azw3</code> با استفاده از نرم افزار Calibre</li>
-<li>نحوه فرمت و اصلاح CSS کتاب‌ها برای نمایش بهتر داخل Kindle</li>
-<li>معرفی برنامه <code>KTOP</code> جهت بهینه سازی کتاب‌های فارسی یا عربی</li>
-</ol>
-<p>در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید.</p>
-<p><strong>جهت اسفتاده از فونت سفارشی؛ حتماً پس ازا اضافه کردن فونت باید با برنامه KTOP نسبت به بهینه سازی کتاب اقدام کنید.</strong></p>
+<p>اگر از کاربران قدیمی‌تر اینترنت باشید؛ حتماً با صفحه زیر آشنایی دارید، یا حداقل شاید برای شما نوستالوژی باشه:</p>
+<p><img alt="Blocking Page" class="center-image" src="http://antipattern.ir/images/peyvandha/01.png" /></p>
+<p>از چند سال پیش این صفحه ساده نوستالوژیک، با صفحه <code>peyvandha.ir</code> جایگزین شد. امروز در حال مطالعه صفحه‌ای در سایت <a href="http://www.w3schools.com" target="_blank">W3Schools</a> بودم که دقت کردم به جای تبلیغ‌های کنار این سایت، داخل چندین <code>iframe</code> صفحه پیوند‌ها باز شده ...</p>
+<p>حساب کردم، همین پهنای باندی که برای باز شدن سایت پیوند‌ها مصرف میشه، باری که روی شبکه می‌ذاره، در طول ماه ممکنه مقدار قابل قبولی بشه! بخصوص اینکه اگه از بسته‌های اینترت موبایل استفاده کنیم ( و بخصوص بصورت آزاد حساب بشه )</p>
+<p>یک اسکریپت برای <a href="https://tampermonkey.net/" target="_blank">TamperMonkey</a> و <a href="http://www.greasespot.net/" target="_blank">GreaseMonkey</a> نوشتم که این صفحه پیوند‌ها رو با حالت زیر تعویض میکنه:</p>
+<p><img alt="New Blocking Page" class="center-image" src="http://antipattern.ir/images/peyvandha/03.png" /></p>
+<p>اگه علاقه‌مند به استفاده از این اسکریپت هستید نگاهی به ادامه مطلب بیاندازید.</p>
 <a name="more"></a>
 
-<h2>نرم افزار‌های مورد نیاز</h2>
-<hr />
-<ol>
-<li><a href="https://calibre-ebook.com/download" target="_blank">دریافت و نصب برنامه Calibre</a></li>
-<li><a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank">دریافت و نصب برنامه کتاپ (KTOP)</a></li>
-</ol>
-<h2>نحوه اضافه کردن فونت و تغییر فرمت کتاب</h2>
-<hr />
-<p>با درگ کردن فایل کتاب، کتاب را به کتاب‌خانه Calibre اضافه کنید. سپس با راست کلیک کردن روی کتاب و انتخاب Convert -&gt; Convert Individually به پنجره کانورت کتاب بروید.</p>
-<p><img alt="Convert with Calibre - Step 1" class="center-image" src="http://antipattern.ir/images/epub/01-convert.png" /></p>
-<p><br /></p>
-<p>فرمت خروجی مورد نظر کتاب خود را انتخاب کنید. (مثلاً azw3 یا epub)
-<em>در صورتی که کتاب را برای آمازون Kindle آماده سازی می‌کنید، فرمت خروجی را روی <strong>azw3</strong> تنظیم کنید.</em></p>
-<p><img alt="Convert with Calibre - Step 2" class="center-image" src="http://antipattern.ir/images/epub/02-convert.png" /></p>
-<p><br /></p>
-<p>در تب <em>Look and Feel</em> فونت مورد نظر خود را انتخاب و تیک <em>ٍEmbed reference font</em> را بزنید.</p>
-<p><img alt="Convert with Calibre - Step 3" class="center-image" src="http://antipattern.ir/images/epub/03-convert.png" /></p>
-<p><br /></p>
-<p>سپس در پایین همین تب، چینش متن را برروی <em>Justify Text</em> تنظیم کنید و کد CSS زیر را در بخش <em>Extra CSS</em> وارد کنید.</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span>    body{
-        direction:rtl <span style="color: #0000ff">!important</span>;
-        text-align:justify;
-    }
-
-    h1,h2,h3,h4,h5,h6,h7{
-        text-align:right <span style="color: #0000ff">!important</span>;
-    }
-</pre></div>
-
-
-<p><img alt="Convert with Calibre - Step 3" class="center-image" src="http://antipattern.ir/images/epub/04-convert.png" /></p>
-<p><br /></p>
-<p>در نهایت برروی OK کلیک کنید تا پروسه کانورت کتاب آغاز شود.</p>
-<p><br /></p>
-<h3>بهینه سازی کتاب با برنامه KTOP - کتاپ</h3>
-<p>جهت اینکه کتاب با فونت انتخابی شما به شکل صحیح در آمازون Kindle قابل خواندن باشد، باید با استفاده از نرم افزار KTOP (بخوانید کتاپ!) نسبت به بهینه سازی آن اقدام کنید.</p>
-<p><a href="ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank">جهت آشنایی و استفاده از برنامه KTOP لطفاً این پست را مطالعه کنید</a></p>
-<p><br /></p>
-<table>
-<thead>
-<tr>
-<th>فونت سفارشی در کیندل</th>
-<th align="center">فونت سفارشی - بهنیه سازی شده</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="Custom font" src="http://antipattern.ir/images/epub/03-custom-font.jpg" /></td>
-<td align="center"><img alt="Optimized font" src="http://antipattern.ir/images/epub/01-optimized.jpg" /></td>
-</tr>
-</tbody>
-</table>
-<p><br /></p>
-<h3>نحوه استفاده از فونت سفارشی در داخل Kindle</h3>
-<p>پس از انتقال کتاب به Kindle، کافیست به قسمت انتخاب Font در Kindle بروید و گزینه Publisher Font را انتخاب کنید.</p>
-<p><img alt="Publisher Font - Amazon Kindle" class="center-image" src="http://antipattern.ir/images/epub/01-publisher-font.png" /></p>         
+<p>بعد از نصب TamperMonkey یا Grease Monkey کافیه اسکریپت زیر رو به اون اضافه کنید:
+<br /></p>
+<h3>مرحله 1 - انتخاب گزینه Add New Script</h3>
+<p><img alt="New Scripts" class="center-image" src="http://antipattern.ir/images/peyvandha/04.png" /></p>
+<h3>مرحله 2 - دریافت/کپی کردن اسکریپت</h3>
+<p><a href="https://gist.github.com/al1b/dde5931c7979b53c5dc514aeceb9e76f" target="_blank">دریافت از github.com</a></p>
+<h3>مرحله 3 - درج توی Tamper/Grease Monkey</h3>
+<p>مثل شکل زیر داخلش قرار بدید و ذخیره کنید:</p>
+<p><img alt="New Blocking Page" class="center-image" src="http://antipattern.ir/images/peyvandha/05.png" /></p>
+<h3>اسکریپت در gist.github.com</h3>
+<script src="https://gist.github.com/al1b/dde5931c7979b53c5dc514aeceb9e76f.js"></script>         
         
         						
 	</article>
@@ -160,7 +108,7 @@
 	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
 	    <div id="disqus_thread"></div>
 	    <script type="text/javascript">
-	       var disqus_identifier = "embed-custom-font-in-epub-and-justify-the-book.html";
+	       var disqus_identifier = "transform-peyvandha-into-simpler-page-with-grease-monkey.html";
 	       (function() {
 	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
@@ -178,11 +126,6 @@
 		<div class="sidebar large-4  small-12 columns">
 			<div class="sidebar-container small-12 columns">
 				
-		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
-		<ul>
-			<li><a href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html">نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</a></li>
-			<li><a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html">معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</a></li>
-		</ul>
 			
 		
 				

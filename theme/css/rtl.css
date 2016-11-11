@@ -446,3 +446,20 @@ article p, article div, article ul, article ol {
 	font-size:1.1em;
 	line-height:2;
 }
+
+.gist-data table{
+	direction:ltr;
+	text-align:left;
+}
+
+.pagination{
+	list-style:none;
+	width:150px;
+}
+
+
+.pagination li{
+	float:right;
+	margin-left:5px;
+	padding:2px;
+}
