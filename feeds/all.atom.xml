@@ -3,7 +3,7 @@
 &lt;p&gt;حتی فکر کردن به جمله بالا کمی از قوه تخیل خارج بود، اما اگر اخبار این چند وقت اخیر مایکروسافت مثل«&lt;a href="https://techcrunch.com/2016/11/16/microsoft-joins-the-linux-foundation/" target="_blank"&gt;پیوستن مایکروسافت به بنیاد لینوکس&lt;/a&gt;»، «&lt;a href="http://venturebeat.com/2016/11/16/google-joins-microsofts-net-foundation/" target="_blank"&gt;پیوستن گوکل به بنیاد دات نت&lt;/a&gt;
 » و یا پست «&lt;a href="http://antipattern.ir/microsoft-stack-2016.html" target="_blank"&gt;چرا باید به استک مایکروسافت بیشتر توجه کنیم&lt;/a&gt;» رو مطالعه کرده باشید زیاد از عنوان بالا تعجب نخواهید کرد.&lt;/p&gt;
 &lt;p&gt;پروژه SQL Server بر روی لینوکس، چندین ماه پیش به شکل رسمی توسط مایکروسافت معرفی شد و دسترسی به نسخه‌های اولیه آزمایشی تنها برای مشتریان/افراد خاص فراهم گردیده بود، در هفته گذشته مایکروسافت دسترسی نسخه آزمایشی &lt;a href="https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux" target="_blank"&gt;SQL Server vNext&lt;/a&gt; را برای تمامی کاربران فراهم آورد.&lt;/p&gt;
-&lt;p&gt;اگر از دسته کسانی باشید که یکبار SQL Server روی ویندوز نصب کرده باشید؛ حتماً مشکلاتی با نصب طولانی آن داشته اید، اما در لینوکس ( در اینجا توزیع Ubuntu ) به راحتی، در عرض چند دقیقه تنها با اسفتاده از دستور &lt;code&gt;apt&lt;/code&gt; می‌توان آن‌را نصب کرد.&lt;/p&gt;
+&lt;p&gt;اگر از دسته کاربرانی باشید که حداقل یکبار SQL Server روی ویندوز نصب کرده باشید؛ حتماً مشکلاتی با نصب طولانی آن داشته اید، اما در لینوکس ( در اینجا توزیع Ubuntu ) به راحتی، در عرض چند دقیقه تنها با اسفتاده از دستور &lt;code&gt;apt&lt;/code&gt; می‌توان آن‌را نصب کرد.&lt;/p&gt;
 &lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;sudo apt install mssql-server
 &lt;/pre&gt;&lt;/div&gt;
 
