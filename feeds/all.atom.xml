@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-11-20T19:21:00+03:30</updated><entry><title>مایکروسافت SQL Server روی لینوکس!</title><link href="http://antipattern.ir/sqlserver-vnext-on-linux.html" rel="alternate"></link><published>2016-11-20T19:21:00+03:30</published><updated>2016-11-20T19:21:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-20:sqlserver-vnext-on-linux.html</id><summary type="html">&lt;p&gt;مایکروسافت SQL Server روی لینوکس! &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2016-12-15T14:15:00+03:30</updated><entry><title>نصب یا دریافت آپدیت‌های Xamarin</title><link href="http://antipattern.ir/download-xamarin-updates.html" rel="alternate"></link><published>2016-12-15T14:15:00+03:30</published><updated>2016-12-15T14:15:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-12-15:download-xamarin-updates.html</id><summary type="html">&lt;p&gt;&lt;img alt="Xamarin Logo" class="center-image" src="http://antipattern.ir/images/xamarin-updates/xamarin-logo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Xamarin آپدیت‌هایش را در سایت &lt;a href="https://releases.xamarin.com/" target="_blank"&gt;Xamarin Releases&lt;/a&gt; معرفی می‌کند. اگر از کاربران Visual Studio باشید، برای نصب یا Update زامارین 2 راه پیش روی شماست:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;استفاده از Visual Studio جهت دریافت خودکار Update&lt;/li&gt;
+&lt;li&gt;دانلود مستقیم آپدیت‌ها از زامارین&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;در زمان نه چندان دور که هنوز Xamarin توسط Microsoft خریداری نشده بود ( یا حتی چند ماه پس از خرید )، لینک‌های دانلود برروی سرورهای Amazon CloudFront قرار می‌گرفتند و متاسفانه در زمان دانلود خطای عدم دسترسی برای IP ایران مشاهده میشد.&lt;/p&gt;
+&lt;p&gt;چند وقتی هست که خوشبختانه فایل‌ها از CloudFront به Azure مایکروسافت منتقل شدن و به راحتی میشه اونها رو دانلود کرد.&lt;/p&gt;
+&lt;p&gt;اگر به آدرس &lt;a href="https://releases.xamarin.com/" target="_blank"&gt;https://releases.xamarin.com&lt;/a&gt; در قسمتی از سایت لیست آخرین releaseها قرار گرفته اند. برای مثال در تصویر زیر یک خبر مربوط به Release Cycle 8 قابل مشاهده است.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Xamarin Cycle Release 8" class="center-image" src="http://antipattern.ir/images/xamarin-updates/cycle-release8.png" /&gt;&lt;/p&gt;
+&lt;p&gt;اگر برای مثال به صفحه یکی از این Cycle Releaseها مراجعه کنیم. ( &lt;a href="https://releases.xamarin.com/stable-release-updated-cycle-8-service-release-1-w-xcode-8-2-support/" target="_blank"&gt;مثلاً این&lt;/a&gt;) در قسمتی از صفحه مانند تصویر زیر شماره نسخه و نام محصول Release شده قابل مشاهده است.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Xamarin Cycle Release 8" class="center-image" src="http://antipattern.ir/images/xamarin-updates/xamarin-release.png" /&gt;&lt;/p&gt;
+&lt;p&gt;مثلاً برای نسخه &lt;code&gt;4.2.1.73&lt;/code&gt; برای ویژوال استودیو کافیست شماره نسخه را در &lt;code&gt;URL&lt;/code&gt; زیر جایگزین کنید و Update و مورد نظر و دریافت کنید.&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_{version}.msi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.2.1.73.msi" target="_blank"&gt;نسخه 4.2.1.73&lt;/a&gt;&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.2.1.73.msi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نسخه ی alpha&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.3.0.281.msi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</summary><category term="Visual Studio"></category><category term="Xamarin"></category></entry><entry><title>مایکروسافت SQL Server روی لینوکس!</title><link href="http://antipattern.ir/sqlserver-vnext-on-linux.html" rel="alternate"></link><published>2016-11-20T19:21:00+03:30</published><updated>2016-11-20T19:21:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-20:sqlserver-vnext-on-linux.html</id><summary type="html">&lt;p&gt;مایکروسافت SQL Server روی لینوکس! &lt;/p&gt;
 &lt;p&gt;حتی فکر کردن به جمله بالا کمی از قوه تخیل خارج بود، اما اگر اخبار این چند وقت اخیر مایکروسافت مثل«&lt;a href="https://techcrunch.com/2016/11/16/microsoft-joins-the-linux-foundation/" target="_blank"&gt;پیوستن مایکروسافت به بنیاد لینوکس&lt;/a&gt;»، «&lt;a href="http://venturebeat.com/2016/11/16/google-joins-microsofts-net-foundation/" target="_blank"&gt;پیوستن گوکل به بنیاد دات نت&lt;/a&gt;
 » و یا پست «&lt;a href="http://antipattern.ir/microsoft-stack-2016.html" target="_blank"&gt;چرا باید به استک مایکروسافت بیشتر توجه کنیم&lt;/a&gt;» رو مطالعه کرده باشید زیاد از عنوان بالا تعجب نخواهید کرد.&lt;/p&gt;
 &lt;p&gt;پروژه SQL Server بر روی لینوکس، چندین ماه پیش به شکل رسمی توسط مایکروسافت معرفی شد و دسترسی به نسخه‌های اولیه آزمایشی تنها برای مشتریان/افراد خاص فراهم گردیده بود، در هفته گذشته مایکروسافت دسترسی نسخه آزمایشی &lt;a href="https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux" target="_blank"&gt;SQL Server vNext&lt;/a&gt; را برای تمامی کاربران فراهم آورد.&lt;/p&gt;

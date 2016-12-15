@@ -99,6 +99,9 @@
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
 				<ul id="recent-posts">
 					<li>
+					<a href="http://antipattern.ir/download-xamarin-updates.html" title='Xamarin آپدیت‌هایش را در سایت Xamarin Releases معرفی می‌کند. اگر از کاربران Visual Studio باشید، برای نصب یا Update زامارین 2 راه پیش روی شماست: استفاده از Visual Studio جهت دریافت خودکار Update دانلود مستقیم آپدیت‌ها از زامارین در زمان نه چندان دور که هنوز Xamarin توسط Microsoft خریداری نشده بود ( یا حتی چند ماه پس از خرید )، لینک‌های دانلود برروی سرورهای Amazon CloudFront قرار می‌گرفتند و متاسفانه در زمان دانلود خطای عدم دسترسی برای IP ایران مشاهده میشد. چند وقتی هست که خوشبختانه فایل‌ها از CloudFront به Azure مایکروسافت منتقل شدن و به راحتی میشه اونها رو دانلود کرد. اگر به آدرس https://releases.xamarin.com در قسمتی از سایت لیست آخرین releaseها قرار گرفته اند. برای مثال در تصویر زیر یک خبر مربوط به Release Cycle 8 قابل مشاهده است. اگر برای مثال به صفحه یکی از این Cycle Releaseها مراجعه کنیم. ( مثلاً این) در قسمتی از صفحه مانند تصویر زیر شماره نسخه و نام محصول Release شده قابل مشاهده است. مثلاً برای نسخه 4.2.1.73 برای ویژوال استودیو کافیست شماره نسخه را در URL زیر جایگزین کنید و Update و مورد نظر و دریافت کنید. https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_{version}.msi نسخه 4.2.1.73 https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.2.1.73.msi نسخه ی alpha https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.3.0.281.msi'>نصب یا دریافت آپدیت‌های Xamarin</a>
+					</li>
+					<li>
 					<a href="http://antipattern.ir/sqlserver-vnext-on-linux.html" title='مایکروسافت SQL Server روی لینوکس! حتی فکر کردن به جمله بالا کمی از قوه تخیل خارج بود، اما اگر اخبار این چند وقت اخیر مایکروسافت مثل«پیوستن مایکروسافت به بنیاد لینوکس»، «پیوستن گوکل به بنیاد دات نت » و یا پست «چرا باید به استک مایکروسافت بیشتر توجه کنیم» رو مطالعه کرده باشید زیاد از عنوان بالا تعجب نخواهید کرد. پروژه SQL Server بر روی لینوکس، چندین ماه پیش به شکل رسمی توسط مایکروسافت معرفی شد و دسترسی به نسخه‌های اولیه آزمایشی تنها برای مشتریان/افراد خاص فراهم گردیده بود، در هفته گذشته مایکروسافت دسترسی نسخه آزمایشی SQL Server vNext را برای تمامی کاربران فراهم آورد. اگر از دسته کاربرانی باشید که حداقل یکبار SQL Server روی ویندوز نصب کرده باشید؛ حتماً مشکلاتی با نصب طولانی آن داشته اید، اما در لینوکس ( در اینجا توزیع Ubuntu ) به راحتی، در عرض چند دقیقه تنها با اسفتاده از دستور apt می‌توان آن‌را نصب کرد. sudo apt install mssql-server مایکروسافت در صفحه SQL Server vNext اطلاعات بسیار خوب کافی از قبیل راهنمایی مرحله به مرحله و ... فراهم آورده است. اگر علاقه‌مند به دریافت اطلاعات بیشتر هستید لطفاً یک ماشین مجازی/فیزیکی با حداقل رم 3.5 گیگ تهیه کنید و ادامه مطلب و بخونید.'>مایکروسافت SQL Server روی لینوکس!</a>
 					</li>
 					<li>
@@ -113,9 +116,6 @@
 					<li>
 					<a href="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html" title='وقتی Solution بزرگی داخل Visual Studio داشته باشیم ممکنه با مشکل تنظیم کردن Reference Path برای تمای پروژه‌های موجود مواجه بشیم، برای اینکور مجبوریم به صفحه Properties پروژه‌ها بریم و Reference Path رو تنظیم کنیم که این خودش کار بسیار زمان بر و اعصاب خوردکنی هست. با اسفتاده از Powershell می‌تونیم به راحتی مسیر Reference Pathها رو برای تمامی پروژه‌ها ست کنیم. برای اینکار کافیه Package Manager Console رو از منو Tools->Nuget Package Manager->Package Manager Console باز کنیم. و اسکریپت Powershell زیر و داخل اون اجرا کنیم. $path = [System.IO.Path]; foreach ($proj in get-project -all) { $proj.Properties.Item("ReferencePath").Value="$($path::GetDirectoryName($proj.filename))\..\libs" } نمونه اجرا شده : اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم برای پروژه میخواید تنظیم کنید کافیه به جای $($path::GetDirectoryName($proj.filename))\..\libs مسیر مستقیم خودتون رو بنویسد. منبع Adding Reference Paths to all Projects in Solution Visual Studio'>تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio</a>
 					</li>
-					<li>
-					<a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" title='نسخه جدید برنامه با پشتیبانی از ویندوز، مک و لینوکس منتشر شده است. اطلاعات بیشتر در پست قبلی به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده. برای رفع این مشکل، من برنامه‌ای نوشتم که کتاب‌های epub رو به شکلی بهینه‌سازی می‌کنه که به راحتی داخل Kindle قابل خوندن باشن، مثلاً به دو عکس زیر توجه کنید: فونت سفارشی فونت سفارشی - بهینه‌سازی شده با KTOP برنامه KTOP کلاً پروسه اسم گذاری برای یه برنامه خیلی سخته، من اسم KTOP رو از روی جمله Kindle Text Optimization for Persian eBooks انتخاب کردم، شاید یه دلیلش این بود که دوست داشتم برنامه رو به اسم کتاپ صدا کنم. قابلیت‌های برنامه اصلاح ی و ک عربی اصلاح نیم‌فاصله‌ها و اشتباه‌های این‌چنینی بهنیه‌سازی کتاب‌ها جهت مشاهده در Amazon Kindle این نکته رو لازم هست که بگم، برنامه و سورس اون با مجوز GNU برروی سایت github در آدرس زیر قرار گرفته: https://github.com/al1b/KTOP در صورتی که علاقه‌مند به آشنایی بیشتر با این برنامه هستید، ادامه مطلب رو مطالعه کنید.'>معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</a>
-					</li>
 				</ul>												
 
 						
@@ -123,35 +123,35 @@
 				<nav class="tags">								
 					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
 					<ul>
-							<li ><a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a></li>
-							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/peyvandhair.html">peyvandha.ir</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
 							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
 							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
-							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
-							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
-							<li class="active"><a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a></li>
-							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
-							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
-							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
-							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
-							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
-							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
-							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
-							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
-							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
-							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
-							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
 							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/peyvandhair.html">peyvandha.ir</a></li>
+							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a></li>
+							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
 							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li class="active"><a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a></li>
+							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
+							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
+							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
 					</ul>
 				</nav>						
 
