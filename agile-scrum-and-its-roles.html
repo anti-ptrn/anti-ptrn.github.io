@@ -2,15 +2,35 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>Python - Anti-Pattern</title>
+	<title>چابک-اسکرام و نقش‌های آن - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
-<link rel="canonical" href="http://antipattern.ir/tag/python.html" />
 
+	<link rel="canonical" href="http://antipattern.ir/agile-scrum-and-its-roles.html" />
 
-<meta property="og:title" content="Anti-Pattern - Python" />
-<meta property="og:description" content="محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
-<meta property="og:image" content="http://antipattern.ir/images/logo.jpg" />
+  <meta name="description" content="چابک و بنابراین اسکرام، تغییر در سطح فرآیند را می‌پذیرند و نوشتن کد برای تغییر یکی از سخت‌ترین و البته مهمترین اصول مدرن توسعه نر‌م افزار است. اخیراً خواندن کتاب Adaptive Code via C#: Agile coding with design patterns and SOLID principles را آغاز کرده‌‌ام. جمله بالا از همین کتاب انتخاب شده است. این کتاب به نظرم یکی از کتاب‌های خوب در رابطه با توسعه نرم‌افزار با استفاده از چهارچوب‌های چابک و اصول شی‌گرایی SOLID است. در فصل اول این کتاب توجه بسیار خوبی به چهارچوب اسکرام شده است و در آن نقش‌ها، فرآورده‌ها و چهارچوب کلی آن شرح داده شده است. در صفحات ابتدایی کتاب نکات بسیار جالبی نوشته شده است که آن‌ها را به شکل خلاصه در این نوشتار آورده‌ام.">
+
+	<meta name="twitter:card" content="summary">
+	  <meta name="twitter:site" content="@ABahraminezhad">
+	<meta name="twitter:title" content="چابک-اسکرام و نقش‌های آن">
+	<meta name="twitter:description" content="چابک و بنابراین اسکرام، تغییر در سطح فرآیند را می‌پذیرند و نوشتن کد برای تغییر یکی از سخت‌ترین و البته مهمترین اصول مدرن توسعه نر‌م افزار است. اخیراً خواندن کتاب Adaptive Code via C#: Agile coding with design patterns and SOLID principles را آغاز کرده‌‌ام. جمله بالا از همین کتاب انتخاب شده است. این کتاب به نظرم یکی از کتاب‌های خوب در رابطه با توسعه نرم‌افزار با استفاده از چهارچوب‌های چابک و اصول شی‌گرایی SOLID است. در فصل اول این کتاب توجه بسیار خوبی به چهارچوب اسکرام شده است و در آن نقش‌ها، فرآورده‌ها و چهارچوب کلی آن شرح داده شده است. در صفحات ابتدایی کتاب نکات بسیار جالبی نوشته شده است که آن‌ها را به شکل خلاصه در این نوشتار آورده‌ام.">
+	<meta name="twitter:url" content="http://antipattern.ir/agile-scrum-and-its-roles.html">
+	
+    <meta property="og:title" content="چابک-اسکرام و نقش‌های آن" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/scrum/adaptive_code_via_csharp.jpg" />
+    <meta property="og:url" content="http://antipattern.ir\agile-scrum-and-its-roles.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2017-02-10" />
+    <meta property="article:modified_time" content="2017-02-10" />
+    <meta property="article:section" content="Agile, Scrum, SOLID" />
+    <meta property="article:tag" content="Agile" />
+    <meta property="article:tag" content="Scrum" />
+    <meta property="article:tag" content="SOLID" />
+	
+
 	
 			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?07052f08">	
 		
@@ -38,47 +58,89 @@
 			</h1>
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/agile-scrum-and-its-roles.html"><i class="fa fa-paperclip" aria-hidden="true"></i> چابک-اسکرام و نقش‌های آن</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
 
-<h3>نوشتارهای تگ: Python</h3>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">22-11-1395</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 6 دقیقه </span>
 
+<hr class="top-spilter" />
 
-<article class="small-12">              
-  <h1><a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html"><i class="fa fa-paragraph" aria-hidden="true"></i> استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a></h1>  
-          
-  <i class="fa fa-user" aria-hidden="true"></i> 
-  <span class="post-article">علی بهرامی‌نژاد</span> -
-  
-  <i class="fa fa-calendar" aria-hidden="true"></i>
-  <span class="post-date">28-03-1395</span>  -
-                  
-  <i class="fa fa-clock-o" aria-hidden="true"></i>
-  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 3 دقیقه </span>
-  
-  <hr class="top-spilter" />
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/agile.html">Agile</a>
+        <a href="http://antipattern.ir/tag/scrum.html">Scrum</a>
+        <a href="http://antipattern.ir/tag/solid.html">SOLID</a>
+</div>    
 
-  <div class="tags">
-    <i class="fa fa-tag" aria-hidden="true"></i> 
-          <a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a>
-          <a href="http://antipattern.ir/tag/python.html">Python</a>
-          <a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a>
-  </div>    
-   
 <br />
 
-  <p>
-    <p><img alt="Microsoft Virtual Academy" class="center-image" src="http://antipattern.ir/images/mva/mva-logo.png" /></p>
-<p>اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با <a href="https://mva.microsoft.com/" target="_blank">Microsoft Virtual Academy</a> آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n<strong><em> صدهزار</em></strong> یا n<strong><em> میلیون</em></strong> تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است.</p>
-<p>اخیراً من اسکریپتی با <a :title="دانلود Python 3.5.1" _="," href="https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe" target="_blank">Python 3</a> نوشتم که با گرفتن URL درس <a href="https://mva.microsoft.com/" target="_blank">Microsoft Virtual Academy</a> لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد.</p>
-<p>اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.</p>
+<blockquote>
+<p>چابک و بنابراین اسکرام، تغییر در سطح فرآیند را می‌پذیرند و نوشتن کد برای تغییر یکی از سخت‌ترین و البته مهمترین اصول مدرن توسعه نر‌م افزار است.</p>
+</blockquote>
+<p><img alt="SCRUM life cycle" class="center-image" src="http://antipattern.ir/images/scrum/scrum.png" /></p>
+<p>اخیراً خواندن کتاب 
+<a href="https://www.amazon.com/Adaptive-Code-via-principles-Developer-ebook/dp/B00OCLLYTY/ref=mt_kindle?_encoding=UTF8&amp;me=" target="_blank">Adaptive Code via C#: Agile coding with design patterns and SOLID principles</a>
+ را آغاز کرده‌‌ام. جمله بالا از همین کتاب انتخاب شده است. این کتاب به نظرم یکی از کتاب‌های خوب در رابطه با توسعه نرم‌افزار با استفاده از چهارچوب‌های چابک و اصول شی‌گرایی 
+ <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank">SOLID</a>
+  است. در فصل اول این کتاب توجه بسیار خوبی به چهارچوب اسکرام شده است و در آن نقش‌ها، فرآورده‌ها و چهارچوب کلی آن شرح داده شده است. در صفحات ابتدایی کتاب نکات بسیار جالبی نوشته شده است که آن‌ها را به شکل خلاصه در این نوشتار آورده‌ام.</p>
+<a name="more"></a>
 
-  </p>
-  <a class="read-more" href="python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
-          
-          
-                    
-  
-</article>
-
+<h2>نقشها و مسئولیتها</h2>
+<p>اسکرام تنها یک فرآیند است و تنها به اندازه ای کارآمد است که اعضای تیم از آن پیروی کنند. این افراد دارای نقش‌ها و وظایفی هستند که این نقش‌ها رفتار آنان را هدایت میکند. اسکرام دارای 3 نقش اصلی «مالک محصول»، «مدیر اسکرام» و اعضای تیم است.</p>
+<h2>مالک محصول – Product Owner ( به اختضار PO )</h2>
+<p>نقش مالک محصول در پروژه بسیار حیاتی است. مالک محصول ارتباط بین مشتری و تیم توسعه را فراهم می‌آورد. مالک محصول در حقیقت صاحب محصول نهایی است و بر همین اساس نقش آن شامل موار زیر می‌شود:</p>
+<ol>
+<li>تصمیم‌گیری در رابطه به اینکه چه ویژگی‌هایی در محصول پیاده سازی شوند</li>
+<li>اولویت‌بندی ویژگی‌ها براساس ارزش تجاری</li>
+<li>تایید یا رد کار انجام شده</li>
+</ol>
+<p>PO یک ذینفع کلیدی برای موفقیت پروژه است. PO باید در کنار اعضای تیم حضور داشته باشد تا در رابطه با چشم انداز پروژه با اعضای تیم صحبت کند. اهداف بلند مدت پروژ برای تیم توسعه باید  واضح باشند و تغییرات به شکل و در زمان مناسب به کل اعضای تیم منتقل شود.
+در برنامه ریزی کوتاه مدت اسپرینت؛ PO تعیین میکند که چه ویژگی‌هایی توسعه پیدا کنند و چه ویژگی هایی در مسیر تولید و ارائه یک نسخه مورد نیاز است. این کار با تعیین اولیت‌های بک‌لاگ محصول صورت می‌گیرد. اگرچه نقش PO نقشی کلیدیست؛ اما نفوذ کامل برروی فرآیند را اسکرام ندارد. مالک محصول نمیتواند تعیین کند که اعضای تیم به چه میزان متعهد برای هر اسپرینت هستند، زیرا این میزان از تعهد توسط تیم براساس سرعت تیم تعیین میشود. PO همچنین نحوه انجام کار را دیکته نمیکد و این تیم توسعه  است که کنترل برروی نحوه پیاده‌سازی براساس یک story ( user-story یا روایت کاربر ) مشخص در سطح فنی را دارا هستند. وقتی اسپرینت در حال پیشرفت است؛ مالک محصول نمی‌تواند اهداف اسپرینت ، شرایط قابل قبول را تغییر دهد و یا یک یا چند story را حذف یا اضافه کند. اسپرینت در حال پیشرفت غیر قابل تغییر است. وقتی اهداف تصمیم‌گیری شدند و storyهای اسپرینت پس از برنامه‌ریزی تعیین شدند پس از آغاز اسپرینت امکان تغییر آن‌ها نیست. هر تغییری می‌بایست منتظر اسپرینت بعدی باشد، مگر اینکه تغییر جهت لغو اسپرینت جاری و یا پروژه بصورت کامل جهت شروع مجدد باشد، این ویژگی به تیم توسعه این امکان را می‌دهد که تمام تمرکز را برروی به ثمر رساندن اهداف اسپرینت باشد؛ اهدافی که تغییر نخواهند یافت.</p>
+<p>در هر اسپرینت، هر میزان که storyها پیشرفت میکنند و کامل میشوند، مالک محصول درباره کارکرد یک ویژگی پرسجو می‌کند تا از کارکرد آن مطمئن شود و  یا بر روی یک وظیفه در حال پیشرفت نظراتی را بیان کند. بسیار مهم است که PO در طول چرخه اسپرینت در صورت رخداد هرگونه سردرگمی یا موارد غیر منتظره ای حتماً زمانی را با اعضای تیم بگذارند. در این حالت؛ در انتهای هر اسپرینت storyهایی که از چشم‌انداز اسپرینت و اهداف آن منحرف شده باشند به  PO ارائه نمی‌شوند. مالک محصول اگرچه، تصمیم می‌گیرد که کدام story مطابق با معیارهای قابل‌ پذیرش است و آیا میتوان آنرا به عنوان story کامل شده در نظر گرفت و در انتهای اسپرینت ارائه داد.</p>
+<h2>مدیر اسکرام ( Scrum Master به اختضار SM )</h2>
+<p>مدیر اسکرام؛ در طی اسپرینت، تیم را از هرگونه عوامل بیرونی که سبب حواس‌پرتی می‌شوند حفظ و موانعی که توسط تیم در جلسات روزانه اسکرام معرفی میشوند را نیز مرتفع میکند. در این صورت تیم به شکل کاملاً کاربردی و سازنده در طول چرخه اسپرینت خواهد بود و تنها برروی اهداف اسپرینت تمرکز میکند.
+همانطور که PO صاحب نرم افزار است؛ مدیر اسکرام نیز صاحب فرآیند و  چهارچوب و چگونگی انجام فرآیند است. این وظیفه SM است که اطمینان حصال کند که اعضای تیم فرآیند اسکرام را به درستی دنبال می‌کنند. اگرچه SM توانایی ارائه پیشنهاد برای بهبود فرآیند ( مثلاً تغییر بازه اسپرینت از 4 هفته به 2 هفته ) را داراست، اما اختیارات وی محدود است. مدیران اسکرام برای مثال نمیتوانند تعیین کنند که اعضای تیم یک story را به  چه شکل باید پیاده‌سازی کنند؛ اما می‌توانند از اینکه آن فرآیند اسکرام را دنبال میکند اطمینان حاصل کنند.
+به عنوان صاحبان فرآیند، مدیران اسکرام مالک «جلسات روزانه اسکرام» نیز هستند. SM از حضور اعزای تیم در جلسات روزانه اسکرام و یادداشت برداری اعضای تیم برای موارد کشف نشده اطمینان حاصل می‌کند، این نکته قابل ذکر است که  اعضای تیم به SM گزارش نمی‌دهند و آنان در حقیقت میزان پیشرفت خود را به اعضای دیگر تیم اعلام میکنند.</p>
+<h2></h2>
+<p>تیم توسعه
+در حالت ایده‌آل؛ اعضای یک تیم چابک از متخصصان عمومی تشکیل شده است. یعنی هر یک از اعزای تیم به شکل چند رشته‌ای قادر به کار با چندین تکنولوژی مختلف به شکل  موثر هستند. البته هریک از آنان در یک زمینه  بخصوص استعداد ، ترجیح و تخصص دارند. برای مثال یک تیم میتواند شامل 4 توسعه‌گر که هر یک از آنان تونایی کارکردن با ASPNET MVC، Windows Workflow و Windows Communication Framework (WCF) دارا هستند، اگرچه دو نفر از توسعه‌گران متخصص Windows Forms هستند و افراد باقیمانده تیم نیز ترجیح میدهند برروی SQL Server و WPF کار کنند.
+داشتن تیمی میان-کاربردی (cross-functional) از ایجاد سیلو‌ها، وقتی یک نفر (مثلاً نفر وب، نفر دیتابیس، نفر WPF ) به تنهایی از نحوه کارکرد یک بخش از نرم‌افزار اطلاعات دارد،  جلوگیری میکند. سیلوها برای تمامی افراد درگیر پروژه به هیچ وجه خوب نیستند و تاکید بسیار زیادی است، در هر زمان که مقدور باشد سیلوها تجزیه شوند.  در اسکرام کد متعلق به تمام تیم است. سیلوها برای کسب‌وکار نیز مناسب نیستند زیرا وابستگی بسیار شدیدی بر روی یک منبع برای بدست آوردن ارزش بوجود می‌آورد و افراد نیز از این مورد رنج خواهند برد زیرا آنان تنها به نقش‌هایی که فقط خودشان می‌توانند انجام دهند محدود می‌شوند. 
+تست‌کنندگان نرم افزار وظیفه نگهداری کیفیت نرم افزار در زمان تولید آن‌را دارند. قبل از شروع یکstory، تست کنندگان ممکن است در رابطه با test-plan مکانیزه جهت تایید اینکه یک story کامل شده، مطابق با معیارهای قابل‌ پذیرش است، بحث کنند. برای پیاده‌سازی تست‌ها می‌توانند همراه تیم توسعه کارکنند یا به شکل مجزا خودشان تست‌ها را بنویسند. بعد از پیاده‌سازی یک story، توسعه‌دهنده می‌تواند آنرا برای تست ارسال کند و تحلیلگر تست آن‌را بررسی و تایید کند که به شکل مورد نیاز کار میکند یا خیر.</p>
+<h2>مرغ‌ها و خوک‌ها</h2>
+<p>هر نقش در اسکرام می‌تواند به عنوان خوک یا مرغ دسته بندی‌شود. این دسته‌بندی برگرفته از داستان زیر است:
+مرغ به دیدار دوستش خوک می‌رود و می‌گوید: «سلام خوک، من یه ایده دارم، باید یه رستوران باز کنیم». در ابتدا خوک بسیار مشتاق هست و می‌پرسد: «خب اسمش و چی بذاریم؟» مرغ در جواب می‌گوید: «خب اسمش می‌تونیم بذاریم ژامبون خوک و تخم مرغ» خوک بعد از کمی فکر با خشم می‌گوید: «عمراً؛ من متعهد میشم اما تو فقط مشارکت می‌کنی!».
+این داستان، صرفاً سطح مشارکت اعضای تیم، که در پرژه به آنان نیاز است را مشخص می‌کند. خوک‌ها تماماً به پروژه متعهد شده اند و برای نتیجه آن باید جوابگو باشند؛ در حالی که مرغ‌ها مشارکتشان بصورت محیطی است. مالک محصول، مدیر اسکرام و تیم توسعه مطابق این داستان همگی خوک و متعهد به تحویل پروژه هستند. در اکثر اوقات مشتریان مرغ‌های مشارکت کننده هستند. بطور مشابه مدیر اجرایی در پروژه مشارکت دارد؛ پس آن‌های نیز مرغ محسوب می‌شوند تا خوک!</p>
+<h2>منبع</h2>
+<p><img alt="Adaptive code via csharp ebook" class="center-image" src="http://antipattern.ir/images/scrum/adaptive_code_via_csharp.jpg" /></p>
+<p>همانطور که در ابتدای نوشتار ذکر گردید؛ این مطالب از فصل اول کتاب
+<a href="https://www.amazon.com/Adaptive-Code-via-principles-Developer-ebook/dp/B00OCLLYTY/ref=mt_kindle?_encoding=UTF8&amp;me=" target="_blank">Adaptive Code via C#: Agile coding with design patterns and SOLID principles</a>
+گردآوری شده است.</p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "agile-scrum-and-its-roles.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
 		
 		</div> <!-- end main -->
 			
@@ -87,6 +149,7 @@
 		<div class="sidebar large-4  small-12 columns">
 			<div class="sidebar-container small-12 columns">
 				
+			
 		
 				
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
@@ -118,7 +181,7 @@
 					<ul>
 							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
 							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li class="active"><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
 							<li ><a href="http://antipattern.ir/tag/peyvandhair.html">peyvandha.ir</a></li>
 							<li ><a href="http://antipattern.ir/tag/ebook.html">ebook</a></li>
 							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>

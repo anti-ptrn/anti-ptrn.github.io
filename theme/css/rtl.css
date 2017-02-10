@@ -463,3 +463,12 @@ article p, article div, article ul, article ol {
 	margin-left:5px;
 	padding:2px;
 }
+blockquote{
+	padding: 0 1em;
+    color: #777;
+    border-right: 0.25em solid #ddd;
+	
+	margin:0;
+	margin-top: 0;
+    margin-bottom: 16px;	
+}
