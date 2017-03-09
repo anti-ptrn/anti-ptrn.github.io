@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2017-02-10T10:21:00+03:30</updated><entry><title>چابک-اسکرام و نقش‌های آن</title><link href="http://antipattern.ir/agile-scrum-and-its-roles.html" rel="alternate"></link><published>2017-02-10T10:21:00+03:30</published><updated>2017-02-10T10:21:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-02-10:agile-scrum-and-its-roles.html</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2017-03-28T12:20:00+04:30</updated><entry><title>VS.2017 و Xamarin - مشکلات پس از نصب و نحوه رفع آن‌ها</title><link href="http://antipattern.ir/visual-studio-2017-and-xamarin-installation-problems.html" rel="alternate"></link><published>2017-03-28T12:20:00+04:30</published><updated>2017-03-28T12:20:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-03-28:visual-studio-2017-and-xamarin-installation-problems.html</id><summary type="html">&lt;p&gt;خب همانطور که خبر دارین این هفته &lt;a href="https://www.visualstudio.com/vs/whatsnew/" target="_blank"&gt;Visual Studio 2017&lt;/a&gt;
+ نسخه نهاییش ارائه شد. ویژوال استودیویی که نسبت به قبل خیلی سریعتر، سبکتر و در کل بهتر شده است. شاید اولین تغییری که بهش بر بخوریم Installer جدید و سریع اون هست که به راحتی اجازه میده تنها چیزی که لازم داریم و نصب کنیم و مثل نسخه‌های قبلی نصب اون خیلی خیلی طولانی نیست و در عرض چند دقیقه نصب خواهد شد.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="VS 2017 new setup" class="center-image" src="http://antipattern.ir/images/vs2017/setup.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;من در نصب و راه اندازی Xamarin توی VS 2017 به یسری مشکل برخوردم:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;چون از قبل &lt;code&gt;Android SDK&lt;/code&gt;, &lt;code&gt;NDK&lt;/code&gt; و &lt;code&gt;Java JDK 1.8&lt;/code&gt; رو نصب داشتم، در زمان نصب تیک مربوط به نصب اون‌ها رو از Installer برداشتم که مجدد دانلود نشوند. ( البته که تحریم هستیم و دانلود نخواهد شد! ). و چون آخرین نسخه Xamarin رو چند روز قبل دانلود کرده بودم ترجیح دادم نصب Xamarin هم مجزا انجام بدم.&lt;/p&gt;
+&lt;p&gt;همه چیز به خوبی پیش رفت؛ اما وقتی نصب Xamarin و باز کردم، چون قبل از ارائه نسخه نهایی 2017 فایل نصب Xamarin و دانلود کرده بودم؛ موقع نصب امکان شناسایی VS 2017 و نداشت. و به همین دلیل از طریق نصب VS زامارین و آنلاین نصب کردم.&lt;/p&gt;
+&lt;p&gt;همه چیز به نظر خوب بود، اما وقتی سعی کردم یه پروژه جدید از نوع &lt;code&gt;Xamarin.Forms&lt;/code&gt; ایجاد کنم متاسفانه Visual Studio به شکل عجیبی توی یه Loop افتاد و بعد از گذشت چندین دقیقه هم اتفاقی رخ نداد!&lt;/p&gt;
+&lt;p&gt;به ناچار فایل‌های &lt;code&gt;Log&lt;/code&gt; مربوط به Xamarin رو از مسیر زیر پیدا و بررسی کردم:&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;C:\Users\username\AppData\Local\Xamarin\Logs\15.0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;داخل یکی از فایل‌ها که مربوط به &lt;code&gt;monodroid&lt;/code&gt; میشد؛ چنین گزارشی دیدم:&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;MonoDroidLog: Information: 0: [I:sdk]:                  Looking &lt;span style="color: #0000ff"&gt;for&lt;/span&gt; Android SDK..
+MonoDroidLog: Information: 0: [I:sdk]:                    Key HKCU\SOFTWARE\Xamarin\VisualStudio\15.0_30cfbabd\Android\AndroidSdkDirectory not found.
+MonoDroidLog: Information: 0: [I:sdk]:                    Key HKLM\SOFTWARE\Xamarin\VisualStudio\15.0_30cfbabd\Android\AndroidSdkDirectory not found.
+MonoDroidLog: Information: 0: [I:sdk]:                    Key HKCU\SOFTWARE\Xamarin\MonoAndroid\PrivateAndroidSdkPath not found.
+MonoDroidLog: Information: 0: [I:sdk]:                    Key HKCU\SOFTWARE\Android SDK Tools\Path not found.
+MonoDroidLog: Information: 0: [I:sdk]:                    Key HKLM\SOFTWARE\Android SDK Tools\Path not found.
+MonoDroidLog: Information: 0: [I:sdk]:                  Looking &lt;span style="color: #0000ff"&gt;for&lt;/span&gt; Android NDK..
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;چیزی که بخوبی از این گزارش میشه متوجه شد؛ این هست که زامارین در چندین تلاش مداوم سعی در پیدا کردن مسیرهای &lt;code&gt;Android SDK&lt;/code&gt;, &lt;code&gt;NDK&lt;/code&gt; و حتی &lt;code&gt;Java JDK&lt;/code&gt; هست.  &lt;/p&gt;
+&lt;p&gt;در خود Visual Studio &lt;a href="https://developer.xamarin.com/guides/android/getting_started/installation/windows/manual_installation/#Configure_the_SDKs" target="_blank"&gt;تنظیماتی&lt;/a&gt; برای تنظیم کردن مسیرهای SDKهای اندروید در &lt;em&gt;Registiry&lt;/em&gt; ویندوز وجود دارد، سعی کردم از مسیر &lt;code&gt;Tools -&amp;gt; Options -&amp;gt; Xamarin -&amp;gt; Android Settings&lt;/code&gt; مسیرها رو تنظیم کنم اما این صفحه تنظیمات هم مثل ساخت پروژه به مشکل برمیخورد و تنها به نمایش یک Waiting ساده قناعت میکرد.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;برای رفع مشکل&lt;/strong&gt;؛ مطابق فایل &lt;code&gt;Log&lt;/code&gt;؛ به مسیر به مسیرهای کلیدهای &lt;em&gt;Registry&lt;/em&gt; اعلام شده رفتم؛ طبق انتظار به غیر از کلید مربوط به &lt;code&gt;JDK&lt;/code&gt; متاسفانه کلید‌های مورد نظر تعریف شده بودند. با تعریف این کلیدها و دادن مسیرهای &lt;code&gt;SDK&lt;/code&gt; و &lt;code&gt;NDK&lt;/code&gt; مشکل مرتفع شد. مسیرهای برای تنظیم کردن به شکل زیر هستند:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;مسیر کلیدها:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="codehilite" style="background: #ffffff"&gt;&lt;pre style="line-height: 125%"&gt;&lt;span&gt;&lt;/span&gt;HKEY_CURRENT_USER\SOFTWARE\XAMARIN\VisualStudio\15.0_30cfbabd\Android
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;نکته؛ در مسیر بالا، مقدار &lt;code&gt;15.0_30cfbabd&lt;/code&gt; ممکن است برای رایانه شما متفاوت باشد؛ صرفا وجود مقدار &lt;code&gt;15.0&lt;/code&gt; در ابتدای اون نشون دهنده محل تنظیمات &lt;code&gt;SDK&lt;/code&gt; اندروید برای VS شما است.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;کلیدها:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;نام کلید&lt;/th&gt;
+&lt;th&gt;نوع کلید&lt;/th&gt;
+&lt;th&gt;مقدار کلید&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;AndroidSdkDirectory&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;your-sdk-path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AndroidNdkDirectory&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;your-ndk-path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JavaSDKDirectory&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;your-java-sdk-path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نمونه کلیدهای تعریف شده:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="VS 2017 new setup" class="center-image" src="http://antipattern.ir/images/vs2017/registry.png" /&gt;&lt;/p&gt;
+</summary><category term="Visual Studio"></category><category term="Xamarin"></category><category term="Microsoft"></category></entry><entry><title>چابک-اسکرام و نقش‌های آن</title><link href="http://antipattern.ir/agile-scrum-and-its-roles.html" rel="alternate"></link><published>2017-02-10T10:21:00+03:30</published><updated>2017-02-10T10:21:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-02-10:agile-scrum-and-its-roles.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;چابک و بنابراین اسکرام، تغییر در سطح فرآیند را می‌پذیرند و نوشتن کد برای تغییر یکی از سخت‌ترین و البته مهمترین اصول مدرن توسعه نر‌م افزار است.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img alt="SCRUM life cycle" class="center-image" src="http://antipattern.ir/images/scrum/scrum.png" /&gt;&lt;/p&gt;

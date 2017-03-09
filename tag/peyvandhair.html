@@ -94,6 +94,9 @@
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
 				<ul id="recent-posts">
 					<li>
+					<a href="http://antipattern.ir/visual-studio-2017-and-xamarin-installation-problems.html" title='خب همانطور که خبر دارین این هفته Visual Studio 2017 نسخه نهاییش ارائه شد. ویژوال استودیویی که نسبت به قبل خیلی سریعتر، سبکتر و در کل بهتر شده است. شاید اولین تغییری که بهش بر بخوریم Installer جدید و سریع اون هست که به راحتی اجازه میده تنها چیزی که لازم داریم و نصب کنیم و مثل نسخه‌های قبلی نصب اون خیلی خیلی طولانی نیست و در عرض چند دقیقه نصب خواهد شد. من در نصب و راه اندازی Xamarin توی VS 2017 به یسری مشکل برخوردم: چون از قبل Android SDK, NDK و Java JDK 1.8 رو نصب داشتم، در زمان نصب تیک مربوط به نصب اون‌ها رو از Installer برداشتم که مجدد دانلود نشوند. ( البته که تحریم هستیم و دانلود نخواهد شد! ). و چون آخرین نسخه Xamarin رو چند روز قبل دانلود کرده بودم ترجیح دادم نصب Xamarin هم مجزا انجام بدم. همه چیز به خوبی پیش رفت؛ اما وقتی نصب Xamarin و باز کردم، چون قبل از ارائه نسخه نهایی 2017 فایل نصب Xamarin و دانلود کرده بودم؛ موقع نصب امکان شناسایی VS 2017 و نداشت. و به همین دلیل از طریق نصب VS زامارین و آنلاین نصب کردم. همه چیز به نظر خوب بود، اما وقتی سعی کردم یه پروژه جدید از نوع Xamarin.Forms ایجاد کنم متاسفانه Visual Studio به شکل عجیبی توی یه Loop افتاد و بعد از گذشت چندین دقیقه هم اتفاقی رخ نداد! به ناچار فایل‌های Log مربوط به Xamarin رو از مسیر زیر پیدا و بررسی کردم: C:\Users\username\AppData\Local\Xamarin\Logs\15.0 داخل یکی از فایل‌ها که مربوط به monodroid میشد؛ چنین گزارشی دیدم: MonoDroidLog: Information: 0: [I:sdk]: Looking for Android SDK.. MonoDroidLog: Information: 0: [I:sdk]: Key HKCU\SOFTWARE\Xamarin\VisualStudio\15.0_30cfbabd\Android\AndroidSdkDirectory not found. MonoDroidLog: Information: 0: [I:sdk]: Key HKLM\SOFTWARE\Xamarin\VisualStudio\15.0_30cfbabd\Android\AndroidSdkDirectory not found. MonoDroidLog: Information: 0: [I:sdk]: Key HKCU\SOFTWARE\Xamarin\MonoAndroid\PrivateAndroidSdkPath not found. MonoDroidLog: Information: 0: [I:sdk]: Key HKCU\SOFTWARE\Android SDK Tools\Path not found. MonoDroidLog: Information: 0: [I:sdk]: Key HKLM\SOFTWARE\Android SDK Tools\Path not found. MonoDroidLog: Information: 0: [I:sdk]: Looking for Android NDK.. چیزی که بخوبی از این گزارش میشه متوجه شد؛ این هست که زامارین در چندین تلاش مداوم سعی در پیدا کردن مسیرهای Android SDK, NDK و حتی Java JDK هست. در خود Visual Studio تنظیماتی برای تنظیم کردن مسیرهای SDKهای اندروید در Registiry ویندوز وجود دارد، سعی کردم از مسیر Tools -> Options -> Xamarin -> Android Settings مسیرها رو تنظیم کنم اما این صفحه تنظیمات هم مثل ساخت پروژه به مشکل برمیخورد و تنها به نمایش یک Waiting ساده قناعت میکرد. برای رفع مشکل؛ مطابق فایل Log؛ به مسیر به مسیرهای کلیدهای Registry اعلام شده رفتم؛ طبق انتظار به غیر از کلید مربوط به JDK متاسفانه کلید‌های مورد نظر تعریف شده بودند. با تعریف این کلیدها و دادن مسیرهای SDK و NDK مشکل مرتفع شد. مسیرهای برای تنظیم کردن به شکل زیر هستند: مسیر کلیدها: HKEY_CURRENT_USER\SOFTWARE\XAMARIN\VisualStudio\15.0_30cfbabd\Android نکته؛ در مسیر بالا، مقدار 15.0_30cfbabd ممکن است برای رایانه شما متفاوت باشد؛ صرفا وجود مقدار 15.0 در ابتدای اون نشون دهنده محل تنظیمات SDK اندروید برای VS شما است. کلیدها: نام کلید نوع کلید مقدار کلید AndroidSdkDirectory string your-sdk-path AndroidNdkDirectory string your-ndk-path JavaSDKDirectory string your-java-sdk-path نمونه کلیدهای تعریف شده:'>VS.2017 و Xamarin - مشکلات پس از نصب و نحوه رفع آن‌ها</a>
+					</li>
+					<li>
 					<a href="http://antipattern.ir/agile-scrum-and-its-roles.html" title='چابک و بنابراین اسکرام، تغییر در سطح فرآیند را می‌پذیرند و نوشتن کد برای تغییر یکی از سخت‌ترین و البته مهمترین اصول مدرن توسعه نر‌م افزار است. اخیراً خواندن کتاب Adaptive Code via C#: Agile coding with design patterns and SOLID principles را آغاز کرده‌‌ام. جمله بالا از همین کتاب انتخاب شده است. این کتاب به نظرم یکی از کتاب‌های خوب در رابطه با توسعه نرم‌افزار با استفاده از چهارچوب‌های چابک و اصول شی‌گرایی SOLID است. در فصل اول این کتاب توجه بسیار خوبی به چهارچوب اسکرام شده است و در آن نقش‌ها، فرآورده‌ها و چهارچوب کلی آن شرح داده شده است. در صفحات ابتدایی کتاب نکات بسیار جالبی نوشته شده است که آن‌ها را به شکل خلاصه در این نوشتار آورده‌ام.'>چابک-اسکرام و نقش‌های آن</a>
 					</li>
 					<li>
@@ -108,9 +111,6 @@
 					<li>
 					<a href="http://antipattern.ir/transform-peyvandha-into-simpler-page-with-grease-monkey.html" title='اگر از کاربران قدیمی‌تر اینترنت باشید؛ حتماً با صفحه زیر آشنایی دارید، یا حداقل شاید برای شما نوستالوژی باشه: از چند سال پیش این صفحه ساده نوستالوژیک، با صفحه peyvandha.ir جایگزین شد. امروز در حال مطالعه صفحه‌ای در سایت W3Schools بودم که دقت کردم به جای تبلیغ‌های کنار این سایت، داخل چندین iframe صفحه پیوند‌ها باز شده. (مشاهده) حساب کردم، همین پهنای باندی که برای باز شدن سایت پیوند‌ها مصرف میشه، باری که روی شبکه می‌ذاره، در طول ماه ممکنه مقدار قابل قبولی بشه! بخصوص اینکه اگه از بسته‌های اینترت موبایل استفاده کنیم ( و بصورت آزاد حساب بشه ) یک اسکریپت برای TamperMonkey و GreaseMonkey نوشتم که این صفحه پیوند‌ها رو با حالت زیر تعویض میکنه: اگه علاقه‌مند به استفاده از این اسکریپت هستید نگاهی به ادامه مطلب بیاندازید.'>تغییر peyvandha.ir به صفحه خیلی خیلی ساده‌تر</a>
 					</li>
-					<li>
-					<a href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" title='امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains dotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من dotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون: رایگان قوی و سریع امکان استخراج فایل پروژه امکان ساخت فایل pdb فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم: Managed Code به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه. (اطلاعات بیشتر) pdb مخفف Program DataBase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (اطلاعات بیشتر) Obfuscation یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه. (اطلاعات بیشتر) چه چیزی و قرار هست بررسی کنیم؟ اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از dotPeek و Visual Studio دیباگ کنیم ...'>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</a>
-					</li>
 				</ul>												
 
 						
@@ -118,40 +118,40 @@
 				<nav class="tags">								
 					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
 					<ul>
-							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
-							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
-							<li class="active"><a href="http://antipattern.ir/tag/peyvandhair.html">peyvandha.ir</a></li>
+							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/agile.html">Agile</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a></li>
 							<li ><a href="http://antipattern.ir/tag/ebook.html">ebook</a></li>
 							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
-							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
-							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
-							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
 							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
-							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a></li>
-							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
 							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
-							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
-							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
-							<li ><a href="http://antipattern.ir/tag/solid.html">SOLID</a></li>
-							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
-							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
-							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/scrum.html">Scrum</a></li>
-							<li ><a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a></li>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
-							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
 							<li ><a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a></li>
-							<li ><a href="http://antipattern.ir/tag/agile.html">Agile</a></li>
+							<li ><a href="http://antipattern.ir/tag/solid.html">SOLID</a></li>
+							<li class="active"><a href="http://antipattern.ir/tag/peyvandhair.html">peyvandha.ir</a></li>
+							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
+							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
+							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
+							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/scrum.html">Scrum</a></li>
+							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
+							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
+							<li ><a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
 					</ul>
 				</nav>						
 
