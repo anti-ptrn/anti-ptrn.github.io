@@ -2,15 +2,34 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>معرفی کتاب - Anti-Pattern</title>
+	<title>Xamarin Workbooks چیست و چه کاربردی دارد؟ - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
-<link rel="canonical" href="http://antipattern.ir/tag/mrfy-khtb.html" />
 
+	<link rel="canonical" href="http://antipattern.ir/what-is-xamarin-workbooks.html" />
 
-<meta property="og:title" content="Anti-Pattern - معرفی کتاب" />
-<meta property="og:description" content="محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
-<meta property="og:image" content="http://antipattern.ir/images/logo.jpg" />
+  <meta name="description" content="تصور کنید قصد یادگرفتن زبان برنامه‌نویسی C# و دارین؛ یا ابزاری نیاز دارید که داخل اون به تمرین و نوشتن کد بپردازین و یا حتی ابزاری که به راحتی به شکل خیلی تعاملی بتونید تکه کدهای خودتون رو اجرا کنید. در حالت عادی اگر قصد چنین کاری و داشته باشید یا باید از ابزار C# Interactive استفاده کنید یا اینکه داخل Visual Studio پروژه جدید ایجاد و کدی که میخواید و اجرا کنید. اما به نظر من؛ برای اینکار ابزاری بسیار عالی توسط شرکت Xamarin به نام Xamarin Workbooks تهیه و تولید شده که وِیژگی‌های زیر را شامل میشود: کاملاً رایگان قابلیت اجرا برروی سیستم عامل Mac و Windows قابلیت تغییر کد بصورت در لحظه و دیدن خروجی بصورت تعاملی امکان نوشتن توضیحات اضافه در بالای کد! پشتیبانی از زبان قالب‌ بندی متن Markdown اگر علاقه‌مند به دیدن کارکرد این برنامه عالی در عمل هستید، حتماً ادامه مطلب را مطالعه نمایید.">
+
+	<meta name="twitter:card" content="summary">
+	  <meta name="twitter:site" content="@ABahraminezhad">
+	<meta name="twitter:title" content="Xamarin Workbooks چیست و چه کاربردی دارد؟">
+	<meta name="twitter:description" content="تصور کنید قصد یادگرفتن زبان برنامه‌نویسی C# و دارین؛ یا ابزاری نیاز دارید که داخل اون به تمرین و نوشتن کد بپردازین و یا حتی ابزاری که به راحتی به شکل خیلی تعاملی بتونید تکه کدهای خودتون رو اجرا کنید. در حالت عادی اگر قصد چنین کاری و داشته باشید یا باید از ابزار C# Interactive استفاده کنید یا اینکه داخل Visual Studio پروژه جدید ایجاد و کدی که میخواید و اجرا کنید. اما به نظر من؛ برای اینکار ابزاری بسیار عالی توسط شرکت Xamarin به نام Xamarin Workbooks تهیه و تولید شده که وِیژگی‌های زیر را شامل میشود: کاملاً رایگان قابلیت اجرا برروی سیستم عامل Mac و Windows قابلیت تغییر کد بصورت در لحظه و دیدن خروجی بصورت تعاملی امکان نوشتن توضیحات اضافه در بالای کد! پشتیبانی از زبان قالب‌ بندی متن Markdown اگر علاقه‌مند به دیدن کارکرد این برنامه عالی در عمل هستید، حتماً ادامه مطلب را مطالعه نمایید.">
+	<meta name="twitter:url" content="http://antipattern.ir/what-is-xamarin-workbooks.html">
+	
+    <meta property="og:title" content="Xamarin Workbooks چیست و چه کاربردی دارد؟" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/xamarin-updates/xamarin.png" />
+    <meta property="og:url" content="http://antipattern.ir\what-is-xamarin-workbooks.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2017-03-28" />
+    <meta property="article:modified_time" content="2017-03-28" />
+    <meta property="article:section" content="Visual Studio, Xamarin, Microsoft" />
+    <meta property="article:tag" content="Xamarin" />
+    <meta property="article:tag" content="CSharp" />
+	
+
 	
 			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?07052f08">	
 		
@@ -38,69 +57,132 @@
 			</h1>
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/what-is-xamarin-workbooks.html"><i class="fa fa-paperclip" aria-hidden="true"></i> Xamarin Workbooks چیست و چه کاربردی دارد؟</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
 
-<h3>نوشتارهای تگ: معرفی کتاب</h3>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">08-01-1396</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
 
+<hr class="top-spilter" />
 
-<article class="small-12">              
-  <h1><a href="http://antipattern.ir/pretotyping-the-book.html"><i class="fa fa-paragraph" aria-hidden="true"></i> معرفی کتاب پیش‌نمونه‌سازی</a></h1>  
-          
-  <i class="fa fa-user" aria-hidden="true"></i> 
-  <span class="post-article">علی بهرامی‌نژاد</span> -
-  
-  <i class="fa fa-calendar" aria-hidden="true"></i>
-  <span class="post-date">07-11-1395</span>  -
-                  
-  <i class="fa fa-clock-o" aria-hidden="true"></i>
-  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 4 دقیقه </span>
-  
-  <hr class="top-spilter" />
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a>
+        <a href="http://antipattern.ir/tag/csharp.html">CSharp</a>
+</div>    
 
-  <div class="tags">
-    <i class="fa fa-tag" aria-hidden="true"></i> 
-          <a href="http://antipattern.ir/tag/ebook.html">ebook</a>
-          <a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a>
-  </div>    
-   
 <br />
 
-  <p>
-    <p><strong><em>«بسازید شکست بخورید اما موفق شوید؛
-مطمئن شوید که شما در حال ساختن آن چیز درست هستید قبل از اینکه به درستی آن چیز را بسازید.
-»</em></strong></p>
-<p><img alt="این عکس پیش‌نمونه‌ای است که جف آنرا ساخته است(شما میتوانید نمونه‌های بیشتری در موزه تاریخچه کامپیوتر در مانیتن ویوو کالیفرنیا پیدا کنید)." class="center-image" src="http://antipattern.ir/images/books/PretotypeItBookCover.jpg" /></p>
-<p>خیلی وقت بود که دوست داشتم، درباره کتاب‌هایی که مطالعه کردم و به نظرم محتوای خوب، کاربردی و مناسب داشتن، داخل وبلاگ کمی دربارشون بنویسم.  این بار قصد معرفی کتاب پیش‌نمونه‌سازی رو دارم. این کتاب درباره مفهوم پیش‌نمونه سازی صحبت می‌کنه. این مفهوم در سال 2009 توسط آقای آلبرتو ساویا مطرح شده و توسعه یافته است. آلبرتو ساویا در کنار کارهای دیگرش، مدیر بخش مهندسی و مشوق نوآوری در بخش تبلیغات گوگل است. از آن به بعد این مفهوم در حال گسترش و توسعه یافتن است. کتاب «پیش‌نمونه‌سازی» هم‌اکنون به زبان های گوناگونی ترجمه شده و در دانشگاه‌های استنفورد و سایر دانشگاه‌های دنیا در حال تدریس است. </p>
-<p>این کتاب شاید با کتاب‌های دیگه‌ای که مطالعه کرده باشین کمی متفاوت باشه؛ شاید دلیل اصلیش این باشه که خود این کتاب یک پیش‌نمونه است! مفهوم پیش‌نمونه‌سازی به نظرم مفهوم جالب و تاثیر گذاری هست؛ به خصوص برای خیلی از ماهایی که ایده‌هایی تو ذهنمون برای اجرا داریم و میخوایم تصمیم بگیرم که چه کنیم. برای اینکه منظور خودم رو به شکل بهتری برسونم قسمتی از این کتاب رو در زیر آوردم:</p>
-<p>«پالم پایلوت در سال 1996 معرفی شد که به اندازه کف دست بوده و چهار عملیات اصلی را انجام میداد: تقویم، دفتر تلفن، لیست کارهای روزمره و یادداشت برداری ساده. پالم پایلوت اولین نمونه موفق دستیاران شخصی بود، اما جف هاوکینز -یکی از بنیانگذاران پالم و مخترع پایلوت- به موفقیت دستیارهای شخصی مطمئن نبود. برعکس باتوجه به مقاله سال 1998 در مجله تایمز(تاکیدها را من اضافه کرده ام):</p>
-<blockquote>
-<p>هاوکینگ ۴۰ ساله، مدیر تکنولوژی پالم و مخترع پالم، یکی از اولین کامپیوترهای قابل حمل به نام گریدپد را ده سال پیش ساخته است. این کامپیوتر یک پدیده اعجاز انگیز مهندسی اما یک شکست تجاری بود به خاطر اینکه به نظر او هنوز بسیار بزرگ بود. وقتی همکاران او از او پرسیدند که کامپیوترهای جدید چه اندازه ای باید باشد برای اطمینان از اینکه این اشتباه را دوباره تکرار نکند برای آنها جواب آماده‌ای داشت: «بیایید سایز جیب لباس را آزمایش کنیم»</p>
-<p>او به گاراژ خود بازگشت و یک تکه چوب را به اندازه سایز جیب لباس خود برید. سپس او این تکه چوب را در ماه‌های متمادی حمل کرد و تظاهر کرد که آن تکه چوب واقعا یک کامپیوتر است. آیا او برای ناهار چهار شنبه آزاد بود؟ هاوکینز آن تکه چوب را از جیبش خارج میکرد و انگار که دارد برنامه زمانی خود را چک میکند آنرا میفشرد. اگر او به شماره تلفنی نیاز داشت، او تظاهر به پیدا کردن آنرا در قطعه چوب میکرد. معمولا او طراحی ظاهری متفاوتی را با چینش دکمه‌های متفاوت رو کاغذ پرینت میکرد و با چسباندن آنها روی چوب طراحی جدید را امتحان میکرد.</p>
-</blockquote>
-<p>این عکس پیش‌نمونه‌ای است که جف آنرا ساخته است(شما میتوانید نمونه‌های بیشتری در موزه تاریخچه کامپیوتر در مانیتن ویوو کالیفرنیا پیدا کنید).</p>
-<p><img alt="این عکس پیش‌نمونه‌ای است که جف آنرا ساخته است(شما میتوانید نمونه‌های بیشتری در موزه تاریخچه کامپیوتر در مانیتن ویوو کالیفرنیا پیدا کنید)." class="center-image" src="http://antipattern.ir/images/books/palmpilot.png" /></p>
-<p>من فقط میتوانم عکس العمل دیگران را هنگامی که هاوکینز آن تکه چوب را از جیب خود بیرون می‌آورد و آنرا همانند یک کامپیوتر فعال میفشرد تصور کنم. آنها فکر میکردند که او دیوانه شده است. اما نه او بسیار باهوش بود. آن تکه چوب به همراه دکمه‌های پرینت‌شده هاوکینز را به این نتیجه رساند که او راه درستی را آمده است. او برای اولین و مهمترین سوال پاسخی یافته بود: «اگه من یک پایلوت داشتم، آیا آنرا با خود حمل کرده و از آن چیز استفاده میکردم؟» و جواب قطعا «بله» بود و او میدانست که چیز درست را یافته است. اکنون او می‌توانست روی سوالات بعدی تمرکز کند مانند: آیا می‌توانم آنرا کوچک درست کنیم؟ ساخت آن چقدر هزینه خواهد برد؟ عمر باتری‌ها چقدر خواهد بود؟ اکنون زمان ساخت یک «نمونه اولیه مناسب» رسیده بود.</p>
-<p><strong><em>پالم پایلوت تنها موفق نبود بکله یک موفقیت بسیار بزرگ با تاثیر عظیم بود. پایلوت جد تمامی تلفن‌های هوشمند امروزی است. این محصول تنها از تکه چوبی شروع شد همانند پینوکیو.</em></strong>»</p>
-<h2>خوندن کتاب چقدر از شما زمان می‌بره؟</h2>
-<p>خوندن این کتاب زمانی زیادی از شما نخواهد گرفت؛ شاید بین 1 الی 2 ساعت بتوان تمام کتاب رو مطالعه کرد؛ اما حتماً توصیه میکنم که این کتاب رو بخونید.</p>
-<h2>کتاب رو چطور دریافت کنیم؟</h2>
-<p>این کتاب توسط آقای عباس یزدان پناه به فارسی ترجمه شده و به شکل رایگان در وب‌سایت فارسی پیش‌نمونه‌سازی منتشر شده که از لینک‌های زیر میتونید به اون دسترسی داشته باشین:</p>
+<p>تصور کنید قصد یادگرفتن زبان برنامه‌نویسی <code>C#</code> و دارین؛ یا ابزاری نیاز دارید که داخل اون به تمرین و نوشتن کد بپردازین و یا حتی ابزاری که به راحتی به شکل خیلی تعاملی بتونید تکه کدهای خودتون رو اجرا کنید.</p>
+<p>در حالت عادی اگر قصد چنین کاری و داشته باشید یا باید از ابزار <a href="https://github.com/dotnet/roslyn/wiki/C%23-Interactive-Walkthrough" target="_blank"><em>C# Interactive</em></a> استفاده کنید  یا اینکه داخل <code>Visual Studio</code> پروژه جدید ایجاد و کدی که میخواید و اجرا کنید.</p>
+<p>اما به نظر من؛ برای اینکار ابزاری بسیار عالی توسط شرکت Xamarin به نام <a href="https://developer.xamarin.com/guides/cross-platform/workbooks/" target="_blank"><em>Xamarin Workbooks</em></a> تهیه و تولید شده که وِیژگی‌های زیر را شامل میشود:</p>
 <ol>
-<li><a href="http://pretotyping.ir/" target="_blank">سایت پیش‌نمونه‌سازی</a> </li>
-<li><a href="http://pretotyping.ir/pdf/pretotypeit_fa.pdf" target="_blank">دریافت نسخه PDF</a></li>
-<li><a href="http://pretotyping.ir/pdf/pretotypeit_fa.epub" target="_blank">دریافت نسخه EPUB</a></li>
-<li><a href="http://pretotyping.ir/this_is_embarrassing/" target="_blank">مطالعه آنلاین</a></li>
+<li>کاملاً رایگان</li>
+<li>قابلیت اجرا برروی سیستم عامل Mac و Windows</li>
+<li>قابلیت تغییر کد بصورت در لحظه و دیدن خروجی بصورت تعاملی</li>
+<li>امکان نوشتن توضیحات اضافه در بالای کد!</li>
+<li>پشتیبانی از زبان قالب‌ بندی متن <a href="https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%DA%A9%E2%80%8C%D8%AF%D8%A7%D9%88%D9%86" target="_blank">Markdown</a></li>
 </ol>
-<p>پی‌نوشت:</p>
-<p>چطور با کتاب آشنا شدم؟ یکی از دوستان توی پستی که برنامه KTOP رو معرفی کرده بودم این کتاب رو به عنوان نمونه قرار داده بود و پرسیده بود که آیا میشه اون کتاب و هم با KTOP بهینه‌سازی کرد یا نه؟ و این کتاب جزو اولین کتاب‌هایی بود که با KTOP بهینه‌سازی شد و داخل Kindle خوندمش.</p>
+<p>اگر علاقه‌مند به دیدن کارکرد این برنامه عالی در عمل هستید، حتماً ادامه مطلب را مطالعه نمایید.</p>
+<a name="more"></a>
 
-  </p>
-  <a class="read-more" href="pretotyping-the-book.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
-          
-          
-                    
-  
-</article>
+<h1>مثال اول</h1>
+<p>برای مثال فرض کنید؛ شما قصد نوشتن برنامه‌ای دارید که تصاویر موجود در مسیر <code>d:\my-pictures</code> را بدست آورد و همه آنها را معکوس نشان دهد؛ برای اینکار کافیست تنها تکه کد زیر را بنویسیم و داخل <code>Xamarin Workbooks</code> اجرا کنیم:</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">using</span> System.Drawing.Imaging;
+<span style="color: #0000ff">using</span> System.Windows.Media.Imaging;
+<span style="color: #0000ff">using</span> System.IO;
+<span style="color: #0000ff">using</span> System.Linq;
 
+<span style="color: #008000">// get image paths</span>
+<span style="color: #2b91af">var</span> images = Directory.GetFiles(<span style="color: #a31515">@&quot;d:\my-pictures&quot;</span>);
+
+<span style="color: #008000">// convert them into Bitmap Image, and make a 180 degres rotation</span>
+images.Select(i =&gt; {
+    <span style="color: #2b91af">var</span> bitmap = <span style="color: #0000ff">new</span> BitmapImage();
+
+    bitmap.BeginInit();
+    bitmap.Rotation = Rotation.Rotate180;
+    bitmap.UriSource = <span style="color: #0000ff">new</span> Uri(i);
+    bitmap.EndInit();
+
+    <span style="color: #0000ff">return</span> bitmap;
+});
+</pre></div>
+
+
+<p><img alt="Xamarin Workbooks" center="center" src="http://antipattern.ir/images/xamarin-workbooks/sample_01.gif" /></p>
+<h1>مثال دوم</h1>
+<p>نمایش اعداد اول کوچکتر از 1000:</p>
+<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #2b91af">bool</span> isPrime(<span style="color: #2b91af">int</span> number)
+{
+    <span style="color: #0000ff">for</span>(<span style="color: #2b91af">var</span> i=2; i &lt;= Math.Sqrt(number); i++)
+        <span style="color: #0000ff">if</span>( number % i == 0 ) <span style="color: #0000ff">return</span> <span style="color: #0000ff">false</span>;
+    <span style="color: #0000ff">return</span> <span style="color: #0000ff">true</span>;        
+}
+
+IEnumerable&lt;<span style="color: #2b91af">int</span>&gt; PrimeNumbers(<span style="color: #2b91af">int</span> max)
+{
+    <span style="color: #2b91af">var</span> number = 0;
+    <span style="color: #0000ff">while</span>(++number &lt;= max)
+        <span style="color: #0000ff">if</span>(isPrime(number)) <span style="color: #0000ff">yield</span> <span style="color: #0000ff">return</span> number;
+}
+
+<span style="color: #008000">// calculate prime numbers below 1000</span>
+<span style="color: #2b91af">var</span> numbers = PrimeNumbers(1000)
+                        .Select(i =&gt; i.ToString())
+                        .ToArray();
+
+<span style="color: #008000">// format them as a cool string</span>
+<span style="color: #2b91af">var</span> formattedText = String.Join(<span style="color: #a31515">&quot;, &quot;</span>, numbers);
+
+<span style="color: #008000">// write it :D</span>
+Console.WriteLine(formattedText);
+</pre></div>
+
+
+<p><img alt="Xamarin Workbooks" center="center" src="http://antipattern.ir/images/xamarin-workbooks/sample_02.gif" /></p>
+<h1>مثال سوم - نمونه فایل از خود Xamarin Workbooks</h1>
+<p><img alt="Xamarin Workbooks" center="center" src="http://antipattern.ir/images/xamarin-workbooks/sample_03.png" /></p>
+<h1>چه کارهای دیگه ای میشه کرد؟</h1>
+<p>هر نوع کد سی شارپ؛ داخل این برنامه قابل اجراست! از ریز ترین کدهای مربوط به مفاهیم شی‌گرایی تا هر نوع کد دیگه ...</p>
+<p>البته زامارین چندین و چند نمونه کتاب ساخته شده از Xamarin WorkBooks اینجا قرار داده که اجرا و بازی کردن با اون‌ها خالی از لطف نیست! نمونه مثال اون رو تو مثال سوم دیدیم ...</p>
+<p><a href="https://developer.xamarin.com/workbooks/" target="_blank">صفحه دسترسی به مثال‌های Xamarin Workbooks</a></p>
+<h1>از کجا دانلود کنیم؟</h1>
+<p>این نکته رو مد نظر قرار دهید که این برنامه جهت اجرا نیازمند موارد زیر است:</p>
+<ol>
+<li>ویندوز 7 یا بالاتر</li>
+<li>Internet Explorer 11</li>
+<li>NetFramework 4.6 یا بالاتر</li>
+</ol>
+<p>از اینجا میتونید فایل نصب رو با حجم حدودی 50 مگابایت دانلود کنید:</p>
+<p><a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" target="_blank">دانلود Xamarin WorkBooks</a></p>
+<h2>پی‌نوشت:</h2>
+<p>ابزار Xamarin Interactive قابلیت‌های خیلی بیشتری دارد اما در اینجا تنها به Xamarin Workbooks اشاره شد.</p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "what-is-xamarin-workbooks.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
 		
 		</div> <!-- end main -->
 			
@@ -109,6 +191,14 @@
 		<div class="sidebar large-4  small-12 columns">
 			<div class="sidebar-container small-12 columns">
 				
+		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
+		<ul>
+			<li><a href="http://antipattern.ir/microsoft-stack-2016.html">چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</a></li>
+			<li><a href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html">فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</a></li>
+			<li><a href="http://antipattern.ir/download-xamarin-updates.html">نصب یا دریافت آپدیت‌های Xamarin</a></li>
+			<li><a href="http://antipattern.ir/visual-studio-2017-and-xamarin-installation-problems.html">VS.2017 و Xamarin - مشکلات پس از نصب و نحوه رفع آن‌ها</a></li>
+		</ul>
+			
 		
 				
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
@@ -149,7 +239,7 @@
 							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
 							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
 							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li class="active"><a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a></li>
+							<li ><a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a></li>
 							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
 							<li ><a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a></li>
 							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
