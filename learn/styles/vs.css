@@ -1,0 +1,103 @@
+.hljs-comment {
+    color: green
+}
+.hljs-built_in,
+.hljs-keyword,
+.hljs-name,
+.hljs-pscommand,
+.hljs-selector-tag,
+.hljs-tag {
+    color: #0101fd
+}
+.hljs-literal {
+    color: #09885a
+}
+.hljs-code,
+.hljs-deletion,
+.hljs-section,
+.hljs-string,
+.hljs-template-tag,
+.hljs-template-variable {
+    color: #a31515
+}
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta,
+.hljs-parameter,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-title,
+.hljs-type {
+    color: #007d9a
+}
+.hljs-doctag {
+    color: #737373
+}
+.hljs-attr {
+    color: red
+}
+.hljs-bullet,
+.hljs-link,
+.hljs-symbol {
+    color: #00b0e8
+}
+.hljs-emphasis {
+    font-style: italic
+}
+.hljs-strong {
+    font-weight: 700
+}
+.theme_night .line-highlight {
+    background-color: #006400
+}
+.theme_night .hljs-comment {
+    color: #57a64a
+}
+.theme_night .hljs-number {
+    color: #b5cea8
+}
+.theme_night .hljs-built_in,
+.theme_night .hljs-keyword,
+.theme_night .hljs-literal,
+.theme_night .hljs-name,
+.theme_night .hljs-pscommand,
+.theme_night .hljs-selector-tag,
+.theme_night .hljs-tag {
+    color: #569cd6
+}
+.theme_night .hljs-title {
+    color: #4ec9b0
+}
+.theme_night .hljs-attribute,
+.theme_night .hljs-code,
+.theme_night .hljs-deletion,
+.theme_night .hljs-section,
+.theme_night .hljs-string,
+.theme_night .hljs-template-tag,
+.theme_night .hljs-template-variable,
+.theme_night .hljs-type {
+    color: #ce9178
+}
+.theme_night .hljs-addition,
+.theme_night .hljs-meta,
+.theme_night .hljs-selector-attr,
+.theme_night .hljs-selector-pseudo {
+    color: #2b91af
+}
+.theme_night .hljs-doctag {
+    color: gray
+}
+.theme_night .hljs-attr {
+    color: #9cdcfe
+}
+.theme_night .hljs-bullet,
+.theme_night .hljs-link,
+.theme_night .hljs-symbol {
+    color: gray
+}
+.theme_night .hljs-emphasis {
+    font-style: italic
+}
+.theme_night .hljs-strong {
+    font-weight: 700
+}
