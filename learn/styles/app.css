@@ -67,7 +67,7 @@ code{
     color:#222;  
 }
 
-code.code{
+code.language-html, code.language-javascript{
     display: block;
     margin:0 0 1rem 0;
     unicode-bidi: normal;
