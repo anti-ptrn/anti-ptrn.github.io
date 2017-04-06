@@ -1,0 +1,23 @@
+<div class="book-nav text-center">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+        {% set prevPage = currentPageIndex - 1 %}
+        {% set nextPage = currentPageIndex + 1 %}
+        {% if prevPage < 0 %}
+            <li class="pagination-previous disabled">صفحه قبلی <span class="show-for-sr">page</span></li>        
+        {% else %}
+            <li class="pagination-previous"><a href="pages/{{pages[prevPage]}}" aria-label="Prev page">صفحه قبلی <span class="show-for-sr">page</span></a></li>        
+        {% endif %}
+        {% for page in pages %}
+            {%if page == currentPage %}
+                <li class="current"><span class="show-for-sr">صفحه فعلی</span> {{loop.index|perisanNumbers}}</li>                
+            {% else %}
+                <li><a href="pages/{{page}}" aria-label="Page 2">{{loop.index|perisanNumbers}}</a></li>     
+            {% endif %}
+        {% endfor %}
+        {% if nextPage >  pages.length-1 %}
+            <li class="pagination-next disabled">صفحه بعدی <span class="show-for-sr">page</span></li>    
+        {% else %}    
+            <li class="pagination-next"><a href="pages/{{pages[nextPage]}}" aria-label="Next page">صفحه بعدی <span class="show-for-sr">page</span></a></li>            
+        {% endif %}
+    </ul>
+</div>

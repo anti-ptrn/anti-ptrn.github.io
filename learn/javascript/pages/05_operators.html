@@ -1,0 +1,526 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفکر در JavaScript | عملگرها</title>
+    <meta property="og:title" content="تفکر در JavaScript - عملگرها">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="http://antipattern.ir/learn/javascript/05_operators.html">
+    <link rel="stylesheet" href="assets/foundation-6.3.1/css/foundation.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/vs.css">
+
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link data-name="vs/editor/editor.main" rel="stylesheet" href="assets/monaco-editor/0.8.3/vs/editor/editor.main.css">
+</head>
+
+<body>
+    <div data-sticky-container>
+    <div class="title-bar" id="example-menu" data-sticky data-options="marginTop:0;" data-top-anchor="0" data-sticky-on="small"
+        style="width:100%">
+        <div class="top-bar-right">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">
+                    تفکر در JavaScript
+                </li>
+                <li>
+                    <a href="#">کتاب</a>
+                    <ul class="menu vertical">
+                        <li><a href="http://antipattern.ir/learn/javascript/pages/00_cover.html">جلد کتاب</a></li>
+                        <li><a href="http://antipattern.ir/learn/javascript/pages/01_overview.html">درباره کتاب</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">فهرست</a>
+                    <ul class="menu vertical">
+                        
+                        <li>
+                            <a href="#">تفکر در JavaScript</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/02_thinking_in_javascript.html#تفکر_در_JavaScript">تفکر در JavaScript</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/02_thinking_in_javascript.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">نحوه استفاده از جاوا اسکریپت</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/03_applying_javascript.html#نحوه_استفاده_از_جاوا_اسکریپت">نحوه استفاده از جاوا اسکریپت</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/03_applying_javascript.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">متغیرها</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#متغیرها">متغیرها</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#متغیر_محلی_و_سراسری">متغیر محلی و سراسری</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#انواع_متغیر">انواع متغیر</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">عملگرها</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرها">عملگرها</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرهای_ریاضی">عملگرهای ریاضی</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرهای_منطقی">عملگرهای منطقی</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرهای_مقایسه‌ای">عملگرهای مقایسه‌ای</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">دستورات شرطی و تکرار</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#دستورات_شرطی_و_تکرار">دستورات شرطی و تکرار</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#دستور_for">دستور for</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#دستور_while">دستور while</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#کلمات_کلیدی_break_و_continue">کلمات کلیدی break و continue</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">توابع </a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#توابع">توابع </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#نحوه_تعریف_تابع">نحوه تعریف تابع</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#مقدار_بازگشتی_تابع">مقدار بازگشتی تابع</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#شکل_دیگر_تعریف_تابع">شکل دیگر تعریف تابع</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">آرایه‌ها </a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#آرایه‌ها">آرایه‌ها </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#نحوه_دسترسی_به_مقادیر_داخل_آرایه">نحوه دسترسی به مقادیر داخل آرایه</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#توابع_داخلی_Array">توابع داخلی Array</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">اشیاء و نقش آن‌ها در JS</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/09_objects_and_their_roles.html#اشیاء_و_نقش_آن‌ها_در_JS">اشیاء و نقش آن‌ها در JS</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/09_objects_and_their_roles.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="top-bar-left hide-for-small-only">
+            <!--<ul class="menu">
+                <li><input type="search" placeholder="جستجو"></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+    <div class="expanded row">
+        <div class="large-3 columns hide-for-small-only" data-sticky-container>
+            
+<nav class="columns sticky page-content" data-sticky data-anchor="article" data-margin-top="6.5" data-anchor="article">
+    <ul class="menu vertical stikcy" data-magellan>
+        <li class="nav-title">فهرست صفحه:</li>
+        
+        <li><a href="#عملگرها">عملگرها</a></li>
+        
+        <li><a href="#عملگرهای_ریاضی">عملگرهای ریاضی</a></li>
+        
+        <li><a href="#عملگرهای_منطقی">عملگرهای منطقی</a></li>
+        
+        <li><a href="#عملگرهای_مقایسه‌ای">عملگرهای مقایسه‌ای</a></li>
+        
+        <li><a href="#پاورقی">پاورقی</a></li>
+        
+    </ul>
+</nav>
+
+        </div>
+        <div class="large-7 small-12 columns">
+            <article>
+                <h3 id="عملگرها">عملگرها <a class="header-anchor" href="#عملگرها" aria-hidden="true" data-magellan-target="عملگرها"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>در <abbr title="JavaScript">JS</abbr> سه نوع عملگر وجود داد:</p>
+<ul>
+<li>عملگرهای ریاضی <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+<li>عملگرهای منطقی <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+<li>عمگرهای مقایسه‌ای <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
+</ul>
+<h4 id="عملگرهای_ریاضی">عملگرهای ریاضی <a class="header-anchor" href="#عملگرهای_ریاضی" aria-hidden="true" data-magellan-target="عملگرهای_ریاضی"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>در جدول زیر می‌توانید انواع مختلف عملگرهای ریاضی را مشاهده فرمایید:</p>
+<table>
+<thead>
+<tr>
+<th>نام فارسی</th>
+<th>عملگر در <abbr title="JavaScript">JS</abbr></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>جمع</td>
+<td><code>+</code></td>
+</tr>
+<tr>
+<td>تفریق</td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td>ضرب</td>
+<td><code>*</code></td>
+</tr>
+<tr>
+<td>تقسیم</td>
+<td><code>/</code></td>
+</tr>
+<tr>
+<td>باقیمانده</td>
+<td><code>%</code></td>
+</tr>
+<tr>
+<td>افرایش</td>
+<td><code>++</code></td>
+</tr>
+<tr>
+<td>کاهش</td>
+<td><code>--</code></td>
+</tr>
+</tbody>
+</table>
+<p>عملگرهای جمع، تفریق، ضرب و تقسیم نیازی به توضیح ندارند و کارکردشان دقیقاً همانند آنچه که در ریاضی انجام داده‌ایم است. عملگر <code>%</code> یا باقیمانده، مقدار باقیمانده یک تقسیم را باز می‌گرداند. عملگر <code>++</code> یا افرایش، در متغیرهای عددی یک واحد به مقدار قبلی اضافه و عملگر <code>--</code> یا کاهش نیز یک واحد از مقدار متغیر عدد کم می‌کند.</p>
+<p>برای مثال به جای اینکه بنویسیم <code>a = a + 1</code> می‌توانیم بنویسم <code>a++</code> یا به جای <code>a = a - 1</code> می‌توانیم بنویسم <code>a--</code>.</p>
+<p>در اینجا چند مثال از عملگرهای بالا آورده شده است:</p>
+<pre><code class="code language-javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">var</span> b = <span class="hljs-number">2</span>;
+
+<span class="hljs-keyword">var</span> c = a + b; <span class="hljs-comment">// c = 12</span>
+
+c = a - b;     <span class="hljs-comment">// c = 8</span>
+
+c = a / b;     <span class="hljs-comment">// c = 5</span>
+
+c = a % b;     <span class="hljs-comment">// c = 0 , باقیمانده تقسیم 10 بر 2</span>
+
+c = a * b;     <span class="hljs-comment">// c = 20</span>
+
+a++;           <span class="hljs-comment">// a = 11</span>
+
+a--;           <span class="hljs-comment">// a = 10</span>
+
+</code></pre>
+<h4 id="عملگرهای_منطقی">عملگرهای منطقی <a class="header-anchor" href="#عملگرهای_منطقی" aria-hidden="true" data-magellan-target="عملگرهای_منطقی"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>جدول زیر عملگرهای مختلف منطقی را نمایش می‌دهد:</p>
+<table>
+<thead>
+<tr>
+<th>نام</th>
+<th>عملگر در <abbr title="JavaScript">JS</abbr></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AND</td>
+<td><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td>OR</td>
+<td><code>||</code></td>
+</tr>
+<tr>
+<td>NOT</td>
+<td><code>!</code></td>
+</tr>
+</tbody>
+</table>
+<p>عملگر <code>AND</code> را وقتی استفاده می‌کنیم که می‌خواهیم تمام شرط ها برقرار باشند. برای مثال: <code>X &gt; 5 &amp;&amp; y ==5</code>، یعنی مقدار <code>x</code> از 5 باید بزرگتر باشد و مقدار <code>x</code> نیز با 5 برابر باشد تا شرط مذکور برقرار شود و مقدار <code>true</code> شود.</p>
+<p>عملگر <code>OR</code> را وقتی استفاده می‌کنیم که می‌خواهیم یکی از شرایط برقرار باشد. برای مثال: <code>x == 5 || y &lt; 3</code>، یعنی یا مقدار <code>x</code> برابر 5 باشد <strong>یا</strong> مقدار <code>y</code> از 3 کوچکتر باشد.</p>
+<p>عملگر <code>NOT</code> یا نقیض برای نقض کردن شرط استفاده می‌شود. مثلاً <code>! (x&lt;5)</code> وقتی <code>true</code> خواهد شد که متغیر <code>x</code> برابر با 5 یا کمتر از 5 باشد.</p>
+<blockquote>
+<p>💡 از توضیحات بالا می‌توان نتیجه گرفت؛ مقدار بازگشتی از عملگرهای منطقی یک مقدار <code>boolean</code> است که می‌تواند یکی از دو مقدار <code>true</code> یا <code>false</code> باشد.</p>
+</blockquote>
+<p>در جدول زیر مثالی از عملگرهای بالا آمده است:</p>
+<table>
+<thead>
+<tr>
+<th>مثال</th>
+<th>مقدار نهایی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>false &amp;&amp; false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true &amp;&amp; true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>true &amp;&amp; false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true || false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>false || false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>! true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>! false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="عملگرهای_مقایسه‌ای">عملگرهای مقایسه‌ای <a class="header-anchor" href="#عملگرهای_مقایسه‌ای" aria-hidden="true" data-magellan-target="عملگرهای_مقایسه‌ای"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>همانطور که از نامشان پیداست، جهت مقایسه مقدارها استفاده می‌شوند. برای مثال اگر مقدار از 5 بزرگتر بود و غیره. در جدول زیر لیست عملگرهای مقایسه‌ای به همراه مثال آمده است:</p>
+<table>
+<thead>
+<tr>
+<th>نام عملگر</th>
+<th>عملگر در <abbr title="JavaScript">JS</abbr></th>
+<th>مثال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>بزرگتر</td>
+<td><code>&gt;</code></td>
+<td><code>a &gt; 5</code></td>
+</tr>
+<tr>
+<td>کوچکتر</td>
+<td><code>&lt;</code></td>
+<td><code>a &lt; 5</code></td>
+</tr>
+<tr>
+<td>مساوی</td>
+<td><code>==</code></td>
+<td><code>a == 5</code></td>
+</tr>
+<tr>
+<td>بزرگتر مساوی</td>
+<td><code>&gt;=</code></td>
+<td><code>a &gt;= 5</code></td>
+</tr>
+<tr>
+<td>کوچکتر مساوی</td>
+<td><code>&lt;=</code></td>
+<td><code>a &lt;= 5</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 بهتر است به جای عملگر <code>==</code> از <code>===</code> استفاده کنید. در فصل‌های آتی علت آن شرح داده خواهد شد.</p>
+</blockquote>
+<h3 id="پاورقی">پاورقی <a class="header-anchor" href="#پاورقی" aria-hidden="true" data-magellan-target="پاورقی"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>arithmetic operators <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>logical operators <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>comparison operators <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>برنامه‌نویسی شی‌گرا یا Object-oriented programming یا به اختصار <abbr title="Object-Orientd Programming">OOP</abbr> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+            </article>
+            <div class="book-nav text-center">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+        
+        
+        
+            <li class="pagination-previous"><a href="pages/04_variables.html" aria-label="Prev page">صفحه قبلی <span class="show-for-sr">page</span></a></li>        
+        
+        
+            
+                <li><a href="pages/00_cover.html" aria-label="Page 2">۱</a></li>     
+            
+        
+            
+                <li><a href="pages/01_overview.html" aria-label="Page 2">۲</a></li>     
+            
+        
+            
+                <li><a href="pages/02_thinking_in_javascript.html" aria-label="Page 2">۳</a></li>     
+            
+        
+            
+                <li><a href="pages/03_applying_javascript.html" aria-label="Page 2">۴</a></li>     
+            
+        
+            
+                <li><a href="pages/04_variables.html" aria-label="Page 2">۵</a></li>     
+            
+        
+            
+                <li class="current"><span class="show-for-sr">صفحه فعلی</span> ۶</li>                
+            
+        
+            
+                <li><a href="pages/06_conditions_and_loops.html" aria-label="Page 2">۷</a></li>     
+            
+        
+            
+                <li><a href="pages/07_functions.html" aria-label="Page 2">۸</a></li>     
+            
+        
+            
+                <li><a href="pages/08_arrays.html" aria-label="Page 2">۹</a></li>     
+            
+        
+            
+                <li><a href="pages/09_objects_and_their_roles.html" aria-label="Page 2">۱۰</a></li>     
+            
+        
+            
+            <li class="pagination-next"><a href="pages/06_conditions_and_loops.html" aria-label="Next page">صفحه بعدی <span class="show-for-sr">page</span></a></li>            
+        
+    </ul>
+</div>
+        </div>
+        <div class="large-2 hide-for-small-only"></div>
+    </div>
+
+    <div class="footer">
+    <div class="row expanded">
+        <div class="medium-4 columns hide-for-small-only">
+            &nbsp;
+        </div>
+        <div class="medium-4 columns text-center">
+            کاری از <a href="https://www.linkedin.com/in/bahraminezhad/" target="_blank">علی بهرامی‌نژاد</a>
+        </div>
+        <div class="medium-4 samll-12 columns hide-for-small-only">
+            &nbsp;
+        </div>
+    </div>
+</div>
+
+    <script src="assets/jquery/jquery-3.2.0.js"></script>
+    <script src="assets/foundation-6.3.1/js/vendor/what-input.js"></script>
+    <script src="assets/foundation-6.3.1/js/vendor/foundation.js"></script>
+
+    <!--<script>
+        var require = { paths: { 'vs': '/assets/monaco-editor/0.8.3/vs' } };
+    </script>
+    <script src=assets/monaco-editor/0.8.3/vs/loader.js"></script>
+    <script src=assets/monaco-editor/0.8.3/vs/editor/editor.main.nls.js"></script>
+    <script src=assets/monaco-editor/0.8.3/vs/editor/editor.main.js"></script>-->
+    <script src="assets/unescape.js"></script>
+    <!--<script src=scripts/editor.js"></script>-->
+    <script src="scripts/code.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>

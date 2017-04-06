@@ -1,0 +1,12 @@
+{% if chapters.length > 1 %}
+<nav class="columns sticky page-content" data-sticky data-anchor="article" data-margin-top="6.5" data-anchor="article">
+    <ul class="menu vertical stikcy" data-magellan>
+        <li class="nav-title">فهرست صفحه:</li>
+        {% for chap in chapters %}
+        <li><a href="#{{chap.slug}}">{{chap.title}}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% else %}
+&nbsp;
+{% endif %}

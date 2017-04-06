@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفکر در JavaScript | آرایه‌ها </title>
+    <meta property="og:title" content="تفکر در JavaScript - آرایه‌ها ">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="http://antipattern.ir/learn/javascript/08_arrays.html">
+    <link rel="stylesheet" href="assets/foundation-6.3.1/css/foundation.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/vs.css">
+
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link data-name="vs/editor/editor.main" rel="stylesheet" href="assets/monaco-editor/0.8.3/vs/editor/editor.main.css">
+</head>
+
+<body>
+    <div data-sticky-container>
+    <div class="title-bar" id="example-menu" data-sticky data-options="marginTop:0;" data-top-anchor="0" data-sticky-on="small"
+        style="width:100%">
+        <div class="top-bar-right">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">
+                    تفکر در JavaScript
+                </li>
+                <li>
+                    <a href="#">کتاب</a>
+                    <ul class="menu vertical">
+                        <li><a href="http://antipattern.ir/learn/javascript/pages/00_cover.html">جلد کتاب</a></li>
+                        <li><a href="http://antipattern.ir/learn/javascript/pages/01_overview.html">درباره کتاب</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">فهرست</a>
+                    <ul class="menu vertical">
+                        
+                        <li>
+                            <a href="#">تفکر در JavaScript</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/02_thinking_in_javascript.html#تفکر_در_JavaScript">تفکر در JavaScript</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/02_thinking_in_javascript.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">نحوه استفاده از جاوا اسکریپت</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/03_applying_javascript.html#نحوه_استفاده_از_جاوا_اسکریپت">نحوه استفاده از جاوا اسکریپت</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/03_applying_javascript.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">متغیرها</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#متغیرها">متغیرها</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#متغیر_محلی_و_سراسری">متغیر محلی و سراسری</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#انواع_متغیر">انواع متغیر</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/04_variables.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">عملگرها</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرها">عملگرها</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرهای_ریاضی">عملگرهای ریاضی</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرهای_منطقی">عملگرهای منطقی</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#عملگرهای_مقایسه‌ای">عملگرهای مقایسه‌ای</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/05_operators.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">دستورات شرطی و تکرار</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#دستورات_شرطی_و_تکرار">دستورات شرطی و تکرار</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#دستور_for">دستور for</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#دستور_while">دستور while</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/06_conditions_and_loops.html#کلمات_کلیدی_break_و_continue">کلمات کلیدی break و continue</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">توابع </a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#توابع">توابع </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#نحوه_تعریف_تابع">نحوه تعریف تابع</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#مقدار_بازگشتی_تابع">مقدار بازگشتی تابع</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#شکل_دیگر_تعریف_تابع">شکل دیگر تعریف تابع</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/07_functions.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">آرایه‌ها </a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#آرایه‌ها">آرایه‌ها </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#نحوه_دسترسی_به_مقادیر_داخل_آرایه">نحوه دسترسی به مقادیر داخل آرایه</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#توابع_داخلی_Array">توابع داخلی Array</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/08_arrays.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#">اشیاء و نقش آن‌ها در JS</a>
+                            <ul class="menu vertical">
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/09_objects_and_their_roles.html#اشیاء_و_نقش_آن‌ها_در_JS">اشیاء و نقش آن‌ها در JS</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="http://antipattern.ir/learn/javascript/pages/09_objects_and_their_roles.html#پاورقی">پاورقی</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="top-bar-left hide-for-small-only">
+            <!--<ul class="menu">
+                <li><input type="search" placeholder="جستجو"></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+    <div class="expanded row">
+        <div class="large-3 columns hide-for-small-only" data-sticky-container>
+            
+<nav class="columns sticky page-content" data-sticky data-anchor="article" data-margin-top="6.5" data-anchor="article">
+    <ul class="menu vertical stikcy" data-magellan>
+        <li class="nav-title">فهرست صفحه:</li>
+        
+        <li><a href="#آرایه‌ها">آرایه‌ها </a></li>
+        
+        <li><a href="#نحوه_دسترسی_به_مقادیر_داخل_آرایه">نحوه دسترسی به مقادیر داخل آرایه</a></li>
+        
+        <li><a href="#توابع_داخلی_Array">توابع داخلی Array</a></li>
+        
+        <li><a href="#پاورقی">پاورقی</a></li>
+        
+    </ul>
+</nav>
+
+        </div>
+        <div class="large-7 small-12 columns">
+            <article>
+                <h3 id="آرایه‌ها">آرایه‌ها <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> <a class="header-anchor" href="#آرایه‌ها" aria-hidden="true" data-magellan-target="آرایه‌ها"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<p>در تمام زبان‌های برنامه‌نویسی مانند <code>C++</code>، <code>Java</code> و <code>PHP</code> مفهوم آرایه‌ها وجود دارد و از آن‌ها استفاده می‌شود. از همان مفاهیم در <abbr title="JavaScript">JS</abbr> نیز استفاده می‌شود. آرایه‌ها لیستی از مقادیر هستند. قبلاً متغیرها را دیده‌ایم، فرض کنیم متغیری داریم که در آن بتوانیم لیست مقادیر را ذخیره سازی کنیم.</p>
+<p>راه‌های مختلفی برای ساخت آرایه در <abbr title="JavaScript">JS</abbr> وجود دارد؛ یکی از آن راه‌ها استفاده از کلاس<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> <code>Array</code> می‌باشد، برای درک بهتر به تکه کد زیر دقت کنید:</p>
+<pre><code class="code language-javascript"><span class="hljs-keyword">var</span> animals = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(); 
+animals[<span class="hljs-number">0</span>]=<span class="hljs-string">"cat"</span>; 
+animals[<span class="hljs-number">1</span>]=<span class="hljs-string">"dog"</span>; 
+animals[<span class="hljs-number">2</span>]=<span class="hljs-string">"mouse"</span>
+</code></pre>
+<p>در کد بالا، با استفاده از تکه کد <code>new Array()</code> یک شی[23] از کلاس <code>Array</code> ایجاد شده است. در ادامه برنامه‌ برای خانه‌های 0، 1 و 2 مقادیری ذخیره شده است.</p>
+<p>در برنامه‌نویسی به شماره خانه‌های هر آیتم در آرایه به اصطلاح <strong>ایندکس</strong> می‌گویند. برای مثال در کد بالا، مقداری که در ایندکس صفر آرایه <code>animals</code> ذخیره شده است، مقدال cat است.</p>
+<blockquote>
+<p>💡 ایندکس‌های آرایه در <abbr title="JavaScript">JS</abbr> از شماره 0 آغاز می‌شوند.</p>
+</blockquote>
+<p>روش دیگر تعریف آرایه به شرح زیر است:</p>
+<pre><code class="code language-javascript"><span class="hljs-keyword">var</span> animals = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"cat"</span>, <span class="hljs-string">"dog"</span>, <span class="hljs-string">"mouse"</span>);
+</code></pre>
+<p>تکه کد بالا؛ با کد قبلی تفاوتی از نظر کارکرد ندارد و فقط مقادیر از طریق سازنده <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> کلاس <code>Array</code> به آن انتساب داده شده است.</p>
+<p>روش دیگر ایجاد آرایه:
+می‌توان بدون استفاده از کلاس <code>Array</code> نسبت به ایجاد آرایه اقدام کرد، برای این کار کافیست مقادیری که می‌خواهیم را بین دو <code>[]</code> قرار دهیم. برای مثال:</p>
+<pre><code class="code language-javascript"><span class="hljs-keyword">var</span> animals = [<span class="hljs-string">"cat"</span>, <span class="hljs-string">"dog"</span>, <span class="hljs-string">"mouse"</span>];
+</code></pre>
+<h4 id="نحوه_دسترسی_به_مقادیر_داخل_آرایه">نحوه دسترسی به مقادیر داخل آرایه <a class="header-anchor" href="#نحوه_دسترسی_به_مقادیر_داخل_آرایه" aria-hidden="true" data-magellan-target="نحوه_دسترسی_به_مقادیر_داخل_آرایه"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>برای دسترسی به مقادیر داخل آرایه کافیست به شکل زیر عمل کنیم:</p>
+<pre><code class="code language-javascript">نام_آرایه[index];
+</code></pre>
+<p>برای مثال:</p>
+<pre><code class="code language-javascript"><span class="hljs-keyword">var</span> animals = [<span class="hljs-string">"cat"</span>, <span class="hljs-string">"dog"</span>, <span class="hljs-string">"mouse"</span>];
+
+alert(animals[<span class="hljs-number">0</span>]); <span class="hljs-comment">// alert("cat");</span>
+alert(animals[<span class="hljs-number">2</span>]); <span class="hljs-comment">// alert("mouse");</span>
+</code></pre>
+<h4 id="توابع_داخلی_Array">توابع داخلی Array <a class="header-anchor" href="#توابع_داخلی_Array" aria-hidden="true" data-magellan-target="توابع_داخلی_Array"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h4>
+<p>کلاس <code>Array</code> دارای برخی خصوصیت<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> و تابع/متد داخلی است که در اینجا شرح آن‌ها آمده است:</p>
+<table>
+<thead>
+<tr>
+<th>نام متد یا خصوصیت</th>
+<th>نوع</th>
+<th>مثال</th>
+<th>شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>خصوصیت</td>
+<td><code>animals.length</code></td>
+<td>این خصوصیت تعداد عناصر یک آرایه را باز می‌گرداند.</td>
+</tr>
+<tr>
+<td>push</td>
+<td>متد</td>
+<td><code>animals.push(value)</code></td>
+<td>یک آیتم به انتهای آرایه اضافه می‌کند.</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>متد</td>
+<td><code>animals.push()</code></td>
+<td>یک آیتم از انتهای آرایه حذف و آن مقدار را باز می‌گرداند.</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>متد</td>
+<td><code>animals.reverse()</code></td>
+<td>یک آرایه را معکوس می‌کند.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>متد</td>
+<td><code>animals.sort()</code></td>
+<td>یک آرایه را مرتب می‌کند.</td>
+</tr>
+</tbody>
+</table>
+<p>برای درک بهتر دستورات بالا؛ در تکه کد زیر برنامه‌ای می‌نویسیم که اعدادی را از ورودی دریافت می‌کند، و در نهایت میانگین آن‌ها را به کاربر نمایش می‌دهد:</p>
+<pre><code class="code language-javascript"><span class="hljs-comment">// محل نگهداری اعداد دریافتی از کاربر</span>
+<span class="hljs-keyword">var</span> numbers = [];
+
+<span class="hljs-comment">// عددی که هربار از کاربر در ورودی دریافت می‌شود</span>
+<span class="hljs-keyword">var</span> inputNumber = <span class="hljs-number">-1</span>;
+
+<span class="hljs-comment">// مادامی که کاربر عدد 0 را وارد نکند، برنامه به دریافت اعداد ادامه می‌دهد</span>
+<span class="hljs-keyword">while</span>(inputNumber !=<span class="hljs-number">0</span>){
+    inputNumber = <span class="hljs-built_in">parseInt</span>(prompt(<span class="hljs-string">"یک عدد وارد کنید، برای اتمام دریافت عدد 0 را وارد کنید."</span>));
+
+    <span class="hljs-comment">// اضافه کردن عدد به آرایه </span>
+    numbers.push(inputNumber);
+}
+
+<span class="hljs-comment">// مجموع اعداد</span>
+<span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// حساب کردن مجموع اعداد</span>
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span> ; i &lt; numbers.length ; i++)
+    sum = sum + numbers[i];
+
+<span class="hljs-comment">// محاسبه میانگین</span>
+<span class="hljs-keyword">var</span> avg = sum / numbers.length;
+
+alert(avg);
+
+</code></pre>
+<p>در فیلم زیر خروجی تکه کد بالا را مشاده می‌کنید:</p>
+<p><img src="resources/08_arrays/array_methods_in_action.gif" alt="Array methods in actions"></p>
+<h3 id="پاورقی">پاورقی <a class="header-anchor" href="#پاورقی" aria-hidden="true" data-magellan-target="پاورقی"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>arrays <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>کلاس یا Class مفهومی از برنامه‌نویسی شی‌گرا<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> می‌باشد. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>در <abbr title="Object-Orientd Programming">OOP</abbr> هر کلاس دارای یک یا چند سازنده یا constructor است. سازنده تابع یا متدی است که در زمان ایجاد یک نمونه از کلاس فراخوانی می‌شود. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>property <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>برنامه‌نویسی شی‌گرا یا Object-oriented programming یا به اختصار <abbr title="Object-Orientd Programming">OOP</abbr> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+            </article>
+            <div class="book-nav text-center">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+        
+        
+        
+            <li class="pagination-previous"><a href="pages/07_functions.html" aria-label="Prev page">صفحه قبلی <span class="show-for-sr">page</span></a></li>        
+        
+        
+            
+                <li><a href="pages/00_cover.html" aria-label="Page 2">۱</a></li>     
+            
+        
+            
+                <li><a href="pages/01_overview.html" aria-label="Page 2">۲</a></li>     
+            
+        
+            
+                <li><a href="pages/02_thinking_in_javascript.html" aria-label="Page 2">۳</a></li>     
+            
+        
+            
+                <li><a href="pages/03_applying_javascript.html" aria-label="Page 2">۴</a></li>     
+            
+        
+            
+                <li><a href="pages/04_variables.html" aria-label="Page 2">۵</a></li>     
+            
+        
+            
+                <li><a href="pages/05_operators.html" aria-label="Page 2">۶</a></li>     
+            
+        
+            
+                <li><a href="pages/06_conditions_and_loops.html" aria-label="Page 2">۷</a></li>     
+            
+        
+            
+                <li><a href="pages/07_functions.html" aria-label="Page 2">۸</a></li>     
+            
+        
+            
+                <li class="current"><span class="show-for-sr">صفحه فعلی</span> ۹</li>                
+            
+        
+            
+                <li><a href="pages/09_objects_and_their_roles.html" aria-label="Page 2">۱۰</a></li>     
+            
+        
+            
+            <li class="pagination-next"><a href="pages/09_objects_and_their_roles.html" aria-label="Next page">صفحه بعدی <span class="show-for-sr">page</span></a></li>            
+        
+    </ul>
+</div>
+        </div>
+        <div class="large-2 hide-for-small-only"></div>
+    </div>
+
+    <div class="footer">
+    <div class="row expanded">
+        <div class="medium-4 columns hide-for-small-only">
+            &nbsp;
+        </div>
+        <div class="medium-4 columns text-center">
+            کاری از <a href="https://www.linkedin.com/in/bahraminezhad/" target="_blank">علی بهرامی‌نژاد</a>
+        </div>
+        <div class="medium-4 samll-12 columns hide-for-small-only">
+            &nbsp;
+        </div>
+    </div>
+</div>
+
+    <script src="assets/jquery/jquery-3.2.0.js"></script>
+    <script src="assets/foundation-6.3.1/js/vendor/what-input.js"></script>
+    <script src="assets/foundation-6.3.1/js/vendor/foundation.js"></script>
+
+    <!--<script>
+        var require = { paths: { 'vs': '/assets/monaco-editor/0.8.3/vs' } };
+    </script>
+    <script src=assets/monaco-editor/0.8.3/vs/loader.js"></script>
+    <script src=assets/monaco-editor/0.8.3/vs/editor/editor.main.nls.js"></script>
+    <script src=assets/monaco-editor/0.8.3/vs/editor/editor.main.js"></script>-->
+    <script src="assets/unescape.js"></script>
+    <!--<script src=scripts/editor.js"></script>-->
+    <script src="scripts/code.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>

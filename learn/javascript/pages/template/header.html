@@ -1,0 +1,41 @@
+<div data-sticky-container>
+    <div class="title-bar" id="example-menu" data-sticky data-options="marginTop:0;" data-top-anchor="0" data-sticky-on="small"
+        style="width:100%">
+        <div class="top-bar-right">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">
+                    {{bookTitle}}
+                </li>
+                <li>
+                    <a href="#">کتاب</a>
+                    <ul class="menu vertical">
+                        <li><a href="{{siteUrl}}pages/00_cover.html">جلد کتاب</a></li>
+                        <li><a href="{{siteUrl}}pages/01_overview.html">درباره کتاب</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">فهرست</a>
+                    <ul class="menu vertical">
+                        {% for chapter in book.chapters %}
+                        <li>
+                            <a href="#">{{chapter.title}}</a>
+                            <ul class="menu vertical">
+                                {% for subChapter in chapter.chapters %}
+                                <li>
+                                    <a href="{{siteUrl}}pages/{{chapter.url}}#{{subChapter.slug}}">{{subChapter.title}}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="top-bar-left hide-for-small-only">
+            <!--<ul class="menu">
+                <li><input type="search" placeholder="جستجو"></li>
+            </ul>-->
+        </div>
+    </div>
+</div>

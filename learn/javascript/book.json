@@ -1,0 +1,8 @@
+var config = {
+    "title": "تفکر در جاوا اسکریپت",
+    "titleEn": "Thinking in JavaScript",
+    "Author": "Aravind Shenoy, Ali Bahraminezhad",
+    "Translator": "Ali Bahraminezhd ali.bahraminezhad@outlook.com",
+};
+
+exports.config = config;
