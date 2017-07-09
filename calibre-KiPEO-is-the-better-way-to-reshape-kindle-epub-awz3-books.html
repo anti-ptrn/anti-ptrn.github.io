@@ -2,9 +2,37 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>SQL-Server, Encryption, C# - Anti-Pattern</title>
+	<title>پلاگین KiPEO، پلاگینی برای Calibre جهت بهینه‌سازی کتاب‌های فارسی برروی Kindle - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
+
+	<link rel="canonical" href="http://antipattern.ir/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html" />
+
+  <meta name="description" content="اگر قبلاً این وبلاگ را دنبال کرده باشید، یا به هر نحوی با نرم‌افزار KTOP که قبلاً توسط من نوشته شده بود آشنا باشید، می‌دونید که KTOP نرم‌افزاری برای بهینه‌سازی کتاب‌های فارسی برروی Kindle یا هر کتاب‌خوان دیگه‌ای بود که زبان فارسی یا عربی مشکل داشتند. خب KTOP نرم‌افزار خیلی کاربردی بود و چندین و چند درخواست مختلف روی اون انجام شد، حتی روزانه تعدادی از بازدیدهای این وبلاگ برای اون نرم‌افزار هست. اما KTOP کم و کاستی‌هایی داشت: بصورت یک ابزار مجزا نوشته شده بود و نمیشد بصورت یکپارچه داخل Calibre از اون استفاده کرد چون با دات‌ نت نوشته شده بود، دوستان لینوکس کمی با مشکل مواجه بودند فقط کتاب‌های epub رو پشتیبانی می‌کرد و ... برای رفع این مشکل‌ها KiPEO متولد شد. KiPEO یک پلاگین برای Calibre که همون کار قبلی KTOP و انجام میده، یعنی با Reshape کردن کارکترهای کتاب اون رو برای خوندن روی Kindle بهینه‌سازی می‌کنه. مثل KTOP پروگژه KiPEO برروی github در آدرس زیر قرار گرفته: https://github.com/al1b/Calibre-KiPEO چه ویژگی‌هایی داره؟: به راحتی با کتاب‌های epub و awz3 کار میکنه به راحتی قابل استفاده است و چه روی ویندوز و چه لینوکس و ... قابل نصب هست نکته خیلی مهم اینکه تازه نسخه اولیه از اون منتظر شده و تو برنامم هست که اون رو کامل‌تر کنم که تجربه بهتری از خوندن کتاب فارسی روی Kindle داشته باشیم. اگر علاقه مند به دیدن نحوه استفاده از KiPEO هستید، به ادامه مطلب مراجعه کنید؛ اونجا یه gif از نصب و استفاده از اون گذاشتم.">
+
+	<meta name="twitter:card" content="summary">
+	  <meta name="twitter:site" content="@ABahraminezhad">
+	<meta name="twitter:title" content="پلاگین KiPEO، پلاگینی برای Calibre جهت بهینه‌سازی کتاب‌های فارسی برروی Kindle">
+	<meta name="twitter:description" content="اگر قبلاً این وبلاگ را دنبال کرده باشید، یا به هر نحوی با نرم‌افزار KTOP که قبلاً توسط من نوشته شده بود آشنا باشید، می‌دونید که KTOP نرم‌افزاری برای بهینه‌سازی کتاب‌های فارسی برروی Kindle یا هر کتاب‌خوان دیگه‌ای بود که زبان فارسی یا عربی مشکل داشتند. خب KTOP نرم‌افزار خیلی کاربردی بود و چندین و چند درخواست مختلف روی اون انجام شد، حتی روزانه تعدادی از بازدیدهای این وبلاگ برای اون نرم‌افزار هست. اما KTOP کم و کاستی‌هایی داشت: بصورت یک ابزار مجزا نوشته شده بود و نمیشد بصورت یکپارچه داخل Calibre از اون استفاده کرد چون با دات‌ نت نوشته شده بود، دوستان لینوکس کمی با مشکل مواجه بودند فقط کتاب‌های epub رو پشتیبانی می‌کرد و ... برای رفع این مشکل‌ها KiPEO متولد شد. KiPEO یک پلاگین برای Calibre که همون کار قبلی KTOP و انجام میده، یعنی با Reshape کردن کارکترهای کتاب اون رو برای خوندن روی Kindle بهینه‌سازی می‌کنه. مثل KTOP پروگژه KiPEO برروی github در آدرس زیر قرار گرفته: https://github.com/al1b/Calibre-KiPEO چه ویژگی‌هایی داره؟: به راحتی با کتاب‌های epub و awz3 کار میکنه به راحتی قابل استفاده است و چه روی ویندوز و چه لینوکس و ... قابل نصب هست نکته خیلی مهم اینکه تازه نسخه اولیه از اون منتظر شده و تو برنامم هست که اون رو کامل‌تر کنم که تجربه بهتری از خوندن کتاب فارسی روی Kindle داشته باشیم. اگر علاقه مند به دیدن نحوه استفاده از KiPEO هستید، به ادامه مطلب مراجعه کنید؛ اونجا یه gif از نصب و استفاده از اون گذاشتم.">
+	<meta name="twitter:url" content="http://antipattern.ir/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html">
+	
+    <meta property="og:title" content="پلاگین KiPEO، پلاگینی برای Calibre جهت بهینه‌سازی کتاب‌های فارسی برروی Kindle" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/epub/kindle.png" />
+    <meta property="og:url" content="http://antipattern.ir\calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2017-07-09" />
+    <meta property="article:modified_time" content="2017-07-29" />
+    <meta property="article:section" content="Kindle, Calibre, plugin, KTOP, Python" />
+    <meta property="article:tag" content="Kindle" />
+    <meta property="article:tag" content="Calibre" />
+    <meta property="article:tag" content="plugin" />
+    <meta property="article:tag" content="KTOP" />
+    <meta property="article:tag" content="Python" />
+	
+
 	
 			<link rel="stylesheet" href="http://antipattern.ir/css/main.css">	
 			<link rel="stylesheet" href="http://antipattern.ir/css/rtl.css">	
@@ -35,50 +63,78 @@
 			</h1>
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html"><i class="fa fa-paperclip" aria-hidden="true"></i> پلاگین KiPEO، پلاگینی برای Calibre جهت بهینه‌سازی کتاب‌های فارسی برروی Kindle</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
 
-<h1>Posts categorized under: SQL-Server, Encryption, C#</h1>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">18-04-1396</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 2 دقیقه </span>
 
-<article class="small-12">              
-  <h1><a href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html"><i class="fa fa-paragraph" aria-hidden="true"></i> رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</a></h1>  
-          
-  <i class="fa fa-user" aria-hidden="true"></i> 
-  <span class="post-article">علی بهرامی‌نژاد</span> -
-  
-  <i class="fa fa-calendar" aria-hidden="true"></i>
-  <span class="post-date">15-03-1395</span>  -
-                  
-  <i class="fa fa-clock-o" aria-hidden="true"></i>
-  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 6 دقیقه </span>
-  
-  <hr class="top-spilter" />
+<hr class="top-spilter" />
 
-  <div class="tags">
-    <i class="fa fa-tag" aria-hidden="true"></i> 
-          <a href="http://antipattern.ir/tag/sql-server.html">SQL-Server</a>
-          <a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a>
-          <a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a>
-          <a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a>
-          <a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a>
-          <a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a>
-  </div>    
-   
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/kindle.html">Kindle</a>
+        <a href="http://antipattern.ir/tag/calibre.html">Calibre</a>
+        <a href="http://antipattern.ir/tag/plugin.html">plugin</a>
+        <a href="http://antipattern.ir/tag/ktop.html">KTOP</a>
+        <a href="http://antipattern.ir/tag/python.html">Python</a>
+</div>    
+
 <br />
 
-  <p>
-    <p><img alt="SQL Server 2016 - Always Encrpted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/sql-server-2016-always-encrpted.jpg"></p>
-<p>رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند.</p>
-<p>مدت زیادی نیست که نسخه نهایی <a href="https://www.microsoft.com/en-us/server-cloud/products/sql-server/" target="_blank">SQL Server 2016</a> توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز آن <a href="https://msdn.microsoft.com/en-us/library/mt163865.aspx" target="_blank">Always Encrypted</a> است که امکان رمزنگاری ستون‌های بانک اطلاعاتی فراهم میکند.</p>
-<p>رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام می‌شود.</p>
-<p>اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.</p>
+<p>اگر قبلاً این وبلاگ را دنبال کرده باشید، یا به هر نحوی با نرم‌افزار <a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank">KTOP</a> که قبلاً توسط من نوشته شده بود آشنا باشید، می‌دونید که KTOP نرم‌افزاری برای بهینه‌سازی کتاب‌های فارسی برروی Kindle یا هر کتاب‌خوان دیگه‌ای بود که زبان فارسی یا عربی مشکل داشتند.</p>
+<p>خب KTOP نرم‌افزار خیلی کاربردی بود و چندین و چند درخواست مختلف روی اون انجام شد، حتی روزانه تعدادی از بازدیدهای این وبلاگ برای اون نرم‌افزار هست.</p>
+<p>اما KTOP کم و کاستی‌هایی داشت:</p>
+<ol>
+<li>بصورت یک ابزار مجزا نوشته شده بود و نمیشد بصورت یکپارچه داخل Calibre از اون استفاده کرد</li>
+<li>چون با دات‌ نت نوشته شده بود، دوستان لینوکس کمی با مشکل مواجه بودند</li>
+<li>فقط کتاب‌های epub رو پشتیبانی می‌کرد</li>
+<li>و ...</li>
+</ol>
+<p>برای رفع این مشکل‌ها KiPEO متولد شد. KiPEO یک پلاگین برای Calibre که همون کار قبلی KTOP و انجام میده، یعنی با Reshape کردن کارکترهای کتاب اون رو برای خوندن روی Kindle بهینه‌سازی می‌کنه.</p>
+<p>مثل KTOP پروگژه KiPEO برروی github در آدرس زیر قرار گرفته:
+<a href="https://github.com/al1b/Calibre-KiPEO" target="_blank">https://github.com/al1b/Calibre-KiPEO</a></p>
+<p>چه ویژگی‌هایی داره؟:</p>
+<ol>
+<li>به راحتی با کتاب‌های epub و awz3 کار میکنه</li>
+<li>به راحتی قابل استفاده است و چه روی ویندوز و چه لینوکس و ... قابل نصب هست</li>
+</ol>
+<p>نکته خیلی مهم اینکه تازه نسخه اولیه از اون منتظر شده و تو برنامم هست که اون رو کامل‌تر کنم که تجربه بهتری از خوندن کتاب فارسی روی Kindle داشته باشیم.</p>
+<p>اگر علاقه مند به دیدن نحوه استفاده از KiPEO هستید، به ادامه مطلب مراجعه کنید؛ اونجا یه gif از نصب و استفاده از اون گذاشتم.</p>
+<a name="more"></a>
 
-  </p>
-  <a class="read-more" href="always-encrypted-with-sql-server-2016-with-code-example.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
-          
-          
-                    
-  
-</article>
-
+<h2>نحوه استفاده از KiPEO</h2>
+<p><img alt="KiPEO demo" center src="http://antipattern.ir/images/kipeo/KiPEO-demo.gif"></p>
+<p>وقتی از KiPEO استفاده کردید، فراموش نکنید که حتماً می‌تونید با embded کردن فونت و style به کتاب، ظاهر خیلی بهتری به کتاب بدید. در اینجا راهنمایی برای اینکار نوشتم:
+<a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html">تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</a></p>
+<h2>KiPEO حالا مخفف چی هست؟</h2>
+<p>از اونجا که من تو نامگذاری اصلا خوب نیستم، KiPEO از مخفف عبارت زیر بدست اومد:</p>
+<p><strong>Ki</strong>ndle <strong>P</strong>ersian <strong>e</strong>-book <strong>o</strong>ptimizer</p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
 		
 		</div> <!-- end main -->
 			
@@ -87,6 +143,14 @@
 		<div class="sidebar large-4  small-12 columns">
 			<div class="sidebar-container small-12 columns">
 				
+		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
+		<ul>
+			<li><a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html">معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</a></li>
+			<li><a href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html">نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</a></li>
+			<li><a href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html">استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</a></li>
+			<li><a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html">تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</a></li>
+		</ul>
+			
 		
 				
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>

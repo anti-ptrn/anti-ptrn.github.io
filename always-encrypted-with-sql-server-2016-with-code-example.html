@@ -35,8 +35,11 @@
 	
 
 	
-			<link rel="stylesheet" href="http://antipattern.ir/theme/css/style.min.css?07052f08">	
-		
+			<link rel="stylesheet" href="http://antipattern.ir/css/main.css">	
+			<link rel="stylesheet" href="http://antipattern.ir/css/rtl.css">	
+			<link rel="stylesheet" href="http://antipattern.ir/fonts/font-awesome/css/font-awesome.min.css">	
+			<link rel="stylesheet" href="http://antipattern.ir/fonts/font-awesome/css/font-awesome.min.css">	
+			<link rel="stylesheet" href="http://antipattern.ir/css/foundation.css">	
 	
 		<link href="http://antipattern.ir/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Anti-Pattern Atom Feed" />
 </head>
@@ -87,7 +90,7 @@
 
 <br />
 
-<p><img alt="SQL Server 2016 - Always Encrpted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/sql-server-2016-always-encrpted.jpg" /></p>
+<p><img alt="SQL Server 2016 - Always Encrpted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/sql-server-2016-always-encrpted.jpg"></p>
 <p>رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند.</p>
 <p>مدت زیادی نیست که نسخه نهایی <a href="https://www.microsoft.com/en-us/server-cloud/products/sql-server/" target="_blank">SQL Server 2016</a> توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز آن <a href="https://msdn.microsoft.com/en-us/library/mt163865.aspx" target="_blank">Always Encrypted</a> است که امکان رمزنگاری ستون‌های بانک اطلاعاتی فراهم میکند.</p>
 <p>رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام می‌شود.</p>
@@ -95,7 +98,7 @@
 <a name="more"></a>
 
 <h2>نیازمندی‌ها</h2>
-<hr />
+<hr>
 <p>اگر قبلاً SQL Server 2016 و Management Studio 2016 رو نصب نکردید، از طریق لینک‌های زیر دانلود و نصب کنید.</p>
 <ul>
 <li><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016" target="_blank">دریافت SQL Server 2016 با لایسنس 180 روزه</a></li>
@@ -103,9 +106,9 @@
 <li><a href="http://go.microsoft.com/fwlink/?LinkID=799832" target="_blank">دریافت Management Studio June 2016</a></li>
 <li><a href="https://download.microsoft.com/download/F/6/4/F6444AC3-ACF7-4024-BD31-3CACA2DA62DC/AdventureWorks2016CTP3.bak" target="_blank">دریافت دیتابیس تمرینی AdventureWorks 2016 CTP3</a></li>
 </ul>
-<p><small><em>برای دانلود نسخه Developer حتماً باید در visualstudio.com/free ثبت نام کنید و عضو برنامه <a href="https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL" target_blank="target_blank">Visual Studio Dev Express</a> شوید.</em></small></p>
+<p><small><em>برای دانلود نسخه Developer حتماً باید در visualstudio.com/free ثبت نام کنید و عضو برنامه <a href="https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL" target_blank>Visual Studio Dev Express</a> شوید.</em></small></p>
 <h3>انواع رمزنگاری</h3>
-<hr />
+<hr>
 <p>قبل از اینکه نحوه استفاده از Always encrpted را بررسی کنیم، باید بدونیم که Always Encrypted به ما دو نوع روش رمزنگاری پیشنهاد میدهد:</p>
 <ol>
 <li>Deterministic encryption</li>
@@ -139,7 +142,7 @@
 <p><br /></p>
 <p><strong>روش Randomized</strong> روشی امن‌تر از روش اول است چون رشته‌های رمزنگاری آن شانس حدس زدن بسیار پایینی دارند، اما نمی‌توان در این جدول‌ها را براساس مقدار رمزنگاری شده جوین زد، با عملگر مساوی مقادیر را پیدا یا دیتا را دسته بندی کرد. به این دلیل که در هر مرتبه از یک <code>cipher text</code> جدید جهت رمزنگاری استفاده میکند.</p>
 <h2>جدولهای نمونه</h2>
-<hr />
+<hr>
 <p>در نظر بگیرید دو جدول به نام‌های <code>dbo.Person</code> و <code>dbo.PersonCard</code> با ساختار زیر وجود دارد:</p>
 <h4>جدول dbo.Person</h4>
 <table>
@@ -187,184 +190,184 @@
 <p><small><em>در این جدول نام بانک و شماره کارت کاربر مهم تلقی شده و قصد رمزنگاری آنرا داریم</em></small></p>
 <p><br /></p>
 <h2>فعال سازی Always Encrypted</h2>
-<hr />
+<hr>
 <p>جهت رمزنگاری؛ کافیست در Management Studio برروی جدولی که می‌خواهیم ستون‌های آنرا رمزنگاری کنیم راست کلیک و گزینه Encrypt Columns را انتخاب کنیم. ( در اینجا جدول <code>dbo.PersonCard</code> )</p>
-<p><img alt="Encrypt Columns" class="center-image" src="http://antipattern.ir/images/sql-server-2016/01-encrypt-columns.png" /></p>
+<p><img alt="Encrypt Columns" class="center-image" src="http://antipattern.ir/images/sql-server-2016/01-encrypt-columns.png"></p>
 <p>سپس در پنجره باز شده به مرحله دوم یعنی <strong>Column Selection</strong> می‌رویم تا ستون‌های مورد نظر جهت رمزنگاری  انتخاب و نوع رمزنگاری آن‌ها را تعیین کنیم.</p>
-<p><img alt="SQL Server 2016 - Always Encrypted - Column Selection" class="center-image" src="http://antipattern.ir/images/sql-server-2016/02-select-columns.png" /></p>
+<p><img alt="SQL Server 2016 - Always Encrypted - Column Selection" class="center-image" src="http://antipattern.ir/images/sql-server-2016/02-select-columns.png"></p>
 <p><em>در پنجره بالا برای ستون‌های <code>CardNumber</code> و  <code>BankName</code> جهت رمزنگاری نوع <strong>Deterministic</strong> را اتخاب کرده ایم.</em> </p>
 <p>همانطور که در شکل بالا پیداست، در یک ToolTip اعلام شده است که نوع <em>Collation</em> ستون از <strong>Persian_100_AS_CS</strong> به <strong>Persian_100_bin2</strong> تبدیل خواهد شد. برای رمزنگاری <strong>Deterministic</strong> نوع <em>Collation</em> ستون باید از نوع <em>Binary</em> باشد.</p>
 <p>در صورت رفتن به مرحله بعدی؛ می‌بایست پیکربند <strong>Master Key</strong> را انجام دهیم. اما سوال اصلی اینجاست که <strong>Master Key</strong> چیست؟ <a href="https://msdn.microsoft.com/en-us/library/mt163865.aspx#Anchor_3" target="_blank">طبق تعریف مایکروسافت</a> <strong>Column Master Keyها</strong>؛ کلیدهایی جهت محافظت از «کلیدهای رمزنگاری کننده ستون» هستند و این کلید‌ها در جایی امن مانند <strong>Windows Certificate Store</strong> باید ذخیره شوند.</p>
-<p><img alt="SQL Server 2016 - Always Encrypted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/Always_Encrypted-graphic.jpg" /></p>
+<p><img alt="SQL Server 2016 - Always Encrypted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/Always_Encrypted-graphic.jpg"></p>
 <p>در این تصویر با استفاده از <strong>Column Encryption Keys</strong> داده‌های حساس در دیتابیس رمزنگاری شده اند و <strong>Master Key</strong>ها جهت دسترسی به کلیدهای رمزنگاری کننده ستون‌ها هستند.</p>
 <p><br /></p>
 <p><strong>پیکربندی Master Key:</strong></p>
-<p><img alt="SQL Server 2016 - Configuration Master Key" class="center-image" src="http://antipattern.ir/images/sql-server-2016/03-master-key-configuration.png" /></p>
+<p><img alt="SQL Server 2016 - Configuration Master Key" class="center-image" src="http://antipattern.ir/images/sql-server-2016/03-master-key-configuration.png"></p>
 <p>در این مرحله اگر قبلاً <strong>Master Key</strong> تولید کرده باشیم می‌توانیم از قسمت <code>Select column master key</code> نسبت به انتخاب آن یا  اگر قبلاً <strong>Master Key</strong> نساخته ایم با انتخاب <code>Auto generate column master key</code> نسبت به تولید <strong>Master Key</strong> اقدام کنیم. همچنین محل ذخیره سازی Master Key بسیار مهم است؛ همانطور که بالاتر نیز شرح داده شد Master Keyها می‌بایست در جایی امن و قابل اطمینان ذخیره شوند. در اینجا <strong>Windows Certification Store</strong> جهت ذخیره Master Keyها انتخاب شده است. پس از انتخاب <code>master key source</code> با رفتن به مرحله Summary عملیات ساخت Keyها را آغاز می‌کنیم.</p>
 <p>در صورتی که خطایی در زمان تولید کلید‌ها رخ ندهد؛ نتیجه چیزی مانند تصویر زیر خواهد بود:</p>
-<p><img alt="SQL Server 2016 - Encrypted in DB , Decrypted In App" class="center-image" src="http://antipattern.ir/images/sql-server-2016/03-result.png" /></p>
+<p><img alt="SQL Server 2016 - Encrypted in DB , Decrypted In App" class="center-image" src="http://antipattern.ir/images/sql-server-2016/03-result.png"></p>
 <p>حال اگر از جدول <strong>dbo.PersonCard</strong> یک <code>SELECT</code> ساده بگیریم؛ خواهیم دید که اطلاعات به چه شکل رمزنگاری شده اند.</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">SELECT</span> * <span style="color: #0000ff">FROM</span> dbo.PersonCard
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">dbo</span><span class="p">.</span><span class="n">PersonCard</span>
 </pre></div>
 
 
-<p><img alt="SQL Server 2016 - Sample Encrypted Data" class="center-image" src="http://antipattern.ir/images/sql-server-2016/04-encrypted-data.png" /></p>
+<p><img alt="SQL Server 2016 - Sample Encrypted Data" class="center-image" src="http://antipattern.ir/images/sql-server-2016/04-encrypted-data.png"></p>
 <p>اطلاعات در ستون‌ها رمزنگاری شده اند و برخی داده‌های رمزنگاری شده با یکدیگر برابر هستند.</p>
 <p><strong><em>باید توجه داشت </em></strong>که اطلاعات بین مسیر ارتباطی با <strong>SQL Server</strong> و همچنین داخل <strong>SQL Server</strong> به شکل رمزنگاری شده هستند و فقط در برنامه است که داده‌ها رمزگشایی میشوند.</p>
-<p><img alt="SQL Server 2016 - Encrypted in DB , Decrypted In App" class="center-image" src="http://antipattern.ir/images/sql-server-2016/encrypted-in-db.png" /></p>
+<p><img alt="SQL Server 2016 - Encrypted in DB , Decrypted In App" class="center-image" src="http://antipattern.ir/images/sql-server-2016/encrypted-in-db.png"></p>
 <h2>مثال عملی - خواندن دیتای رمزنگاری شده</h2>
-<hr />
+<hr>
 <p>در Query زیر یک Aggregation و Group By برروی یکی از ستون‌های رمزنگاری شده انجام میدهیم.</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">SELECT</span> BankName, <span style="color: #0000ff">COUNT</span>(1) [CardQuantity] <span style="color: #0000ff">FROM</span> dbo.PersonCard
-<span style="color: #0000ff">GROUP</span> <span style="color: #0000ff">BY</span> BankName
+<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">BankName</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">[</span><span class="n">CardQuantity</span><span class="p">]</span> <span class="k">FROM</span> <span class="n">dbo</span><span class="p">.</span><span class="n">PersonCard</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">BankName</span>
 </pre></div>
 
 
-<p><img alt="SQL Server 2016 - Sample Encrypted Data Group by Query" class="center-image" src="http://antipattern.ir/images/sql-server-2016/05-sample-query.png" /></p>
+<p><img alt="SQL Server 2016 - Sample Encrypted Data Group by Query" class="center-image" src="http://antipattern.ir/images/sql-server-2016/05-sample-query.png"></p>
 <p>قبلاً نیز اشاره کردیم که تنها دربرنامه می‌توان مقدار رمزنگاری شده را رمزگشایی کرد؛ حال سعی میکنیم این کار را در یک پروژه با دات نت انجام دهیم.</p>
 <p>برای استفاده از <strong>Always Encrypted</strong> در دات نت بهتر است در پروژه خود از Netframework 4.6.x استفاده کنید.</p>
 <p><em>وجود عبارت <code>Column Encryption Setting=enabled</code> در <strong>Connection String</strong>، سبب می‌شود تا ADO.Net از امکان Always Encrypted استفاده کند.</em></p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">using</span> System;
-<span style="color: #0000ff">using</span> System.Collections.Generic;
-<span style="color: #0000ff">using</span> System.Linq;
-<span style="color: #0000ff">using</span> System.Text;
-<span style="color: #0000ff">using</span> System.Threading.Tasks;
-<span style="color: #0000ff">using</span> System.Data;
-<span style="color: #0000ff">using</span> System.Data.SqlClient;
+<div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data.SqlClient</span><span class="p">;</span>
 
-<span style="color: #0000ff">namespace</span> AlwaysEncrypted
-{
-    <span style="color: #0000ff">class</span> <span style="color: #2b91af">Program</span>
-    {
-        <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #2b91af">string</span>[] args)
-        {
-            <span style="color: #008000">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
-            <span style="color: #2b91af">var</span> connectionString = <span style="color: #a31515">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span>;
+<span class="k">namespace</span> <span class="nn">AlwaysEncrypted</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+            <span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span><span class="p">;</span>
 
-            <span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> connection = <span style="color: #0000ff">new</span> SqlConnection(connectionString))
-            {
-                connection.Open();
+            <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">connection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">connection</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
 
-                <span style="color: #2b91af">var</span> cmd = connection.CreateCommand();
-                cmd.CommandText = <span style="color: #a31515">&quot;SELECT BankName, COUNT(1) [CardQuantity] FROM dbo.PersonCard GROUP BY BankName&quot;</span>;
+                <span class="kt">var</span> <span class="n">cmd</span> <span class="p">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">CreateCommand</span><span class="p">();</span>
+                <span class="n">cmd</span><span class="p">.</span><span class="n">CommandText</span> <span class="p">=</span> <span class="s">&quot;SELECT BankName, COUNT(1) [CardQuantity] FROM dbo.PersonCard GROUP BY BankName&quot;</span><span class="p">;</span>
 
-                <span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> reader = cmd.ExecuteReader())
-                {
-                    <span style="color: #0000ff">while</span> (reader.Read())
-                        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{reader[0]}\t{reader[1]}&quot;</span>);
+                <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">cmd</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">())</span>
+                <span class="p">{</span>
+                    <span class="k">while</span> <span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">Read</span><span class="p">())</span>
+                        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{reader[0]}\t{reader[1]}&quot;</span><span class="p">);</span>
 
-                    reader.Close();
-                }
-            }
+                    <span class="n">reader</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
 
-            Console.Read();
-        }
-    }
-}
+            <span class="n">Console</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>بدون اینکه کد اضافه ای نوشته شود دیتا رمزگشایی شد.</p>
-<p><img alt="SQL Server 2016 - Sample Decrypted Data Group by Query" class="center-image" src="http://antipattern.ir/images/sql-server-2016/06-decrpted_data.jpg" /></p>
+<p><img alt="SQL Server 2016 - Sample Decrypted Data Group by Query" class="center-image" src="http://antipattern.ir/images/sql-server-2016/06-decrpted_data.jpg"></p>
 <h2>مثال عملی - درج دیتا</h2>
-<hr />
+<hr>
 <p>با استفاده از تکه کد زیر قصد داریم یک کارت بانکی جدید در جدول <code>dbo.PersonCard</code> اضافه کنیم. از قبل ستون‌های <strong>BankName</strong> و <strong>CardNumber</strong>رمزنگاری شده اند، اما به چه شکل میتوانیم در دات نت در آنها دیتا درج کنیم؟</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008000">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
-<span style="color: #2b91af">var</span> connectionString = <span style="color: #a31515">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span>;
+<div class="highlight"><pre><span></span><span class="c1">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+<span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span><span class="p">;</span>
 
-<span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> connection = <span style="color: #0000ff">new</span> SqlConnection(connectionString))
-{
-    connection.Open();
+<span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">connection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">connection</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
 
-    <span style="color: #2b91af">var</span> cmd = connection.CreateCommand();
-    cmd.CommandText = <span style="color: #a31515">@&quot;INSERT INTO [dbo].[PersonCard]</span>
-<span style="color: #a31515">                        SELECT @PersonId, @CardNumber, @BankName;&quot;</span>;
-
-
-
-    cmd.Parameters.AddWithValue(<span style="color: #a31515">&quot;@PersonId&quot;</span>, 1);
-    cmd.Parameters.AddWithValue(<span style="color: #a31515">&quot;@BankName&quot;</span>, <span style="color: #a31515">&quot;New Bank of Mine&quot;</span>);
-    cmd.Parameters.AddWithValue(<span style="color: #a31515">&quot;@CardNumber&quot;</span>, <span style="color: #a31515">&quot;80908945xxxxyyyy&quot;</span>);
+    <span class="kt">var</span> <span class="n">cmd</span> <span class="p">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">CreateCommand</span><span class="p">();</span>
+    <span class="n">cmd</span><span class="p">.</span><span class="n">CommandText</span> <span class="p">=</span> <span class="s">@&quot;INSERT INTO [dbo].[PersonCard]</span>
+<span class="s">                        SELECT @PersonId, @CardNumber, @BankName;&quot;</span><span class="p">;</span>
 
 
-    cmd.ExecuteNonQuery();
 
-    Console.WriteLine(<span style="color: #a31515">&quot;Inserted!&quot;</span>);
-}
+    <span class="n">cmd</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@PersonId&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+    <span class="n">cmd</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@BankName&quot;</span><span class="p">,</span> <span class="s">&quot;New Bank of Mine&quot;</span><span class="p">);</span>
+    <span class="n">cmd</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&quot;@CardNumber&quot;</span><span class="p">,</span> <span class="s">&quot;80908945xxxxyyyy&quot;</span><span class="p">);</span>
 
-Console.Read();
+
+    <span class="n">cmd</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Inserted!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span>
 </pre></div>
 
 
 <p>کد بالا بدون مشکل اجرا میشود و رکورد در دیتابیس درج میشود؛
 اگر با استفاده از <a href="https://technet.microsoft.com/en-us/library/aa173918(v=sql.80).aspx" target="_blank">SQL Server Profiler</a> دستورات ارسالی به <em>SQL Server</em> پروفایل کنید خواهید دید که مقادیر اارسالی نیز به شکل رمزنگاری شده ارسال شده اند!</p>
-<p><img alt="SQL Server Profiler - Insert in Always Encrypted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/07-profiler.png" /></p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000ff">exec</span> sp_executesql N<span style="color: #a31515">&#39;INSERT INTO [dbo].[PersonCard]</span>
-<span style="color: #a31515">                                    SELECT @PersonId, @CardNumber, @BankName;&#39;</span>,N<span style="color: #a31515">&#39;@PersonId int,@BankName nvarchar(16),@CardNumber nvarchar(16)&#39;</span>,@PersonId=1,@BankName=0x01272FF7910740F799AC04B88B70A0C540CA03301928CCFEB027DDBD56589004159F7DD3C71D8B5D83BE0DFE1B52B9374B542F38F419B3F8C0A06F9FDD398DEBB6BA3B499D9D43017755F87F89720EDFC02B2227BCC15C5BCD03B87C9D3837EC5D,@CardNumber=0x01634D3FF45705BCA69969F7650B178B4B733F0148A7FE6562CF9DEABC8BF1BCAC3249FF28CE30AAE4D4CA8663EA9D3474E35711867CF35069B930272DC979BB761B92F319541DF9233F8983DA5ECE39607212E28C89316D35A02A480721ED04C7
+<p><img alt="SQL Server Profiler - Insert in Always Encrypted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/07-profiler.png"></p>
+<div class="highlight"><pre><span></span><span class="k">exec</span> <span class="n">sp_executesql</span> <span class="n">N</span><span class="s1">&#39;INSERT INTO [dbo].[PersonCard]</span>
+<span class="s1">                                    SELECT @PersonId, @CardNumber, @BankName;&#39;</span><span class="p">,</span><span class="n">N</span><span class="s1">&#39;@PersonId int,@BankName nvarchar(16),@CardNumber nvarchar(16)&#39;</span><span class="p">,</span><span class="o">@</span><span class="n">PersonId</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="o">@</span><span class="n">BankName</span><span class="o">=</span><span class="mi">0</span><span class="n">x01272FF7910740F799AC04B88B70A0C540CA03301928CCFEB027DDBD56589004159F7DD3C71D8B5D83BE0DFE1B52B9374B542F38F419B3F8C0A06F9FDD398DEBB6BA3B499D9D43017755F87F89720EDFC02B2227BCC15C5BCD03B87C9D3837EC5D</span><span class="p">,</span><span class="o">@</span><span class="n">CardNumber</span><span class="o">=</span><span class="mi">0</span><span class="n">x01634D3FF45705BCA69969F7650B178B4B733F0148A7FE6562CF9DEABC8BF1BCAC3249FF28CE30AAE4D4CA8663EA9D3474E35711867CF35069B930272DC979BB761B92F319541DF9233F8983DA5ECE39607212E28C89316D35A02A480721ED04C7</span>
 </pre></div>
 
 
 <p><br /></p>
 <h2>مثال عملی - خواندن دیتا و درج دیتا با استفاده از EntityFramework</h2>
-<hr />
+<hr>
 <p>تکه کد زیر جهت اجرای دستورات خواندن، درج، بروز آوری، جستجو و دسته بندی در <strong>Entity Framework</strong> نوشته شده است.</p>
-<div class="codehilite" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008000">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
-<span style="color: #2b91af">var</span> connectionString = <span style="color: #a31515">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span>;
+<div class="highlight"><pre><span></span><span class="c1">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+<span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span><span class="p">;</span>
 
-<span style="color: #0000ff">using</span> (<span style="color: #2b91af">var</span> context = <span style="color: #0000ff">new</span> MyDBContext(connectionString))
-{
-    <span style="color: #008000">// Read them all</span>
-    Console.WriteLine(<span style="color: #a31515">&quot;All Data&quot;</span>);
-    context.PersonCards.ToList().ForEach((card) =&gt;
-    {
-        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{card.PersonId}, {card.BankName}, {card.CardNumber}&quot;</span>);
-    });
+<span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MyDBContext</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">// Read them all</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;All Data&quot;</span><span class="p">);</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span><span class="p">.</span><span class="n">ToList</span><span class="p">().</span><span class="n">ForEach</span><span class="p">((</span><span class="n">card</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{card.PersonId}, {card.BankName}, {card.CardNumber}&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
 
-    <span style="color: #008000">// Insert some</span>
-    <span style="color: #2b91af">var</span> newCard = context.PersonCards.Add(<span style="color: #0000ff">new</span> PersonCard
-    {
-        PersonId = 1,
-        BankName = <span style="color: #a31515">&quot;Entity Bank of Me&quot;</span>,
-        CardNumber = <span style="color: #a31515">&quot;1234567891234531&quot;</span>
-    });
-    context.SaveChanges();
-    Console.WriteLine(<span style="color: #a31515">&quot;\r\nRecord has inserted&quot;</span>);
+    <span class="c1">// Insert some</span>
+    <span class="kt">var</span> <span class="n">newCard</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">PersonCard</span>
+    <span class="p">{</span>
+        <span class="n">PersonId</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span>
+        <span class="n">BankName</span> <span class="p">=</span> <span class="s">&quot;Entity Bank of Me&quot;</span><span class="p">,</span>
+        <span class="n">CardNumber</span> <span class="p">=</span> <span class="s">&quot;1234567891234531&quot;</span>
+    <span class="p">});</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">SaveChanges</span><span class="p">();</span>
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\r\nRecord has inserted&quot;</span><span class="p">);</span>
 
-    <span style="color: #008000">// A Where Condition</span>
-    <span style="color: #008000">// حتماً به متدهای لینک متغیر پاس دهید تا کوئری تولید شده پارامتری باشد</span>
-    <span style="color: #008000">// در غیر اینصورت ممکن است با خطا مواجه شوید!</span>
-    <span style="color: #2b91af">var</span> aCard = context.PersonCards
-                        .FirstOrDefault(card =&gt; card.CardNumber == newCard.CardNumber);
-    <span style="color: #0000ff">if</span> (aCard != <span style="color: #0000ff">null</span>)
-        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;\r\nCard found \t =&gt; \t {aCard.PersonId}, {aCard.BankName}, {aCard.CardNumber}&quot;</span>);
+    <span class="c1">// A Where Condition</span>
+    <span class="c1">// حتماً به متدهای لینک متغیر پاس دهید تا کوئری تولید شده پارامتری باشد</span>
+    <span class="c1">// در غیر اینصورت ممکن است با خطا مواجه شوید!</span>
+    <span class="kt">var</span> <span class="n">aCard</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span>
+                        <span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">card</span> <span class="p">=&gt;</span> <span class="n">card</span><span class="p">.</span><span class="n">CardNumber</span> <span class="p">==</span> <span class="n">newCard</span><span class="p">.</span><span class="n">CardNumber</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">aCard</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;\r\nCard found \t =&gt; \t {aCard.PersonId}, {aCard.BankName}, {aCard.CardNumber}&quot;</span><span class="p">);</span>
 
-    <span style="color: #008000">// Update some fields</span>
-    aCard.BankName = <span style="color: #a31515">&quot;EN Bank&quot;</span>;
-    context.SaveChanges();
+    <span class="c1">// Update some fields</span>
+    <span class="n">aCard</span><span class="p">.</span><span class="n">BankName</span> <span class="p">=</span> <span class="s">&quot;EN Bank&quot;</span><span class="p">;</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">SaveChanges</span><span class="p">();</span>
 
-    Console.WriteLine(<span style="color: #a31515">&quot;\r\nRecord has updated.&quot;</span>);
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\r\nRecord has updated.&quot;</span><span class="p">);</span>
 
-    <span style="color: #008000">// An aggregation query</span>
-    <span style="color: #2b91af">var</span> result = (<span style="color: #0000ff">from</span> c <span style="color: #0000ff">in</span> context.PersonCards
-                    <span style="color: #0000ff">group</span> c <span style="color: #0000ff">by</span> c.BankName <span style="color: #0000ff">into</span> gc
-                    <span style="color: #0000ff">select</span> <span style="color: #0000ff">new</span> { BankName = gc.Key, Quantity = gc.Count() })
-                    .ToList();
+    <span class="c1">// An aggregation query</span>
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="p">(</span><span class="k">from</span> <span class="n">c</span> <span class="k">in</span> <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span>
+                    <span class="k">group</span> <span class="n">c</span> <span class="k">by</span> <span class="n">c</span><span class="p">.</span><span class="n">BankName</span> <span class="k">into</span> <span class="n">gc</span>
+                    <span class="k">select</span> <span class="k">new</span> <span class="p">{</span> <span class="n">BankName</span> <span class="p">=</span> <span class="n">gc</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span> <span class="n">Quantity</span> <span class="p">=</span> <span class="n">gc</span><span class="p">.</span><span class="n">Count</span><span class="p">()</span> <span class="p">})</span>
+                    <span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
 
-    Console.WriteLine(<span style="color: #a31515">&quot;\r\nA group by!\r\n&quot;</span>);
-    result.ForEach((r) =&gt;
-    {
-        Console.WriteLine(<span style="border: 1px solid #FF0000">$</span><span style="color: #a31515">&quot;{r.BankName}, {r.Quantity}&quot;</span>);
-    });
+    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\r\nA group by!\r\n&quot;</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">ForEach</span><span class="p">((</span><span class="n">r</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{r.BankName}, {r.Quantity}&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
 
-}
+<span class="p">}</span>
 
 
-Console.Read();
+<span class="n">Console</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span>
 </pre></div>
 
 
 <p><strong>خروجی تکه کد بالا</strong></p>
-<p><img alt="SQL Server Profiler - EntityFramework Query Result" class="center-image" src="http://antipattern.ir/images/sql-server-2016/08-ef-query-result.png" /></p>
+<p><img alt="SQL Server Profiler - EntityFramework Query Result" class="center-image" src="http://antipattern.ir/images/sql-server-2016/08-ef-query-result.png"></p>
 <p><br /></p>
 <p>بزرگترین مزیت <strong>Always Encrypted</strong> عدم نیاز به تغییر در کدهای برنامه است و تنها با اضافه کردن یک تنظیم در <strong>Connection String</strong> می‌توان از این امکان جدید استفاده کرد.</p>         
         
@@ -404,6 +407,9 @@ Console.Read();
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>
 				<ul id="recent-posts">
 					<li>
+					<a href="http://antipattern.ir/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html" title='اگر قبلاً این وبلاگ را دنبال کرده باشید، یا به هر نحوی با نرم‌افزار KTOP که قبلاً توسط من نوشته شده بود آشنا باشید، می‌دونید که KTOP نرم‌افزاری برای بهینه‌سازی کتاب‌های فارسی برروی Kindle یا هر کتاب‌خوان دیگه‌ای بود که زبان فارسی یا عربی مشکل داشتند. خب KTOP نرم‌افزار خیلی کاربردی بود و چندین و چند درخواست مختلف روی اون انجام شد، حتی روزانه تعدادی از بازدیدهای این وبلاگ برای اون نرم‌افزار هست. اما KTOP کم و کاستی‌هایی داشت: بصورت یک ابزار مجزا نوشته شده بود و نمیشد بصورت یکپارچه داخل Calibre از اون استفاده کرد چون با دات‌ نت نوشته شده بود، دوستان لینوکس کمی با مشکل مواجه بودند فقط کتاب‌های epub رو پشتیبانی می‌کرد و ... برای رفع این مشکل‌ها KiPEO متولد شد. KiPEO یک پلاگین برای Calibre که همون کار قبلی KTOP و انجام میده، یعنی با Reshape کردن کارکترهای کتاب اون رو برای خوندن روی Kindle بهینه‌سازی می‌کنه. مثل KTOP پروگژه KiPEO برروی github در آدرس زیر قرار گرفته: https://github.com/al1b/Calibre-KiPEO چه ویژگی‌هایی داره؟: به راحتی با کتاب‌های epub و awz3 کار میکنه به راحتی قابل استفاده است و چه روی ویندوز و چه لینوکس و ... قابل نصب هست نکته خیلی مهم اینکه تازه نسخه اولیه از اون منتظر شده و تو برنامم هست که اون رو کامل‌تر کنم که تجربه بهتری از خوندن کتاب فارسی روی Kindle داشته باشیم. اگر علاقه مند به دیدن نحوه استفاده از KiPEO هستید، به ادامه مطلب مراجعه کنید؛ اونجا یه gif از نصب و استفاده از اون گذاشتم.'>پلاگین KiPEO، پلاگینی برای Calibre جهت بهینه‌سازی کتاب‌های فارسی برروی Kindle</a>
+					</li>
+					<li>
 					<a href="http://antipattern.ir/what-is-xamarin-workbooks.html" title='تصور کنید قصد یادگرفتن زبان برنامه‌نویسی C# و دارین؛ یا ابزاری نیاز دارید که داخل اون به تمرین و نوشتن کد بپردازین، یا حتی ابزاری که به راحتی به شکل خیلی تعاملی، بتونید تکه کدهای خودتون رو اجرا کنید. در حالت عادی اگر قصد چنین کاری و داشته باشید یا باید از ابزار C# Interactive استفاده کنید یا اینکه داخل Visual Studio پروژه جدید ایجاد و کدی که میخواید و اجرا کنید. اما به نظر من؛ برای اینکار ابزاری بسیار عالی توسط شرکت Xamarin به نام Xamarin Workbooks تهیه و تولید شده که وِیژگی‌های زیر را شامل میشود: کاملاً رایگان قابلیت اجرا برروی سیستم عامل Mac و Windows قابلیت تغییر کد بصورت در لحظه و دیدن خروجی بصورت تعاملی امکان نوشتن توضیحات اضافه در بالای کد! پشتیبانی از زبان قالب‌ بندی متن Markdown اگر علاقه‌مند به دیدن کارکرد این برنامه عالی در عمل هستید، حتماً ادامه مطلب را مطالعه نمایید.'>Xamarin Workbooks چیست و چه کاربردی دارد؟</a>
 					</li>
 					<li>
@@ -418,9 +424,6 @@ Console.Read();
 					<li>
 					<a href="http://antipattern.ir/download-xamarin-updates.html" title='Xamarin آپدیت‌هایش را در سایت Xamarin Releases معرفی می‌کند. اگر از کاربران Visual Studio باشید، برای نصب یا Update زامارین 2 راه پیش روی شماست: استفاده از Visual Studio جهت دریافت خودکار Update دانلود مستقیم آپدیت‌ها از زامارین در زمان نه چندان دور که هنوز Xamarin توسط Microsoft خریداری نشده بود ( یا حتی چند ماه پس از خرید )، لینک‌های دانلود برروی سرورهای Amazon CloudFront قرار می‌گرفتند و متاسفانه در زمان دانلود خطای عدم دسترسی برای IP ایران مشاهده میشد. چند وقتی هست که خوشبختانه فایل‌ها از CloudFront به Azure مایکروسافت منتقل شدن و به راحتی میشه اونها رو دانلود کرد. اگر به آدرس https://releases.xamarin.com در قسمتی از سایت لیست آخرین releaseها قرار گرفته اند. برای مثال در تصویر زیر یک خبر مربوط به Release Cycle 8 قابل مشاهده است. اگر برای مثال به صفحه یکی از این Cycle Releaseها مراجعه کنیم. ( مثلاً این) در قسمتی از صفحه مانند تصویر زیر شماره نسخه و نام محصول Release شده قابل مشاهده است. مثلاً برای نسخه 4.2.1.73 برای ویژوال استودیو کافیست شماره نسخه را در URL زیر جایگزین کنید و Update و مورد نظر و دریافت کنید. https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_{version}.msi نسخه 4.2.1.73 https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.2.1.73.msi نسخه ی alpha https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.3.0.281.msi'>نصب یا دریافت آپدیت‌های Xamarin</a>
 					</li>
-					<li>
-					<a href="http://antipattern.ir/sqlserver-vnext-on-linux.html" title='مایکروسافت SQL Server روی لینوکس! حتی فکر کردن به جمله بالا کمی از قوه تخیل خارج بود، اما اگر اخبار این چند وقت اخیر مایکروسافت مثل«پیوستن مایکروسافت به بنیاد لینوکس»، «پیوستن گوکل به بنیاد دات نت » و یا پست «چرا باید به استک مایکروسافت بیشتر توجه کنیم» رو مطالعه کرده باشید زیاد از عنوان بالا تعجب نخواهید کرد. پروژه SQL Server بر روی لینوکس، چندین ماه پیش به شکل رسمی توسط مایکروسافت معرفی شد و دسترسی به نسخه‌های اولیه آزمایشی تنها برای مشتریان/افراد خاص فراهم گردیده بود، در هفته گذشته مایکروسافت دسترسی نسخه آزمایشی SQL Server vNext را برای تمامی کاربران فراهم آورد. اگر از دسته کاربرانی باشید که حداقل یکبار SQL Server روی ویندوز نصب کرده باشید؛ حتماً مشکلاتی با نصب طولانی آن داشته اید، اما در لینوکس ( در اینجا توزیع Ubuntu ) به راحتی، در عرض چند دقیقه تنها با اسفتاده از دستور apt می‌توان آن‌را نصب کرد. sudo apt install mssql-server مایکروسافت در صفحه SQL Server vNext اطلاعات بسیار خوب کافی از قبیل راهنمایی مرحله به مرحله و ... فراهم آورده است. اگر علاقه‌مند به دریافت اطلاعات بیشتر هستید لطفاً یک ماشین مجازی/فیزیکی با حداقل رم 3.5 گیگ تهیه کنید و ادامه مطلب و بخونید.'>مایکروسافت SQL Server روی لینوکس!</a>
-					</li>
 				</ul>												
 
 						
@@ -428,41 +431,43 @@ Console.Read();
 				<nav class="tags">								
 					<h2><i class="fa fa-tags" aria-hidden="true"></i> تگ‌ها</h2>
 					<ul>
-							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
-							<li ><a href="http://antipattern.ir/tag/agile.html">Agile</a></li>
-							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
-							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
-							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
-							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
-							<li ><a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a></li>
-							<li ><a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a></li>
 							<li ><a href="http://antipattern.ir/tag/peyvandhair.html">peyvandha.ir</a></li>
-							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
-							<li ><a href="http://antipattern.ir/tag/solid.html">SOLID</a></li>
-							<li ><a href="http://antipattern.ir/tag/ebook.html">ebook</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a></li>
-							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
-							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
-							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
+							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
+							<li ><a href="http://antipattern.ir/tag/ereader.html">eReader</a></li>
+							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
 							<li ><a href="http://antipattern.ir/tag/csharp.html">CSharp</a></li>
-							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
-							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
+							<li ><a href="http://antipattern.ir/tag/mrfy-khtb.html">معرفی کتاب</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
+							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
+							<li ><a href="http://antipattern.ir/tag/agile.html">Agile</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql-server.html">SQL Server</a></li>
+							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
+							<li ><a href="http://antipattern.ir/tag/adonet.html">ADO.Net</a></li>
+							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
+							<li ><a href="http://antipattern.ir/tag/net.html">.net</a></li>
+							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
+							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
+							<li ><a href="http://antipattern.ir/tag/net-core.html">.NET Core</a></li>
+							<li ><a href="http://antipattern.ir/tag/scrum.html">Scrum</a></li>
 							<li ><a href="http://antipattern.ir/tag/amazon-kindle.html">Amazon Kindle</a></li>
 							<li ><a href="http://antipattern.ir/tag/python.html">Python</a></li>
-							<li ><a href="http://antipattern.ir/tag/calibre.html">Calibre</a></li>
-							<li ><a href="http://antipattern.ir/tag/ktop.html">KTOP</a></li>
-							<li ><a href="http://antipattern.ir/tag/hyper-v.html">Hyper-V</a></li>
-							<li ><a href="http://antipattern.ir/tag/microsoft-virtual-academy.html">Microsoft Virtual Academy</a></li>
-							<li ><a href="http://antipattern.ir/tag/debugging.html">Debugging</a></li>
-							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/ebook.html">ebook</a></li>
 							<li ><a href="http://antipattern.ir/tag/mqlh-amwzshy.html">مقاله آموزشی</a></li>
-							<li ><a href="http://antipattern.ir/tag/rmzngry.html">رمزنگاری</a></li>
-							<li ><a href="http://antipattern.ir/tag/always-encrypted.html">Always Encrypted</a></li>
-							<li ><a href="http://antipattern.ir/tag/scrum.html">Scrum</a></li>
-							<li ><a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a></li>
+							<li ><a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a></li>
+							<li ><a href="http://antipattern.ir/tag/android.html">Android</a></li>
+							<li ><a href="http://antipattern.ir/tag/epub.html">epub</a></li>
+							<li ><a href="http://antipattern.ir/tag/xamarin.html">Xamarin</a></li>
+							<li ><a href="http://antipattern.ir/tag/c.html">C#</a></li>
 							<li ><a href="http://antipattern.ir/tag/open-source.html">Open Source</a></li>
+							<li ><a href="http://antipattern.ir/tag/plugin.html">plugin</a></li>
+							<li ><a href="http://antipattern.ir/tag/solid.html">SOLID</a></li>
 							<li ><a href="http://antipattern.ir/tag/powershell.html">Powershell</a></li>
+							<li ><a href="http://antipattern.ir/tag/entity-framework.html">Entity Framework</a></li>
+							<li ><a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a></li>
+							<li ><a href="http://antipattern.ir/tag/emulator.html">Emulator</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypt-khrbrdy-pytwn.html">اسکریپت کاربردی پایتون</a></li>
+							<li ><a href="http://antipattern.ir/tag/kindle.html">Kindle</a></li>
+							<li ><a href="http://antipattern.ir/tag/skhrypthy-grease-monkey.html">اسکریپت‌های Grease Monkey</a></li>
 					</ul>
 				</nav>						
 
