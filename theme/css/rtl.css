@@ -476,4 +476,5 @@ blockquote{
 
 .highlight pre{
 	direction:ltr;
+	text-align:left;
 }
