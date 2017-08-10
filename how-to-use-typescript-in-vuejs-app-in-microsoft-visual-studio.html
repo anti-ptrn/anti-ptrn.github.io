@@ -2,9 +2,35 @@
 <html lang="">
 <head>
 	<meta charset="utf-8"/>
-	<title>Open Source, Microsoft, SQL Server - Anti-Pattern</title>
+	<title>نحوه استفاده از TypeScript در توسعه برنامه‌های Vue.js در Visual Studio - Anti-Pattern</title>
 	<link rel="shortcut icon" type="image/png" href="http://antipattern.ir/theme/images/favicon.ico"/>	
 	<meta name="author" content="Ali Bahraminezhad">
+
+	<link rel="canonical" href="http://antipattern.ir/how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html" />
+
+  <meta name="description" content="اخیراً در پروژه‌ای تصمیم گرفتم از چهارچوب جاوااسکریپتی Vue.js استفاده کنم. باتوجه به اینکه این چهارچوب فوق‌العاده به صورت رسمی از TypeScript پشتیبانی می‌کند مطابق راهنمای موجود در سایت vuejs سعی کردم که فایل‌های declaration مربوط به Vue.js را به عنوان Reference به پروژه اضافه کنم اما کامپایلر TypeScript آن‌ها را نشناخت و چندین خطای مختلف رخ داد. در این نوشتار راهنمای استفاده از declaration فایل‌های Vue.js در Visual Studio شرح داده شده است. به لطف این فایل‌ها می‌توان در کد نویسی Vue.js از امکان intellisense ویژوال استودیو بهره برد تا با راحتی هرچه بیشتر به توسعه برنامه پرداخت ...">
+
+	<meta name="twitter:card" content="summary">
+	  <meta name="twitter:site" content="@ABahraminezhad">
+	<meta name="twitter:title" content="نحوه استفاده از TypeScript در توسعه برنامه‌های Vue.js در Visual Studio">
+	<meta name="twitter:description" content="اخیراً در پروژه‌ای تصمیم گرفتم از چهارچوب جاوااسکریپتی Vue.js استفاده کنم. باتوجه به اینکه این چهارچوب فوق‌العاده به صورت رسمی از TypeScript پشتیبانی می‌کند مطابق راهنمای موجود در سایت vuejs سعی کردم که فایل‌های declaration مربوط به Vue.js را به عنوان Reference به پروژه اضافه کنم اما کامپایلر TypeScript آن‌ها را نشناخت و چندین خطای مختلف رخ داد. در این نوشتار راهنمای استفاده از declaration فایل‌های Vue.js در Visual Studio شرح داده شده است. به لطف این فایل‌ها می‌توان در کد نویسی Vue.js از امکان intellisense ویژوال استودیو بهره برد تا با راحتی هرچه بیشتر به توسعه برنامه پرداخت ...">
+	<meta name="twitter:url" content="http://antipattern.ir/how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html">
+	
+    <meta property="og:title" content="نحوه استفاده از TypeScript در توسعه برنامه‌های Vue.js در Visual Studio" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://antipattern.ir/images/vuejs/vue.png" />
+    <meta property="og:url" content="http://antipattern.ir\how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="" />
+    <meta property="og:site_name" content="Anti-Pattern محلی برای اشتراک دانش برنامه‌نویسی، مهندسی نرم افزار، ابزارها" />
+    <meta property="article:published_time" content="2017-08-10" />
+    <meta property="article:modified_time" content="2017-08-10" />
+    <meta property="article:section" content="Visual Studio, TypeScript, Vue.js" />
+    <meta property="article:tag" content="Visual Studio" />
+    <meta property="article:tag" content="TypeScript" />
+    <meta property="article:tag" content="Vue.js" />
+	
+
 	
 			<link rel="stylesheet" href="http://antipattern.ir/theme/css/main.css">	
 			<link rel="stylesheet" href="http://antipattern.ir/theme/css/rtl.css">	
@@ -35,53 +61,163 @@
 			</h1>
 		</header>
 		<div role="main" class="content large-8 small-12 columns">
+	<article class="small-12 columns single-article">
+<h1><a href="http://antipattern.ir/how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html"><i class="fa fa-paperclip" aria-hidden="true"></i> نحوه استفاده از TypeScript در توسعه برنامه‌های Vue.js در Visual Studio</a></h1>  
+        
+<i class="fa fa-user" aria-hidden="true"></i> 
+<span class="post-article">علی بهرامی‌نژاد</span> -
 
-<h1>Posts categorized under: Open Source, Microsoft, SQL Server</h1>
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<span class="post-date">19-05-1396</span>  -
+                
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+<span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 3 دقیقه </span>
 
-<article class="small-12">              
-  <h1><a href="http://antipattern.ir/sqlserver-vnext-on-linux.html"><i class="fa fa-paragraph" aria-hidden="true"></i> مایکروسافت SQL Server روی لینوکس!</a></h1>  
-          
-  <i class="fa fa-user" aria-hidden="true"></i> 
-  <span class="post-article">علی بهرامی‌نژاد</span> -
-  
-  <i class="fa fa-calendar" aria-hidden="true"></i>
-  <span class="post-date">30-08-1395</span>  -
-                  
-  <i class="fa fa-clock-o" aria-hidden="true"></i>
-  <span data-tooltip aria-haspopup="true" title="Test test" class="has-tip" data-disable-hover="false">زمان تقریبی مطالعه: 3 دقیقه </span>
-  
-  <hr class="top-spilter" />
+<hr class="top-spilter" />
 
-  <div class="tags">
-    <i class="fa fa-tag" aria-hidden="true"></i> 
-          <a href="http://antipattern.ir/tag/open-source.html">Open Source</a>
-          <a href="http://antipattern.ir/tag/microsoft.html">Microsoft</a>
-          <a href="http://antipattern.ir/tag/sql.html">SQL <Server></Server></a>
-  </div>    
-   
+<div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i> 
+        <a href="http://antipattern.ir/tag/visual-studio.html">Visual Studio</a>
+        <a href="http://antipattern.ir/tag/typescript.html">TypeScript</a>
+        <a href="http://antipattern.ir/tag/vuejs.html">Vue.js</a>
+</div>    
+
 <br />
 
-  <p>
-    <p>مایکروسافت SQL Server روی لینوکس! </p>
-<p>حتی فکر کردن به جمله بالا کمی از قوه تخیل خارج بود، اما اگر اخبار این چند وقت اخیر مایکروسافت مثل«<a href="https://techcrunch.com/2016/11/16/microsoft-joins-the-linux-foundation/" target="_blank">پیوستن مایکروسافت به بنیاد لینوکس</a>»، «<a href="http://venturebeat.com/2016/11/16/google-joins-microsofts-net-foundation/" target="_blank">پیوستن گوکل به بنیاد دات نت</a>
-» و یا پست «<a href="http://antipattern.ir/microsoft-stack-2016.html" target="_blank">چرا باید به استک مایکروسافت بیشتر توجه کنیم</a>» رو مطالعه کرده باشید زیاد از عنوان بالا تعجب نخواهید کرد.</p>
-<p>پروژه SQL Server بر روی لینوکس، چندین ماه پیش به شکل رسمی توسط مایکروسافت معرفی شد و دسترسی به نسخه‌های اولیه آزمایشی تنها برای مشتریان/افراد خاص فراهم گردیده بود، در هفته گذشته مایکروسافت دسترسی نسخه آزمایشی <a href="https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux" target="_blank">SQL Server vNext</a> را برای تمامی کاربران فراهم آورد.</p>
-<p>اگر از دسته کاربرانی باشید که حداقل یکبار SQL Server روی ویندوز نصب کرده باشید؛ حتماً مشکلاتی با نصب طولانی آن داشته اید، اما در لینوکس ( در اینجا توزیع Ubuntu ) به راحتی، در عرض چند دقیقه تنها با اسفتاده از دستور <code>apt</code> می‌توان آن‌را نصب کرد.</p>
-<div class="highlight"><pre><span></span>sudo apt install mssql-server
+<p><img alt="Vuejs" class="center-image" src="http://antipattern.ir/images/vuejs/vue.png"></p>
+<p>اخیراً در پروژه‌ای تصمیم گرفتم از چهارچوب جاوااسکریپتی <a href="https://vuejs.org/" target="_blank">Vue.js</a> استفاده کنم. باتوجه به اینکه این چهارچوب فوق‌العاده به صورت <a href="https://vuejs.org/v2/guide/typescript.html" target="_blank">رسمی</a>  از <code>TypeScript</code> پشتیبانی می‌کند مطابق راهنمای موجود در سایت vuejs سعی کردم که فایل‌های declaration مربوط به <code>Vue.js</code> را به عنوان Reference به پروژه اضافه کنم اما کامپایلر TypeScript آن‌ها را نشناخت و چندین خطای مختلف رخ داد. در این نوشتار راهنمای استفاده از declaration فایل‌های <code>Vue.js</code> در <code>Visual Studio</code> شرح داده شده است. به لطف این فایل‌ها می‌توان در کد نویسی Vue.js از امکان intellisense ویژوال استودیو بهره برد تا با راحتی هرچه بیشتر به توسعه برنامه پرداخت ...
+<a name="more"></a></p>
+<h2>پیش‌نیازهای نرم افزاری</h2>
+<p>لازم است از قبل NodeJS برروی client شما نصب شده باشد.</p>
+<h3>نخست نصب TypeScript</h3>
+<p>پس از نصب NodeJS کافیست Command Prompt را باز کنید و TypeScript را از طریق <code>NPM</code> نصب کنید:</p>
+<div class="highlight"><pre><span></span>npm install typescript -g
 </pre></div>
 
 
-<p><img alt="SQL Server - apt get install" class="center-image" src="http://antipattern.ir/images/sqlserver-vnext/01-intro.png"></p>
-<p>مایکروسافت در صفحه <a href="https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux" target="_blank">SQL Server vNext</a> اطلاعات بسیار خوب کافی از قبیل راهنمایی مرحله به مرحله و ... فراهم آورده است. اگر علاقه‌مند به دریافت اطلاعات بیشتر هستید لطفاً یک ماشین مجازی/فیزیکی با حداقل <strong><em>رم 3.5 گیگ</em></strong> تهیه کنید و ادامه مطلب و بخونید.</p>
+<h3>مرحله دوم: ساخته بسته NPM برای پروژه</h3>
+<p>لازم است ابتدا به پوشه‌ای که فایل‌های TypeScript شما قرار گرفته است رفته و دستور <code>npm init</code> را وارد کنید تا فایل <code>package.json</code> مربوط به <code>npm</code> برای پروژه شما ایجاد شود، مقادیر ورودی را طبق نیاز وارد کنید یا همگی را <code>enter</code> بزنید تا به شکل پیش‌فرض پر شوند. با اینکار فایل <code>package.json</code> در کنار پروژه شما ایجاد میشود.</p>
+<p>نمونه اجرا شده دستور بالا:</p>
+<div class="highlight"><pre><span></span>D:\hello-vue&gt;npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
 
-  </p>
-  <a class="read-more" href="sqlserver-vnext-on-linux.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i> ادامه ...</a>               
-          
-          
-                    
-  
-</article>
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
 
+Use `npm install &lt;pkg&gt; --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (hello-vue)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to D:\hello-vue\package.json:
+
+{
+  &quot;name&quot;: &quot;hello-vue&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;
+}
+
+
+Is this ok? (yes) yes
+</pre></div>
+
+
+<h3>مرحله سوم: دریافت بسته‌های مربوط به Vue.js</h3>
+<p>سپس بسته‌های مربوط به Vue.js و declation فایل‌های آن‌را دریافت کنید. </p>
+<div class="highlight"><pre><span></span>npm install --save vue
+npm install --save-dev @types/vue
+</pre></div>
+
+
+<p><em>پس از اجرای دستورات بالا، خواهید دید که در پوشه <code>App</code> پوشه Node_Modules ایجاد شده است، این پوشه مربوط به بسته‌های NodeJS می‌باشد.</em></p>
+<p>نمونه مثال اجرا شده از دستورات بالا:</p>
+<div class="highlight"><pre><span></span><span class="nl">D</span><span class="p">:</span><span class="err">\</span><span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="o">&gt;</span><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="n">vue</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="mf">@1.0.0</span> <span class="nl">D</span><span class="p">:</span><span class="err">\</span><span class="n">hello</span><span class="o">-</span><span class="n">vue</span>
+<span class="err">`</span><span class="o">--</span> <span class="n">vue</span><span class="mf">@2.4.2</span>
+
+<span class="n">npm</span> <span class="n">WARN</span> <span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="mf">@1.0.0</span> <span class="n">No</span> <span class="n">description</span>
+<span class="n">npm</span> <span class="n">WARN</span> <span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="mf">@1.0.0</span> <span class="n">No</span> <span class="n">repository</span> <span class="n">field</span><span class="p">.</span>
+
+<span class="nl">D</span><span class="p">:</span><span class="err">\</span><span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="o">&gt;</span><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span><span class="o">-</span><span class="n">dev</span> <span class="p">@</span><span class="n">types</span><span class="o">/</span><span class="n">vue</span>
+<span class="n">npm</span> <span class="n">WARN</span> <span class="n">deprecated</span> <span class="p">@</span><span class="n">types</span><span class="o">/</span><span class="n">vue</span><span class="mf">@2.0.0</span><span class="o">:</span> <span class="n">This</span> <span class="n">is</span> <span class="n">a</span> <span class="n">stub</span> <span class="n">types</span> <span class="n">definition</span> <span class="k">for</span> <span class="n">vuejs</span> <span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/vuejs/vue). vuejs provides its own type definitions, so you don&#39;t need @types/vue installed!</span>
+<span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="mf">@1.0.0</span> <span class="nl">D</span><span class="p">:</span><span class="err">\</span><span class="n">hello</span><span class="o">-</span><span class="n">vue</span>
+<span class="err">`</span><span class="o">--</span> <span class="p">@</span><span class="n">types</span><span class="o">/</span><span class="n">vue</span><span class="mf">@2.0.0</span>
+
+<span class="n">npm</span> <span class="n">WARN</span> <span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="mf">@1.0.0</span> <span class="n">No</span> <span class="n">description</span>
+<span class="n">npm</span> <span class="n">WARN</span> <span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="mf">@1.0.0</span> <span class="n">No</span> <span class="n">repository</span> <span class="n">field</span><span class="p">.</span>
+
+<span class="nl">D</span><span class="p">:</span><span class="err">\</span><span class="n">hello</span><span class="o">-</span><span class="n">vue</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h3>مرحله چهارم: ساخت فایل tsconfig.json</h3>
+<p>با زدن دستور <code>tsc --init</code> فایل <code>tsconfig.json</code> که مربوط به تنظیمات کامپایلر TypeScript است در پروژه شما ایجاد می‌شود. مطابق راهنمای <a href="https://vuejs.org/v2/guide/typescript.html#Recommended-Configuration" target="_blank">Vue.js</a> تغییرات را در فایل <code>tsconfig.json</code> ایجاد میکنیم:</p>
+<p>نحوه اجرا دستور:</p>
+<div class="highlight"><pre><span></span>D:\hello-vue&gt;tsc --init
+message TS6071: Successfully created a tsconfig.json file.
+</pre></div>
+
+
+<p>فایل را مطابق زیر تغییر می‌دهیم:</p>
+<div class="highlight"><pre><span></span>// tsconfig.json
+{
+  &quot;compilerOptions&quot;: {
+    &quot;noImplicitAny&quot;: false,
+    &quot;noEmitOnError&quot;: true,
+    &quot;removeComments&quot;: false,
+    &quot;sourceMap&quot;: true,
+    &quot;target&quot;: &quot;es5&quot;,
+    &quot;allowSyntheticDefaultImports&quot;: true,
+    &quot;lib&quot;: [
+      &quot;dom&quot;,
+      &quot;es5&quot;,
+      &quot;es2015.promise&quot;
+    ]
+  },
+  &quot;exclude&quot;: [
+    &quot;node_modules&quot;,
+    &quot;wwwroot&quot;
+  ]
+}
+</pre></div>
+
+
+<h3>مرحله آخر: لذت intellisense در نوشتن Vue.js</h3>
+<p><img alt="Vuejs" class="center-image" src="http://antipattern.ir/images/vuejs/vuejs.gif"></p>         
+        
+        						
+	</article>
+	
+	
+	<div class="comments">
+	<span class="comment-title">دیدگاه‌ها <i class="fa fa-comments-o" aria-hidden="true"></i></span>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	       var disqus_identifier = "how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html";
+	       (function() {
+	       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	       dsq.src = 'https://antipattern22.disqus.com/embed.js';
+	       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	      })();
+	    </script>
+	</div>
+			
+	
 		
 		</div> <!-- end main -->
 			
@@ -90,6 +226,15 @@
 		<div class="sidebar large-4  small-12 columns">
 			<div class="sidebar-container small-12 columns">
 				
+		<h2><i class="fa fa-book" aria-hidden="true"></i> مطالعه بیشتر</h2>						
+		<ul>
+			<li><a href="http://antipattern.ir/download-xamarin-updates.html">نصب یا دریافت آپدیت‌های Xamarin</a></li>
+			<li><a href="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html">تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio</a></li>
+			<li><a href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html">فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</a></li>
+			<li><a href="http://antipattern.ir/overcome-visual-studio-android-emulator-2048-mb-requirement.html">رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</a></li>
+			<li><a href="http://antipattern.ir/visual-studio-2017-and-xamarin-installation-problems.html">VS.2017 و Xamarin - مشکلات پس از نصب و نحوه رفع آن‌ها</a></li>
+		</ul>
+			
 		
 				
 				<h2><i class="fa fa-book" aria-hidden="true"></i> آخرین نوشتارها</h2>

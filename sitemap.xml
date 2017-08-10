@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/</loc>
-<lastmod>2017-07-12T23:32:54-00:00</lastmod>
+<lastmod>2017-08-10T23:35:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/archives.html</loc>
-<lastmod>2017-07-12T23:32:54-00:00</lastmod>
+<lastmod>2017-08-10T23:35:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/tags.html</loc>
-<lastmod>2017-07-12T23:32:54-00:00</lastmod>
+<lastmod>2017-08-10T23:35:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/categories.html</loc>
-<lastmod>2017-07-12T23:32:54-00:00</lastmod>
+<lastmod>2017-08-10T23:35:28-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://antipattern.ir/how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html</loc>
+<lastmod>2017-08-10T10:08:00+04:30</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -256,6 +263,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://antipattern.ir/category/visual-studio-typescript-vuejs.html</loc>
+<lastmod>2017-08-10T10:08:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://antipattern.ir/category/visual-studio-xamarin.html</loc>
 <lastmod>2016-12-15T14:15:00+03:26</lastmod>
 <changefreq>daily</changefreq>
@@ -326,6 +340,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://antipattern.ir/tag/vuejs.html</loc>
+<lastmod>2017-08-10T10:08:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://antipattern.ir/tag/agile.html</loc>
 <lastmod>2017-02-10T10:21:00+03:26</lastmod>
 <changefreq>daily</changefreq>
@@ -376,7 +397,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/tag/visual-studio.html</loc>
-<lastmod>2017-03-16T12:20:00+03:26</lastmod>
+<lastmod>2017-08-10T10:08:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -389,8 +410,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/scrum.html</loc>
-<lastmod>2017-02-10T10:21:00+03:26</lastmod>
+<loc>http://antipattern.ir/tag/typescript.html</loc>
+<lastmod>2017-08-10T10:08:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -410,8 +431,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://antipattern.ir/tag/ebook.html</loc>
-<lastmod>2017-01-26T18:02:00+03:26</lastmod>
+<loc>http://antipattern.ir/tag/scrum.html</loc>
+<lastmod>2017-02-10T10:21:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -494,6 +515,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://antipattern.ir/tag/ebook.html</loc>
+<lastmod>2017-01-26T18:02:00+03:26</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://antipattern.ir/tag/microsoft.html</loc>
 <lastmod>2017-03-16T12:20:00+03:26</lastmod>
 <changefreq>daily</changefreq>
@@ -530,7 +558,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/author/ly-bhrmynjd.html</loc>
-<lastmod>2017-07-29T19:10:00+03:26</lastmod>
+<lastmod>2017-08-10T10:08:00+03:26</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
