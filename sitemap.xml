@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://antipattern.ir/</loc>
-<lastmod>2017-08-10T23:49:48-00:00</lastmod>
+<lastmod>2017-08-17T11:37:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/archives.html</loc>
-<lastmod>2017-08-10T23:49:48-00:00</lastmod>
+<lastmod>2017-08-17T11:37:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/tags.html</loc>
-<lastmod>2017-08-10T23:49:48-00:00</lastmod>
+<lastmod>2017-08-17T11:37:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://antipattern.ir/categories.html</loc>
-<lastmod>2017-08-10T23:49:48-00:00</lastmod>
+<lastmod>2017-08-17T11:37:15-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
