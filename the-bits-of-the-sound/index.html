@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The bits of the sound!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style type="text/css">
+        .container {
+            margin-top: 2em;
+        }
+
+        .love {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="sound.svg" width="30" height="30" class="d-inline-block align-top" alt=""> The bits of the sound!
+        </a>
+    </nav>
+
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>A simple tool to bring your midi files to life with an
+                    <a href="https://www.arduino.cc" target="_blank">Arduino</a> uno and
+                    <a href="https://github.com/bhagman/Tone" target="_blank">tone()</a> library. </h3>
+                    <hr />
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Phase 1 - Upload your midi file here
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{currentFileName}}</h5>
+                                <a href="#" class="btn btn-primary" v-on:click.prevent="fileUpload">Upload</a>
+                                <input type="file" id="file" class="d-none" v-on:change="fileUploaded" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-sm-12" v-if="phase2">
+                        <div class="card">
+                            <div class="card-header">
+                                Phase 2 - Select your desired track in
+                                <strong>{{currentFileName}}</strong>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Tracks</h5>
+                                <div class="form-check" v-for="(track, index) in midiFile.tracks">
+                                    <input class="form-check-input" type="radio" name="rbTrack" v-bind:value="index" v-on:click="selectTrack(index)">
+                                    <label class="form-check-label" for="gridRadios1">
+                                        {{index+1}} - {{track.name}}
+                                    </label>
+                                </div>
+                                <br />
+                                <button type="button" class="btn btn-info" v-if="isTrackSelected" v-on:click="bringToLife">🎵 Bring
+                                    <em>{{midiFile.tracks[selectedTrack].name}}</em> into life!</button>
+                                <hr />
+                                <small class="text-muted">By selecting any of the tracks above, you will hear how it sounds.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-sm-12" v-if="phase3">
+                        <div class="card">
+                            <div class="card-header">
+                                Here is to you with
+                                <span class="love">❤</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Arduino tone() code:</h5>
+                                <a href="#" v-on:click="download">Download</a>
+                                <hr />
+                                <pre><code>{{generatedTone}}
+                                        </code></pre>
+                                <hr />
+                                <small class="text-muted">Copy code above, and compile it in Arduino IDE</small>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Made with
+                <span class="love">❤</span> by
+                <a href="https://github.com/al1b" target="_blank">Ali Bahraminezhad.</a> Dedicated to the one who I love. #4</span>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://tonejs.github.io/build/Tone.min.js"></script>
+    <script src="MidiConvert.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
