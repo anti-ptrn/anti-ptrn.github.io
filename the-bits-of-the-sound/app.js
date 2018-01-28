@@ -32,8 +32,15 @@ var app = new Vue({
             for (var i = 0; i < track.notes.length; i++) {
                 var note = track.notes[i];
                 var noteStr = 'NOTE_' + note.name.replace('#', 'S');
+                if (i > 0) {
+                  var restDuration = Math.round((track.notes[i].noteOn - track.notes[i - 1].noteOff) * 1000);
+                  if (restDuration > 0) {
+                    notes.push("REST");
+                    durations.push(restDuration);
+                  }
+                }
                 notes.push(noteStr);
-                durations.push(note.duration * 1000);
+                durations.push(Math.round(note.duration * 1000));
             }
 
             this.phase3 = true;
@@ -45,38 +52,31 @@ var app = new Vue({
 // ${this.midiFile.header.name} song
 
 #include "pitches.h"
+#define REST 0
+#define TONEPIN 8
 
-// notes in the melody:
-int melody[] = {
-    ${JSON.stringify(notes)}
+uint16_t notes[] = {
+  ${JSON.stringify(notes).replace(/[\"\[\]]/g, '')}
 };
 
-// note durations: 4 = quarter note, 8 = eighth note, etc.:
-float noteDurations[] = {
-    ${JSON.stringify(durations)}
+uint16_t noteDurations[] = {
+  ${JSON.stringify(durations).replace(/[\[\]]/g, '')}
 };
 
 void setup() {
-    // iterate over the notes of the melody:
-    for (int thisNote = 0; thisNote < ${durations.length}; thisNote++) {
-
-    // to calculate the note duration, take one second divided by the note type.
-    //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-    tone(8, melody[thisNote], noteDurations[thisNote]);
-
-    // to distinguish the notes, set a minimum time between them.
-    // the note's duration + 30% seems to work well:
-    int pauseBetweenNotes = noteDurations[thisNote];
-    delay(pauseBetweenNotes);
-    
-    // stop the tone playing:
-    noTone(8);
+  for (int thisNote = 0; thisNote < ${durations.length}; thisNote++) {
+    if (notes[thisNote] != REST) {
+      // Start playing the tone on the pin if it is not a rest.
+      tone(TONEPIN, notes[thisNote], noteDurations[thisNote]);
     }
+    delay(noteDurations[thisNote]);
+    noTone(TONEPIN);
+  }
 }
 
 void loop() {
-    // no need to repeat the melody.
-    delay(7.5);
+  // We played the track only once in setup().
+  delay(100);
 }`;
         },
         praseMidi(file) {
