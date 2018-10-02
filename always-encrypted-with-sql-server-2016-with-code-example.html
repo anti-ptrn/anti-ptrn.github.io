@@ -241,7 +241,7 @@
     <span class="p">{</span>
         <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="c1">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+            <span class="c1">// Column Encryption Setting=enabled =&amp;gt; Always Encrypted تنظیم فعال بودن امکان </span>
             <span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span><span class="p">;</span>
 
             <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">connection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
@@ -272,7 +272,7 @@
 <h2>مثال عملی - درج دیتا</h2>
 <hr>
 <p>با استفاده از تکه کد زیر قصد داریم یک کارت بانکی جدید در جدول <code>dbo.PersonCard</code> اضافه کنیم. از قبل ستون‌های <strong>BankName</strong> و <strong>CardNumber</strong>رمزنگاری شده اند، اما به چه شکل میتوانیم در دات نت در آنها دیتا درج کنیم؟</p>
-<div class="highlight"><pre><span></span><span class="c1">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+<div class="highlight"><pre><span></span><span class="c1">// Column Encryption Setting=enabled =&amp;gt; Always Encrypted تنظیم فعال بودن امکان </span>
 <span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span><span class="p">;</span>
 
 <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">connection</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
@@ -311,14 +311,14 @@
 <h2>مثال عملی - خواندن دیتا و درج دیتا با استفاده از EntityFramework</h2>
 <hr>
 <p>تکه کد زیر جهت اجرای دستورات خواندن، درج، بروز آوری، جستجو و دسته بندی در <strong>Entity Framework</strong> نوشته شده است.</p>
-<div class="highlight"><pre><span></span><span class="c1">// Column Encryption Setting=enabled =&gt; Always Encrypted تنظیم فعال بودن امکان </span>
+<div class="highlight"><pre><span></span><span class="c1">// Column Encryption Setting=enabled =&amp;gt; Always Encrypted تنظیم فعال بودن امکان </span>
 <span class="kt">var</span> <span class="n">connectionString</span> <span class="p">=</span> <span class="s">@&quot;Data Source=.\SQL2016; Integrated Security=SSPI;Initial Catalog=MyDB; Column Encryption Setting=enabled;Trusted_Connection=Yes;&quot;</span><span class="p">;</span>
 
 <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MyDBContext</span><span class="p">(</span><span class="n">connectionString</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="c1">// Read them all</span>
     <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;All Data&quot;</span><span class="p">);</span>
-    <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span><span class="p">.</span><span class="n">ToList</span><span class="p">().</span><span class="n">ForEach</span><span class="p">((</span><span class="n">card</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span><span class="p">.</span><span class="n">ToList</span><span class="p">().</span><span class="n">ForEach</span><span class="p">((</span><span class="n">card</span><span class="p">)</span> <span class="p">=&amp;</span><span class="n">gt</span><span class="p">;</span>
     <span class="p">{</span>
         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{card.PersonId}, {card.BankName}, {card.CardNumber}&quot;</span><span class="p">);</span>
     <span class="p">});</span>
@@ -337,9 +337,9 @@
     <span class="c1">// حتماً به متدهای لینک متغیر پاس دهید تا کوئری تولید شده پارامتری باشد</span>
     <span class="c1">// در غیر اینصورت ممکن است با خطا مواجه شوید!</span>
     <span class="kt">var</span> <span class="n">aCard</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">PersonCards</span>
-                        <span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">card</span> <span class="p">=&gt;</span> <span class="n">card</span><span class="p">.</span><span class="n">CardNumber</span> <span class="p">==</span> <span class="n">newCard</span><span class="p">.</span><span class="n">CardNumber</span><span class="p">);</span>
+                        <span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">(</span><span class="n">card</span> <span class="p">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">card</span><span class="p">.</span><span class="n">CardNumber</span> <span class="p">==</span> <span class="n">newCard</span><span class="p">.</span><span class="n">CardNumber</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">aCard</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
-        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;\r\nCard found \t =&gt; \t {aCard.PersonId}, {aCard.BankName}, {aCard.CardNumber}&quot;</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;\r\nCard found \t =&amp;gt; \t {aCard.PersonId}, {aCard.BankName}, {aCard.CardNumber}&quot;</span><span class="p">);</span>
 
     <span class="c1">// Update some fields</span>
     <span class="n">aCard</span><span class="p">.</span><span class="n">BankName</span> <span class="p">=</span> <span class="s">&quot;EN Bank&quot;</span><span class="p">;</span>
@@ -354,7 +354,7 @@
                     <span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
 
     <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;\r\nA group by!\r\n&quot;</span><span class="p">);</span>
-    <span class="n">result</span><span class="p">.</span><span class="n">ForEach</span><span class="p">((</span><span class="n">r</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="n">result</span><span class="p">.</span><span class="n">ForEach</span><span class="p">((</span><span class="n">r</span><span class="p">)</span> <span class="p">=&amp;</span><span class="n">gt</span><span class="p">;</span>
     <span class="p">{</span>
         <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{r.BankName}, {r.Quantity}&quot;</span><span class="p">);</span>
     <span class="p">});</span>
@@ -373,6 +373,23 @@
         
         						
 	</article>
+	
+	<div class="clickyab-native-ad na_ORMrb2"></div>
+	<script type="text/javascript">
+		var clickyab_native = clickyab_native || [];
+		clickyab_native['count'] = 8;
+		clickyab_native['corners'] = "round";
+		clickyab_native['title'] = "مطالب از سراسر وب";
+		clickyab_native['horizontal'] = "";
+		clickyab_native['fontSize'] = 13;
+		clickyab_native['fontFamily'] = "";
+		clickyab_native['position'] = "top";
+		clickyab_native['domain'] = "antipattern.ir";
+		clickyab_native['id'] = 7601538118444;
+		clickyab_native['orientation'] = "horizontal";
+		clickyab_native['selector'] = "na_ORMrb2";
+	</script>
+	<script src="//static.clickyab.com/js/native_ad.js"></script>	
 	
 	
 	<div class="comments">

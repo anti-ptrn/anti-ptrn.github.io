@@ -106,7 +106,7 @@
 <span class="kt">var</span> <span class="n">images</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="s">@&quot;d:\my-pictures&quot;</span><span class="p">);</span>
 
 <span class="c1">// convert them into Bitmap Image, and make a 180 degres rotation</span>
-<span class="n">images</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">i</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="n">images</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">i</span> <span class="p">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">{</span>
     <span class="kt">var</span> <span class="n">bitmap</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BitmapImage</span><span class="p">();</span>
 
     <span class="n">bitmap</span><span class="p">.</span><span class="n">BeginInit</span><span class="p">();</span>
@@ -124,21 +124,21 @@
 <p>نمایش اعداد اول کوچکتر از 1000:</p>
 <div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">isPrime</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">var</span> <span class="n">i</span><span class="p">=</span><span class="m">2</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;=</span> <span class="n">Math</span><span class="p">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">);</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">var</span> <span class="n">i</span><span class="p">=</span><span class="m">2</span><span class="p">;</span> <span class="n">i</span> <span class="p">&amp;</span><span class="n">lt</span><span class="p">;=</span> <span class="n">Math</span><span class="p">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">);</span> <span class="n">i</span><span class="p">++)</span>
         <span class="k">if</span><span class="p">(</span> <span class="n">number</span> <span class="p">%</span> <span class="n">i</span> <span class="p">==</span> <span class="m">0</span> <span class="p">)</span> <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
     <span class="k">return</span> <span class="k">true</span><span class="p">;</span>        
 <span class="p">}</span>
 
-<span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">PrimeNumbers</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">)</span>
+<span class="n">IEnumerable</span><span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="kt">int</span><span class="p">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">PrimeNumbers</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">var</span> <span class="n">number</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">while</span><span class="p">(++</span><span class="n">number</span> <span class="p">&lt;=</span> <span class="n">max</span><span class="p">)</span>
+    <span class="k">while</span><span class="p">(++</span><span class="n">number</span> <span class="p">&amp;</span><span class="n">lt</span><span class="p">;=</span> <span class="n">max</span><span class="p">)</span>
         <span class="k">if</span><span class="p">(</span><span class="n">isPrime</span><span class="p">(</span><span class="n">number</span><span class="p">))</span> <span class="k">yield</span> <span class="k">return</span> <span class="n">number</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// calculate prime numbers below 1000</span>
 <span class="kt">var</span> <span class="n">numbers</span> <span class="p">=</span> <span class="n">PrimeNumbers</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-                        <span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">i</span> <span class="p">=&gt;</span> <span class="n">i</span><span class="p">.</span><span class="n">ToString</span><span class="p">())</span>
+                        <span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">i</span> <span class="p">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">i</span><span class="p">.</span><span class="n">ToString</span><span class="p">())</span>
                         <span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
 
 <span class="c1">// format them as a cool string</span>
@@ -170,6 +170,23 @@
         
         						
 	</article>
+	
+	<div class="clickyab-native-ad na_ORMrb2"></div>
+	<script type="text/javascript">
+		var clickyab_native = clickyab_native || [];
+		clickyab_native['count'] = 8;
+		clickyab_native['corners'] = "round";
+		clickyab_native['title'] = "مطالب از سراسر وب";
+		clickyab_native['horizontal'] = "";
+		clickyab_native['fontSize'] = 13;
+		clickyab_native['fontFamily'] = "";
+		clickyab_native['position'] = "top";
+		clickyab_native['domain'] = "antipattern.ir";
+		clickyab_native['id'] = 7601538118444;
+		clickyab_native['orientation'] = "horizontal";
+		clickyab_native['selector'] = "na_ORMrb2";
+	</script>
+	<script src="//static.clickyab.com/js/native_ad.js"></script>	
 	
 	
 	<div class="comments">

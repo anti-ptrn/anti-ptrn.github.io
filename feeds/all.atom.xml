@@ -1,2 +1,336 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2018-10-02T22:39:16Z</updated></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Anti-Pattern</title><link href="http://antipattern.ir/" rel="alternate"></link><link href="http://antipattern.ir/feeds/all.atom.xml" rel="self"></link><id>http://antipattern.ir/</id><updated>2017-08-10T10:08:00+04:30</updated><entry><title>نحوه استفاده از TypeScript در توسعه برنامه‌های Vue.js در Visual Studio</title><link href="http://antipattern.ir/how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html" rel="alternate"></link><published>2017-08-10T10:08:00+04:30</published><updated>2017-08-10T10:08:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-08-10:how-to-use-typescript-in-vuejs-app-in-microsoft-visual-studio.html</id><summary type="html">&lt;p&gt;&lt;img alt="Vuejs" class="center-image" src="http://antipattern.ir/images/vuejs/vue.png"&gt;&lt;/p&gt;
+&lt;p&gt;اخیراً به چهارچوب جاوااسکریپتی &lt;a href="https://vuejs.org/" target="_blank"&gt;Vue.js&lt;/a&gt; علاقه‌مند شدم. باتوجه به اینکه &lt;code&gt;Vue.js&lt;/code&gt; به صورت &lt;a href="https://vuejs.org/v2/guide/typescript.html" target="_blank"&gt;رسمی&lt;/a&gt;  از &lt;code&gt;TypeScript&lt;/code&gt; پشتیبانی می‌کند مطابق راهنمای موجود در سایت &lt;code&gt;Vue.js&lt;/code&gt; سعی کردم که فایل‌های &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html" target="_blank"&gt;Declaration&lt;/a&gt; مربوط به &lt;code&gt;Vue.js&lt;/code&gt; را به عنوان Reference به فایل‌های TypeScript پروژه اضافه کنم اما کامپایلر TypeScript آن‌ها را نشناخت و چندین خطای مختلف رخ داد. در این نوشتار راهنمای استفاده از declaration فایل‌های &lt;code&gt;Vue.js&lt;/code&gt; در &lt;code&gt;Visual Studio&lt;/code&gt; شرح داده شده است. به لطف این فایل‌ها می‌توان در کد نویسی Vue.js از امکان intellisense ویژوال استودیو بهره برد تا با راحتی هرچه بیشتر به توسعه برنامه پرداخت ...&lt;/p&gt;
+</summary><category term="Visual Studio"></category><category term="TypeScript"></category><category term="Vue.js"></category></entry><entry><title>پلاگین KiPEO، پلاگینی برای Calibre جهت بهینه‌سازی کتاب‌های فارسی برروی Kindle</title><link href="http://antipattern.ir/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html" rel="alternate"></link><published>2017-07-29T19:10:00+04:30</published><updated>2017-07-29T19:10:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-07-09:calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html</id><summary type="html">&lt;p&gt;اگر قبلاً این وبلاگ را دنبال کرده باشید، یا به هر نحوی با نرم‌افزار &lt;a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank"&gt;KTOP&lt;/a&gt; که قبلاً توسط من نوشته شده بود آشنا باشید، می‌دونید که KTOP نرم‌افزاری برای بهینه‌سازی کتاب‌های فارسی برروی Kindle یا هر کتاب‌خوان دیگه‌ای بود که زبان فارسی یا عربی مشکل داشتند.&lt;/p&gt;
+&lt;p&gt;خب KTOP نرم‌افزار خیلی کاربردی بود و چندین و چند درخواست مختلف روی اون انجام شد، حتی روزانه تعدادی از بازدیدهای این وبلاگ برای اون نرم‌افزار هست.&lt;/p&gt;
+&lt;p&gt;اما KTOP کم و کاستی‌هایی داشت:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;بصورت یک ابزار مجزا نوشته شده بود و نمیشد بصورت یکپارچه داخل Calibre از اون استفاده کرد&lt;/li&gt;
+&lt;li&gt;چون با دات‌ نت نوشته شده بود، دوستان لینوکس کمی با مشکل مواجه بودند&lt;/li&gt;
+&lt;li&gt;فقط کتاب‌های epub رو پشتیبانی می‌کرد&lt;/li&gt;
+&lt;li&gt;و ...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;برای رفع این مشکل‌ها KiPEO متولد شد. KiPEO یک پلاگین برای Calibre که همون کار قبلی KTOP و انجام میده، یعنی با Reshape کردن کارکترهای کتاب اون رو برای خوندن روی Kindle بهینه‌سازی می‌کنه.&lt;/p&gt;
+&lt;p&gt;مثل KTOP پروگژه KiPEO برروی github در آدرس زیر قرار گرفته:
+&lt;a href="https://github.com/al1b/Calibre-KiPEO" target="_blank"&gt;https://github.com/al1b/Calibre-KiPEO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;در صورتی که علاقهمند به حمایت از پروژه باشین؛ میتونید از آدرس زیر از پروژه حمایت کنید!
+&lt;a href="https://www.payping.ir/al1b"&gt;https://www.payping.ir/al1b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;چه ویژگی‌هایی داره؟:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;به راحتی با کتاب‌های epub و awz3 کار میکنه&lt;/li&gt;
+&lt;li&gt;به راحتی قابل استفاده است و چه روی ویندوز و چه لینوکس و ... قابل نصب هست&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;نکته خیلی مهم اینکه تازه نسخه اولیه از اون منتظر شده و تو برنامم هست که اون رو کامل‌تر کنم که تجربه بهتری از خوندن کتاب فارسی روی Kindle داشته باشیم.&lt;/p&gt;
+&lt;p&gt;اگر علاقه مند به دیدن نحوه استفاده از KiPEO هستید، به ادامه مطلب مراجعه کنید؛ اونجا یه gif از نصب و استفاده از اون گذاشتم.&lt;/p&gt;
+</summary><category term="Kindle"></category><category term="Calibre"></category><category term="plugin"></category><category term="KTOP"></category><category term="Python"></category></entry><entry><title>Xamarin Workbooks چیست و چه کاربردی دارد؟</title><link href="http://antipattern.ir/what-is-xamarin-workbooks.html" rel="alternate"></link><published>2017-03-28T19:10:00+04:30</published><updated>2017-03-28T19:10:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-03-28:what-is-xamarin-workbooks.html</id><summary type="html">&lt;p&gt;تصور کنید قصد یادگرفتن زبان برنامه‌نویسی &lt;code&gt;C#&lt;/code&gt; و دارین؛ یا ابزاری نیاز دارید که داخل اون به تمرین و نوشتن کد بپردازین،  یا حتی ابزاری که به راحتی به شکل خیلی تعاملی، بتونید تکه کدهای خودتون رو اجرا کنید.&lt;/p&gt;
+&lt;p&gt;در حالت عادی اگر قصد چنین کاری و داشته باشید یا باید از ابزار &lt;a href="https://github.com/dotnet/roslyn/wiki/C%23-Interactive-Walkthrough" target="_blank"&gt;&lt;em&gt;C# Interactive&lt;/em&gt;&lt;/a&gt; استفاده کنید  یا اینکه داخل &lt;code&gt;Visual Studio&lt;/code&gt; پروژه جدید ایجاد و کدی که میخواید و اجرا کنید.&lt;/p&gt;
+&lt;p&gt;اما به نظر من؛ برای اینکار ابزاری بسیار عالی توسط شرکت Xamarin به نام &lt;a href="https://developer.xamarin.com/guides/cross-platform/workbooks/" target="_blank"&gt;&lt;em&gt;Xamarin Workbooks&lt;/em&gt;&lt;/a&gt; تهیه و تولید شده که وِیژگی‌های زیر را شامل میشود:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;کاملاً رایگان&lt;/li&gt;
+&lt;li&gt;قابلیت اجرا برروی سیستم عامل Mac و Windows&lt;/li&gt;
+&lt;li&gt;قابلیت تغییر کد بصورت در لحظه و دیدن خروجی بصورت تعاملی&lt;/li&gt;
+&lt;li&gt;امکان نوشتن توضیحات اضافه در بالای کد!&lt;/li&gt;
+&lt;li&gt;پشتیبانی از زبان قالب‌ بندی متن &lt;a href="https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%DA%A9%E2%80%8C%D8%AF%D8%A7%D9%88%D9%86" target="_blank"&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;اگر علاقه‌مند به دیدن کارکرد این برنامه عالی در عمل هستید، حتماً ادامه مطلب را مطالعه نمایید.&lt;/p&gt;
+</summary><category term="Xamarin"></category><category term="CSharp"></category></entry><entry><title>VS.2017 و Xamarin - مشکلات پس از نصب و نحوه رفع آن‌ها</title><link href="http://antipattern.ir/visual-studio-2017-and-xamarin-installation-problems.html" rel="alternate"></link><published>2017-03-16T12:20:00+03:30</published><updated>2017-03-16T12:20:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-03-16:visual-studio-2017-and-xamarin-installation-problems.html</id><summary type="html">&lt;p&gt;خب همانطور که خبر دارین این هفته &lt;a href="https://www.visualstudio.com/vs/whatsnew/" target="_blank"&gt;Visual Studio 2017&lt;/a&gt;
+ نسخه نهاییش ارائه شد. ویژوال استودیویی که نسبت به قبل خیلی سریعتر، سبکتر و در کل بهتر شده است. شاید اولین تغییری که بهش بر بخوریم Installer جدید و سریع اون هست که به راحتی اجازه میده تنها چیزی که لازم داریم و نصب کنیم و مثل نسخه‌های قبلی نصب اون خیلی خیلی طولانی نیست و در عرض چند دقیقه نصب خواهد شد.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="VS 2017 new setup" class="center-image" src="http://antipattern.ir/images/vs2017/setup.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;من در نصب و راه اندازی Xamarin توی VS 2017 به یسری مشکل برخوردم:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;چون از قبل &lt;code&gt;Android SDK&lt;/code&gt;, &lt;code&gt;NDK&lt;/code&gt; و &lt;code&gt;Java JDK 1.8&lt;/code&gt; رو نصب داشتم، در زمان نصب تیک مربوط به نصب اون‌ها رو از Installer برداشتم که مجدد دانلود نشوند. ( البته که تحریم هستیم و دانلود نخواهد شد! ). و چون آخرین نسخه Xamarin رو چند روز قبل دانلود کرده بودم ترجیح دادم نصب Xamarin هم مجزا انجام بدم.&lt;/p&gt;
+&lt;p&gt;همه چیز به خوبی پیش رفت؛ اما وقتی نصب Xamarin و باز کردم، چون قبل از ارائه نسخه نهایی 2017 فایل نصب Xamarin و دانلود کرده بودم؛ موقع نصب امکان شناسایی VS 2017 و نداشت. و به همین دلیل از طریق نصب VS زامارین و آنلاین نصب کردم.&lt;/p&gt;
+&lt;p&gt;همه چیز به نظر خوب بود، اما وقتی سعی کردم یه پروژه جدید از نوع &lt;code&gt;Xamarin.Forms&lt;/code&gt; ایجاد کنم متاسفانه Visual Studio به شکل عجیبی توی یه Loop افتاد و بعد از گذشت چندین دقیقه هم اتفاقی رخ نداد!&lt;/p&gt;
+&lt;p&gt;به ناچار فایل‌های &lt;code&gt;Log&lt;/code&gt; مربوط به Xamarin رو از مسیر زیر پیدا و بررسی کردم:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:\Users\username\AppData\Local\Xamarin\Logs\15.0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;داخل یکی از فایل‌ها که مربوط به &lt;code&gt;monodroid&lt;/code&gt; میشد؛ چنین گزارشی دیدم:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                  &lt;span class="n"&gt;Looking&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Android&lt;/span&gt; &lt;span class="n"&gt;SDK&lt;/span&gt;&lt;span class="o"&gt;..&lt;/span&gt;
+&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                    &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="n"&gt;HKCU&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;SOFTWARE&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Xamarin&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;VisualStudio&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="mf"&gt;15.0&lt;/span&gt;&lt;span class="n"&gt;_30cfbabd&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Android&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;AndroidSdkDirectory&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                    &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="n"&gt;HKLM&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;SOFTWARE&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Xamarin&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;VisualStudio&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="mf"&gt;15.0&lt;/span&gt;&lt;span class="n"&gt;_30cfbabd&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Android&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;AndroidSdkDirectory&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                    &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="n"&gt;HKCU&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;SOFTWARE&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Xamarin&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;MonoAndroid&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;PrivateAndroidSdkPath&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                    &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="n"&gt;HKCU&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;SOFTWARE&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Android&lt;/span&gt; &lt;span class="n"&gt;SDK&lt;/span&gt; &lt;span class="n"&gt;Tools&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                    &lt;span class="n"&gt;Key&lt;/span&gt; &lt;span class="n"&gt;HKLM&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;SOFTWARE&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Android&lt;/span&gt; &lt;span class="n"&gt;SDK&lt;/span&gt; &lt;span class="n"&gt;Tools&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;MonoDroidLog&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;sdk&lt;/span&gt;&lt;span class="o"&gt;]:&lt;/span&gt;                  &lt;span class="n"&gt;Looking&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Android&lt;/span&gt; &lt;span class="n"&gt;NDK&lt;/span&gt;&lt;span class="o"&gt;..&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;چیزی که بخوبی از این گزارش میشه متوجه شد؛ این هست که زامارین در چندین تلاش مداوم سعی در پیدا کردن مسیرهای &lt;code&gt;Android SDK&lt;/code&gt;, &lt;code&gt;NDK&lt;/code&gt; و حتی &lt;code&gt;Java JDK&lt;/code&gt; هست.  &lt;/p&gt;
+&lt;p&gt;در خود Visual Studio &lt;a href="https://developer.xamarin.com/guides/android/getting_started/installation/windows/manual_installation/#Configure_the_SDKs" target="_blank"&gt;تنظیماتی&lt;/a&gt; برای تنظیم کردن مسیرهای SDKهای اندروید در &lt;em&gt;Registiry&lt;/em&gt; ویندوز وجود دارد، سعی کردم از مسیر &lt;code&gt;Tools -&amp;gt; Options -&amp;gt; Xamarin -&amp;gt; Android Settings&lt;/code&gt; مسیرها رو تنظیم کنم اما این صفحه تنظیمات هم مثل ساخت پروژه به مشکل برمیخورد و تنها به نمایش یک Waiting ساده قناعت میکرد.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;برای رفع مشکل&lt;/strong&gt;؛ مطابق فایل &lt;code&gt;Log&lt;/code&gt;؛ به مسیر به مسیرهای کلیدهای &lt;em&gt;Registry&lt;/em&gt; اعلام شده رفتم؛ طبق انتظار به غیر از کلید مربوط به &lt;code&gt;JDK&lt;/code&gt; متاسفانه کلید‌های مورد نظر تعریف شده بودند. با تعریف این کلیدها و دادن مسیرهای &lt;code&gt;SDK&lt;/code&gt; و &lt;code&gt;NDK&lt;/code&gt; مشکل مرتفع شد. مسیرهای برای تنظیم کردن به شکل زیر هستند:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;مسیر کلیدها:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;HKEY_CURRENT_USER\SOFTWARE\XAMARIN\VisualStudio\15.0_30cfbabd\Android
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;نکته؛ در مسیر بالا، مقدار &lt;code&gt;15.0_30cfbabd&lt;/code&gt; ممکن است برای رایانه شما متفاوت باشد؛ صرفا وجود مقدار &lt;code&gt;15.0&lt;/code&gt; در ابتدای اون نشون دهنده محل تنظیمات &lt;code&gt;SDK&lt;/code&gt; اندروید برای VS شما است.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;کلیدها:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;نام کلید&lt;/th&gt;
+&lt;th&gt;نوع کلید&lt;/th&gt;
+&lt;th&gt;مقدار کلید&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;AndroidSdkDirectory&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;your-sdk-path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AndroidNdkDirectory&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;your-ndk-path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JavaSDKDirectory&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;your-java-sdk-path&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نمونه کلیدهای تعریف شده:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="VS 2017 new setup" class="center-image" src="http://antipattern.ir/images/vs2017/registry.png"&gt;&lt;/p&gt;
+</summary><category term="Visual Studio"></category><category term="Xamarin"></category><category term="Microsoft"></category></entry><entry><title>چابک-اسکرام و نقش‌های آن</title><link href="http://antipattern.ir/agile-scrum-and-its-roles.html" rel="alternate"></link><published>2017-02-10T10:21:00+03:30</published><updated>2017-02-10T10:21:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-02-10:agile-scrum-and-its-roles.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;چابک و بنابراین اسکرام، تغییر در سطح فرآیند را می‌پذیرند و نوشتن کد برای تغییر یکی از سخت‌ترین و البته مهمترین اصول مدرن توسعه نر‌م افزار است.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="SCRUM life cycle" class="center-image" src="http://antipattern.ir/images/scrum/scrum.png"&gt;&lt;/p&gt;
+&lt;p&gt;اخیراً خواندن کتاب 
+&lt;a href="https://www.amazon.com/Adaptive-Code-via-principles-Developer-ebook/dp/B00OCLLYTY/ref=mt_kindle?_encoding=UTF8&amp;amp;me=" target="_blank"&gt;Adaptive Code via C#: Agile coding with design patterns and SOLID principles&lt;/a&gt;
+ را آغاز کرده‌‌ام. جمله بالا از همین کتاب انتخاب شده است. این کتاب به نظرم یکی از کتاب‌های خوب در رابطه با توسعه نرم‌افزار با استفاده از چهارچوب‌های چابک و اصول شی‌گرایی 
+ &lt;a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank"&gt;SOLID&lt;/a&gt;
+  است. در فصل اول این کتاب توجه بسیار خوبی به چهارچوب اسکرام شده است و در آن نقش‌ها، فرآورده‌ها و چهارچوب کلی آن شرح داده شده است. در صفحات ابتدایی کتاب نکات بسیار جالبی نوشته شده است که آن‌ها را به شکل خلاصه در این نوشتار آورده‌ام.&lt;/p&gt;
+</summary><category term="Agile"></category><category term="Scrum"></category><category term="SOLID"></category></entry><entry><title>معرفی کتاب پیش‌نمونه‌سازی</title><link href="http://antipattern.ir/pretotyping-the-book.html" rel="alternate"></link><published>2017-01-26T18:02:00+03:30</published><updated>2017-01-26T18:02:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2017-01-26:pretotyping-the-book.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;«بسازید شکست بخورید اما موفق شوید؛
+مطمئن شوید که شما در حال ساختن آن چیز درست هستید قبل از اینکه به درستی آن چیز را بسازید.
+»&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="این عکس پیش‌نمونه‌ای است که جف آنرا ساخته است(شما میتوانید نمونه‌های بیشتری در موزه تاریخچه کامپیوتر در مانیتن ویوو کالیفرنیا پیدا کنید)." class="center-image" src="http://antipattern.ir/images/books/PretotypeItBookCover.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;خیلی وقت بود که دوست داشتم، درباره کتاب‌هایی که مطالعه کردم و به نظرم محتوای خوب، کاربردی و مناسب داشتن، داخل وبلاگ کمی دربارشون بنویسم.  این بار قصد معرفی کتاب پیش‌نمونه‌سازی رو دارم. این کتاب درباره مفهوم پیش‌نمونه سازی صحبت می‌کنه. این مفهوم در سال 2009 توسط آقای آلبرتو ساویا مطرح شده و توسعه یافته است. آلبرتو ساویا در کنار کارهای دیگرش، مدیر بخش مهندسی و مشوق نوآوری در بخش تبلیغات گوگل است. از آن به بعد این مفهوم در حال گسترش و توسعه یافتن است. کتاب «پیش‌نمونه‌سازی» هم‌اکنون به زبان های گوناگونی ترجمه شده و در دانشگاه‌های استنفورد و سایر دانشگاه‌های دنیا در حال تدریس است. &lt;/p&gt;
+&lt;p&gt;این کتاب شاید با کتاب‌های دیگه‌ای که مطالعه کرده باشین کمی متفاوت باشه؛ شاید دلیل اصلیش این باشه که خود این کتاب یک پیش‌نمونه است! مفهوم پیش‌نمونه‌سازی به نظرم مفهوم جالب و تاثیر گذاری هست؛ به خصوص برای خیلی از ماهایی که ایده‌هایی تو ذهنمون برای اجرا داریم و میخوایم تصمیم بگیرم که چه کنیم. برای اینکه منظور خودم رو به شکل بهتری برسونم قسمتی از این کتاب رو در زیر آوردم:&lt;/p&gt;
+&lt;p&gt;«پالم پایلوت در سال 1996 معرفی شد که به اندازه کف دست بوده و چهار عملیات اصلی را انجام میداد: تقویم، دفتر تلفن، لیست کارهای روزمره و یادداشت برداری ساده. پالم پایلوت اولین نمونه موفق دستیاران شخصی بود، اما جف هاوکینز -یکی از بنیانگذاران پالم و مخترع پایلوت- به موفقیت دستیارهای شخصی مطمئن نبود. برعکس باتوجه به مقاله سال 1998 در مجله تایمز(تاکیدها را من اضافه کرده ام):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;هاوکینگ ۴۰ ساله، مدیر تکنولوژی پالم و مخترع پالم، یکی از اولین کامپیوترهای قابل حمل به نام گریدپد را ده سال پیش ساخته است. این کامپیوتر یک پدیده اعجاز انگیز مهندسی اما یک شکست تجاری بود به خاطر اینکه به نظر او هنوز بسیار بزرگ بود. وقتی همکاران او از او پرسیدند که کامپیوترهای جدید چه اندازه ای باید باشد برای اطمینان از اینکه این اشتباه را دوباره تکرار نکند برای آنها جواب آماده‌ای داشت: «بیایید سایز جیب لباس را آزمایش کنیم»&lt;/p&gt;
+&lt;p&gt;او به گاراژ خود بازگشت و یک تکه چوب را به اندازه سایز جیب لباس خود برید. سپس او این تکه چوب را در ماه‌های متمادی حمل کرد و تظاهر کرد که آن تکه چوب واقعا یک کامپیوتر است. آیا او برای ناهار چهار شنبه آزاد بود؟ هاوکینز آن تکه چوب را از جیبش خارج میکرد و انگار که دارد برنامه زمانی خود را چک میکند آنرا میفشرد. اگر او به شماره تلفنی نیاز داشت، او تظاهر به پیدا کردن آنرا در قطعه چوب میکرد. معمولا او طراحی ظاهری متفاوتی را با چینش دکمه‌های متفاوت رو کاغذ پرینت میکرد و با چسباندن آنها روی چوب طراحی جدید را امتحان میکرد.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;این عکس پیش‌نمونه‌ای است که جف آنرا ساخته است(شما میتوانید نمونه‌های بیشتری در موزه تاریخچه کامپیوتر در مانیتن ویوو کالیفرنیا پیدا کنید).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="این عکس پیش‌نمونه‌ای است که جف آنرا ساخته است(شما میتوانید نمونه‌های بیشتری در موزه تاریخچه کامپیوتر در مانیتن ویوو کالیفرنیا پیدا کنید)." class="center-image" src="http://antipattern.ir/images/books/palmpilot.png"&gt;&lt;/p&gt;
+&lt;p&gt;من فقط میتوانم عکس العمل دیگران را هنگامی که هاوکینز آن تکه چوب را از جیب خود بیرون می‌آورد و آنرا همانند یک کامپیوتر فعال میفشرد تصور کنم. آنها فکر میکردند که او دیوانه شده است. اما نه او بسیار باهوش بود. آن تکه چوب به همراه دکمه‌های پرینت‌شده هاوکینز را به این نتیجه رساند که او راه درستی را آمده است. او برای اولین و مهمترین سوال پاسخی یافته بود: «اگه من یک پایلوت داشتم، آیا آنرا با خود حمل کرده و از آن چیز استفاده میکردم؟» و جواب قطعا «بله» بود و او میدانست که چیز درست را یافته است. اکنون او می‌توانست روی سوالات بعدی تمرکز کند مانند: آیا می‌توانم آنرا کوچک درست کنیم؟ ساخت آن چقدر هزینه خواهد برد؟ عمر باتری‌ها چقدر خواهد بود؟ اکنون زمان ساخت یک «نمونه اولیه مناسب» رسیده بود.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;پالم پایلوت تنها موفق نبود بکله یک موفقیت بسیار بزرگ با تاثیر عظیم بود. پایلوت جد تمامی تلفن‌های هوشمند امروزی است. این محصول تنها از تکه چوبی شروع شد همانند پینوکیو.&lt;/em&gt;&lt;/strong&gt;»&lt;/p&gt;
+&lt;h2&gt;خوندن کتاب چقدر از شما زمان می‌بره؟&lt;/h2&gt;
+&lt;p&gt;خوندن این کتاب زمانی زیادی از شما نخواهد گرفت؛ شاید بین 1 الی 2 ساعت بتوان تمام کتاب رو مطالعه کرد؛ اما حتماً توصیه میکنم که این کتاب رو بخونید.&lt;/p&gt;
+&lt;h2&gt;کتاب رو چطور دریافت کنیم؟&lt;/h2&gt;
+&lt;p&gt;این کتاب توسط آقای عباس یزدان پناه به فارسی ترجمه شده و به شکل رایگان در وب‌سایت فارسی پیش‌نمونه‌سازی منتشر شده که از لینک‌های زیر میتونید به اون دسترسی داشته باشین:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://pretotyping.ir/" target="_blank"&gt;سایت پیش‌نمونه‌سازی&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pretotyping.ir/pdf/pretotypeit_fa.pdf" target="_blank"&gt;دریافت نسخه PDF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pretotyping.ir/pdf/pretotypeit_fa.epub" target="_blank"&gt;دریافت نسخه EPUB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pretotyping.ir/this_is_embarrassing/" target="_blank"&gt;مطالعه آنلاین&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;پی‌نوشت:&lt;/p&gt;
+&lt;p&gt;چطور با کتاب آشنا شدم؟ یکی از دوستان توی پستی که برنامه KTOP رو معرفی کرده بودم این کتاب رو به عنوان نمونه قرار داده بود و پرسیده بود که آیا میشه اون کتاب و هم با KTOP بهینه‌سازی کرد یا نه؟ و این کتاب جزو اولین کتاب‌هایی بود که با KTOP بهینه‌سازی شد و داخل Kindle خوندمش.&lt;/p&gt;
+</summary><category term="ebook"></category><category term="معرفی کتاب"></category></entry><entry><title>نصب یا دریافت آپدیت‌های Xamarin</title><link href="http://antipattern.ir/download-xamarin-updates.html" rel="alternate"></link><published>2016-12-15T14:15:00+03:30</published><updated>2016-12-15T14:15:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-12-15:download-xamarin-updates.html</id><summary type="html">&lt;p&gt;&lt;img alt="Xamarin Logo" class="center-image" src="http://antipattern.ir/images/xamarin-updates/xamarin-logo.png"&gt;&lt;/p&gt;
+&lt;p&gt;Xamarin آپدیت‌هایش را در سایت &lt;a href="https://releases.xamarin.com/" target="_blank"&gt;Xamarin Releases&lt;/a&gt; معرفی می‌کند. اگر از کاربران Visual Studio باشید، برای نصب یا Update زامارین 2 راه پیش روی شماست:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;استفاده از Visual Studio جهت دریافت خودکار Update&lt;/li&gt;
+&lt;li&gt;دانلود مستقیم آپدیت‌ها از زامارین&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;در زمان نه چندان دور که هنوز Xamarin توسط Microsoft خریداری نشده بود ( یا حتی چند ماه پس از خرید )، لینک‌های دانلود برروی سرورهای Amazon CloudFront قرار می‌گرفتند و متاسفانه در زمان دانلود خطای عدم دسترسی برای IP ایران مشاهده میشد.&lt;/p&gt;
+&lt;p&gt;چند وقتی هست که خوشبختانه فایل‌ها از CloudFront به Azure مایکروسافت منتقل شدن و به راحتی میشه اونها رو دانلود کرد.&lt;/p&gt;
+&lt;p&gt;اگر به آدرس &lt;a href="https://releases.xamarin.com/" target="_blank"&gt;https://releases.xamarin.com&lt;/a&gt; در قسمتی از سایت لیست آخرین releaseها قرار گرفته اند. برای مثال در تصویر زیر یک خبر مربوط به Release Cycle 8 قابل مشاهده است.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Xamarin Cycle Release 8" class="center-image" src="http://antipattern.ir/images/xamarin-updates/cycle-release8.png"&gt;&lt;/p&gt;
+&lt;p&gt;اگر برای مثال به صفحه یکی از این Cycle Releaseها مراجعه کنیم. ( &lt;a href="https://releases.xamarin.com/stable-release-updated-cycle-8-service-release-1-w-xcode-8-2-support/" target="_blank"&gt;مثلاً این&lt;/a&gt;) در قسمتی از صفحه مانند تصویر زیر شماره نسخه و نام محصول Release شده قابل مشاهده است.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Xamarin Cycle Release 8" class="center-image" src="http://antipattern.ir/images/xamarin-updates/xamarin-release.png"&gt;&lt;/p&gt;
+&lt;p&gt;مثلاً برای نسخه &lt;code&gt;4.2.1.73&lt;/code&gt; برای ویژوال استودیو کافیست شماره نسخه را در &lt;code&gt;URL&lt;/code&gt; زیر جایگزین کنید و Update و مورد نظر و دریافت کنید.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_{version}.msi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.2.1.73.msi" target="_blank"&gt;نسخه 4.2.1.73&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.2.1.73.msi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;نسخه ی alpha&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://xamarin.azureedge.net/XamarinforVisualStudio/Windows/Xamarin.VisualStudio_4.3.0.281.msi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</summary><category term="Visual Studio"></category><category term="Xamarin"></category></entry><entry><title>مایکروسافت SQL Server روی لینوکس!</title><link href="http://antipattern.ir/sqlserver-vnext-on-linux.html" rel="alternate"></link><published>2016-11-20T19:21:00+03:30</published><updated>2016-11-20T19:21:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-20:sqlserver-vnext-on-linux.html</id><summary type="html">&lt;p&gt;مایکروسافت SQL Server روی لینوکس! &lt;/p&gt;
+&lt;p&gt;حتی فکر کردن به جمله بالا کمی از قوه تخیل خارج بود، اما اگر اخبار این چند وقت اخیر مایکروسافت مثل«&lt;a href="https://techcrunch.com/2016/11/16/microsoft-joins-the-linux-foundation/" target="_blank"&gt;پیوستن مایکروسافت به بنیاد لینوکس&lt;/a&gt;»، «&lt;a href="http://venturebeat.com/2016/11/16/google-joins-microsofts-net-foundation/" target="_blank"&gt;پیوستن گوکل به بنیاد دات نت&lt;/a&gt;
+» و یا پست «&lt;a href="http://antipattern.ir/microsoft-stack-2016.html" target="_blank"&gt;چرا باید به استک مایکروسافت بیشتر توجه کنیم&lt;/a&gt;» رو مطالعه کرده باشید زیاد از عنوان بالا تعجب نخواهید کرد.&lt;/p&gt;
+&lt;p&gt;پروژه SQL Server بر روی لینوکس، چندین ماه پیش به شکل رسمی توسط مایکروسافت معرفی شد و دسترسی به نسخه‌های اولیه آزمایشی تنها برای مشتریان/افراد خاص فراهم گردیده بود، در هفته گذشته مایکروسافت دسترسی نسخه آزمایشی &lt;a href="https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux" target="_blank"&gt;SQL Server vNext&lt;/a&gt; را برای تمامی کاربران فراهم آورد.&lt;/p&gt;
+&lt;p&gt;اگر از دسته کاربرانی باشید که حداقل یکبار SQL Server روی ویندوز نصب کرده باشید؛ حتماً مشکلاتی با نصب طولانی آن داشته اید، اما در لینوکس ( در اینجا توزیع Ubuntu ) به راحتی، در عرض چند دقیقه تنها با اسفتاده از دستور &lt;code&gt;apt&lt;/code&gt; می‌توان آن‌را نصب کرد.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install mssql-server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="SQL Server - apt get install" class="center-image" src="http://antipattern.ir/images/sqlserver-vnext/01-intro.png"&gt;&lt;/p&gt;
+&lt;p&gt;مایکروسافت در صفحه &lt;a href="https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux" target="_blank"&gt;SQL Server vNext&lt;/a&gt; اطلاعات بسیار خوب کافی از قبیل راهنمایی مرحله به مرحله و ... فراهم آورده است. اگر علاقه‌مند به دریافت اطلاعات بیشتر هستید لطفاً یک ماشین مجازی/فیزیکی با حداقل &lt;strong&gt;&lt;em&gt;رم 3.5 گیگ&lt;/em&gt;&lt;/strong&gt; تهیه کنید و ادامه مطلب و بخونید.&lt;/p&gt;
+</summary><category term="Open Source"></category><category term="Microsoft"></category><category term="SQL &lt;Server&gt;&lt;/Server&gt;"></category></entry><entry><title>تغییر peyvandha.ir به صفحه خیلی خیلی ساده‌تر</title><link href="http://antipattern.ir/transform-peyvandha-into-simpler-page-with-grease-monkey.html" rel="alternate"></link><published>2016-11-11T18:20:00+03:30</published><updated>2016-11-11T18:20:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-11:transform-peyvandha-into-simpler-page-with-grease-monkey.html</id><summary type="html">&lt;p&gt;اگر از کاربران قدیمی‌تر اینترنت باشید؛ حتماً با صفحه زیر آشنایی دارید، یا حداقل شاید برای شما نوستالوژی باشه:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Blocking Page" class="center-image" src="http://antipattern.ir/images/peyvandha/01.png"&gt;&lt;/p&gt;
+&lt;p&gt;از چند سال پیش این صفحه ساده نوستالوژیک، با صفحه &lt;code&gt;peyvandha.ir&lt;/code&gt; جایگزین شد. امروز در حال مطالعه صفحه‌ای در سایت &lt;a href="http://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt; بودم که دقت کردم به جای تبلیغ‌های کنار این سایت، داخل چندین &lt;code&gt;iframe&lt;/code&gt; صفحه پیوند‌ها باز شده. (&lt;a href="/images/peyvandha/06.png" target="_blank"&gt;مشاهده&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;حساب کردم، همین پهنای باندی که برای باز شدن سایت پیوند‌ها مصرف میشه، باری که روی شبکه می‌ذاره، در طول ماه ممکنه مقدار قابل قبولی بشه! بخصوص اینکه اگه از بسته‌های اینترت موبایل استفاده کنیم ( و  بصورت آزاد حساب بشه )&lt;/p&gt;
+&lt;p&gt;یک اسکریپت برای &lt;a href="https://tampermonkey.net/" target="_blank"&gt;TamperMonkey&lt;/a&gt; و &lt;a href="http://www.greasespot.net/" target="_blank"&gt;GreaseMonkey&lt;/a&gt; نوشتم که این صفحه پیوند‌ها رو با حالت زیر تعویض میکنه:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Blocking Page" class="center-image" src="http://antipattern.ir/images/peyvandha/03.png"&gt;&lt;/p&gt;
+&lt;p&gt;اگه علاقه‌مند به استفاده از این اسکریپت هستید نگاهی به ادامه مطلب بیاندازید.&lt;/p&gt;
+</summary><category term="اسکریپت‌های Grease Monkey"></category><category term="peyvandha.ir"></category></entry><entry><title>دیباگ کردن اسمبلی‌های دات نتی بدون داشتن سورس کد</title><link href="http://antipattern.ir/debugging-dotnet-assemblies-without-having-the-source-code.html" rel="alternate"></link><published>2016-11-03T16:50:00+03:30</published><updated>2016-11-03T16:50:00+03:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-11-03:debugging-dotnet-assemblies-without-having-the-source-code.html</id><summary type="html">&lt;p&gt;امروز مساله‌ای برام پیش اومده بود که باید برنامه‌ای دات نتی رو علاوه بر دیکامپایل، دیباگ هم کنم. خب با استفاده از برنامه‌هایی مثل JetBrains dotPeek یا RedGate .NET Reflector میشه Assemblyهای برنامه رو در صورتی که Obfuscate نشده باشه دیکامپایل کرد. از بین این دو برنامه؛ به نظر من dotPeek ابزار مناسب‌تری برای دیکامپایل برنامه‌های Managed Code هست چون:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;رایگان&lt;/li&gt;
+&lt;li&gt;قوی و سریع&lt;/li&gt;
+&lt;li&gt;امکان استخراج فایل پروژه&lt;/li&gt;
+&lt;li&gt;امکان ساخت فایل pdb&lt;/li&gt;
+&lt;li&gt;فراهم آوردن امکان دیباگ سورس کد با بهره‌گیری از Symbol Sever&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;قبل از اینکه نحوه دیباگ کردن و شرح بدم، لازم میدونم که یکی دو مورد رو توضیح بدم:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Managed Code&lt;/em&gt;&lt;/strong&gt; به کدهایی گفته میشه که توسط یکی از زبان‌های برنامه‌نویسی .Net Framework ( مثل سی شارپ و ... ) تولید شده باشه، کد نوشته شده در این زبان‌ها به زبان میانی (CIL) ترجمه و توسط دات نت روی سیستم‌ها اجرا میشه.
+(&lt;a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb318664(v=vs.85).aspx" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;pdb&lt;/em&gt;&lt;/strong&gt; مخفف &lt;strong&gt;P&lt;/strong&gt;rogram &lt;strong&gt;D&lt;/strong&gt;ata&lt;strong&gt;B&lt;/strong&gt;ase، فایل‌هایی هستند که اطلاعات دیباگ پروژه رو نگهداری میکنند و تنها زمانی که حالت کامپایل برنامه روی debug باشد تولید میشوند. (&lt;a href="https://msdn.microsoft.com/en-us/library/ms241903(v=vs.90).aspx" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Obfuscation&lt;/em&gt;&lt;/strong&gt; یا مبهم‌سازی کد به روشی میگن که قبل از کامپایل کد ساختار کد ( مانند نام متغیر و ... ) را بهم میریزند تا وقتی توسط یک Decompiler یا Debugger کد کامپایل شده اون‌ها بررسی میشه خواندن اونها به آسانی میسر نباشه.
+(&lt;a href="https://en.wikipedia.org/wiki/Obfuscation_(software)" target="_blank"&gt;اطلاعات بیشتر&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;چه چیزی و قرار هست بررسی کنیم؟
+اینکه چطور یک برنامه دات نتی و بدون داشتن کد با استفاده از dotPeek و Visual Studio دیباگ کنیم ...&lt;/p&gt;
+</summary><category term=".net"></category><category term="Debugging"></category><category term="C#"></category></entry><entry><title>نسخه 1.5.1 برنامه KTOP (بهینه‌ساز کتاب‌های فارسی و عربی برای کیندل) قابل اجرا روی ویندوز، لینوکس و مک</title><link href="http://antipattern.ir/cross-platform-ktop-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-09-10T22:13:00+04:30</published><updated>2016-09-10T22:13:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-09-09:cross-platform-ktop-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;
+این پروژه متوقف شده است و به جای آن پروژه KiPEO آغاز شده است. &lt;a href="/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html"&gt;اطلاعات بیشتر&lt;/a&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;در صورتی که علاقهمند به حمایت از پروژه باشین؛ میتونید از آدرس زیر از پروژه حمایت کنید!
+&lt;a href="https://www.payping.ir/al1b"&gt;https://www.payping.ir/al1b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="KTOP On Linux" src="http://antipattern.ir/images/epub/linux-ubuntu.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ویرایش:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;درصورتی که نسخه 1.5b را پیش‌تر دریافت کرده‌اید، لطفاً نسبت به دانلود نسخه 1.5.1 که لینک دانلود آن در همین پست آمده است اقدام کنید.&lt;/p&gt;
+&lt;p&gt;اگر 2 پست قبلی درباره معرفی برنامه &lt;a href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" target="_blank"&gt;KTOP&lt;/a&gt; و &lt;a href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank"&gt;نحوه اضافه کردن فونت سفارشی به Calibre&lt;/a&gt; را مطالعه کرده باشید؛ با برنامه KTOP آشنایی دارید. KTOP (تلفظ کنید کِتاپ) بهینه‌ساز کتاب‌های فارسی و عربی برای کتابخوان آمازون Kindle می‌باشد.&lt;/p&gt;
+&lt;p&gt;بعد از انتشار این نرم‌افزار چندین درخواست مبنی بر ارائه نرم افزار برای سیستم‌عامل‌های Mac یا Linux دریافت کردم. امروز بالاخره موفق شدم و بهتر بگم فرصتی پیدا کردم که برنامه را با DOTNet Core سازگار کنم. با اینکار امکان اجرا بر روی سیستم‌عامل‌های لینوکس، مک و ویندوز فراهم شد.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;تغییرات نسخه 1.5:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;اضافه شدن پشتیبانی از Mac و Linux&lt;/li&gt;
+&lt;li&gt;ساخت Installer برای سیستم عامل Windows&lt;/li&gt;
+&lt;li&gt;ساده‌تر شدن سوییچ ها&lt;/li&gt;
+&lt;li&gt;حذف کتابخانه ویراستیار که جهت اصلاح نویسه‌ها استفاده میشد.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;آخرین تغییرات پروژه داخل صفحه github پروژه قرار گرفتن:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/al1b/KTOP" target="_blank"&gt;https://github.com/al1b/KTOP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;جهت آشنایی با تغییرات و دریافت نسخه جدید ادامه مطلب را مطالعه نمایید.&lt;/p&gt;
+</summary><category term="Amazon Kindle"></category><category term="eReader"></category><category term="epub"></category><category term="Calibre"></category><category term="KTOP"></category></entry><entry><title>تنظیم کردن Reference Path برای تمامی پروژه‌های موجود در Solutionهای Visual Studio</title><link href="http://antipattern.ir/define-reference-path-for-all-projects-in-visual-studio-solution.html" rel="alternate"></link><published>2016-09-01T11:05:00+04:30</published><updated>2016-09-01T11:05:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-09-01:define-reference-path-for-all-projects-in-visual-studio-solution.html</id><summary type="html">&lt;p&gt;&lt;img alt="Sample Solution" class="center-image" src="http://antipattern.ir/images/vs-ref/00.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;وقتی Solution بزرگی داخل Visual Studio داشته باشیم ممکنه با مشکل تنظیم کردن &lt;strong&gt;Reference Path&lt;/strong&gt; برای تمای پروژه‌های موجود مواجه بشیم، برای اینکور مجبوریم به صفحه &lt;strong&gt;Properties&lt;/strong&gt; پروژه‌ها بریم و &lt;strong&gt;Reference Path&lt;/strong&gt; رو تنظیم کنیم که این خودش کار بسیار زمان بر و اعصاب خوردکنی هست.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Define Reference Path" class="center-image" src="http://antipattern.ir/images/vs-ref/01.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;با اسفتاده از Powershell می‌تونیم به راحتی مسیر Reference Pathها رو برای تمامی پروژه‌ها ست کنیم. برای اینکار کافیه &lt;strong&gt;Package Manager Console&lt;/strong&gt; رو از منو &lt;code&gt;Tools-&amp;gt;Nuget Package Manager-&amp;gt;Package Manager Console&lt;/code&gt; باز کنیم.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/02.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;و اسکریپت Powershell زیر و داخل اون اجرا کنیم.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;$path&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="no"&gt;[System.IO.Path]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$proj&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;get-project&lt;/span&gt; &lt;span class="n"&gt;-all&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;   &lt;span class="nv"&gt;$proj&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Properties&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Item&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ReferencePath&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$path&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;GetDirectoryName&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$proj&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="s2"&gt;\..\libs&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;نمونه اجرا شده :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Package Manager Console" class="center-image" src="http://antipattern.ir/images/vs-ref/03.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;اسکریپت بالا مناسب برای مسیرهای نسبی هستند، اگر مسیر مستقیم برای پروژه میخواید تنظیم کنید کافیه به جای &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$($path::GetDirectoryName($proj.filename))\..\libs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;مسیر مستقیم خودتون رو بنویسد.&lt;/p&gt;
+&lt;h4&gt;منبع&lt;/h4&gt;
+&lt;p&gt;&lt;a href="http://andsmi.com/post/85237953978/adding-reference-paths-to-all-projects-in-solution" target="_blank"&gt;Adding Reference Paths to all Projects in Solution Visual Studio&lt;/a&gt;&lt;/p&gt;
+</summary><category term="Visual Studio"></category><category term="Powershell"></category></entry><entry><title>معرفی نرم افزار KTOP، برنامه‌ای جهت بهینه‌سازی کتاب‌های فارسی و عربی برای Amazon Kindle</title><link href="http://antipattern.ir/ktop-kindle-text-optimization-for-perisan-ebooks.html" rel="alternate"></link><published>2016-08-13T20:30:00+04:30</published><updated>2016-08-13T20:30:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-08-13:ktop-kindle-text-optimization-for-perisan-ebooks.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;
+این پروژه متوقف شده است و به جای آن پروژه KiPEO آغاز شده است. &lt;a href="/calibre-KiPEO-is-the-better-way-to-reshape-kindle-epub-awz3-books.html"&gt;اطلاعات بیشتر&lt;/a&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;
+نسخه جدید برنامه با پشتیبانی از ویندوز، مک و لینوکس منتشر شده است. &lt;a href="/cross-platform-ktop-text-optimization-for-perisan-ebooks.html"&gt;اطلاعات بیشتر&lt;/a&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;در صورتی که علاقهمند به حمایت از پروژه باشین؛ میتونید از آدرس زیر از پروژه حمایت کنید!
+&lt;a href="https://www.payping.ir/al1b"&gt;https://www.payping.ir/al1b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;در &lt;a href="/embed-custom-font-in-epub-and-justify-the-book.html" target="_blank"&gt;پست قبلی&lt;/a&gt; به این اشاره کردیم که با استفاده از Calibre می‌توان به راحتی هر نوع فونت دلخواهی رو به کتاب epub یا azw3 مورد علاقمون اضافه کنیم. اما متاسفانه Kindle به خوبی نوشته‌ها رو نشون نمیده و مثل تصویر زیر کارکترها و بصورت مجزا از هم نشون میده.&lt;/p&gt;
+&lt;p&gt;برای رفع این مشکل، من برنامه‌ای نوشتم که کتاب‌های &lt;strong&gt;epub&lt;/strong&gt; رو به شکلی بهینه‌سازی می‌کنه که به راحتی داخل Kindle قابل خوندن باشن، مثلاً به دو عکس زیر توجه کنید:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center"&gt;فونت سفارشی&lt;/th&gt;
+&lt;th align="center"&gt;فونت سفارشی - بهینه‌سازی شده با KTOP&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;&lt;img alt="Custom font" src="http://antipattern.ir/images/epub/03-custom-font.jpg"&gt;&lt;/td&gt;
+&lt;td align="center"&gt;&lt;img alt="Optimized font" src="http://antipattern.ir/images/epub/01-optimized.jpg"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;برنامه KTOP&lt;/h2&gt;
+&lt;p&gt;کلاً پروسه اسم گذاری برای یه برنامه خیلی سخته، من اسم &lt;em&gt;KTOP&lt;/em&gt; رو از روی جمله &lt;em&gt;Kindle Text Optimization for Persian eBooks&lt;/em&gt; انتخاب کردم، شاید یه دلیلش این بود که دوست داشتم برنامه رو به اسم &lt;strong&gt;کتاپ&lt;/strong&gt; صدا کنم.&lt;/p&gt;
+&lt;h2&gt;قابلیت‌های برنامه&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;اصلاح ی و ک عربی&lt;/li&gt;
+&lt;li&gt;اصلاح نیم‌فاصله‌ها و اشتباه‌های این‌چنینی&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;بهنیه‌سازی کتاب‌ها جهت مشاهده در Amazon Kindle&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;این نکته رو لازم هست که بگم، برنامه و سورس اون با مجوز GNU برروی سایت github در آدرس زیر قرار گرفته:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/al1b/KTOP" target="_blank"&gt;https://github.com/al1b/KTOP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;در صورتی که علاقه‌مند به آشنایی بیشتر با این برنامه هستید، ادامه مطلب رو مطالعه کنید.&lt;/p&gt;
+</summary><category term="Amazon Kindle"></category><category term="eReader"></category><category term="epub"></category><category term="Calibre"></category><category term="KTOP"></category></entry><entry><title>تنظیم فونت سفارشی برای کتاب‌های epub و azw3 در دستگاه Amazon Kindle با استفاده از Calibre</title><link href="http://antipattern.ir/embed-custom-font-in-epub-and-justify-the-book.html" rel="alternate"></link><published>2016-08-13T19:30:00+04:30</published><updated>2016-08-13T19:30:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-08-13:embed-custom-font-in-epub-and-justify-the-book.html</id><summary type="html">&lt;p&gt;&lt;img alt="Sample Books" class="center-image" src="http://antipattern.ir/images/epub/sample-books.png"&gt;&lt;/p&gt;
+&lt;p&gt;کتاب‌خوان آمازون کیندل پس از ارائه فرمت &lt;a href="https://www.amazon.com/gp/feature.html?docId=1000729511" target="_blank"&gt;KF8&lt;/a&gt; امکان پشتیبانی از کتاب‌های فارسی رو فراهم آورده، اما فونت پیشفرض دستگاه علاوه بر اینکه خیلی ناخوشایند هست، اشکالات زیادی داره که بخشی از اون تو تصویر بالا می‌تونید ببیند.&lt;/p&gt;
+&lt;h2&gt;تو این مطلب مواردی که بررسی میشن:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;نحوه اضافه کردن فونت سفارشی به کتاب‌هایی با فرمت &lt;code&gt;epub&lt;/code&gt; یا &lt;code&gt;azw3&lt;/code&gt; با استفاده از نرم افزار Calibre&lt;/li&gt;
+&lt;li&gt;نحوه فرمت و اصلاح CSS کتاب‌ها برای نمایش بهتر داخل Kindle&lt;/li&gt;
+&lt;li&gt;معرفی برنامه &lt;code&gt;KTOP&lt;/code&gt; جهت بهینه سازی کتاب‌های فارسی یا عربی&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;در صورتی که کتاب‌خوان Kindle دارید یا علاقه‌مند هستید که کمی درباره اون بدونید ادامه مطلب رو مطالعه کنید.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;جهت اسفتاده از فونت سفارشی؛ حتماً پس ازا اضافه کردن فونت باید با برنامه KTOP نسبت به بهینه سازی کتاب اقدام کنید.&lt;/strong&gt;&lt;/p&gt;
+</summary><category term="Amazon Kindle"></category><category term="eReader"></category><category term="epub"></category><category term="Calibre"></category></entry><entry><title>فعال‌سازی intellisense/autocomplete کد برای فایل‌های axml اندروید در Visual Studio</title><link href="http://antipattern.ir/enable-visual-studio-intellisense-in-android-.axml-files.html" rel="alternate"></link><published>2016-07-30T10:31:00+04:30</published><updated>2016-07-30T10:31:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-07-30:enable-visual-studio-intellisense-in-android-.axml-files.html</id><summary type="html">&lt;p&gt;برای ویرایش فایل‌های axml اندروید در &lt;a href="https://www.xamarin.com/visual-studio" target="_blank"&gt;Xamarin For Visual Studio&lt;/a&gt; دو راه وجود دارد:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;استفاده از ابزار ابزار طراحی گرافیکی &lt;/li&gt;
+&lt;li&gt;ویرایش متنی فایل axml&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;در حالت اول به راحتی با استفاده از ابزار GUI که Xamarin تهیه کرده است عمده تغییرات قابل اعمال است، اما اگر قصد این را داشته باشیم که مستقیم فایل‌ها را در حالت متنی ویرایش کنیم مشاهده خواهیم کرد که هیچ intellisense یا autocomplete کد، به کاربر ارائه نمی‌شود.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Visual Studio - Xamarin - intellisense won't work" class="center-image" src="http://antipattern.ir/images/xamarin-code/intel-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;همانطور که در شکل بالا نیز مشخص است؛ هیچ پیشنهاد کد یا راهنمایی برای تکمیل کردن کد در xml editor نمایش داده نمیشود. خوشبختانه این مورد توسط Xamarin پشتیبانی میشود و تنها باید آنرا فعال کنیم. در ادامه مطلب نحوه فعال سازی آن شرح داده خواهد شد.
+&lt;br /&gt;&lt;/p&gt;
+</summary><category term="Android"></category><category term="Xamarin"></category><category term="Visual Studio"></category></entry><entry><title>رفع مشکل عدم وجود حافظه خالی 2048 مگابایتی RAM در اجرای Visual Studio Emulator For Android</title><link href="http://antipattern.ir/overcome-visual-studio-android-emulator-2048-mb-requirement.html" rel="alternate"></link><published>2016-07-28T17:20:00+04:30</published><updated>2016-07-28T17:20:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-07-28:overcome-visual-studio-android-emulator-2048-mb-requirement.html</id><summary type="html">&lt;p&gt;یکی از Emulatorهای خوب عرضه شده جهت تست و توسعه برنامه‌های اندروید برروی سیستم عامل ویندوز؛ ابزار &lt;a href="https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx" target="_blank"&gt;Visual Sudio Emulator For Android&lt;/a&gt; می‌باشد.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; از جمله ویژ‌گی‌های این ابزار میتوان به موارد زیر اشاره کرد: &lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;کاملاً رایگان&lt;/li&gt;
+&lt;li&gt;هماهنگی کامل با Visual Studio&lt;/li&gt;
+&lt;li&gt;امکان استفاده در Android Studio، Eclipse یا هر ابزار دیگری که از ADB پشتیبانی می‌کند&lt;/li&gt;
+&lt;li&gt;کارایی خوب بدلیل استفاده از Hyper-V ویندوز&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Microsoft Visual Emulator For Android - 2048 MB Error" class="center-image" src="http://antipattern.ir/images/vs-android-emulator/error.png"&gt;&lt;/p&gt;
+&lt;p&gt;کاربران در استفاده از این ابزار ممکن است با خطای &lt;strong&gt;Not enough memory is available in the system to start an emulator that uses 2048 MB of startup RAM&lt;/strong&gt; مواجه شوند. بصورت کلی دو راه برای رفع این مشکل وجود دارد:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;افزایش حافظه RAM&lt;/li&gt;
+&lt;li&gt;بستن برنامه‌های در حال اجرا جهت کاهش حافظه مصرفی&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;اما اگر هیچ یک از دو راه بالا امکان پذیر نبود، چه باید کرد؟ در ادامه مطلب به بررسی و رفع این مشکل می‌پردازیم.  &lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+</summary><category term="Android"></category><category term="Emulator"></category><category term="Hyper-V"></category><category term="Visual Studio"></category></entry><entry><title>چرا باید به استک مایکروسافت بیشتر از گذشته توجه کرد؟</title><link href="http://antipattern.ir/microsoft-stack-2016.html" rel="alternate"></link><published>2016-06-28T12:45:00+04:30</published><updated>2016-06-28T12:45:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-06-27:microsoft-stack-2016.html</id><summary type="html">&lt;p&gt;&lt;img alt="Microsoft Stack" class="center-image" src="http://antipattern.ir/images/microsoft-stack/microsoft-logo.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;اگر به دلایل زیر توجه کنید:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SQL Server برروی لینوکس&lt;/li&gt;
+&lt;li&gt;توسعه و اجرای برنامه‌های .Net برروی لینوکس، مک &lt;/li&gt;
+&lt;li&gt;توسعه برنامه‌های Native موبایل با استفاده از Xamarin &lt;/li&gt;
+&lt;li&gt;متن باز شدن .Net Framework و Xamarin&lt;/li&gt;
+&lt;li&gt;ارائه ابزارهای رایگان و متن باز برنامه‌نویسی&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;حتماً نگاه دقیقتری به استک مایکروسافت برای برای توسعه &lt;em&gt;برنامه‌های آینده/فعلی&lt;/em&gt; خود خواهید داشت. درصورتی که علاقه‌مند به این استک هستید ادامه مطلب را مطالعه کنید.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+</summary><category term="Microsoft"></category><category term=".Net"></category><category term=".NET Core"></category><category term="Open Source"></category><category term="Xamarin"></category><category term="SQL Server"></category></entry><entry><title>استخراج لینک‌ها و زیرنویس‌های دوره‌های آموزشی سایت Microsoft Virtual Academy با یک اسکریپت پایتون</title><link href="http://antipattern.ir/python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html" rel="alternate"></link><published>2016-06-17T13:06:00+04:30</published><updated>2016-06-17T13:06:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-06-17:python-script-for-downloading-video-links-subtitles-microsoft-virtual-academy.html</id><summary type="html">&lt;p&gt;&lt;img alt="Microsoft Virtual Academy" class="center-image" src="http://antipattern.ir/images/mva/mva-logo.png"&gt;&lt;/p&gt;
+&lt;p&gt;اگر تا به حال به دنبال محتوای آموزشی حرفه‌ای و البته رایگان در اینترنت بوده باشید حتماً با &lt;a href="https://mva.microsoft.com/" target="_blank"&gt;Microsoft Virtual Academy&lt;/a&gt; آشنایی دارید، در این وب‌سایت، مایکروسافت دوره‌های آموزشی بسیار عالی تهیه کرده که اگر بخواهیم معادل همین دوره‌ها رو در موسسات آموزشی ایرانی بگذرونیم n&lt;strong&gt;&lt;em&gt; صدهزار&lt;/em&gt;&lt;/strong&gt; یا n&lt;strong&gt;&lt;em&gt; میلیون&lt;/em&gt;&lt;/strong&gt; تومان هزینه کنیم. به لطف مایکروسافت تمامی این دوره‌ها بصورت رایگان ارائه شده؛ اما دانلود کردن تک به تک درس‌ها برای ما ایرانی‌ها که اینترنت مناسبی نداریم کمی تا قسمتی آزار دهنده است.&lt;/p&gt;
+&lt;p&gt;اخیراً من اسکریپتی با &lt;a :title="دانلود Python 3.5.1" _="," href="https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe" target="_blank"&gt;Python 3&lt;/a&gt; نوشتم که با گرفتن URL درس &lt;a href="https://mva.microsoft.com/" target="_blank"&gt;Microsoft Virtual Academy&lt;/a&gt; لینک‌های دانلود فیلم‌های آموزشی رو به تفکیک کیفیت استخراج و اگر کاربر تمایل داشته باشد حتی زیرنویس‌ها را نیز استخراج و دریافت کند. این نکته لازم به ذکر هست که زیرنویس‌های مذکور را به راحتی می‌توان به پسوندهای رایج مانند srt تبدیل کرد.&lt;/p&gt;
+&lt;p&gt;اگر مایل به استفاده از این اسکریپت کاربردی هستید حتماً ادامه مطلب رو مطالعه کنید.&lt;/p&gt;
+</summary><category term="Microsoft Virtual Academy"></category><category term="Python"></category><category term="اسکریپت کاربردی پایتون"></category></entry><entry><title>رمزنگاری اطلاعات در SQL Server 2016 با استفاده از امکان Always Encrypted - به همراه مثال در ADO.Net و EntityFramework</title><link href="http://antipattern.ir/always-encrypted-with-sql-server-2016-with-code-example.html" rel="alternate"></link><published>2016-06-03T18:53:00+04:30</published><updated>2016-06-03T18:53:00+04:30</updated><author><name>علی بهرامی‌نژاد</name></author><id>tag:antipattern.ir,2016-06-04:always-encrypted-with-sql-server-2016-with-code-example.html</id><summary type="html">&lt;p&gt;&lt;img alt="SQL Server 2016 - Always Encrpted" class="center-image" src="http://antipattern.ir/images/sql-server-2016/sql-server-2016-always-encrpted.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;رمزنگاری دیتا در بانک اطلاعاتی همواره از مشکلات بزرگ برنامه‌نویسان است؛ اینکه بتوانند علاوه بر رمزنگاری مناسب دیتا؛ روی دیتای رمزنگاری شده Query اجرا کنند، Index بسازند.&lt;/p&gt;
+&lt;p&gt;مدت زیادی نیست که نسخه نهایی &lt;a href="https://www.microsoft.com/en-us/server-cloud/products/sql-server/" target="_blank"&gt;SQL Server 2016&lt;/a&gt; توسط مایکروسافت ارائه شده؛ یکی از قابلیت‌های منحصربفرد و هیجان انگیز آن &lt;a href="https://msdn.microsoft.com/en-us/library/mt163865.aspx" target="_blank"&gt;Always Encrypted&lt;/a&gt; است که امکان رمزنگاری ستون‌های بانک اطلاعاتی فراهم میکند.&lt;/p&gt;
+&lt;p&gt;رمز نگاری بدین شکل هست که دیتا در دیتابیس و مسیر ارتباطی با برنامه به شکل رمزنگاری شده است و تنها در برنامه شماست که رمزگشایی دیتا انجام می‌شود.&lt;/p&gt;
+&lt;p&gt;اگر علاقه‌مند هستید که چطور میشه ستون‌هارو رمزنگاری کرد و چطور میشه در دات نت (ADO.Net و Entity Framework) از اون بهره برد حتماً ادامه مطلب را بخونید.&lt;/p&gt;
+</summary><category term="SQL-Server"></category><category term="رمزنگاری"></category><category term="Always Encrypted"></category><category term="ADO.Net"></category><category term="Entity Framework"></category><category term="مقاله آموزشی"></category></entry></feed>
